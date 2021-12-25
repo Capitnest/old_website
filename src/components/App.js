@@ -14,6 +14,7 @@ import Wallet from "./Wallet";
 import SendCoins from "./SendCoins";
 
 import Overview from "./Market/Overview";
+import Buy from "./Market/Buy";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <PrivateRoute path="/update-profile" component={UpdateProfile} />
           <PrivateRoute path="/wallet" component={Wallet} />
 
+          <PrivateRoute path="/market/buy" component={Buy} />
           <Route path="/market/overview" component={Overview} />
 
           <Route exact path="/" component={Home} />

@@ -27,6 +27,7 @@ export default function Wallet() {
   const coins = useRef(0); //the coins that the user wants to send
   const id = useRef("");
   const captcha = useRef("");
+  const [username, setUsername] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -65,23 +66,19 @@ export default function Wallet() {
               return setError("The Wallet Id is invalid!");
             } else {
               run = true;
+              database
+                .ref("users/" + id.current.value + "/username")
+                .on("value", (snapshot) => {
+                  const data = snapshot.val();
+                  setUsername(data);
+                });
             }
           });
 
         if (run === true) {
-          //the username of the user that will receive the coins
-          var receiver_username = "";
-
-          //get the username of the user that will receive the coins from the database
-          database
-            .ref("users/" + id.current.value + "/username")
-            .on("value", (snapshot) => {
-              receiver_username = snapshot.val();
-            });
-
           //change the database values for the user that receives the coins
           database.ref("users/" + id.current.value).set({
-            username: toString(receiver_username),
+            username: username,
             balance: parseFloat(data + parseFloat(coins.current.value)),
           });
 
@@ -95,7 +92,9 @@ export default function Wallet() {
 
           return setDone("Transaction Completed!");
         } else {
-          console.log("Nope!");
+          setDone(
+            "Are you sure you want to send the coins to this wallet?\n Complete the form once more if you are sure"
+          );
         }
       }
     } catch {
@@ -128,7 +127,6 @@ export default function Wallet() {
           setMoney(data);
         });
     }
-    console.log(money);
     loadCaptchaEnginge(6);
   }, []);
 

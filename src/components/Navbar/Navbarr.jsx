@@ -54,16 +54,9 @@ export default function Navbarr() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="Software">
-              <NavDropdown.Item
-                href="https://github.com/nottimnik/hackercode/releases/tag/publish"
-                target="_blank"
-              >
-                HackerCode
-              </NavDropdown.Item>
-            </NavDropdown>
-
             <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+            <Nav.Link href="/wallet">Wallet</Nav.Link>
+            <Nav.Link href="/market/buy">Buy Coins</Nav.Link>
           </Nav>
         </Navbar.Collapse>
 
