@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
+import { Form, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import styled from "styled-components"
+import Navbarr from "./../components/Navbar/Navbarr"
 
 export default function UpdateProfile() {
   const emailRef = useRef()
@@ -43,8 +45,9 @@ export default function UpdateProfile() {
 
   return (
     <>
+      <Navbarr />
+      <div style={{display: "flex", justifyContent: "center"}}>
       <Card>
-        <Card.Body>
           <h2 className="text-center mb-4">Update Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
@@ -77,11 +80,24 @@ export default function UpdateProfile() {
               Update
             </Button>
           </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
+          <div className="w-100 text-center mt-2">
         <Link to="/">Cancel</Link>
+      </div>
+      </Card>
       </div>
     </>
   )
 }
+
+const Card = styled.div`
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 20px 20px 20px;
+  border-color: gray;
+  background-color: rgba(26,26,94);
+  color: white;
+  margin-top: 5%;
+  margin-right: 3%;
+  margin-left: 3%;
+  width: 30%;
+`;

@@ -57,6 +57,7 @@ export default function Navbarr() {
             <Nav.Link href="/dashboard">Dashboard</Nav.Link>
             <Nav.Link href="/wallet">Wallet</Nav.Link>
             <Nav.Link href="/market/buy">Buy Coins</Nav.Link>
+            <Nav.Link href="/send-coins">Send Coins</Nav.Link>
           </Nav>
         </Navbar.Collapse>
 

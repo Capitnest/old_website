@@ -3,7 +3,6 @@ import Navbarr from "./Navbar/Navbarr";
 import {
   Container,
   Alert,
-  Card,
   FormControl,
   Form,
   Button,
@@ -17,6 +16,7 @@ import {
   LoadCanvasTemplateNoReload,
   validateCaptcha,
 } from "react-simple-captcha";
+import styled from "styled-components"
 
 export default function Wallet() {
   const [error, setError] = useState("");
@@ -28,6 +28,7 @@ export default function Wallet() {
   const id = useRef("");
   const captcha = useRef("");
   const [username, setUsername] = useState("");
+  const [price, setPrice] = useState(0); //the current price of the coin
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -126,6 +127,13 @@ export default function Wallet() {
           const data = snapshot.val();
           setMoney(data);
         });
+      //get the current price of the coin in usd
+      database
+        .ref("price")
+        .on("value", (snapshot) => {
+          const data = snapshot.val();
+          setPrice(data);
+        });
     }
     loadCaptchaEnginge(6);
   }, []);
@@ -134,20 +142,21 @@ export default function Wallet() {
     <>
       <Navbarr />
 
-      <Container
-        className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
-      >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
-          <div style={{ textAlign: "center" }}>
-            <h1>Your Wallet:</h1>
-            <p>
-              <b>{money}</b> Atomic Coins
-            </p>
-          </div>
+      
+
+          <div style={{display: "flex", justifyContent: "center"}}>
 
           <Card>
-            <Card.Body>
+            <h1>Your Wallet:</h1>
+              <p><b>{money}.00</b> Atomic ≈ {price * money}$</p>
+              <p><b>0.00</b> USD ≈ 0.00$</p>
+              <p><b>0.00</b> Cat ≈ 0.00$</p>
+          </Card>
+
+          </div>
+          <div style={{display: "flex", justifyContent: "center"}}>
+
+          <Card>
               <h2 className="text-center mb-4">Send Coins to a Wallet</h2>
               {error && <Alert variant="danger">{error}</Alert>}
               {done && <Alert variant="success">{done}</Alert>}
@@ -174,10 +183,24 @@ export default function Wallet() {
                   Send Coins
                 </Button>
               </Form>
-            </Card.Body>
           </Card>
-        </div>
-      </Container>
+
+          </div>
+       
+
     </>
   );
 }
+
+const Card = styled.div`
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 20px 20px 20px;
+  border-color: gray;
+  background-color: rgba(26,26,94);
+  color: white;
+  margin-top: 5%;
+  margin-right: 3%;
+  margin-left: 3%;
+  width: 30%;
+`;
