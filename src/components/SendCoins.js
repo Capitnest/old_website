@@ -1,12 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbarr from "./Navbar/Navbarr";
-import {
-  Container,
-  Alert,
-  FormControl,
-  Form,
-  Button,
-} from "react-bootstrap";
+import { Container, Alert, FormControl, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { auth, database } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
@@ -16,7 +10,7 @@ import {
   LoadCanvasTemplateNoReload,
   validateCaptcha,
 } from "react-simple-captcha";
-import styled from "styled-components"
+import styled from "styled-components";
 
 export default function Wallet() {
   const [error, setError] = useState("");
@@ -128,12 +122,10 @@ export default function Wallet() {
           setMoney(data);
         });
       //get the current price of the coin in usd
-      database
-        .ref("price")
-        .on("value", (snapshot) => {
-          const data = snapshot.val();
-          setPrice(data);
-        });
+      database.ref("price").on("value", (snapshot) => {
+        const data = snapshot.val();
+        setPrice(data);
+      });
     }
     loadCaptchaEnginge(6);
   }, []);
@@ -142,62 +134,52 @@ export default function Wallet() {
     <>
       <Navbarr />
 
-      
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Card>
+          <h1 style={{ textAlign: "center" }}>Your Wallet:</h1>
+          <h1 style={{ textAlign: "center", fontFamily: "60px" }}>{money}$</h1>
+        </Card>
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Card>
+          <h2 className="text-center mb-4">Send Money to a Wallet</h2>
+          {error && <Alert variant="danger">{error}</Alert>}
+          {done && <Alert variant="success">{done}</Alert>}
+          <Form onSubmit={handleSubmit}>
+            <Form.Group id="email">
+              <Form.Label>Wallet Id</Form.Label>
+              <Form.Control ref={id} required />
+            </Form.Group>
+            <Form.Group id="email">
+              <Form.Label>Amount of USD</Form.Label>
+              <Form.Control ref={coins} required />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Captcha</Form.Label>
+              <div className="form-group">
+                <div className="col mt-3">
+                  <LoadCanvasTemplate />
+                </div>
 
-          <div style={{display: "flex", justifyContent: "center"}}>
-
-          <Card>
-            <h1>Your Wallet:</h1>
-              <p><b>{money}.00</b> Atomic ≈ {price * money}$</p>
-              <p><b>0.00</b> USD ≈ 0.00$</p>
-              <p><b>0.00</b> Cat ≈ 0.00$</p>
-          </Card>
-
-          </div>
-          <div style={{display: "flex", justifyContent: "center"}}>
-
-          <Card>
-              <h2 className="text-center mb-4">Send Coins to a Wallet</h2>
-              {error && <Alert variant="danger">{error}</Alert>}
-              {done && <Alert variant="success">{done}</Alert>}
-              <Form onSubmit={handleSubmit}>
-                <Form.Group id="email">
-                  <Form.Label>Wallet Id</Form.Label>
-                  <Form.Control ref={id} required />
-                </Form.Group>
-                <Form.Group id="email">
-                  <Form.Label>Amount of Coins</Form.Label>
-                  <Form.Control ref={coins} required />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Captcha</Form.Label>
-                  <div className="form-group">
-                    <div className="col mt-3">
-                      <LoadCanvasTemplate />
-                    </div>
-
-                    <Form.Control ref={captcha} required />
-                  </div>
-                </Form.Group>
-                <Button disabled={loading} className="w-100" type="submit">
-                  Send Coins
-                </Button>
-              </Form>
-          </Card>
-
-          </div>
-       
-
+                <Form.Control ref={captcha} required />
+              </div>
+            </Form.Group>
+            <Button disabled={loading} className="w-100" type="submit">
+              Send Money
+            </Button>
+          </Form>
+        </Card>
+      </div>
     </>
   );
 }
 
 const Card = styled.div`
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 20px 20px 20px;
   border-color: gray;
-  background-color: rgba(26,26,94);
+  background-color: rgba(26, 26, 94);
   color: white;
   margin-top: 5%;
   margin-right: 3%;

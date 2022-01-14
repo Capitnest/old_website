@@ -4,14 +4,15 @@ import { Container } from "react-bootstrap";
 import { auth, database } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
 import styled from "styled-components";
+import Footer from "./Footer/Footer";
+import Particles from "react-particles-js";
+import particlesConfig from "../config/particlesConfig";
 
 export default function SendCoins() {
-  const [balance, setBalance] = useState(0); //the balance of the user 
+  const [balance, setBalance] = useState(0); //the balance of the user
   const [price, setPrice] = useState(0); //the current price of the coin
 
   useEffect(() => {
-
-    
     if (auth.currentUser !== null) {
       //get the balance of the user from the database
       database
@@ -22,80 +23,70 @@ export default function SendCoins() {
         });
 
       //get the current price of the coin in usd
-      database
-        .ref("price")
-        .on("value", (snapshot) => {
-          const data = snapshot.val();
-          setPrice(data);
-        });
+      database.ref("price").on("value", (snapshot) => {
+        const data = snapshot.val();
+        setPrice(data);
+      });
     }
-
-
-
   }, []);
 
   return (
     <Page>
       <Navbarr />
 
-      <Content>
-        <MainCard>
-          <h1>Wallet</h1>
-          <p>See all the coins & how much they worth</p>
-        </MainCard>
+      <div style={{ position: "absolute", zIndex: -1 }}>
+        <Particles height="95vh" width="95vw" params={particlesConfig} />
+      </div>
 
-        <CardMeniu>
-          <Card>
-            <h1>Atomic Coin</h1>
-            <div style={{display: "flex"}}>
-            <h1>{balance}.00 </h1>{" "}<p style={{marginTop: "21px"}}>Atomic</p>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          textAlign: "center",
+        }}
+      >
+        <Content>
+          <MainCard>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <h1 style={{ fontSize: "40px", textAlign: "center" }}>Wallet</h1>
             </div>
-            <p>Estimated Value ≈ {price * balance}</p>
-          </Card>
-
-          <Card>
-            <h1>USD Coin</h1>
-            <div style={{display: "flex"}}>
-            <h1>0.00 </h1>{" "}<p style={{marginTop: "21px"}}>USD</p>
+            <p>Wallet Id: {auth.currentUser.uid}</p>
+            <br />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <h1 style={{ fontSize: "40px", textAlign: "center" }}>Balance</h1>
+              <h1 style={{ fontSize: "60px" }}>{balance}$</h1>
             </div>
-            <p>Estimated Value ≈ 0.0$</p>
-          </Card>
-
-          <Card>
-            <h1>Cat Coin</h1>
-            <div style={{display: "flex"}}>
-            <h1>0.00 </h1>{" "}<p style={{marginTop: "21px"}}>Cat</p>
-            </div>
-            <p>Estimated Value ≈ 0.0$</p>
-          </Card>
-
-        </CardMeniu>
-      </Content>
+          </MainCard>
+        </Content>
+      </div>
 
       <br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
+      <Footer />
     </Page>
   );
 }
-
 
 const Content = styled.div`
   margin-right: 5%;
@@ -103,16 +94,14 @@ const Content = styled.div`
   margin-top: 5%;
 `;
 
-const Page = styled.div`
-  background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F04%2FSimple-wallpapers-HD-for-desktop.png&f=1&nofb=1");
-`;
+const Page = styled.div``;
 
 const Card = styled.div`
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  padding: 20px 20px 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 200px 200px 100px 100px;
   border-color: gray;
-  background-color: rgba(26,26,94);
+  background-color: rgba(30, 30, 94);
   color: white;
   margin-top: 5%;
   margin-right: 3%;
@@ -122,10 +111,10 @@ const Card = styled.div`
 
 const MainCard = styled.div`
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 20px 20px 20px;
   border-color: gray;
-  background-color: rgba(26,26,94);
+  background-color: rgba(26, 26, 94);
   color: white;
   margin-top: 5%;
   margin-right: 3%;
@@ -134,6 +123,4 @@ const MainCard = styled.div`
 
 const CardMeniu = styled.div`
   display: flex;
-
-  
 `;
