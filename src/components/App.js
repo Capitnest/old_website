@@ -4,7 +4,7 @@ import "semantic-ui-css/semantic.min.css";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Dashboard from "./Dashboard";
+import Dashboard from "../dashboard/Dashboard";
 import Login from "../auth/Login";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "../auth/ForgotPassword";

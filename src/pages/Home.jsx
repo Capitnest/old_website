@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import styled from "styled-components";
 import Footer from "../components/Footer/Footer";
 import ReactTypingEffect from "react-typing-effect";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 export default function Home() {
   return (
@@ -85,8 +86,8 @@ export default function Home() {
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
-            marginTop: "100px",
-            backgroundColor: "#fdfdfd",
+            marginTop: "80px",
+            backgroundColor: "#fcfcfc",
           }}
         >
           <SubTitle>
@@ -143,6 +144,64 @@ export default function Home() {
           </Category>
         </div>
 
+        <Industry>
+          <IndustryTitle>Industries & Markets that we support</IndustryTitle>
+          <IndustryCategories>
+            <ul>
+              <li>#Crypto</li>
+              <li>#NFT's</li>
+              <li>#Stocks</li>
+              <li>#Forex</li>
+              <li>#IT & Tech</li>
+              <li>#Startups</li>
+              <li>#Countries Economies</li>
+            </ul>
+          </IndustryCategories>
+        </Industry>
+
+        <IndustryTitle>Cheap Plans</IndustryTitle>
+
+        <Cards>
+          <MonthlyCard>
+            <Label>1-Month Plan</Label>
+            <Price>$1.99/mo</Price>
+            <Description>$1.99 billed every month</Description>
+            <Submit>
+              <div style={{ marginTop: "10px" }}>
+                <Button
+                  style={{
+                    backgroundColor: "#04d192",
+                    borderColor: "#04d192",
+                    fontFamily: "Inter, sans-serif",
+                  }}
+                  href="/signup/monthly/create-account"
+                >
+                  <AiOutlineArrowRight />
+                  Select Plan
+                </Button>
+              </div>
+            </Submit>
+          </MonthlyCard>
+          <YearlyyCard>
+            <Label>1-Year Plan</Label>
+            <Price>$0.99/mo</Price>
+            <Description>$11.88$ billed every year</Description>
+            <Submit>
+              <div style={{ marginTop: "10px" }}>
+                <Button
+                  style={{
+                    backgroundColor: "#04d192",
+                    borderColor: "#04d192",
+                    fontFamily: "Inter, sans-serif",
+                  }}
+                >
+                  <AiOutlineArrowRight /> Select Plan
+                </Button>
+              </div>
+            </Submit>
+          </YearlyyCard>
+        </Cards>
+
         <br />
         <br />
         <br />
@@ -161,6 +220,154 @@ export default function Home() {
     </div>
   );
 }
+
+const Submit = styled.div`
+  button {
+    &:hover {
+      color: black;
+    }
+  }
+`;
+
+const Label = styled.div`
+  font-family: "Inter", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: rgb(73, 84, 90);
+`;
+
+const Price = styled.h1`
+  font-family: "Inter", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: rgb(73, 84, 90);
+`;
+
+const Cards = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  flex-direction: row;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+`;
+
+const MonthlyCard = styled.div`
+  border-radius: 25px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 350px;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  box-sizing: border-box;
+  border-color: rgb(237, 242, 247);
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-radius: 8px;
+  border-top-color: rgb(79, 209, 197);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-top-width: 8px;
+  border-top-style: solid;
+
+  margin-right: 15px;
+
+  @media (max-width: 800px) {
+    margin-right: 0px;
+  }
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+      rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 8px 10px 0.5px,
+      rgba(0, 0, 0, 0.06) 0px 6px 8px 5px;
+    position: relative;
+    top: -2px;
+  }
+`;
+
+const YearlyyCard = styled.div`
+  border-radius: 25px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 350px;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  box-sizing: border-box;
+  border-color: rgb(237, 242, 247);
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-radius: 8px;
+  border-top-color: rgb(49, 151, 149);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-top-width: 8px;
+  border-top-style: solid;
+  margin-left: 15px;
+
+  @media (max-width: 800px) {
+    margin-left: 0px;
+  }
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+      rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 8px 10px 0.5px,
+      rgba(0, 0, 0, 0.06) 0px 6px 8px 5px;
+    position: relative;
+    top: -2px;
+  }
+`;
+
+const Industry = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+`;
+
+const IndustryTitle = styled.h1`
+  font-family: "Inter", sans-serif;
+  color: rgb(45, 55, 72);
+  font-weight: 600;
+  font-size: 35px;
+  margin-right: 20%;
+  margin-left: 20%;
+`;
+
+const IndustryCategories = styled.div`
+  font-family: "Inter", sans-serif;
+  color: rgb(45, 55, 72);
+  font-weight: 500;
+  font-size: 18px;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  li {
+    margin-right: 4px;
+    margin-left: 4px;
+    background-color: #e5e5e5;
+    padding: 2px 4px;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #cecece;
+      cursor: pointer;
+    }
+  }
+`;
+
+const IndustryCard = styled.div``;
 
 const Title = styled.h1`
   font-family: "Inter", sans-serif;
@@ -185,6 +392,7 @@ const SubTitle = styled.p`
   font-size: 45px;
   margin-right: 20%;
   margin-left: 20%;
+  margin-top: 20px;
 
   display: flex;
   justify-content: center;

@@ -2,7 +2,6 @@ import React from "react";
 import Navbarr from "../components/Navbar/Navbarr";
 import Footer from "../components/Footer/Footer";
 import styled from "styled-components";
-import { PricingTable, PricingSlot, PricingDetail } from "react-pricing-tables";
 import { Button, Nav } from "react-bootstrap";
 import { AiOutlineArrowRight } from "react-icons/ai";
 

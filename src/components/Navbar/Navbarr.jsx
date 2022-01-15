@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Dropdown,
-  Button,
-  ButtonGroup,
-} from "react-bootstrap";
+import { Navbar, Nav, Dropdown, Button, ButtonGroup } from "react-bootstrap";
 import { auth, database } from "../../firebase";
 import { useAuth } from "../../contexts/AuthContext";
 import styled from "styled-components";
@@ -68,7 +61,7 @@ export default function Navbarr() {
         {auth.currentUser ? (
           <Dropdown as={ButtonGroup}>
             <Button href="/dashboard" variant="success">
-              {username}
+              <Username>{username}</Username>
             </Button>
 
             <Dropdown.Toggle
@@ -101,6 +94,10 @@ export default function Navbarr() {
     </Content>
   );
 }
+
+const Username = styled.div`
+  color: white;
+`;
 
 const Content = styled.div`
   color: white;
