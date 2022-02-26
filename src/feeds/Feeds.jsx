@@ -15,20 +15,25 @@ export default function Feeds() {
             fontFamily: '"Inter", sans-serif',
             fontSize: "40px",
             fontWeight: "1000",
+            textAlign: "center",
           }}
         >
           Top Crypto Tweets
         </h1>
 
-        <Wrap>
-          {tweets.map((tweet) => (
-            <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-              <WrapItem>
-                <Tweet blog={tweet} />
-              </WrapItem>
-            </div>
-          ))}
-        </Wrap>
+        <br />
+
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Wrap>
+            {tweets.map((tweet) => (
+              <div style={{ marginTop: "10px", marginBottom: "10px" }}>
+                <WrapItem>
+                  <Tweet blog={tweet} />
+                </WrapItem>
+              </div>
+            ))}
+          </Wrap>
+        </div>
       </Content>
     </Layout>
   );
