@@ -6,17 +6,27 @@ import {
   useColorMode,
   useColorModeValue,
   DarkMode,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+  Button,
 } from "@chakra-ui/react";
 import React, { useState, useRef } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { useAuth } from "../contexts/AuthContext";
 import Navlink from "./Navlink";
 import styled from "styled-components";
+import { TriangleDownIcon } from "@chakra-ui/icons";
 import {
   Navbar as Navbarr,
   Nav,
   Dropdown,
-  Button,
   ButtonGroup,
   Container,
   NavDropdown,
@@ -24,40 +34,31 @@ import {
 import { CgProfile } from "react-icons/cg";
 
 export function Navbar() {
-  const { toggleColorMode } = useColorMode();
-  const [theme, setTheme] = useState("dark");
+  const { colorMode, toggleColorMode } = useColorMode();
+
   // const { logout, currentUser } = useAuth()
   const { logout, currentUser } = useAuth();
-
-  const handleTheme = () => {
-    if (theme == "dark") {
-      setTheme("white");
-    } else {
-      setTheme("dark");
-    }
-  };
 
   return (
     <>
       <div
         style={{
-          // backgroundColor: (() => {
-          //   if (theme == "dark") {
-          //     return "rgb(26, 32, 44)";
-          //   } else {
-          //     return "rgb(255, 255, 255)";
-          //   }
-          // })(),
-          // position: "fixed",
-          // top: 0,
-          // left: 0,
-          // zIndex: 999,
-          // width: "100%",
+          backgroundColor: (() => {
+            if (colorMode === "light") {
+              return "rgb(255, 255, 255)";
+            } else {
+              return "rgb(26, 32, 44)";
+            }
+          })(),
+          position: "fixed",
+          top: 0,
+          left: 0,
+          zIndex: 999,
+          width: "100%",
           boxShadow: "0 2px 2px -2px gray",
-          backgroundColor: "-moz-initial",
         }}
       >
-        <Navbarr expand="md">
+        <Navbarr expand="md" variant={colorMode === "dark" ? "dark" : "light"}>
           <Container>
             <Navbarr.Brand href="/">
               <div style={{ display: "flex" }}>
@@ -74,11 +75,16 @@ export function Navbar() {
             <Navbarr.Toggle aria-controls="basic-navbar-nav" />
             <Navbarr.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
+                <Navlink to="/feeds" name="Feed" />
                 <Navlink to="/news" name="News" />
-                <Navlink to="/feeds" name="Feeds" />
+
                 <Navlink to="/nfts" name="NFTs" />
+                <Navlink to="/videos" name="Videos" />
               </Nav>
             </Navbarr.Collapse>
+            <Spacer />
+            <Spacer />
+            <Spacer />
             {!currentUser && <Navlink to="/login" name="Login" />}
             {currentUser && <Navlink to="/profile" name="Profile" />}
 
@@ -87,7 +93,6 @@ export function Navbar() {
               icon={useColorModeValue(<FaMoon />, <FaSun />)}
               onClick={() => {
                 toggleColorMode();
-                handleTheme();
               }}
               aria-label="toggle-dark-mode"
             />
@@ -97,6 +102,15 @@ export function Navbar() {
     </>
   );
 }
+
+const Link = styled.h1`
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+  }
+`;
 
 const Title = styled.h1`
   font-family: "Inter", sans-serif;

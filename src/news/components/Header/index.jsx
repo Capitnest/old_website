@@ -4,9 +4,7 @@ import styled from "styled-components";
 const Header = () => (
   <NewsHeader>
     <br />
-    <h1>
-      <span>“</span> News <span>”</span>
-    </h1>
+    <h1>News</h1>
     <p>Get the most recent news about crypto & nfts</p>
   </NewsHeader>
 );

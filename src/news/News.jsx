@@ -23,7 +23,7 @@ const Home = () => {
   const handleSearchResults = () => {
     const allBlogs = blogList;
     const filteredBlogs = allBlogs.filter((blog) =>
-      blog.category.toLowerCase().includes(searchKey.toLowerCase().trim())
+      blog.title.toLowerCase().includes(searchKey.toLowerCase().trim())
     );
     setBlogs(filteredBlogs);
   };
@@ -55,29 +55,33 @@ const Home = () => {
 
         <br />
 
-        <a
-          href="https://twitter.com/intent/tweet?button_hashtag=crypto&ref_src=twsrc%5Etfw"
-          class="twitter-hashtag-button"
-          data-show-count="false"
-        >
-          Tweet #crypto
-        </a>
-        <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charset="utf-8"
-        ></script>
+        <Featured />
+
+        <br />
 
         <br />
 
         {/* Blog List & Empty View */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
+        <div style={{ marginTop: "-70px" }}>
+          <h1
+            style={{
+              fontFamily: '"Inter", sans-serif',
+              fontSize: "30px",
+              fontWeight: 600,
+              fontStyle: "italic",
+              marginBottom: "10px",
+            }}
+          >
+            Latest News
+          </h1>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
+          </div>
         </div>
       </Content>
     </Layout>
@@ -87,6 +91,8 @@ const Home = () => {
 export default Home;
 
 const Content = styled.div`
+  margin-top: 50px;
+
   *,
   *::after,
   *::before {

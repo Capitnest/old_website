@@ -3,6 +3,32 @@ import styled from "styled-components";
 export const tweets = [
   {
     id: 1,
+    authorName: "Yahoo Finance",
+    authorUsername: "finance.yahoo.com",
+    authorProfilePic:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.altfi.com%2Fimages%2Fcompanies%2Fyahoo-finance.png&f=1&nofb=1",
+    authorLink: "finance.yahoo.com",
+    tweet: (
+      <p>
+        JPMorgan expands crypto footprint with investment in blockchain firm TRM
+        Labs <br /> <br />
+        <img
+          src="https://s.yimg.com/ny/api/res/1.2/J.Y_Xn3k.6DbOR3FcEJTIg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDE-/https://s.yimg.com/os/creatr-uploaded-images/2022-02/555653f0-98bb-11ec-af7f-e95c7fa7f227"
+          alt="article img"
+        />
+        <br />
+        JP Morgan is making a "strategic investment" in the blockchain analysis
+        firm, TRM Labs.
+      </p>
+    ),
+    date: "1/19/2022",
+    source:
+      "https://ph.news.yahoo.com/jp-morgan-expands-crypto-footprint-with-investment-in-blockchain-firm-172704578.html",
+    searchKeywords:
+      "Yahoo Finance finance.yahoo.com JPMorgan expands crypto footprint with investment in blockchain firm TRM Labs JP Morgan is making a strategic investment in the blockchain analysis firm, TRM Labs.",
+  },
+  {
+    id: 1,
     authorName: "Watcher.Guru",
     authorUsername: "@Watcher.Guru",
     authorProfilePic:

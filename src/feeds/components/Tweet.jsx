@@ -1,6 +1,9 @@
-import React from "react";
-import { Box, Avatar, Wrap, WrapItem, Flex } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, Avatar, Wrap, WrapItem, Flex, Button } from "@chakra-ui/react";
 import styled from "styled-components";
+import Like from "./Like";
+import Report from "./Report";
+import { FaGlobe } from "react-icons/fa";
 
 export default function Tweet({
   blog: {
@@ -11,17 +14,19 @@ export default function Tweet({
     authorLink,
     tweet,
     date,
+    source,
   },
 }) {
   return (
     <Content>
       <Box
-        maxW="sm"
+        maxW="lg"
         borderWidth="3px"
         borderRadius="lg"
         overflow="hidden"
         padding="5px"
         borderColor="#019165"
+        backgroundColor="rgb(18, 22, 31)"
       >
         <Wrap>
           <WrapItem>
@@ -40,11 +45,31 @@ export default function Tweet({
                 {authorUsername}
               </a>
             </Flex>
-            <Flex justifyContent="right">
-              <p style={{ fontSize: "15px", marginLeft: "50px" }}>{date}</p>
-            </Flex>
           </WrapItem>
-          <WrapItem>{tweet}</WrapItem>
+          <Flex flexDirection="column">
+            <WrapItem>{tweet}</WrapItem>
+            <Flex marginTop="10px">
+              <Like />
+
+              <div style={{ marginLeft: "5px" }}>
+                <Report />
+              </div>
+
+              <a href={source} style={{ display: "flex" }} target="_blank">
+                <Button marginLeft="5px">
+                  {" "}
+                  <div style={{ marginTop: "1px" }}>
+                    <FaGlobe />{" "}
+                  </div>{" "}
+                  <div style={{ marginLeft: "5px" }}>Source</div>
+                </Button>
+              </a>
+
+              <div style={{ marginLeft: "100px", marginTop: "16px" }}>
+                <p style={{ color: "gray" }}>Posted on {date}</p>
+              </div>
+            </Flex>
+          </Flex>
         </Wrap>
       </Box>
     </Content>

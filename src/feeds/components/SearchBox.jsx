@@ -22,7 +22,7 @@ const SearchBar = ({ formSubmit, value, handleSearchKey, clearSearch }) => (
         <Input
           variant="filled"
           type="text"
-          placeholder="Search"
+          placeholder="Search on Capitnest"
           value={value}
           onChange={handleSearchKey}
         />

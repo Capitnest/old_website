@@ -20,6 +20,7 @@ import Blog from "../news/Blog";
 import Feeds from "../feeds/Feeds";
 import Nfts from "../nft/Nfts";
 import Video from "../feeds/videos/Video";
+import About from "../pages/company/About";
 
 export default function AppRouter(props) {
   return (
@@ -33,6 +34,8 @@ export default function AppRouter(props) {
           <Route exact path="/nfts" component={Nfts} />
           <Route exact path="/feeds" component={Feeds} />
           <Route exact path="/videos" component={Video} />
+
+          <Route exact path="/about" component={About} />
 
           <ProtectedRoute exact path="/login" component={Loginpage} />
           <ProtectedRoute exact path="/register" component={Registerpage} />
