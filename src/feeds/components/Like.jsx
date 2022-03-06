@@ -1,6 +1,7 @@
 import { Button } from "@chakra-ui/react";
 import React, { Component } from "react";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
+import { HiHeart } from "react-icons/hi";
 
 class Like extends Component {
   state = {
@@ -14,10 +15,10 @@ class Like extends Component {
   };
 
   render() {
-    const changeColor = this.state.liked ? <FcLike /> : <FcLikePlaceholder />;
+    const changeColor = this.state.liked ? <FcLike /> : <HiHeart />;
 
     return (
-      <Button padding="3%" onClick={this.toggleLike}>
+      <Button padding="0px" onClick={this.toggleLike}>
         {changeColor}
       </Button>
     );

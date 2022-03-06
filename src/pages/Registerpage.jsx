@@ -8,95 +8,137 @@ import {
   Input,
   Stack,
   useToast,
-} from '@chakra-ui/react'
-import React, { useEffect, useRef, useState } from 'react'
-import { FaGoogle } from 'react-icons/fa'
-import { useHistory } from 'react-router-dom'
-import { Card } from '../components/Card'
-import DividerWithText from '../components/DividerWithText'
-import { Layout } from '../components/Layout'
-import { useAuth } from '../contexts/AuthContext'
+} from "@chakra-ui/react";
+import React, { useEffect, useRef, useState } from "react";
+import { FaGoogle } from "react-icons/fa";
+import { useHistory } from "react-router-dom";
+import { Card } from "../components/Card";
+import DividerWithText from "../components/DividerWithText";
+import { Layout } from "../components/Layout";
+import { useAuth } from "../contexts/AuthContext";
+import {
+  loadCaptchaEnginge,
+  LoadCanvasTemplate,
+  validateCaptcha,
+} from "react-simple-captcha";
 
 export default function Registerpage() {
-  const history = useHistory()
-  const { signInWithGoogle, register } = useAuth()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const toast = useToast()
-  const mounted = useRef(false)
+  const history = useHistory();
+  const { signInWithGoogle, register } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [captcha, setCaptcha] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const toast = useToast();
+  const mounted = useRef(false);
 
   useEffect(() => {
-    mounted.current = true
+    loadCaptchaEnginge(6);
+    mounted.current = true;
     return () => {
-      mounted.current = false
-    }
-  }, [])
+      mounted.current = false;
+    };
+  }, []);
 
   return (
     <Layout>
-      <Heading textAlign='center' my={12}>
+      <Heading textAlign="center" my={12}>
         Register
       </Heading>
-      <Card maxW='md' mx='auto' mt={4}>
+      <Card maxW="md" mx="auto" mt={4}>
         <chakra.form
-          onSubmit={async e => {
-            e.preventDefault()
+          onSubmit={async (e) => {
+            e.preventDefault();
             if (!email || !password) {
               toast({
-                description: 'Credentials not valid.',
-                status: 'error',
+                description: "Credentials not valid.",
+                status: "error",
                 duration: 9000,
                 isClosable: true,
-              })
-              return
+              });
+              return;
             }
+
+            if (validateCaptcha(captcha) == true) {
+              loadCaptchaEnginge(6);
+            } else {
+              toast({
+                description: "Incorrect Captcha",
+                status: "error",
+                duration: 9000,
+                isClosable: true,
+              });
+              return;
+            }
+
+            if (password.length < 9) {
+              toast({
+                description: "Your password must have more than 8 characters.",
+                status: "error",
+                duration: 9000,
+                isClosable: true,
+              });
+              return;
+            }
+
             // your register logic here
-            setIsSubmitting(true)
+            setIsSubmitting(true);
             register(email, password)
-              .then(res => {})
-              .catch(error => {
-                console.log(error.message)
+              .then((res) => {})
+              .catch((error) => {
+                console.log(error.message);
                 toast({
                   description: error.message,
-                  status: 'error',
+                  status: "error",
                   duration: 9000,
                   isClosable: true,
-                })
+                });
               })
               .finally(() => {
-                mounted.current && setIsSubmitting(false)
-              })
+                mounted.current && setIsSubmitting(false);
+              });
           }}
         >
-          <Stack spacing='6'>
-            <FormControl id='email'>
+          <Stack spacing="6">
+            <FormControl id="email">
               <FormLabel>Email address</FormLabel>
               <Input
-                name='email'
-                type='email'
-                autoComplete='email'
+                name="email"
+                type="email"
+                autoComplete="email"
                 required
                 value={email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </FormControl>
-            <FormControl id='password'>
+            <FormControl id="password">
               <FormLabel>Password</FormLabel>
               <Input
-                name='password'
-                type='password'
-                autoComplete='password'
+                name="password"
+                type="password"
+                autoComplete="password"
                 required
                 value={password}
-                onChange={e => setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </FormControl>
+            <FormControl>
+              <FormLabel>Captcha</FormLabel>
+              <LoadCanvasTemplate />
+              <Input
+                name="captcha"
+                type="text"
+                required
+                value={captcha}
+                onChange={(e) => setCaptcha(e.target.value)}
+              />
+            </FormControl>
+
             <Button
-              type='submit'
-              colorScheme='pink'
-              size='lg'
-              fontSize='md'
+              type="submit"
+              colorScheme="pink"
+              size="lg"
+              fontSize="md"
               isLoading={isSubmitting}
             >
               Sign up
@@ -104,25 +146,25 @@ export default function Registerpage() {
           </Stack>
         </chakra.form>
         <Center my={4}>
-          <Button variant='link' onClick={() => history.push('/login')}>
+          <Button variant="link" onClick={() => history.push("/login")}>
             Login
           </Button>
         </Center>
         <DividerWithText my={6}>OR</DividerWithText>
         <Button
-          variant='outline'
+          variant="outline"
           isFullWidth
-          colorScheme='red'
+          colorScheme="red"
           leftIcon={<FaGoogle />}
           onClick={() =>
             signInWithGoogle()
-              .then(user => console.log(user))
-              .catch(e => console.log(e.message))
+              .then((user) => console.log(user))
+              .catch((e) => console.log(e.message))
           }
         >
           Sign in with Google
         </Button>
       </Card>
     </Layout>
-  )
+  );
 }

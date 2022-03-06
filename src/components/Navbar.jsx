@@ -5,16 +5,6 @@ import {
   Spacer,
   useColorMode,
   useColorModeValue,
-  DarkMode,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
   Button,
 } from "@chakra-ui/react";
 import React, { useState, useRef } from "react";
@@ -31,7 +21,6 @@ import {
   Container,
   NavDropdown,
 } from "react-bootstrap";
-import { CgProfile } from "react-icons/cg";
 
 export function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -85,7 +74,11 @@ export function Navbar() {
             <Spacer />
             <Spacer />
             <Spacer />
-            {!currentUser && <Navlink to="/login" name="Login" />}
+            {!currentUser && (
+              <a href="/register">
+                <Button>Register</Button>
+              </a>
+            )}
             {currentUser && <Navlink to="/profile" name="Profile" />}
 
             <IconButton

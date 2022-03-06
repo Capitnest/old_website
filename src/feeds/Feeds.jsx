@@ -3,15 +3,17 @@ import { Layout } from "../components/Layout";
 import Tweet from "./components/Tweet";
 import { tweets } from "./tweets.js";
 import { influencers } from "./influencers";
-import { Flex, Wrap, WrapItem } from "@chakra-ui/react";
+import { Flex, Spacer, Wrap, WrapItem, useColorMode } from "@chakra-ui/react";
 import styled from "styled-components";
 import Influencer from "./components/Influencer";
 import useScript from "./../functions/useScript";
-import SearchBox from "./components/SearchBox";
+import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
+import CryptoPrices from "./components/CryptoPrices";
 
 export default function Feeds() {
   const [blogs, setBlogs] = useState(tweets);
   const [searchKey, setSearchKey] = useState("");
+  const { colorMode, toggleColorMode } = useColorMode();
 
   //Search submit
   const handleSearchBar = (e) => {
@@ -23,7 +25,7 @@ export default function Feeds() {
   const handleSearchResults = () => {
     const allBlogs = tweets;
     const filteredBlogs = allBlogs.filter((blog) =>
-      blog.tweet.toLowerCase().includes(searchKey.toLowerCase().trim())
+      blog.authorName.toLowerCase().includes(searchKey.toLowerCase().trim())
     );
     setBlogs(filteredBlogs);
   };
@@ -37,11 +39,6 @@ export default function Feeds() {
   return (
     <Layout>
       <Content>
-        <br />
-        <br />
-        <br />
-        <br />
-
         <div
           style={{
             display: "flex",
@@ -49,32 +46,41 @@ export default function Feeds() {
           }}
           className="scrollbarParent"
         >
-          <div
-            style={{
-              width: "50%",
-              marginRight: "40px",
-            }}
-          >
-            <div
+          <LeftSide>
+            <Search
               style={{
-                position: "fixed",
-                backgroundColor: "white",
-                zIndex: 1,
-                width: "496px",
+                backgroundColor: () => {
+                  if (colorMode === "dark") {
+                    return "#fff";
+                  } else {
+                    return "#fff";
+                  }
+                },
               }}
             >
-              <SearchBox
-                value={searchKey}
-                clearSearch={handleClearSearch}
-                formSubmit={handleSearchBar}
-                handleSearchKey={(e) => setSearchKey(e.target.value)}
-              />
-            </div>
+              {colorMode === "dark" ? (
+                <SearchBarDark
+                  value={searchKey}
+                  clearSearch={handleClearSearch}
+                  formSubmit={handleSearchBar}
+                  handleSearchKey={(e) => setSearchKey(e.target.value)}
+                />
+              ) : (
+                <SearchBarLight
+                  value={searchKey}
+                  clearSearch={handleClearSearch}
+                  formSubmit={handleSearchBar}
+                  handleSearchKey={(e) => setSearchKey(e.target.value)}
+                />
+              )}
+            </Search>
+
             <div
               style={{
                 display: "flex",
                 justifyContent: "center",
                 flexDirection: "column",
+                marginTop: "75px",
               }}
             >
               {blogs.map((tweet) => (
@@ -85,7 +91,7 @@ export default function Feeds() {
                 </div>
               ))}
             </div>
-          </div>
+          </LeftSide>
 
           <div
             style={{
@@ -110,78 +116,7 @@ export default function Feeds() {
               <SmallerTitle style={{ marginBottom: "10px", marginTop: "5px" }}>
                 Top Social Cryptocurrencies
               </SmallerTitle>
-              <Wrap>
-                {useScript(
-                  "https://www.livecoinwatch.com/static/lcw-widget.js"
-                )}
-                <script
-                  defer
-                  src="https://www.livecoinwatch.com/static/lcw-widget.js"
-                ></script>{" "}
-                <div
-                  class="livecoinwatch-widget-6"
-                  lcw-coin="BTC"
-                  lcw-base="USD"
-                  lcw-period="d"
-                  lcw-color-tx="#ffffff"
-                  lcw-color-bg="#1f2434"
-                  lcw-border-w="0"
-                ></div>
-                <div
-                  class="livecoinwatch-widget-6"
-                  lcw-coin="ETH"
-                  lcw-base="USD"
-                  lcw-period="d"
-                  lcw-color-tx="#ffffff"
-                  lcw-color-bg="#1f2434"
-                  lcw-border-w="0"
-                ></div>
-                <div
-                  class="livecoinwatch-widget-6"
-                  lcw-coin="BNB"
-                  lcw-base="USD"
-                  lcw-period="d"
-                  lcw-color-tx="#ffffff"
-                  lcw-color-bg="#1f2434"
-                  lcw-border-w="0"
-                ></div>
-                <div
-                  class="livecoinwatch-widget-6"
-                  lcw-coin="XRP"
-                  lcw-base="USD"
-                  lcw-period="d"
-                  lcw-color-tx="#ffffff"
-                  lcw-color-bg="#1f2434"
-                  lcw-border-w="0"
-                ></div>
-                <div
-                  class="livecoinwatch-widget-6"
-                  lcw-coin="LUNA"
-                  lcw-base="USD"
-                  lcw-period="d"
-                  lcw-color-tx="#ffffff"
-                  lcw-color-bg="#1f2434"
-                  lcw-border-w="0"
-                ></div>
-                <div
-                  class="livecoinwatch-widget-6"
-                  lcw-coin="SOL"
-                  lcw-base="USD"
-                  lcw-period="d"
-                  lcw-color-tx="#ffffff"
-                  lcw-color-bg="#1f2434"
-                  lcw-border-w="0"
-                ></div>
-                <div
-                  class="livecoinwatch-widget-6"
-                  lcw-coin="ADA"
-                  lcw-base="USD"
-                  lcw-period="d"
-                  lcw-color-tx="#ffffff"
-                  lcw-color-bg="#1f2434"
-                  lcw-border-w="0"
-                ></div>
-              </Wrap>
+              <CryptoPrices />
             </RightNavbar>
           </div>
         </div>
@@ -194,6 +129,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 71px;
 `;
 
 const Title = styled.h1`
@@ -207,6 +143,10 @@ const SmallerTitle = styled.h1`
   font-family: "Inter", sans-serif;
   font-weight: bold;
   margin-bottom: 5px;
+
+  @media (max-width: 1500px) {
+    font-size: 23px;
+  }
 `;
 
 const RightNavbar = styled.div`
@@ -216,10 +156,37 @@ const RightNavbar = styled.div`
     margin-right: 5%;
   }
 
-  @media (max-width: 805px) {
+  @media (max-width: 786px) {
     width: 0px;
     height: 0px;
     position: relative;
     display: none !important;
+  }
+`;
+
+const Search = styled.div`
+  position: fixed;
+  z-index: 1;
+  margin-top: -6px;
+  width: 496px;
+
+  @media (max-width: 1040px) {
+    width: 49%;
+  }
+
+  @media (max-width: 840px) {
+    width: 410px;
+  }
+`;
+
+const LeftSide = styled.div`
+  width: 50%;
+  margin-right: 40px;
+
+  @media (max-width: 786px) {
+    display: flex;
+    justify-content: center;
+    margin-right: 30%;
+    margin-left: 30%;
   }
 `;
