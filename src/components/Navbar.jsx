@@ -68,21 +68,23 @@ export function Navbar() {
                 <Navlink to="/news" name="News" />
 
                 <Navlink to="/nfts" name="NFTs" />
-                <Navlink to="/videos" name="Videos" />
               </Nav>
             </Navbarr.Collapse>
+
             <Spacer />
             <Spacer />
             <Spacer />
+
             {!currentUser && (
               <a href="/register">
-                <Button>Register</Button>
+                <Button size="md">Register</Button>
               </a>
             )}
             {currentUser && <Navlink to="/profile" name="Profile" />}
 
             <IconButton
               variant="ghost"
+              marginLeft="4px"
               icon={useColorModeValue(<FaMoon />, <FaSun />)}
               onClick={() => {
                 toggleColorMode();
