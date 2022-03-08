@@ -13,6 +13,7 @@ import {
   CircularProgress,
   CircularProgressLabel,
   Center,
+  Wrap,
 } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 
@@ -36,11 +37,15 @@ export default function Homepage() {
               important & trustworthy news about Cryptocurrency & NFTs.
             </p>
             <Spacer />
-            <Button colorScheme="teal">
-              <a href="/register">Sign Up</a>
-            </Button>
+            <ButtonN>
+              <Button colorScheme="teal">
+                <a href="/register">Sign Up</a>
+              </Button>
+            </ButtonN>
           </Flex>
-          <img src="/images/home.png" />
+          <Imagee>
+            <img src="/images/home.png" width="1200px" />
+          </Imagee>
         </Head>
 
         <Stats>
@@ -124,10 +129,17 @@ export default function Homepage() {
         <a name="more" />
         <br />
         <br />
+        <br />
+        <br />
 
         <Filter>
-          <img src="/images/filter.png" style={{ marginRight: "40px" }} />
-
+          <FilterImage>
+            <img
+              src="/images/filter.png"
+              style={{ marginRight: "40px", marginTop: "-40px" }}
+              width="1300px"
+            />
+          </FilterImage>
           <Flex direction={"column"}>
             <h1>
               We filter through thousands of articles from hundrends of
@@ -138,15 +150,47 @@ export default function Homepage() {
               media posts, youtube videos, etc. and find the best content & the
               best information to give it to you.
             </p>
-            <Button colorScheme="teal" width="150px">
-              <a href="/register">Sign Up</a>
-            </Button>
+            <FilterButton>
+              <Button colorScheme="teal" width="150px">
+                <a href="/register">Sign Up</a>
+              </Button>
+            </FilterButton>
           </Flex>
         </Filter>
 
+        <br />
+        <br />
+
         <Content>
           <h2>Explore All Types of Content</h2>
-          <Flex marginTop="25px">
+          <Flex marginTop="25px" justifyContent={"center"}>
+            <span>
+              <Box
+                maxW="sm"
+                borderWidth="2px"
+                borderRadius="lg"
+                overflow="hidden"
+                padding="10px"
+              >
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <img src="/images/socialmedia.png" width="150px" />
+                </div>
+                <h1>Feed</h1>
+                <p style={{ fontSize: "15px", marginTop: "5px" }}>
+                  Explore Crypto & NFT content through a social media style App
+                </p>
+                <Center>
+                  <Button colorScheme="green" size="sm" marginTop="7px">
+                    <a
+                      href="/news"
+                      style={{ fontSize: "15px", fontWeight: "bold" }}
+                    >
+                      Explore
+                    </a>
+                  </Button>
+                </Center>
+              </Box>
+            </span>
             <span>
               <Box
                 maxW="sm"
@@ -158,7 +202,7 @@ export default function Homepage() {
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   <img src="/images/news.webp" width="150px" />
                 </div>
-                <h1>Latest News</h1>
+                <h1>News</h1>
                 <p style={{ fontSize: "16px", marginTop: "5px" }}>
                   The Latest Important News about Crypto & NFTs
                 </p>
@@ -175,61 +219,7 @@ export default function Homepage() {
                 </Center>
               </Box>
             </span>
-            <span>
-              <Box
-                maxW="sm"
-                borderWidth="2px"
-                borderRadius="lg"
-                overflow="hidden"
-                padding="10px"
-              >
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                  <img src="/images/socialmedia.png" width="150px" />
-                </div>
-                <h1>Popular Social Media Posts</h1>
-                <p style={{ fontSize: "15px", marginTop: "5px" }}>
-                  Twitter Tweets & Social Media Posts
-                </p>
-                <Center>
-                  <Button colorScheme="green" size="sm" marginTop="7px">
-                    <a
-                      href="/news"
-                      style={{ fontSize: "15px", fontWeight: "bold" }}
-                    >
-                      Explore
-                    </a>
-                  </Button>
-                </Center>
-              </Box>
-            </span>
-            <span>
-              <Box
-                maxW="sm"
-                borderWidth="2px"
-                borderRadius="lg"
-                overflow="hidden"
-                padding="10px"
-              >
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                  <img src="/images/podcast.png" width="150px" />
-                </div>
-                <h1>Podcasts</h1>
-                <p style={{ fontSize: "15px", marginTop: "5px" }}>
-                  List of great podcasts that our team & community checked them
-                  out
-                </p>
-                <Center>
-                  <Button colorScheme="green" size="sm" marginTop="7px">
-                    <a
-                      href="/news"
-                      style={{ fontSize: "15px", fontWeight: "bold" }}
-                    >
-                      Explore
-                    </a>
-                  </Button>
-                </Center>
-              </Box>
-            </span>
+
             <span>
               <Box
                 maxW="sm"
@@ -241,9 +231,9 @@ export default function Homepage() {
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   <img src="/images/nft.png" width="130px" />
                 </div>
-                <h1>Upcomming NFTs</h1>
+                <h1>NFTs</h1>
                 <p style={{ fontSize: "15px", marginTop: "5px" }}>
-                  List of the Upcomming NFTs & information about them
+                  See the Upcomming NFTs & Information about them
                 </p>
                 <Center>
                   <Button colorScheme="green" size="sm" marginTop="7px">
@@ -301,11 +291,13 @@ export default function Homepage() {
         <br />
 
         <Filter>
-          <img
-            src="/images/statie.png"
-            width="600px"
-            style={{ marginRight: "40px" }}
-          />
+          <FilterImage>
+            <img
+              src="/images/statie.png"
+              width="600px"
+              style={{ marginRight: "40px" }}
+            />
+          </FilterImage>
 
           <Flex direction={"column"} marginTop="70px">
             <h1>Join the Greatest Crypto Community</h1>
@@ -314,9 +306,11 @@ export default function Homepage() {
               Join the Greatest Community in Crypto & always be up to date about
               everything that happends about Crypto & NFTs
             </p>
-            <Button colorScheme="teal" width="150px">
-              <a href="/register">Sign Up</a>
-            </Button>
+            <FilterButton>
+              <Button colorScheme="teal" width="150px">
+                <a href="/register">Sign Up</a>
+              </Button>
+            </FilterButton>
           </Flex>
         </Filter>
 
@@ -367,6 +361,88 @@ const Head = styled.div`
     &:hover {
     }
   }
+
+  @media (max-width: 1200px) {
+    img {
+      margin-top: 20px;
+      height: 400px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    h1 {
+      font-size: 50px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+
+    img {
+      height: 350px;
+      width: 400px;
+    }
+
+    p {
+      margin-left: 7%;
+      margin-right: 7%;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    p {
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+
+    h1 {
+      font-size: 47px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    p {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+
+    h1 {
+      font-size: 45px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    p {
+      font-size: 17px;
+    }
+
+    h1 {
+      font-size: 41px;
+    }
+  }
+`;
+
+const ButtonN = styled.div`
+  @media (max-width: 900px) {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+`;
+
+const Imagee = styled.div`
+  @media (max-width: 900px) {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 70px;
+  }
 `;
 
 const Filter = styled.div`
@@ -395,6 +471,52 @@ const Filter = styled.div`
 
     &:hover {
     }
+  }
+
+  @media (max-width: 1200px) {
+    h1 {
+      font-size: 35px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 25px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    img {
+      width: 1000px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    text-align: center;
+
+    img {
+      width: 400px;
+    }
+  }
+`;
+
+const FilterImage = styled.div`
+  text-align: center;
+  display: flex;
+  justify-content: center;
+`;
+
+const FilterButton = styled.div`
+  @media (max-width: 700px) {
+    display: flex;
+    justify-content: center;
   }
 `;
 

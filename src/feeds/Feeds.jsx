@@ -175,7 +175,7 @@ const Search = styled.div`
   }
 
   @media (max-width: 840px) {
-    width: 410px;
+    width: 415px;
   }
 `;
 

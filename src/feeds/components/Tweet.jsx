@@ -162,7 +162,7 @@ const Date = styled.p`
   color: gray;
   margin-top: 16px;
   margin-bottom: 0px;
-  margin-left: 40%;
+  margin-left: 39%;
 
   @media (max-width: 1038px) {
     margin-left: 160px;
