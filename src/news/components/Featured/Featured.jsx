@@ -54,30 +54,32 @@ export default function Featured() {
         <Spacer />
         <Popular>
           <h1>Popular</h1>
-          <PopularArticle>
-            <a href="/d">
-              <img src={PopularImgOne} />
-            </a>
-            <a href="das/">
-              <h2>{PopularTitleOne}</h2>
-            </a>
-          </PopularArticle>
-          <PopularArticle>
-            <a href="bf">
-              <img src={PopularImgTwo} />
-            </a>
-            <a href="/das">
-              <h2>{PopularTitleTwo}</h2>
-            </a>
-          </PopularArticle>
-          <PopularArticle>
-            <a href="fds">
-              <img src={PopularImgThree} />
-            </a>
-            <a href="/dsa">
-              <h2>{PopularTitleThree}</h2>
-            </a>
-          </PopularArticle>
+          <PopularList>
+            <PopularArticle>
+              <a href="/d">
+                <img src={PopularImgOne} />
+              </a>
+              <a href="das/">
+                <h2>{PopularTitleOne}</h2>
+              </a>
+            </PopularArticle>
+            <PopularArticle>
+              <a href="bf">
+                <img src={PopularImgTwo} />
+              </a>
+              <a href="/das">
+                <h2>{PopularTitleTwo}</h2>
+              </a>
+            </PopularArticle>
+            <PopularArticle>
+              <a href="fds">
+                <img src={PopularImgThree} />
+              </a>
+              <a href="/dsa">
+                <h2>{PopularTitleThree}</h2>
+              </a>
+            </PopularArticle>
+          </PopularList>
         </Popular>
       </Content>
     </>
@@ -87,11 +89,17 @@ export default function Featured() {
 const Content = styled.div`
   display: flex;
   font-family: "Inter", sans-serif;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    margin-top: 20px;
+  }
 `;
 
 const Feature = styled.div`
   display: flex;
   flex-direction: column;
+
   width: 70%;
   flex-wrap: wrap;
 
@@ -106,6 +114,11 @@ const Feature = styled.div`
       color: gray;
     }
   }
+
+  @media (max-width: 800px) {
+    width: 90%;
+    margin-left: 5%;
+  }
 `;
 
 const Popular = styled.div`
@@ -118,6 +131,28 @@ const Popular = styled.div`
     font-weight: 600;
     margin-bottom: 10px;
     font-style: italic;
+  }
+
+  @media (max-width: 800px) {
+    width: 90%;
+    margin-left: 4%;
+
+    h1 {
+      margin-left: 1%;
+    }
+  }
+`;
+
+const PopularList = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 800px) {
+    flex-direction: row;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
   }
 `;
 
@@ -133,6 +168,25 @@ const PopularArticle = styled.div`
   a {
     &:hover {
       color: gray;
+    }
+  }
+
+  @media (max-width: 800px) {
+    margin-right: 1%;
+    margin-left: 1%;
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 20px;
+
+    img {
+      border-radius: 20px;
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 18px;
+      font-family: "Montserrat", sans-serif;
     }
   }
 `;

@@ -46,6 +46,8 @@ const Content = styled.div`
   -webkit-box-shadow: 0 0 3px #ccc;
   box-shadow: 0 0 3px #ccc;
   border-radius: 8px;
+  width: 100%;
+  height: 40px;
 
   input:focus {
     box-shadow: none;

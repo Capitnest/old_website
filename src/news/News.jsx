@@ -41,39 +41,47 @@ const Home = () => {
 
         <Header />
 
-        <br />
-
-        {/* Search Bar */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <SearchBar
-            value={searchKey}
-            clearSearch={handleClearSearch}
-            formSubmit={handleSearchBar}
-            handleSearchKey={(e) => setSearchKey(e.target.value)}
-          />
-        </div>
-
-        <br />
-
         <Featured />
 
-        <br />
+        <a name="search" />
 
+        <br />
         <br />
 
         {/* Blog List & Empty View */}
-        <div style={{ marginTop: "-70px" }}>
-          <h1
-            style={{
-              fontFamily: '"Inter", sans-serif',
-              fontSize: "30px",
-              fontWeight: 600,
-              fontStyle: "italic",
-              marginBottom: "10px",
-            }}
-          >
-            Latest News
-          </h1>
+        <div>
+          <div style={{ display: "flex", marginBottom: "10px" }}>
+            <h1
+              style={{
+                fontFamily: '"Inter", sans-serif',
+                fontSize: "30px",
+                fontWeight: 600,
+                fontStyle: "italic",
+                marginBottom: "10px",
+                marginTop: "10px",
+              }}
+            >
+              Latest News
+            </h1>
+            {/* Search Bar */}
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "8px",
+                marginLeft: "13%",
+              }}
+            >
+              <SearchBar
+                value={searchKey}
+                clearSearch={handleClearSearch}
+                formSubmit={handleSearchBar}
+                handleSearchKey={(e) => setSearchKey(e.target.value)}
+              />
+            </div>
+          </div>
+
           <div
             style={{
               display: "flex",

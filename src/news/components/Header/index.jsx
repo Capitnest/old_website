@@ -1,11 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { Search2Icon } from "@chakra-ui/icons";
 
 const Header = () => (
   <NewsHeader>
     <br />
-    <h1>News</h1>
-    <p>Get the most recent news about crypto & nfts</p>
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <h1>News</h1>
+      <a href="#search" style={{ marginTop: "24px", marginLeft: "7px" }}>
+        <Search2Icon />
+      </a>
+    </div>
+    <p style={{ marginTop: "-15px" }}>
+      Get the most recent news about crypto & nfts
+    </p>
   </NewsHeader>
 );
 

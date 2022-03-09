@@ -25,7 +25,7 @@ export default function Feeds() {
   const handleSearchResults = () => {
     const allBlogs = tweets;
     const filteredBlogs = allBlogs.filter((blog) =>
-      blog.authorName.toLowerCase().includes(searchKey.toLowerCase().trim())
+      blog.searchKeywords.toLowerCase().includes(searchKey.toLowerCase().trim())
     );
     setBlogs(filteredBlogs);
   };
