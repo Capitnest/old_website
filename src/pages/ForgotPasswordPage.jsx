@@ -25,6 +25,8 @@ export default function ForgotPasswordPage() {
 
   return (
     <Layout>
+      <br />
+      <br />
       <Heading textAlign="center" my={12}>
         Forgot password
       </Heading>

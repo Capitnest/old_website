@@ -13,6 +13,7 @@ import { useAuth } from "../contexts/AuthContext";
 import Navlink from "./Navlink";
 import styled from "styled-components";
 import { TriangleDownIcon } from "@chakra-ui/icons";
+import { auth } from "../utils/init-firebase";
 import {
   Navbar as Navbarr,
   Nav,
@@ -27,6 +28,10 @@ export function Navbar() {
 
   // const { logout, currentUser } = useAuth()
   const { logout, currentUser } = useAuth();
+
+  function signOut() {
+    return auth.signOut();
+  }
 
   return (
     <>
@@ -80,7 +85,7 @@ export function Navbar() {
                 <Button size="md">Register</Button>
               </a>
             )}
-            {currentUser && <Navlink to="/profile" name="Profile" />}
+            {currentUser && <Button onClick={signOut}>Sign Out</Button>}
 
             <IconButton
               variant="ghost"

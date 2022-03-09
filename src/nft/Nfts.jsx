@@ -10,6 +10,11 @@ export default function Nfts() {
     <>
       <Navbar />
 
+      <br />
+      <br />
+      <br />
+      <br />
+
       <Content>
         <br />
         <h1

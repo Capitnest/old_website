@@ -23,11 +23,18 @@ import Video from "../feeds/videos/Video";
 import About from "../pages/company/About";
 
 export default function AppRouter(props) {
+  const { logout, currentUser } = useAuth();
+
   return (
     <>
       <Router>
         <Switch>
-          <Route exact path="/" component={Homepage} />
+          {currentUser ? (
+            <ProtectedRoute exact path="/" component={Feeds} />
+          ) : (
+            <Route exact path="/" component={Homepage} />
+          )}
+
           <Route exact path="/news" component={News} />
           <Route path="/news/:id" component={Blog} />
 

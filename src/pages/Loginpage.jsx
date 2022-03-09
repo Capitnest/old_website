@@ -50,6 +50,8 @@ export default function Loginpage() {
 
   return (
     <Layout>
+      <br />
+      <br />
       <Heading textAlign="center" my={12}>
         Login
       </Heading>

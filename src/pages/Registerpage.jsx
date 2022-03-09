@@ -42,6 +42,8 @@ export default function Registerpage() {
 
   return (
     <Layout>
+      <br />
+      <br />
       <Heading textAlign="center" my={12}>
         Register
       </Heading>

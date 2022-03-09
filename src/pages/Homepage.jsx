@@ -324,9 +324,6 @@ export default function Homepage() {
           <ListItem>
             <Link to="/forgot-password">forgot page</Link>
           </ListItem>
-          <ListItem>
-            <Link to="/test">test page</Link>
-          </ListItem>
         </List>
       </Page>
     </Layout>
