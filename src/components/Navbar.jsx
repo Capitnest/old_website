@@ -74,22 +74,28 @@ export function Navbar() {
 
                 <Navlink to="/nfts" name="NFTs" />
               </Nav>
+              <Spacer />
+              <Spacer />
+              <Spacer />
+              {!currentUser && (
+                <a href="/register">
+                  <Button
+                    borderRadius="44px"
+                    size="md"
+                    fontSize="15px"
+                    fontFamily='"Inter", sans-serif'
+                    colorScheme="teal"
+                  >
+                    Sign in / Register
+                  </Button>
+                </a>
+              )}
+              {currentUser && <Button onClick={signOut}>Sign Out</Button>}
             </Navbarr.Collapse>
-
-            <Spacer />
-            <Spacer />
-            <Spacer />
-
-            {!currentUser && (
-              <a href="/register">
-                <Button size="md">Register</Button>
-              </a>
-            )}
-            {currentUser && <Button onClick={signOut}>Sign Out</Button>}
 
             <IconButton
               variant="ghost"
-              marginLeft="4px"
+              marginLeft="10px"
               icon={useColorModeValue(<FaMoon />, <FaSun />)}
               onClick={() => {
                 toggleColorMode();

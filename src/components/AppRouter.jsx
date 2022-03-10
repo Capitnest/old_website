@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import ForgotPasswordPage from "../pages/ForgotPasswordPage";
-import Homepage from "../pages/Homepage";
+import Homepage from "../pages/Home/Homepage";
 import Loginpage from "../pages/Loginpage";
 import NotfoundPage from "../pages/NotfoundPage";
 import Profilepage from "../pages/Profilepage";
