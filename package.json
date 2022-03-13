@@ -17,6 +17,7 @@
     "install": "^0.13.0",
     "material-table": "^1.69.3",
     "npm": "^8.5.1",
+    "rc-footer": "^0.6.6",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.2",
     "react-captchaa": "^1.0.13",

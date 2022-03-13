@@ -19,9 +19,9 @@ export default function Filter() {
           the legit & high-quality content.
         </p>
         <FilterButton>
-          <Button>
-            <a href="/register">Sign Up</a>
-          </Button>
+          <a href="/register">
+            <Button>Sign Up</Button>
+          </a>
         </FilterButton>
       </Flex>
     </Content>
@@ -29,61 +29,35 @@ export default function Filter() {
 }
 
 const Button = styled.button`
-  appearance: button;
-  background-color: #191919;
-  background-image: none;
-  border: 1px solid #191919;
+  appearance: none;
   border-radius: 4px;
-  box-shadow: rgb(172, 44, 255) 4px 4px 0 0, #191919 4px 4px 0 1px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
   box-sizing: border-box;
-  color: rgb(172, 44, 255);
   cursor: pointer;
-  display: inline-block;
-
-  font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
-  font-size: 16px;
+  display: "inline-flex";
+  height: 40px;
+  background-color: #6d4bd0;
+  color: white;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 18px;
-  margin: 0 5px 10px 0;
-  overflow: visible;
-  padding: 12px 40px;
-  text-align: center;
-  text-transform: none;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
 
   &:focus {
-    text-decoration: none;
+    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
   }
 
   &:hover {
-    text-decoration: none;
-    background-color: #161616;
-    color: #9619e7;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    transform: translateY(-2px);
+    background-color: #5a35c6;
+    color: #e4e4e4;
   }
 
   &:active {
-    box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
-    outline: 0;
-  }
-
-  &:not([disabled]):active {
-    box-shadow: rgb(172, 44, 255) 2px 2px 0 0, #191919 2px 2px 0 1px;
-    transform: translate(2px, 2px);
-  }
-
-  @media (min-width: 768px) {
-    padding: 12px 50px;
-  }
-
-  a {
-    &:hover {
-      text-decoration: none;
-      color: #9619e7;
-    }
+    box-shadow: #d6d6e7 0 3px 0px inset;
+    transform: translateY(2px);
   }
 `;
 

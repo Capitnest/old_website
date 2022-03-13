@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Spacer, Button } from "@chakra-ui/react";
+import { Flex, Spacer } from "@chakra-ui/react";
 import styled from "styled-components";
 
 export default function Header() {
@@ -14,17 +14,50 @@ export default function Header() {
         <Spacer />
 
         <ButtonN>
-          <Button colorScheme="teal">
-            <a href="/register">Sign Up</a>
-          </Button>
+          <a href="/register">
+            <Button>Sign Up</Button>
+          </a>
         </ButtonN>
       </Flex>
       <Imagee>
-        <img src="/images/home.png" width="1200px" />
+        <img src="/images/home.png" width="1000px" />
       </Imagee>
     </Head>
   );
 }
+
+const Button = styled.button`
+  appearance: none;
+  border-radius: 4px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: "inline-flex";
+  height: 40px;
+  background-color: #6d4bd0;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+
+  &:focus {
+    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  }
+
+  &:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    transform: translateY(-2px);
+    background-color: #5a35c6;
+    color: #e4e4e4;
+  }
+
+  &:active {
+    box-shadow: #d6d6e7 0 3px 0px inset;
+    transform: translateY(2px);
+  }
+`;
 
 const Head = styled.div`
   display: flex;
@@ -123,6 +156,7 @@ const Head = styled.div`
 
 const ButtonN = styled.div`
   @media (max-width: 900px) {
+    margin-top: 0px;
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -130,6 +164,8 @@ const ButtonN = styled.div`
 `;
 
 const Imagee = styled.div`
+  margin-top: 55px;
+  margin-bottom: -30px;
   @media (max-width: 900px) {
     display: flex;
     justify-content: center;
