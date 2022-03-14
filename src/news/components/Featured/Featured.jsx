@@ -5,20 +5,20 @@ import useScript from "../../../functions/useScript";
 
 export default function Featured() {
   const FeaturedImg =
-    "https://static.news.bitcoin.com/wp-content/uploads/2022/02/bitconnect.jpg";
+    "https://static.news.bitcoin.com/wp-content/uploads/2022/03/shutterstock_1261992364.jpg";
   const FeaturedTitle =
-    "US Charges Indian Citizen in $3.4 Billion Crypto Ponzi Scheme Bitconnect";
-  const FeaturedDate = "February 27, 2022";
+    "EU Policymakers may vote on Environmental Standard that could Ban some Cryptocurrencies";
+  const FeaturedDate = "March 14, 2022";
 
   const PopularImgOne =
-    "https://static.news.bitcoin.com/wp-content/uploads/2022/02/lana.jpg";
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcryptogazette.com%2Fwp-content%2Fuploads%2F2020%2F01%2Felon-musk-1024x597.png&f=1&nofb=1";
   const PopularTitleOne =
-    "Adult Film Star Lana Rhoades Deletes Twitter Account After NFT Project Was Criticized";
+    "Elon Musk says that He's not Selling his Crypto Holdings. Bitcoin, Ethereum, Dogecoin";
 
   const PopularImgTwo =
-    "https://static.news.bitcoin.com/wp-content/uploads/2022/02/putin.jpg";
+    "https://static.news.bitcoin.com/wp-content/uploads/2022/02/lana.jpg";
   const PopularTitleTwo =
-    "Analysts Warn of Regulatory Risks if Russia Is Able to Use Crypto to Evade Sanctions";
+    "Adult Film Star Lana Rhoades Deletes Twitter Account After NFT Project Was Criticized";
 
   const PopularImgThree =
     "https://static.news.bitcoin.com/wp-content/uploads/2022/02/ukraine1.jpg";
@@ -30,10 +30,10 @@ export default function Featured() {
       <Content>
         <Feature>
           <h1 style={{ fontStyle: "italic" }}>Featured</h1>
-          <a href="/fds">
+          <a href="/news/5">
             <img src={FeaturedImg} />
           </a>
-          <a href="/vfs">
+          <a href="/news/5">
             <h1 style={{ marginTop: "10px" }}>{FeaturedTitle}</h1>
           </a>
           <p>{FeaturedDate}</p>
@@ -56,26 +56,26 @@ export default function Featured() {
           <h1>Popular</h1>
           <PopularList>
             <PopularArticle>
-              <a href="/d">
+              <a href="/news/4">
                 <img src={PopularImgOne} />
               </a>
-              <a href="das/">
+              <a href="/news/4">
                 <h2>{PopularTitleOne}</h2>
               </a>
             </PopularArticle>
             <PopularArticle>
-              <a href="bf">
+              <a href="/news/2">
                 <img src={PopularImgTwo} />
               </a>
-              <a href="/das">
+              <a href="/news/2">
                 <h2>{PopularTitleTwo}</h2>
               </a>
             </PopularArticle>
             <PopularArticle>
-              <a href="fds">
+              <a href="/news/3">
                 <img src={PopularImgThree} />
               </a>
-              <a href="/dsa">
+              <a href="/news/3">
                 <h2>{PopularTitleThree}</h2>
               </a>
             </PopularArticle>

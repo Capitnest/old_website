@@ -35,11 +35,11 @@ const BlogItem = ({
             <p>{createdAt}</p>
           </div>
         </div>
-        <Button colorScheme="teal" size="sm">
-          <Link className="blogItem-link" to={`/news/${id}`}>
+        <Link className="blogItem-link" to={`/news/${id}`}>
+          <Button colorScheme="teal" size="sm">
             Read More ➝
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </footer>
     </div>
   );

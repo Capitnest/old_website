@@ -21,6 +21,7 @@ import Feeds from "../feeds/Feeds";
 import Nfts from "../nft/Nfts";
 import Video from "../feeds/videos/Video";
 import About from "../pages/company/About";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 export default function AppRouter(props) {
   const { logout, currentUser } = useAuth();
@@ -30,7 +31,7 @@ export default function AppRouter(props) {
       <Router>
         <Switch>
           {currentUser ? (
-            <ProtectedRoute exact path="/" component={Feeds} />
+            <ProtectedRoute exact path="/" component={Dashboard} />
           ) : (
             <Route exact path="/" component={Homepage} />
           )}
@@ -44,6 +45,7 @@ export default function AppRouter(props) {
 
           <Route exact path="/about" component={About} />
 
+          <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/login" component={Loginpage} />
           <ProtectedRoute exact path="/register" component={Registerpage} />
           <ProtectedRoute exact path="/profile" component={Profilepage} />

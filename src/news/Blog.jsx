@@ -22,7 +22,10 @@ const Blog = () => {
     <>
       <Layout>
         <br />
-        <Link className="blog-goBack" to="/">
+        <br />
+        <br />
+        <br />
+        <Link className="blog-goBack" to="/news">
           <Button colorScheme="teal">
             <span> &#8592; </span> <span>Go Back </span>
           </Button>

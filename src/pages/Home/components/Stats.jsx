@@ -7,7 +7,6 @@ import {
 } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 import styled from "styled-components";
-import waves from "./waves.png";
 
 export default function Stats() {
   const { colorMode, toggleColorMode } = useColorMode();

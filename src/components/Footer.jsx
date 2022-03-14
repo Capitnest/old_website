@@ -24,7 +24,7 @@ export default function Footerr() {
           items: [
             {
               title: "Dashboard",
-              url: "https://pro.ant.design/",
+              url: "/dashboard",
               openExternal: true,
             },
             {
@@ -91,7 +91,7 @@ export default function Footerr() {
                 />
               ),
               title: "Discord",
-              url: "https://yuque.com",
+              url: "https://discord.gg/6rmB5W8Wuq",
               openExternal: true,
             },
             {
@@ -120,7 +120,7 @@ export default function Footerr() {
               icon: (
                 <img
                   src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpluspng.com%2Fimg-png%2Fgithub-logo-png-white-github-11-icon-free-white-social-icons-512x512.png&f=1&nofb=1"
-                  alt="yuque"
+                  alt="discord"
                 />
               ),
               title: "Github",

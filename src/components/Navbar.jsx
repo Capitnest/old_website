@@ -29,10 +29,6 @@ export function Navbar() {
   // const { logout, currentUser } = useAuth()
   const { logout, currentUser } = useAuth();
 
-  function signOut() {
-    return auth.signOut();
-  }
-
   return (
     <>
       <div
@@ -90,7 +86,11 @@ export function Navbar() {
                   </Button>
                 </a>
               )}
-              {currentUser && <Button onClick={signOut}>Sign Out</Button>}
+              {currentUser && (
+                <a href="/profile">
+                  <Button colorScheme="green">{currentUser.displayName}</Button>
+                </a>
+              )}
             </Navbarr.Collapse>
 
             <IconButton

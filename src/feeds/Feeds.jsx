@@ -38,6 +38,7 @@ export default function Feeds() {
 
   return (
     <Layout>
+      <br />
       <Content>
         <div
           style={{
@@ -167,7 +168,7 @@ const RightNavbar = styled.div`
 const Search = styled.div`
   position: fixed;
   z-index: 1;
-  margin-top: -6px;
+  margin-top: -30px;
   width: 496px;
 
   @media (max-width: 1040px) {
