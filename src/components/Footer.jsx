@@ -25,12 +25,6 @@ export default function Footerr() {
             {
               title: "Dashboard",
               url: "/dashboard",
-              openExternal: true,
-            },
-            {
-              title: "Reset Password",
-              url: "/reset-password",
-              openExternal: true,
             },
             {
               title: "Forgot Password",
@@ -38,26 +32,24 @@ export default function Footerr() {
             },
           ],
         },
-        {
-          title: "Company",
-          items: [
-            {
-              title: "About Us",
-              url: "https://pro.ant.design/",
-              openExternal: true,
-            },
-            {
-              title: "Team",
-              url: "https://mobile.ant.design/",
-              openExternal: true,
-            },
-            {
-              title: "Jobs",
-              url: "https://kitchen.alipay.com/",
-              description: "Join our Team",
-            },
-          ],
-        },
+        // {
+        //   title: "Company",
+        //   items: [
+        //     {
+        //       title: "About Us",
+        //       url: "/company#about",
+        //     },
+        //     {
+        //       title: "Team",
+        //       url: "/company#team",
+        //     },
+        //     {
+        //       title: "Career",
+        //       url: "https://kitchen.alipay.com/",
+        //       description: "Join our Team",
+        //     },
+        //   ],
+        // },
         {
           title: "Legal",
 
@@ -125,6 +117,17 @@ export default function Footerr() {
               ),
               title: "Github",
               url: "https://www.github.com/capitnest",
+              openExternal: true,
+            },
+            {
+              icon: (
+                <img
+                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.eclipseeducation.com.au%2Fimages%2FTrustpilot_logo.png&f=1&nofb=1"
+                  alt="discord"
+                />
+              ),
+              title: "Trustpilot",
+              url: "https://www.trustpilot.com/review/capitnest.com",
               openExternal: true,
             },
           ],

@@ -11,7 +11,7 @@ import ForgotPasswordPage from "../pages/ForgotPasswordPage";
 import Homepage from "../pages/Home/Homepage";
 import Loginpage from "../pages/Loginpage";
 import NotfoundPage from "../pages/NotfoundPage";
-import Profilepage from "../pages/Profilepage";
+import Profilepage from "../pages/Profile/Profilepage";
 import Registerpage from "../pages/Registerpage";
 import ResetPasswordPage from "../pages/ResetPasswordPage";
 import TestPage from "../pages/TestPage";
@@ -20,7 +20,7 @@ import Blog from "../news/Blog";
 import Feeds from "../feeds/Feeds";
 import Nfts from "../nft/Nfts";
 import Video from "../feeds/videos/Video";
-import About from "../pages/company/About";
+import Company from "../pages/company/Company";
 import Dashboard from "../pages/Dashboard/Dashboard";
 
 export default function AppRouter(props) {
@@ -43,7 +43,7 @@ export default function AppRouter(props) {
           <Route exact path="/feeds" component={Feeds} />
           <Route exact path="/videos" component={Video} />
 
-          <Route exact path="/about" component={About} />
+          <Route exact path="/company" component={Company} />
 
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/login" component={Loginpage} />

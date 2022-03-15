@@ -14,14 +14,8 @@ import Navlink from "./Navlink";
 import styled from "styled-components";
 import { TriangleDownIcon } from "@chakra-ui/icons";
 import { auth } from "../utils/init-firebase";
-import {
-  Navbar as Navbarr,
-  Nav,
-  Dropdown,
-  ButtonGroup,
-  Container,
-  NavDropdown,
-} from "react-bootstrap";
+import { Navbar as Navbarr, Nav, Container } from "react-bootstrap";
+import { CgProfile } from "react-icons/cg";
 
 export function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -88,7 +82,7 @@ export function Navbar() {
               )}
               {currentUser && (
                 <a href="/profile">
-                  <Button colorScheme="green">{currentUser.displayName}</Button>
+                  <IconButton variant="ghost" icon={<CgProfile size={25} />} />
                 </a>
               )}
             </Navbarr.Collapse>
