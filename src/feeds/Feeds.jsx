@@ -38,7 +38,6 @@ export default function Feeds() {
 
   return (
     <Layout>
-      <br />
       <Content>
         <div
           style={{
@@ -130,7 +129,6 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 71px;
 `;
 
 const Title = styled.h1`

@@ -23,6 +23,9 @@ import Video from "../feeds/videos/Video";
 import Company from "../pages/company/Company";
 import Dashboard from "../pages/Dashboard/Dashboard";
 
+import Markets from "../markets/Markets";
+import CoinPage from "../markets/CoinPage";
+
 export default function AppRouter(props) {
   const { logout, currentUser } = useAuth();
 
@@ -38,6 +41,9 @@ export default function AppRouter(props) {
 
           <Route exact path="/news" component={News} />
           <Route path="/news/:id" component={Blog} />
+
+          <Route exact path="/markets" component={Markets} />
+          <Route path="/markets/:id" component={CoinPage} />
 
           <Route exact path="/nfts" component={Nfts} />
           <Route exact path="/feeds" component={Feeds} />

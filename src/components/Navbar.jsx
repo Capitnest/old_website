@@ -60,6 +60,7 @@ export function Navbar() {
             <Navbarr.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Navlink to="/feeds" name="Feed" />
+                <Navlink to="/markets" name="Markets" />
                 <Navlink to="/news" name="News" />
 
                 <Navlink to="/nfts" name="NFTs" />

@@ -18,48 +18,42 @@ export default function Homepage() {
   return (
     <>
       <Layout>
-        <Page>
-          <Header />
+        <Header />
 
-          <Stats />
+        <Stats />
 
-          <a name="more" />
-          <br />
-          <br />
-          <br />
-          <br />
+        <a name="more" />
+        <br />
+        <br />
+        <br />
+        <br />
 
-          <Filter />
+        <Filter />
 
-          <br />
-          <br />
+        <br />
+        <br />
 
-          <Explore />
+        <Explore />
 
-          <Content />
+        <Content />
 
-          {/* <Text my={6}>{currentUser?.email}</Text> */}
+        {/* <Text my={6}>{currentUser?.email}</Text> */}
 
-          <br />
-          <br />
-          <br />
+        <br />
+        <br />
+        <br />
 
-          <Newsletter />
+        <Newsletter />
 
-          <br />
-          <br />
-          <br />
-          <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
-          <Join />
-        </Page>
+        <Join />
       </Layout>
 
       <Footerr />
     </>
   );
 }
-
-const Page = styled.div`
-  margin-top: 30px;
-`;

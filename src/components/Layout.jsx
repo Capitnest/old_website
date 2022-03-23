@@ -7,6 +7,10 @@ export function Layout({ children }) {
   return (
     <Box mb={16}>
       <Navbar />
+      <br />
+      <br />
+      <br />
+      <br />
       <Container maxW="container.lg">{children}</Container>
     </Box>
   );
