@@ -4,6 +4,7 @@ import Footerr from "../components/Footer";
 import axios from "axios";
 import useScript from "./../functions/useScript";
 import styled from "styled-components";
+import { Badge, Flex } from "@chakra-ui/react";
 
 //Components
 import Coins from "./components/Coins";
@@ -13,7 +14,7 @@ export default function Markets() {
   const [coins, setCoins] = useState([]);
 
   const url =
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false";
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false";
 
   useEffect(() => {
     axios
@@ -30,7 +31,18 @@ export default function Markets() {
   return (
     <>
       <Layout>
-        <Title>Markets</Title>
+        <Flex justifyContent="center">
+          <Title>Markets</Title>
+          <Badge
+            colorScheme="red"
+            marginLeft="5px"
+            marginTop="30px"
+            marginBottom="20px"
+            fontSize="13px"
+          >
+            Beta
+          </Badge>
+        </Flex>
         <Coins coins={coins} />
       </Layout>
 

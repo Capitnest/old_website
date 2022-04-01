@@ -20,8 +20,6 @@ export default function Dashboard() {
         <br />
 
         <Welcome />
-        {useScript("https://s3.tradingview.com/tv.js")}
-        {useScript("")}
 
         <Content />
       </Layout>

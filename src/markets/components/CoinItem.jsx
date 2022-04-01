@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Box, Flex, Avatar } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
+import Numeral from "react-numeral";
 
 export default function CoinItem(props) {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -18,22 +19,22 @@ export default function CoinItem(props) {
             <img src={props.coins.image} alt="" />
             <p>{props.coins.name}</p>
           </ImgSymbol>
-          <p>{props.coins.current_price}</p>
+          <p>
+            <Numeral value={props.coins.current_price} format={"0.0"} />$
+          </p>
 
           {props.coins.price_change_percentage_24h < 2 ? (
             <p style={{ color: "red" }}>
-              {" "}
-              {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
+              {props.coins.price_change_percentage_24h.toFixed(2)}%
             </p>
           ) : (
             <p style={{ color: "green" }}>
-              {" "}
-              {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
+              {props.coins.price_change_percentage_24h.toFixed(2)}%
             </p>
           )}
 
           <HideMobile>{props.coins.total_volume}</HideMobile>
-          <HideMobile>{props.coins.market_cap}</HideMobile>
+          <HideMobile>{props.coins.market_cap.fo}</HideMobile>
         </CoinRowDark>
       ) : (
         <CoinRowLight>
@@ -42,7 +43,9 @@ export default function CoinItem(props) {
             <img src={props.coins.image} alt="" />
             <p>{props.coins.name}</p>
           </ImgSymbol>
-          <p>{props.coins.current_price}</p>
+          <p>
+            <Numeral value={props.coins.current_price} format={"0.0"} />$
+          </p>
 
           {props.coins.price_change_percentage_24h < 2 ? (
             <p style={{ color: "red" }}>
