@@ -169,23 +169,8 @@ export default function Profile() {
         </Stack>
       </Stack>
 
-      {/* <Card maxW="sm" mx="auto" mt={4}> */}
-      {/* <chakra.form> */}
-      {/* <Stack spacing="6">
-                    <FormControl id="text">
-                      <FormLabel>Display Name</FormLabel>
-                      <Input
-                        name="text"
-                        type="text"
-                        autoComplete="text"
-                        required
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                      />
-                    </FormControl>
-                  </Stack> */}
-      {/* </chakra.form> */}
-      {/* </Card> */}
+      <br />
+      <br />
 
       <br />
 

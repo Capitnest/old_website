@@ -16,6 +16,7 @@ import { TriangleDownIcon } from "@chakra-ui/icons";
 import { auth } from "../utils/init-firebase";
 import { Navbar as Navbarr, Nav, Container } from "react-bootstrap";
 import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 export function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -44,26 +45,38 @@ export function Navbar() {
       >
         <Navbarr expand="md" variant={colorMode === "dark" ? "dark" : "light"}>
           <Container>
-            <Navbarr.Brand href="/">
-              <div style={{ display: "flex" }}>
-                <img
-                  alt="Capitnest Logo"
-                  src="/images/logo.png"
-                  width="40"
-                  height="40"
-                  className="d-inline-block align-top"
-                />
-                <Title>Capitnest</Title>
-              </div>
+            <Navbarr.Brand>
+              <Link to="/">
+                <div style={{ display: "flex" }}>
+                  <img
+                    alt="Capitnest Logo"
+                    src="/images/logo.png"
+                    width="40"
+                    height="40"
+                    className="d-inline-block align-top"
+                  />
+                  <Title>Capitnest</Title>
+                </div>
+              </Link>
             </Navbarr.Brand>
+
             <Navbarr.Toggle aria-controls="basic-navbar-nav" />
             <Navbarr.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Navlink to="/feeds" name="Feed" />
-                <Navlink to="/markets" name="Markets" />
-                <Navlink to="/news" name="News" />
+                <Link to="/feeds">
+                  <Navlink to="/feeds" name="Feed" />
+                </Link>
+                <Link to="/markets">
+                  <Navlink to="/markets" name="Markets" />
+                </Link>
 
-                <Navlink to="/nfts" name="NFTs" />
+                <a href="/news">
+                  <Navlink to="/news" name="News" />
+                </a>
+
+                <Link to="/nfts">
+                  <Navlink to="/nfts" name="NFTs" />
+                </Link>
               </Nav>
               <Spacer />
               <Spacer />
@@ -104,15 +117,6 @@ export function Navbar() {
   );
 }
 
-const Link = styled.h1`
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-
-  &:hover {
-  }
-`;
-
 const Title = styled.h1`
   font-family: "Inter", sans-serif;
 
@@ -125,12 +129,4 @@ const Title = styled.h1`
   &:hover {
     color: #04b681;
   }
-`;
-
-const paragrap = styled.p`
-  font-family: "Inter", sans-serif;
-
-  font-size: 28px;
-  font-weight: 600;
-  margin-left: 10px;
 `;

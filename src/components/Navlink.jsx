@@ -8,14 +8,12 @@ export default function Navlink({ to, name, ...rest }) {
   const isActive = location.pathname === to;
 
   return (
-    <a href={to}>
-      <Button
-        variant={isActive ? "outline" : "ghost"}
-        colorScheme={isActive ? "pink" : ""}
-        {...rest}
-      >
-        {name}
-      </Button>
-    </a>
+    <Button
+      variant={isActive ? "outline" : "ghost"}
+      colorScheme={isActive ? "pink" : ""}
+      {...rest}
+    >
+      {name}
+    </Button>
   );
 }
