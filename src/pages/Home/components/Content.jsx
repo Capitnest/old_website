@@ -43,6 +43,7 @@ export default function Content() {
             </Center>
           </Box>
         </span>
+
         <span>
           <Box
             maxW="sm"
@@ -95,6 +96,39 @@ export default function Content() {
                 </Button>
               </a>
             </Center>
+          </Box>
+        </span>
+
+        <span>
+          <Box
+            maxW="sm"
+            borderWidth="2px"
+            borderRadius="lg"
+            overflow="hidden"
+            padding="10px"
+            height="100%"
+            backgroundColor={backgroundClr}
+            borderColor="#6d4bd0"
+          >
+            <div style={{ marginTop: "20%" }}>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <img src="/images/markets.png" width="800px" />
+              </div>
+              <h1>Markets</h1>
+              <p style={{ fontSize: "15px", marginTop: "5px" }}>
+                See the current prices of cryptocurrencies
+              </p>
+              <Center>
+                <a
+                  href="/markets"
+                  style={{ fontSize: "15px", fontWeight: "bold" }}
+                >
+                  <Button colorScheme="green" size="sm" marginTop="7px">
+                    Markets
+                  </Button>
+                </a>
+              </Center>
+            </div>
           </Box>
         </span>
       </Flex>
@@ -167,5 +201,9 @@ const Component = styled.div`
   span {
     margin-right: 10px;
     margin-left: 10px;
+  }
+
+  @media (max-width: 700px) {
+    display: none;
   }
 `;

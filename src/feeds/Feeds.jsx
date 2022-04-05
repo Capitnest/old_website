@@ -9,6 +9,8 @@ import Influencer from "./components/Influencer";
 import useScript from "./../functions/useScript";
 import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
 import CryptoPrices from "./components/CryptoPrices";
+import { Link } from "react-router-dom";
+import Footer from "./../components/Footer";
 
 export default function Feeds() {
   const [blogs, setBlogs] = useState(tweets);
@@ -37,93 +39,115 @@ export default function Feeds() {
   };
 
   return (
-    <Layout>
-      <Content>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-          className="scrollbarParent"
-        >
-          <LeftSide>
-            <Search
-              style={{
-                backgroundColor: () => {
-                  if (colorMode === "dark") {
-                    return "#fff";
-                  } else {
-                    return "#fff";
-                  }
-                },
-              }}
-            >
-              {colorMode === "dark" ? (
-                <SearchBarDark
-                  value={searchKey}
-                  clearSearch={handleClearSearch}
-                  formSubmit={handleSearchBar}
-                  handleSearchKey={(e) => setSearchKey(e.target.value)}
-                />
-              ) : (
-                <SearchBarLight
-                  value={searchKey}
-                  clearSearch={handleClearSearch}
-                  formSubmit={handleSearchBar}
-                  handleSearchKey={(e) => setSearchKey(e.target.value)}
-                />
-              )}
-            </Search>
+    <>
+      <Layout>
+        <Content>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+            className="scrollbarParent"
+          >
+            <LeftSide>
+              <Search
+                style={{
+                  backgroundColor: () => {
+                    if (colorMode === "dark") {
+                      return "#fff";
+                    } else {
+                      return "#fff";
+                    }
+                  },
+                }}
+              >
+                {colorMode === "dark" ? (
+                  <SearchBarDark
+                    value={searchKey}
+                    clearSearch={handleClearSearch}
+                    formSubmit={handleSearchBar}
+                    handleSearchKey={(e) => setSearchKey(e.target.value)}
+                  />
+                ) : (
+                  <SearchBarLight
+                    value={searchKey}
+                    clearSearch={handleClearSearch}
+                    formSubmit={handleSearchBar}
+                    handleSearchKey={(e) => setSearchKey(e.target.value)}
+                  />
+                )}
+              </Search>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  marginTop: "50px",
+                }}
+              >
+                {blogs.map((tweet) => (
+                  <div style={{ marginTop: "10px", marginBottom: "10px" }}>
+                    <WrapItem>
+                      <Tweet blog={tweet} />
+                    </WrapItem>
+                  </div>
+                ))}
+              </div>
+            </LeftSide>
 
             <div
               style={{
                 display: "flex",
-                justifyContent: "center",
                 flexDirection: "column",
-                marginTop: "75px",
+                width: "40%",
+                marginTop: "0px",
               }}
             >
-              {blogs.map((tweet) => (
-                <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-                  <WrapItem>
-                    <Tweet blog={tweet} />
-                  </WrapItem>
-                </div>
-              ))}
+              <RightNavbar>
+                <SmallerTitle>
+                  <Linkk>
+                    <Link to="/top-influencers">Top Influencers</Link>
+                  </Linkk>
+                </SmallerTitle>
+                <Wrap width="300px">
+                  {influencers.map((influ) => (
+                    <div style={{ marginTop: "5px", marginBottom: "8px" }}>
+                      <WrapItem>
+                        <Influencer blog={influ} />
+                      </WrapItem>
+                    </div>
+                  ))}
+                </Wrap>
+
+                <SmallerTitle
+                  style={{ marginBottom: "10px", marginTop: "5px" }}
+                >
+                  <Linkk>
+                    <Link to="/markets">Top Social Cryptocurrencies</Link>
+                  </Linkk>
+                </SmallerTitle>
+                <CryptoPrices />
+              </RightNavbar>
             </div>
-          </LeftSide>
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "40%",
-              marginTop: "10px",
-            }}
-          >
-            <RightNavbar>
-              <SmallerTitle>Top Influencers</SmallerTitle>
-              <Wrap width="300px">
-                {influencers.map((influ) => (
-                  <div style={{ marginTop: "5px", marginBottom: "8px" }}>
-                    <WrapItem>
-                      <Influencer blog={influ} />
-                    </WrapItem>
-                  </div>
-                ))}
-              </Wrap>
-
-              <SmallerTitle style={{ marginBottom: "10px", marginTop: "5px" }}>
-                Top Social Cryptocurrencies
-              </SmallerTitle>
-              <CryptoPrices />
-            </RightNavbar>
           </div>
-        </div>
-      </Content>
-    </Layout>
+        </Content>
+      </Layout>
+
+      <Footer />
+    </>
   );
 }
+
+const Linkk = styled.div`
+  a {
+    &:hover {
+      text-decoration: underline;
+      color: inherit;
+      filter: brightness(0.8);
+    }
+  }
+`;
 
 const Content = styled.div`
   display: flex;

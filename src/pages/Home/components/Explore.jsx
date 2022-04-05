@@ -21,7 +21,7 @@ export default function Explore() {
       <FilterImage>
         <img
           src="/images/explore.png"
-          style={{ marginRight: "40px", marginTop: "-40px" }}
+          style={{ marginTop: "-40px" }}
           width="1300px"
         />
       </FilterImage>
@@ -91,21 +91,7 @@ const Content = styled.div`
   }
 
   @media (max-width: 1200px) {
-    h1 {
-      font-size: 35px;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    h1 {
-      font-size: 30px;
-    }
-  }
-
-  @media (max-width: 900px) {
-    h1 {
-      font-size: 25px;
-    }
+    margin-top: 60px;
   }
 
   @media (max-width: 750px) {
@@ -117,17 +103,25 @@ const Content = styled.div`
   @media (max-width: 700px) {
     flex-direction: column;
     text-align: center;
+    flex-direction: column-reverse;
 
     img {
-      width: 400px;
+      width: 500px;
     }
   }
 `;
 
 const FilterImage = styled.div`
-  text-align: center;
-  display: flex;
-  justify-content: center;
+  @media (max-width: 700px) {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    img {
+      display: flex;
+      justify-content: center;
+    }
+  }
 `;
 
 const FilterButton = styled.div`

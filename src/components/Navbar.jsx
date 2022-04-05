@@ -63,9 +63,9 @@ export function Navbar() {
             <Navbarr.Toggle aria-controls="basic-navbar-nav" />
             <Navbarr.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Link to="/feeds">
+                <a href="/feeds">
                   <Navlink to="/feeds" name="Feed" />
-                </Link>
+                </a>
                 <Link to="/markets">
                   <Navlink to="/markets" name="Markets" />
                 </Link>

@@ -170,6 +170,7 @@ const Imagee = styled.div`
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-left: 70px;
+    margin-left: 0px;
+    margin-top: 0px;
   }
 `;

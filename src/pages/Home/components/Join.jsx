@@ -30,18 +30,20 @@ export default function Join() {
               <Button>Sign Up</Button>
             </a>
 
-            <a href="https://discord.gg/6rmB5W8Wuq" target="_blank">
-              <FaDiscord size={35} />
-            </a>
-            <a href="https://twitter.com/capitnest" target="_blank">
-              <AiFillTwitterCircle size={35} />
-            </a>
-            <a href="https://instagram.com/capitnest" target="_blank">
-              <AiOutlineInstagram size={35} />
-            </a>
-            <a href="https://github.com/capitnest" target="_blank">
-              <BsGithub size={32} />
-            </a>
+            <span>
+              <a href="https://discord.gg/6rmB5W8Wuq" target="_blank">
+                <FaDiscord size={35} />
+              </a>
+              <a href="https://twitter.com/capitnest" target="_blank">
+                <AiFillTwitterCircle size={35} />
+              </a>
+              <a href="https://instagram.com/capitnest" target="_blank">
+                <AiOutlineInstagram size={35} />
+              </a>
+              <a href="https://github.com/capitnest" target="_blank">
+                <BsGithub size={32} />
+              </a>
+            </span>
           </Flex>
         </FilterButton>
       </Flex>
@@ -110,24 +112,6 @@ const Content = styled.div`
     }
   }
 
-  @media (max-width: 1200px) {
-    h1 {
-      font-size: 35px;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    h1 {
-      font-size: 30px;
-    }
-  }
-
-  @media (max-width: 900px) {
-    h1 {
-      font-size: 25px;
-    }
-  }
-
   @media (max-width: 750px) {
     img {
       width: 1000px;
@@ -155,6 +139,20 @@ const FilterButton = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    div {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column-reverse;
+    }
+
+    span {
+      display: flex;
+      margin-bottom: 20px;
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   a {

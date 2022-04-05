@@ -11,7 +11,7 @@ export default function Newsletter() {
         textAlign: "center",
       }}
     >
-      <h1
+      {/* <h1
         style={{
           fontFamily: '"Inter", sans-serif',
           fontSize: "30px",
@@ -29,7 +29,7 @@ export default function Newsletter() {
           src="https://eocampaign1.com/form/045a91d2-9409-11ec-9258-0241b9615763.js"
           data-form="045a91d2-9409-11ec-9258-0241b9615763"
         ></script>
-      </div>
+      </div> */}
     </div>
   );
 }

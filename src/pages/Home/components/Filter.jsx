@@ -8,7 +8,7 @@ export default function Filter() {
       <FilterImage>
         <img
           src="/images/filter.png"
-          style={{ marginRight: "40px", marginTop: "-40px" }}
+          style={{ marginTop: "-40px" }}
           width="900px"
         />
       </FilterImage>
@@ -91,7 +91,7 @@ const Content = styled.div`
 
   @media (max-width: 1200px) {
     h1 {
-      font-size: 35px;
+      font-size: 40px;
     }
   }
 
@@ -103,7 +103,7 @@ const Content = styled.div`
 
   @media (max-width: 900px) {
     h1 {
-      font-size: 25px;
+      font-size: 40px;
     }
   }
 
@@ -116,10 +116,6 @@ const Content = styled.div`
   @media (max-width: 700px) {
     flex-direction: column;
     text-align: center;
-
-    img {
-      width: 400px;
-    }
   }
 `;
 
@@ -127,6 +123,21 @@ const FilterImage = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
+
+  img {
+    margin-right: 40px;
+  }
+
+  @media (max-width: 700px) {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    img {
+      margin-right: 0px;
+      width: 450px;
+    }
+  }
 `;
 
 const FilterButton = styled.div`
