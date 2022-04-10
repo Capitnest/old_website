@@ -11,6 +11,7 @@ import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
 import CryptoPrices from "./components/CryptoPrices";
 import { Link } from "react-router-dom";
 import Footer from "./../components/Footer";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function Feeds() {
   const [blogs, setBlogs] = useState(tweets);
@@ -86,13 +87,15 @@ export default function Feeds() {
                   marginTop: "50px",
                 }}
               >
-                {blogs.map((tweet) => (
-                  <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-                    <WrapItem>
-                      <Tweet blog={tweet} />
-                    </WrapItem>
-                  </div>
-                ))}
+                <InfiniteScroll dataLength={blogs.length}>
+                  {blogs.map((tweet) => (
+                    <div style={{ marginTop: "10px", marginBottom: "10px" }}>
+                      <WrapItem>
+                        <Tweet blog={tweet} />
+                      </WrapItem>
+                    </div>
+                  ))}
+                </InfiniteScroll>
               </div>
             </LeftSide>
 
