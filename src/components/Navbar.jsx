@@ -17,6 +17,7 @@ import { auth } from "../utils/init-firebase";
 import { Navbar as Navbarr, Nav, Container } from "react-bootstrap";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 export function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -52,7 +53,6 @@ export function Navbar() {
                     alt="Capitnest Logo"
                     src="/images/logo.png"
                     width="40"
-                    height="40"
                     className="d-inline-block align-top"
                   />
                   <Title>Capitnest</Title>
@@ -60,7 +60,6 @@ export function Navbar() {
               </Link>
             </Navbarr.Brand>
 
-            <Navbarr.Toggle aria-controls="basic-navbar-nav" />
             <Navbarr.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <a href="/feeds">
@@ -78,9 +77,7 @@ export function Navbar() {
                   <Navlink to="/nfts" name="NFTs" />
                 </Link>
               </Nav>
-              <Spacer />
-              <Spacer />
-              <Spacer />
+
               {!currentUser && (
                 <a href="/register">
                   <Button
@@ -101,21 +98,51 @@ export function Navbar() {
               )}
             </Navbarr.Collapse>
 
-            <IconButton
-              variant="ghost"
-              marginLeft="10px"
-              icon={useColorModeValue(<FaMoon />, <FaSun />)}
-              onClick={() => {
-                toggleColorMode();
-              }}
-              aria-label="toggle-dark-mode"
-            />
+            <ThemeIconColapse>
+              <IconButton
+                variant="ghost"
+                marginLeft="10px"
+                icon={useColorModeValue(<FaMoon />, <FaSun />)}
+                onClick={() => {
+                  toggleColorMode();
+                }}
+                aria-label="toggle-dark-mode"
+              />
+            </ThemeIconColapse>
+            <Navbarr.Toggle aria-controls="basic-navbar-nav">
+              <GiHamburgerMenu size={25} color="black" />
+            </Navbarr.Toggle>
           </Container>
         </Navbarr>
       </div>
     </>
   );
 }
+
+/*
+Make the theme IconButton be on the left side next to the 
+menu button, idk how to make it fixed so I am basically moving it
+to the left manually
+*/
+const ThemeIconColapse = styled.div`
+  @media (max-width: 767px) {
+    margin-left: 37%;
+    display: flex;
+    justify-content: right;
+  }
+
+  @media (max-width: 541px) {
+    margin-left: 30%;
+  }
+
+  @media (max-width: 500px) {
+    margin-left: 25%;
+  }
+
+  @media (max-width: 450px) {
+    margin-left: 20%;
+  }
+`;
 
 const Title = styled.h1`
   font-family: "Inter", sans-serif;
