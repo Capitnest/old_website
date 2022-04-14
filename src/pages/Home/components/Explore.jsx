@@ -100,7 +100,29 @@ const Content = styled.div`
     }
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 800px) {
+    h1 {
+      font-size: 40px;
+      margin-top: -20px;
+    }
+
+    img {
+      width: 1400px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    h1 {
+      margin-top: -40px;
+      font-size: 35px;
+    }
+
+    img {
+      width: 1600px;
+    }
+  }
+
+  @media (max-width: 600px) {
     flex-direction: column;
     text-align: center;
     flex-direction: column-reverse;
@@ -112,7 +134,7 @@ const Content = styled.div`
 `;
 
 const FilterImage = styled.div`
-  @media (max-width: 750px) {
+  @media (max-width: 600px) {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -129,7 +151,7 @@ const FilterImage = styled.div`
 `;
 
 const FilterButton = styled.div`
-  @media (max-width: 750px) {
+  @media (max-width: 600px) {
     display: flex;
     justify-content: center;
   }

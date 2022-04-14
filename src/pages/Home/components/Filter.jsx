@@ -91,10 +91,31 @@ const Content = styled.div`
   @media (max-width: 900px) {
     h1 {
       font-size: 40px;
+      margin-top: -70px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    h1 {
+      font-size: 35px;
+      margin-top: -60px;
     }
   }
 
   @media (max-width: 750px) {
+    h1 {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    h1 {
+      font-size: 25px;
+      margin-top: -70px;
+    }
+  }
+
+  @media (max-width: 600px) {
     flex-direction: column;
     text-align: center;
 
@@ -109,10 +130,14 @@ const FilterImage = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
+  margin-left: 2%;
+
   img {
     margin-right: 40px;
   }
-  @media (max-width: 750px) {
+  @media (max-width: 600px) {
+    margin-left: 0px;
+    margin-left: 0px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -124,7 +149,7 @@ const FilterImage = styled.div`
 `;
 
 const FilterButton = styled.div`
-  @media (max-width: 750px) {
+  @media (max-width: 600px) {
     display: flex;
     justify-content: center;
   }

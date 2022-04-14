@@ -111,12 +111,53 @@ const Head = styled.div`
   }
 
   @media (max-width: 900px) {
-    /* img {
-      width: 1100px
-    } */
+    img {
+      width: 1000px;
+    }
+
+    h1 {
+      font-size: 45px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    img {
+      width: 900px;
+    }
   }
 
   @media (max-width: 750px) {
+    img {
+      width: 1000px;
+      margin-top: 70px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 17px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 600px) {
     flex-direction: column-reverse;
     justify-content: center;
     text-align: center;
@@ -137,17 +178,6 @@ const Head = styled.div`
     }
   }
 
-  @media (max-width: 650px) {
-    p {
-      margin-right: 0px;
-      margin-left: 0px;
-    }
-
-    h1 {
-      font-size: 45px;
-    }
-  }
-
   @media (max-width: 600px) {
     p {
       font-size: 17px;
@@ -160,7 +190,7 @@ const Head = styled.div`
 `;
 
 const ButtonN = styled.div`
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     margin-top: 0px;
     display: flex;
     justify-content: center;
