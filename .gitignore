@@ -25,3 +25,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/feeds/tweets.js
+src/feeds/tweets.js
+src/news/data/data.js
+src/nft/nft.js

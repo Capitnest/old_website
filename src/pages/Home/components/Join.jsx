@@ -30,7 +30,7 @@ export default function Join() {
               <Button>Sign Up</Button>
             </a>
 
-            <span>
+            <Icons>
               <a href="https://discord.gg/6rmB5W8Wuq" target="_blank">
                 <FaDiscord size={35} />
               </a>
@@ -43,7 +43,7 @@ export default function Join() {
               <a href="https://github.com/capitnest" target="_blank">
                 <BsGithub size={32} />
               </a>
-            </span>
+            </Icons>
           </Flex>
         </FilterButton>
       </Flex>
@@ -144,19 +144,24 @@ const FilterButton = styled.div`
       text-align: center;
       display: flex;
       justify-content: center;
-      flex-direction: column-reverse;
-    }
-
-    span {
-      display: flex;
-      margin-bottom: 20px;
-      justify-content: center;
-      text-align: center;
+      flex-direction: column;
     }
   }
 
   a {
     margin-right: 5px;
     margin-left: 5px;
+  }
+`;
+
+const Icons = styled.span`
+  display: flex;
+
+  @media (max-width: 700px) {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 `;

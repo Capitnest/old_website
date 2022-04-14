@@ -7,8 +7,8 @@ export default function Filter() {
     <Content>
       <FilterImage>
         <img
-          src="/images/filter.png"
-          style={{ marginTop: "-40px" }}
+          src="/images/filter.webp"
+          style={{ marginTop: "-90px" }}
           width="900px"
         />
       </FilterImage>
@@ -41,12 +41,10 @@ const Button = styled.button`
   color: white;
   font-size: 18px;
   font-weight: 500;
-
   &:focus {
     box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
       rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
   }
-
   &:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
       rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
@@ -54,7 +52,6 @@ const Button = styled.button`
     background-color: #5a35c6;
     color: #e4e4e4;
   }
-
   &:active {
     box-shadow: #d6d6e7 0 3px 0px inset;
     transform: translateY(2px);
@@ -70,34 +67,24 @@ const Content = styled.div`
     font-family: "Inter", sans-serif;
     font-weight: bold;
   }
-
   p {
     margin-top: 10px;
     font-size: 18px;
     font-family: "Inter", sans-serif;
   }
-
   button {
     margin-top: 20px;
     width: 150px;
   }
-
   a {
     font-family: "Inter", sans-serif;
-
     &:hover {
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1100px) {
     h1 {
-      font-size: 40px;
-    }
-  }
-
-  @media (max-width: 1000px) {
-    h1 {
-      font-size: 30px;
+      margin-top: -30px;
     }
   }
 
@@ -108,14 +95,13 @@ const Content = styled.div`
   }
 
   @media (max-width: 750px) {
-    img {
-      width: 1000px;
-    }
-  }
-
-  @media (max-width: 700px) {
     flex-direction: column;
     text-align: center;
+
+    h1 {
+      margin-top: 10px;
+      font-size: 35px;
+    }
   }
 `;
 
@@ -123,16 +109,13 @@ const FilterImage = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
-
   img {
     margin-right: 40px;
   }
-
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     display: flex;
     justify-content: center;
     text-align: center;
-
     img {
       margin-right: 0px;
       width: 450px;
@@ -141,7 +124,7 @@ const FilterImage = styled.div`
 `;
 
 const FilterButton = styled.div`
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     display: flex;
     justify-content: center;
   }

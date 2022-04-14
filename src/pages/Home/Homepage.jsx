@@ -10,19 +10,27 @@ import Content from "./components/Content";
 import Newsletter from "./components/Newsletter";
 import Join from "./components/Join";
 
+//LIBRARIES COMPONENTS
+import { Container } from "@chakra-ui/react";
+
 //LAYOUT
 import Footerr from "../../components/Footer";
-import { Layout } from "../../components/Layout";
+import { Navbar } from "../../components/Navbar";
 
 export default function Homepage() {
   return (
     <>
-      <Layout>
+      <Navbar />
+      <Container maxW="container.lg">
         <Header />
 
         <Stats />
 
-        <a name="more" />
+        <a
+          name="more"
+          style={{ position: "relative", zIndex: "-2", top: "-80px" }}
+        />
+
         <br />
         <br />
         <br />
@@ -34,6 +42,8 @@ export default function Homepage() {
         <br />
 
         <Explore />
+
+        <br />
 
         <Content />
 
@@ -51,8 +61,10 @@ export default function Homepage() {
         <br />
 
         <Join />
-      </Layout>
 
+        <br />
+        <br />
+      </Container>
       <Footerr />
     </>
   );

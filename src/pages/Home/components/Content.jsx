@@ -16,7 +16,7 @@ export default function Content() {
 
   return (
     <Component>
-      <Flex marginTop="25px" justifyContent={"center"}>
+      <Flex marginTop="25px" justifyContent={"center"} flexWrap="wrap">
         <span>
           <Box
             maxW="sm"
@@ -26,6 +26,7 @@ export default function Content() {
             padding="10px"
             backgroundColor={backgroundClr}
             borderColor="#6d4bd0"
+            height="100%"
           >
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img src="/images/feed.png" width="200px" />
@@ -53,6 +54,7 @@ export default function Content() {
             padding="10px"
             backgroundColor={backgroundClr}
             borderColor="#6d4bd0"
+            height="100%"
           >
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img src="/images/news.png" width="200px" />
@@ -81,6 +83,7 @@ export default function Content() {
             padding="10px"
             backgroundColor={backgroundClr}
             borderColor="#6d4bd0"
+            height="100%"
           >
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img src="/images/nft.png" width="200px" />
@@ -106,13 +109,13 @@ export default function Content() {
             borderRadius="lg"
             overflow="hidden"
             padding="10px"
-            height="100%"
             backgroundColor={backgroundClr}
             borderColor="#6d4bd0"
+            height="100%"
           >
-            <div style={{ marginTop: "20%" }}>
+            <div>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <img src="/images/markets.png" width="800px" />
+                <img src="/images/markets.png" width="200px" />
               </div>
               <h1>Markets</h1>
               <p style={{ fontSize: "15px", marginTop: "5px" }}>
@@ -121,9 +124,17 @@ export default function Content() {
               <Center>
                 <a
                   href="/markets"
-                  style={{ fontSize: "15px", fontWeight: "bold" }}
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "bold",
+                  }}
                 >
-                  <Button colorScheme="green" size="sm" marginTop="7px">
+                  <Button
+                    colorScheme="green"
+                    size="sm"
+                    marginTop="7px"
+                    bottom="0"
+                  >
                     Markets
                   </Button>
                 </a>
@@ -173,6 +184,7 @@ const Button = styled.button`
 const Component = styled.div`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
 
   h2 {
@@ -201,9 +213,27 @@ const Component = styled.div`
   span {
     margin-right: 10px;
     margin-left: 10px;
-  }
+    width: 220px;
 
-  @media (max-width: 700px) {
-    display: none;
+    @media (max-width: 1000px) {
+      width: 200px;
+    }
+
+    @media (max-width: 950px) {
+      width: 180px;
+    }
+
+    @media (max-width: 850px) {
+      width: 300px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 780px) {
+      width: 300px;
+    }
+
+    @media (max-width: 750px) {
+      width: 45%;
+    }
   }
 `;

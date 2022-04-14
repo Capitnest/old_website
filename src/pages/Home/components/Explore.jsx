@@ -20,9 +20,9 @@ export default function Explore() {
       </Flex>
       <FilterImage>
         <img
-          src="/images/explore.png"
-          style={{ marginTop: "-40px" }}
-          width="1300px"
+          src="https://cdni.iconscout.com/illustration/premium/thumb/man-working-on-nft-blockchain-5017552-4173581.png"
+          style={{ marginTop: "-50px" }}
+          width="1200px"
         />
       </FilterImage>
     </Content>
@@ -94,25 +94,25 @@ const Content = styled.div`
     margin-top: 60px;
   }
 
-  @media (max-width: 750px) {
-    img {
-      width: 1000px;
+  @media (max-width: 1100px) {
+    p {
+      font-size: 16px;
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     flex-direction: column;
     text-align: center;
     flex-direction: column-reverse;
 
     img {
-      width: 500px;
+      width: 450px;
     }
   }
 `;
 
 const FilterImage = styled.div`
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -122,10 +122,14 @@ const FilterImage = styled.div`
       justify-content: center;
     }
   }
+
+  @media (max-width: 1100px) {
+    margin-top: 35px;
+  }
 `;
 
 const FilterButton = styled.div`
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     display: flex;
     justify-content: center;
   }

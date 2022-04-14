@@ -62,6 +62,11 @@ const Button = styled.button`
 const Head = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 30px;
+
+  img {
+    margin-top: 30px;
+  }
 
   h1 {
     font-size: 60px;
@@ -91,37 +96,31 @@ const Head = styled.div`
   @media (max-width: 1200px) {
     img {
       margin-top: 20px;
-      height: 400px;
+      width: 800px;
     }
   }
 
   @media (max-width: 1100px) {
+    img {
+      margin-top: 50px;
+    }
+
     h1 {
       font-size: 50px;
     }
   }
 
   @media (max-width: 900px) {
+    /* img {
+      width: 1100px
+    } */
+  }
+
+  @media (max-width: 750px) {
     flex-direction: column-reverse;
     justify-content: center;
     text-align: center;
 
-    img {
-      height: 350px;
-      width: 400px;
-    }
-
-    p {
-      margin-left: 7%;
-      margin-right: 7%;
-    }
-
-    h1 {
-      margin-top: 20px;
-    }
-  }
-
-  @media (max-width: 750px) {
     p {
       margin-right: 2%;
       margin-left: 2%;
@@ -129,6 +128,12 @@ const Head = styled.div`
 
     h1 {
       font-size: 47px;
+      margin-top: 0px;
+    }
+
+    img {
+      width: 400px;
+      margin-bottom: 0px;
     }
   }
 
@@ -155,7 +160,7 @@ const Head = styled.div`
 `;
 
 const ButtonN = styled.div`
-  @media (max-width: 900px) {
+  @media (max-width: 700px) {
     margin-top: 0px;
     display: flex;
     justify-content: center;
@@ -164,8 +169,6 @@ const ButtonN = styled.div`
 `;
 
 const Imagee = styled.div`
-  margin-top: 55px;
-  margin-bottom: -30px;
   @media (max-width: 900px) {
     display: flex;
     justify-content: center;

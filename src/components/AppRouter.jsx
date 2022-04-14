@@ -26,6 +26,8 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Markets from "../markets/Markets";
 import CoinPage from "../markets/CoinPage";
 
+import Influencers from "../feeds/Influencers";
+
 export default function AppRouter(props) {
   const { logout, currentUser } = useAuth();
 
@@ -48,6 +50,7 @@ export default function AppRouter(props) {
           <Route exact path="/nfts" component={Nfts} />
           <Route exact path="/feeds" component={Feeds} />
           <Route exact path="/videos" component={Video} />
+          <Route path="/influencer/:id" component={Influencers} />
 
           <Route exact path="/company" component={Company} />
 
