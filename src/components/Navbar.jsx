@@ -110,7 +110,11 @@ export function Navbar() {
               />
             </ThemeIconColapse>
             <Navbarr.Toggle aria-controls="basic-navbar-nav">
-              <GiHamburgerMenu size={25} color="black" />
+              {colorMode === "dark" ? (
+                <GiHamburgerMenu size={25} color="white" />
+              ) : (
+                <GiHamburgerMenu size={25} color="black" />
+              )}
             </Navbarr.Toggle>
           </Container>
         </Navbarr>
