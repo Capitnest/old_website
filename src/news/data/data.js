@@ -13,6 +13,87 @@ const Quote = styled.p`
 
 export const blogList = [
   {
+    id: 5,
+    title:
+      "EU Policymakers may vote on Environmental Standard that could Ban some Cryptocurrencies",
+    category: ["Bitcoin"],
+    subCategory: ["Bitcoin", "Crypto"],
+    description:
+      "EU policymakers are mulling major changes the region's crypto framework and may vote on environmental standards that could effectively ban some digital currencies from trading within the bloc.",
+    authorName: "Timnik",
+    authorAvatar: "images/team/timnik.png",
+    createdAt: "March 14, 2022",
+    cover:
+      "https://static.news.bitcoin.com/wp-content/uploads/2022/03/shutterstock_1261992364.jpg",
+    content: (
+      <>
+        <Header>
+          EU policymakers are mulling major changes the region's crypto
+          framework and may vote on environmental standards that could
+          effectively ban some digital currencies from trading within the bloc.
+        </Header>
+        <br />
+        Bitcoin prices edged higher Monday ahead of a key vote by European
+        lawmakers on new regulatory framework for crypto assets that some see as
+        the first step towards an all-out ban on digital coins in the world's
+        biggest economic bloc.
+        <br /> <br />
+        The European Union's Economic and Monetary Affairs Committee is set to
+        vote on a policy recommendation known as MiCa, which would demand
+        "minimum environmental sustainability standards" for crypto assets
+        traded in the bloc.
+        <br /> <br />
+        The rule change, if ultimately adopted, would mean "proof of work"
+        crypto assets, such as bitcoin and Ethereum, would be likely be unable
+        to demonstrate their alignment, given the ever-increasing computing
+        power required to validate each transaction on the blockchain.
+        <br /> <br />
+        A 2021 report from Bank of America noted that the CO2 emissions required
+        to "mine" each transaction are at similar levels to that of Greece, a
+        top fifty global economy, at around 60 tons, adding that an inflow of $1
+        billion in new bitcoin investment is the equivalent of 1.2mn internal
+        combustion engine cars.
+        <br /> <br />
+        "As hash power today is mostly in coal-fired Xinjiang, a link between
+        prices, energy demand & CO2 means Bitcoin is tied to Chinese coal.
+        Should prices rise to $1 million, Bitcoin may turn into the world's 5th
+        largest emitter, surpassing Japan," BofA said.
+      </>
+    ),
+  },
+  {
+    id: 4,
+    title:
+      "Elon Musk says that He's not Selling his Crypto Holdings. Bitcoin, Ethereum, Dogecoin",
+    category: ["Bitcoin"],
+    subCategory: ["Bitcoin", "Crypto", "Ethereum", "Elon Musk", "Dogecoin"],
+    description:
+      "Elon Musk says that he won't sell his bitcoin, ethereum and dogecoin holdings.",
+    authorName: "Timnik",
+    authorAvatar: "images/team/timnik.png",
+    createdAt: "March 14, 2022",
+    cover:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcryptogazette.com%2Fwp-content%2Fuploads%2F2020%2F01%2Felon-musk-1024x597.png&f=1&nofb=1",
+    content: (
+      <>
+        <Header>
+          Elon Musk says that He's not Selling his Crypto Holdings. Bitcoin,
+          Ethereum, Dogecoin
+        </Header>
+        <br />
+        The CEO of Tesla and SpaceX Elon Musk asked on Twitter on Monday, March
+        14, his follower's thoughts about the probable inflation rate of the USD
+        over the next few years.
+        <br /> <br />
+        However, despite the rising inflation, he will not sell his Bitcoin
+        (BTC), Ethereum (ETH) or Dogecoin (DOGE) holdings.
+        <br /> <br />
+        After this statment Dogecoin rose 3.93% to $0.11, Bitcoin rose 3.36% and
+        Ethereum 0.33%.
+      </>
+    ),
+  },
+  {
     id: 3,
     title:
       "Bitcoin Donations Pour in to Help Ukrainian Military Fight Russia — Over $5 Million in BTC Raised",
@@ -20,8 +101,8 @@ export const blogList = [
     subCategory: ["Bitcoin", "Crypto"],
     description:
       "Cryptocurrency donations have poured into a nonprofit organization that provides support to Ukrainian soldiers after Russia launched a large-scale attack on Ukraine. More than $5 million in bitcoin has already been raised. Meanwhile, the group’s fundraising page on Patreon has been abruptly removed.",
-    authorName: <a href="/author/timnik">Timnik</a>,
-    authorAvatar: "images/timnik.jpg",
+    authorName: "Timnik",
+    authorAvatar: "images/team/timnik.png",
     createdAt: "February 27, 2022",
     cover:
       "https://static.news.bitcoin.com/wp-content/uploads/2022/02/ukraine1.jpg",
@@ -110,8 +191,8 @@ export const blogList = [
     subCategory: ["NFTs", "NFT Scams"],
     description:
       "Adult film star Lana Rhoades is being criticized for her non-fungible token (NFT) project called “Cryptosis,” after $1.5 million of ethereum from the mint was withdrawn from the project’s wallet. The crypto withdrawal took place after Rhoades told her fans that the NFTs would be a “lucrative investment for holders,” and following the community disapproval, the porn star deleted her official Twitter account.",
-    authorName: <a href="/author/timnik">Timnik</a>,
-    authorAvatar: "images/timnik.jpg",
+    authorName: "Timnik",
+    authorAvatar: "images/team/timnik.png",
     createdAt: "February 27, 2022",
     cover:
       "https://static.news.bitcoin.com/wp-content/uploads/2022/02/lana.jpg",
@@ -189,8 +270,8 @@ export const blogList = [
     subCategory: ["Crypto", "Coinbase"],
     description:
       "Coinbase jumped into the No. 2 spot for downloads in the App Store since airing its historic Super Bowl ad on Sunday.",
-    authorName: <a href="/author/timnik">Timnik</a>,
-    authorAvatar: "images/timnik.jpg",
+    authorName: "Timnik",
+    authorAvatar: "images/team/timnik.png",
     createdAt: "June 03, 2021",
     cover: "/assets/news/1/header.jpeg",
     content: (
