@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CoinItem from "./CoinItem";
 import { useColorMode } from "@chakra-ui/react";
+import MaterialTable from "material-table";
 
 export default function Coins(props) {
   const { colorMode, toggleColorMode } = useColorMode();

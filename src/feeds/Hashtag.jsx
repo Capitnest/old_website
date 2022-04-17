@@ -20,7 +20,7 @@ import CryptoPrices from "./components/CryptoPrices";
 import { Link, useParams } from "react-router-dom";
 import Footer from "./../components/Footer";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { HiHome } from "react-icons/hi";
+import HashtagsNav from "./components/HashtagsNav";
 
 export default function Hashtag() {
   const { id } = useParams();
@@ -61,42 +61,7 @@ export default function Hashtag() {
             className="scrollbarParent"
           >
             <div style={{ position: "fixed", marginRight: "53%" }}>
-              <Box
-                maxW="md"
-                borderWidth="1px"
-                borderRadius="lg"
-                overflow="hidden"
-                backgroundColor="var(--chakra-colors-gray-100)"
-                marginRight="20px"
-                padding="10px 20px"
-                height="100%"
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    fontSize: "20px",
-                  }}
-                >
-                  <a
-                    href="/feeds"
-                    style={{
-                      display: "flex",
-                      fontSize: "25px",
-                      fontWeight: 700,
-                    }}
-                  >
-                    <HiHome size={32} /> Home
-                  </a>
-
-                  <a href="/feeds/bitcoin">#Bitcoin</a>
-                  <a href="/feeds/solana">#Solana</a>
-                  <a href="/feeds/ethereum">#Ethereum</a>
-                  <a href="/feeds/cardano">#Cardano</a>
-                  <a href="/feeds/polkadot">#Polkadot</a>
-                  <a href="/feeds/bnb">#BNB</a>
-                </div>
-              </Box>
+              <HashtagsNav />
             </div>
 
             <LeftSide>
@@ -107,7 +72,7 @@ export default function Hashtag() {
                   fontWeight: 700,
                 }}
               >
-                Feeds about #{id}
+                Posts about #{id}
               </h1>
 
               <div

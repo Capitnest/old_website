@@ -19,7 +19,6 @@ import News from "../news/News";
 import Blog from "../news/Blog";
 import Feeds from "../feeds/Feeds";
 import Nfts from "../nft/Nfts";
-import Video from "../feeds/videos/Video";
 import Dashboard from "../pages/Dashboard/Dashboard";
 
 import Markets from "../markets/Markets";
@@ -52,7 +51,6 @@ export default function AppRouter(props) {
           <Route exact path="/nfts" component={Nfts} />
           <Route exact path="/feeds" component={Feeds} />
           <Route path="/feeds/:id" component={Hashtag} />
-          <Route exact path="/videos" component={Video} />
           <Route path="/influencer/:id" component={Influencers} />
 
           <Route exact path="/company/roadmap" component={RoadMap} />
