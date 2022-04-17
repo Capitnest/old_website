@@ -20,13 +20,15 @@ import Blog from "../news/Blog";
 import Feeds from "../feeds/Feeds";
 import Nfts from "../nft/Nfts";
 import Video from "../feeds/videos/Video";
-import Company from "../pages/company/Company";
 import Dashboard from "../pages/Dashboard/Dashboard";
 
 import Markets from "../markets/Markets";
 import CoinPage from "../markets/CoinPage";
 
 import Influencers from "../feeds/Influencers";
+
+import RoadMap from "../pages/company/roadmap/RoadMap";
+import Hashtag from "../feeds/Hashtag";
 
 export default function AppRouter(props) {
   const { logout, currentUser } = useAuth();
@@ -49,10 +51,11 @@ export default function AppRouter(props) {
 
           <Route exact path="/nfts" component={Nfts} />
           <Route exact path="/feeds" component={Feeds} />
+          <Route path="/feeds/:id" component={Hashtag} />
           <Route exact path="/videos" component={Video} />
           <Route path="/influencer/:id" component={Influencers} />
 
-          <Route exact path="/company" component={Company} />
+          <Route exact path="/company/roadmap" component={RoadMap} />
 
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/login" component={Loginpage} />

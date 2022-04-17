@@ -3,7 +3,15 @@ import { Layout } from "../components/Layout";
 import Tweet from "./components/Tweet";
 import { tweets } from "./tweets.js";
 import { influencers } from "./influencers";
-import { Flex, Spacer, Wrap, WrapItem, useColorMode } from "@chakra-ui/react";
+import {
+  Flex,
+  Spacer,
+  Wrap,
+  WrapItem,
+  useColorMode,
+  Box,
+  Container,
+} from "@chakra-ui/react";
 import styled from "styled-components";
 import Influencer from "./components/Influencer";
 import useScript from "./../functions/useScript";
@@ -12,11 +20,14 @@ import CryptoPrices from "./components/CryptoPrices";
 import { Link } from "react-router-dom";
 import Footer from "./../components/Footer";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { HiHome } from "react-icons/hi";
+import { Navbar } from "./../components/Navbar";
 
 export default function Feeds() {
   const [blogs, setBlogs] = useState(tweets);
   const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
+  const i = 5;
 
   //Search submit
   const handleSearchBar = (e) => {
@@ -50,6 +61,45 @@ export default function Feeds() {
             }}
             className="scrollbarParent"
           >
+            <div style={{ position: "fixed", marginRight: "53%" }}>
+              <Box
+                maxW="md"
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+                backgroundColor="var(--chakra-colors-gray-100)"
+                marginRight="20px"
+                padding="10px 20px"
+                height="100%"
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    fontSize: "20px",
+                  }}
+                >
+                  <a
+                    href="/feeds"
+                    style={{
+                      display: "flex",
+                      fontSize: "25px",
+                      fontWeight: 700,
+                    }}
+                  >
+                    <HiHome size={32} /> Home
+                  </a>
+
+                  <a href="/feeds/bitcoin">#Bitcoin</a>
+                  <a href="/feeds/solana">#Solana</a>
+                  <a href="/feeds/ethereum">#Ethereum</a>
+                  <a href="/feeds/cardano">#Cardano</a>
+                  <a href="/feeds/polkadot">#Polkadot</a>
+                  <a href="/feeds/bnb">#BNB</a>
+                </div>
+              </Box>
+            </div>
+
             <LeftSide>
               <Search
                 style={{
@@ -103,7 +153,7 @@ export default function Feeds() {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                width: "40%",
+                width: "30%",
                 marginTop: "0px",
               }}
             >
