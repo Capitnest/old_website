@@ -25,16 +25,18 @@ export default function CoinItem(props) {
 
           {props.coins.price_change_percentage_24h < 2 ? (
             <p style={{ color: "red" }}>
-              {props.coins.price_change_percentage_24h.toFixed(2)}%
+              {" "}
+              {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
             </p>
           ) : (
             <p style={{ color: "green" }}>
-              {props.coins.price_change_percentage_24h.toFixed(2)}%
+              {" "}
+              {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
             </p>
           )}
 
           <HideMobile>{props.coins.total_volume}</HideMobile>
-          <HideMobile>{props.coins.market_cap.fo}</HideMobile>
+          <HideMobile>{props.coins.market_cap}</HideMobile>
         </CoinRowDark>
       ) : (
         <CoinRowLight>
