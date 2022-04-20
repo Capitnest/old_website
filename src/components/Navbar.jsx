@@ -72,10 +72,6 @@ export function Navbar() {
                 <a href="/news">
                   <Navlink to="/news" name="News" />
                 </a>
-
-                <Link to="/nfts">
-                  <Navlink to="/nfts" name="NFTs" />
-                </Link>
               </Nav>
 
               {!currentUser && (

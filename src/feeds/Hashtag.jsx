@@ -10,8 +10,10 @@ import {
   WrapItem,
   useColorMode,
   Box,
+  Badge,
   Container,
 } from "@chakra-ui/react";
+import { CloseIcon } from "@chakra-ui/icons";
 import styled from "styled-components";
 import Influencer from "./components/Influencer";
 import useScript from "./../functions/useScript";
@@ -60,9 +62,9 @@ export default function Hashtag() {
             }}
             className="scrollbarParent"
           >
-            <div style={{ position: "fixed", marginRight: "53%" }}>
+            <HashtagComponent>
               <HashtagsNav />
-            </div>
+            </HashtagComponent>
 
             <LeftSide>
               <h1
@@ -72,7 +74,17 @@ export default function Hashtag() {
                   fontWeight: 700,
                 }}
               >
-                Posts about #{id}
+                Posts about{" "}
+                <a href="/feeds">
+                  <Badge
+                    marginBottom="5px"
+                    colorScheme="green"
+                    fontSize="20px"
+                    padding="2px 10px"
+                  >
+                    #{id} <CloseIcon w={4} h={4} marginBottom="4px" />
+                  </Badge>
+                </a>
               </h1>
 
               <div
@@ -142,6 +154,16 @@ export default function Hashtag() {
     </>
   );
 }
+
+const HashtagComponent = styled.div`
+  position: fixed;
+  margin-right: 1000px;
+  margin-top: -7px;
+
+  @media (max-width: 1150px) {
+    display: none;
+  }
+`;
 
 const Linkk = styled.div`
   a {

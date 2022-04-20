@@ -48,12 +48,9 @@ export default function AppRouter(props) {
           <Route exact path="/markets" component={Markets} />
           <Route path="/markets/:id" component={CoinPage} />
 
-          <Route exact path="/nfts" component={Nfts} />
           <Route exact path="/feeds" component={Feeds} />
           <Route path="/feeds/:id" component={Hashtag} />
           <Route path="/influencer/:id" component={Influencers} />
-
-          <Route exact path="/company/roadmap" component={RoadMap} />
 
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/login" component={Loginpage} />

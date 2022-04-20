@@ -52,7 +52,6 @@ export default function HashtagsNav() {
               <Navlink to="/feeds/ethereum" name="#Ethereum" />
               <Navlink to="/feeds/solana" name="#Solana" />
               <Navlink to="/feeds/cardano" name="#Cardano" />
-              <Navlink to="/feeds/polkadot" name="#Polkadot" />
               <Navlink to="/feeds/luna" name="#Luna" />
               <Navlink to="/feeds/bnb" name="#BNB" />
               <Navlink to="/feeds/xrp" name="#XRP" />
