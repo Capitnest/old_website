@@ -60,11 +60,11 @@ export default function Feeds() {
             }}
             className="scrollbarParent"
           >
-            <div style={{ position: "fixed", marginRight: "53%" }}>
-              <HashtagsNav />
-            </div>
-
             <LeftSide>
+              <HashtagsNav />
+            </LeftSide>
+
+            <MiddleSide>
               <Search
                 style={{
                   backgroundColor: () => {
@@ -111,22 +111,11 @@ export default function Feeds() {
                   ))}
                 </InfiniteScroll>
               </div>
-            </LeftSide>
+            </MiddleSide>
 
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "30%",
-                marginTop: "0px",
-              }}
-            >
-              <RightNavbar>
-                <SmallerTitle>
-                  <Linkk>
-                    <Link to="/top-influencers">Top Influencers</Link>
-                  </Linkk>
-                </SmallerTitle>
+            <RightNavbar>
+              <RightNavbarContent>
+                <SmallerTitle>Top Influencers</SmallerTitle>
                 <Wrap width="300px">
                   {influencers.map((influ) => (
                     <div style={{ marginTop: "5px", marginBottom: "8px" }}>
@@ -145,8 +134,8 @@ export default function Feeds() {
                   </Linkk>
                 </SmallerTitle>
                 <CryptoPrices />
-              </RightNavbar>
-            </div>
+              </RightNavbarContent>
+            </RightNavbar>
           </div>
         </Content>
       </Layout>
@@ -155,6 +144,16 @@ export default function Feeds() {
     </>
   );
 }
+
+const LeftSide = styled.div`
+  position: fixed;
+  margin-right: 1000px;
+  margin-top: -7px;
+
+  @media (max-width: 1150px) {
+    display: none;
+  }
+`;
 
 const Linkk = styled.div`
   a {
@@ -190,6 +189,17 @@ const SmallerTitle = styled.h1`
 `;
 
 const RightNavbar = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-top: -7px;
+
+  @media (max-width: 1150px) {
+    width: 40%;
+  }
+`;
+
+const RightNavbarContent = styled.div`
   position: fixed;
   margin-right: 20%;
   @media (max-width: 1200px) {
@@ -219,9 +229,13 @@ const Search = styled.div`
   }
 `;
 
-const LeftSide = styled.div`
+const MiddleSide = styled.div`
   width: 50%;
   margin-right: 40px;
+
+  @media (max-width: 1150px) {
+    width: 53%;
+  }
 
   @media (max-width: 786px) {
     display: flex;

@@ -95,7 +95,7 @@ export default function CryptoPrices() {
               lcw-base="USD"
               lcw-period="d"
               lcw-color-tx="#1f2434"
-              lcw-color-bg="#e3e3e3"
+              lcw-color-bg="var(--chakra-colors-gray-100)"
               lcw-border-w="0"
             ></div>
             <div
@@ -104,7 +104,7 @@ export default function CryptoPrices() {
               lcw-base="USD"
               lcw-period="d"
               lcw-color-tx="#1f2434"
-              lcw-color-bg="#e3e3e3"
+              lcw-color-bg="var(--chakra-colors-gray-100)"
               lcw-border-w="0"
             ></div>
             <div
@@ -113,7 +113,7 @@ export default function CryptoPrices() {
               lcw-base="USD"
               lcw-period="d"
               lcw-color-tx="#1f2434"
-              lcw-color-bg="#e3e3e3"
+              lcw-color-bg="var(--chakra-colors-gray-100)"
               lcw-border-w="0"
             ></div>
             <div
@@ -122,7 +122,7 @@ export default function CryptoPrices() {
               lcw-base="USD"
               lcw-period="d"
               lcw-color-tx="#1f2434"
-              lcw-color-bg="#e3e3e3"
+              lcw-color-bg="var(--chakra-colors-gray-100)"
               lcw-border-w="0"
             ></div>
             <div
@@ -131,7 +131,7 @@ export default function CryptoPrices() {
               lcw-base="USD"
               lcw-period="d"
               lcw-color-tx="#1f2434"
-              lcw-color-bg="#e3e3e3"
+              lcw-color-bg="var(--chakra-colors-gray-100)"
               lcw-border-w="0"
             ></div>
             <div
@@ -140,7 +140,7 @@ export default function CryptoPrices() {
               lcw-base="USD"
               lcw-period="d"
               lcw-color-tx="#1f2434"
-              lcw-color-bg="#e3e3e3"
+              lcw-color-bg="var(--chakra-colors-gray-100)"
               lcw-border-w="0"
             ></div>
             <div
@@ -149,7 +149,7 @@ export default function CryptoPrices() {
               lcw-base="USD"
               lcw-period="d"
               lcw-color-tx="#1f2434"
-              lcw-color-bg="#e3e3e3"
+              lcw-color-bg="var(--chakra-colors-gray-100)"
               lcw-border-w="0"
             ></div>
           </Wrap>

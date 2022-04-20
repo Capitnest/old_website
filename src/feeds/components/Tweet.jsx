@@ -92,7 +92,7 @@ export default function Tweet({
             overflow="hidden"
             padding="5px"
             borderColor="#019165"
-            backgroundColor="#fafafa"
+            backgroundColor="var(--chakra-colors-gray-100)"
           >
             <Wrap>
               <WrapItem>
