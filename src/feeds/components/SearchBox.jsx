@@ -116,8 +116,6 @@ const ContentDark = styled.div`
 `;
 
 const FormDark = styled.div`
-  -moz-box-shadow: 0 0 3px #ccc;
-  -webkit-box-shadow: 0 0 3px #ccc;
-  box-shadow: 0 0 3px #ccc;
+  border-width: 2px;
   border-radius: 8px;
 `;

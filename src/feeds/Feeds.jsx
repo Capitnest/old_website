@@ -217,11 +217,15 @@ const RightNavbarContent = styled.div`
 const Search = styled.div`
   position: fixed;
   z-index: 1;
-  margin-top: -30px;
+  margin-top: -32px;
   width: 496px;
 
-  @media (max-width: 1040px) {
-    width: 49%;
+  @media (max-width: 1150px) {
+    width: 50%;
+  }
+
+  @media (max-width: 1050px) {
+    width: 53%;
   }
 
   @media (max-width: 840px) {

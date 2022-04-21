@@ -13,7 +13,6 @@ export default function Coins(props) {
         {colorMode === "dark" ? (
           <>
             <HeadingDark>
-              <p>#</p>
               <Name>Coin</Name>
               <p>Price</p>
               <p>24h</p>
@@ -81,7 +80,7 @@ const HeadingLight = styled.div`
 `;
 
 const Name = styled.p`
-  margin-left: -4rem;
+  margin-left: 0rem;
 `;
 
 const HideMobile = styled.p`

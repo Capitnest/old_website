@@ -30,11 +30,13 @@ export default function CoinItem(props) {
             </div>
           </ImgSymbol>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <p style={{ fontWeight: 700, fontSize: "20px" }}>
+            <p
+              style={{ fontWeight: 700, fontSize: "20px", textAlign: "right" }}
+            >
               <Numeral value={props.coins.current_price} format={"0.0"} />$
             </p>
 
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", justifyContent: "right" }}>
               {props.coins.price_change_percentage_24h < 2 ? (
                 <p style={{ color: "red" }}>
                   {" "}
@@ -46,7 +48,7 @@ export default function CoinItem(props) {
                   {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
                 </p>
               )}{" "}
-              <p>24h</p>
+              <p style={{ marginLeft: "5px" }}>24h</p>
             </div>
           </div>
         </CoinRowDark>
@@ -84,8 +86,8 @@ const CoinRowDark = styled.div`
   box-shadow: 0px 0px 12px #18191b;
   background-color: #1f2434;
   color: #ffffff;
-  border-width: 2px;
-  border-color: black;
+  border-width: 1px;
+
   border-radius: 8px;
   margin-top: 10px;
   padding: 0.3rem 0.5rem;
