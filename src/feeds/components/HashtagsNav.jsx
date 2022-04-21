@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, textDecoration, useColorMode } from "@chakra-ui/react";
 import { HiHome } from "react-icons/hi";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 export default function HashtagsNav() {
@@ -122,9 +122,9 @@ function Navlink({ to, name, ...rest }) {
   const isActive = location.pathname === to;
 
   return (
-    <Link>
-      <a
-        href={to}
+    <Linkk>
+      <Link
+        to={to}
         style={{
           fontWeight: (() => {
             if (isActive === true) {
@@ -136,12 +136,12 @@ function Navlink({ to, name, ...rest }) {
         }}
       >
         {name}
-      </a>
-    </Link>
+      </Link>
+    </Linkk>
   );
 }
 
-const Link = styled.div`
+const Linkk = styled.div`
   a {
     &:hover {
       color: #04d192;

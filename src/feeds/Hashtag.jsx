@@ -75,7 +75,7 @@ export default function Hashtag() {
                 }}
               >
                 Posts about{" "}
-                <a href="/feeds">
+                <Link to="/feeds">
                   <Badge
                     marginBottom="5px"
                     colorScheme="green"
@@ -84,7 +84,7 @@ export default function Hashtag() {
                   >
                     #{id} <CloseIcon w={4} h={4} marginBottom="4px" />
                   </Badge>
-                </a>
+                </Link>
               </h1>
 
               <div
