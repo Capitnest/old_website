@@ -62,9 +62,9 @@ export function Navbar() {
 
             <Navbarr.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <a href="/feeds">
+                <Link to="/feeds">
                   <Navlink to="/feeds" name="Feed" />
-                </a>
+                </Link>
                 <Link to="/markets">
                   <Navlink to="/markets" name="Markets" />
                 </Link>

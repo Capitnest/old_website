@@ -16,7 +16,7 @@ import styled from "styled-components";
 import Influencer from "./components/Influencer";
 import useScript from "./../functions/useScript";
 import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
-import CryptoPrices from "./components/CryptoPrices";
+import Coins from "./components/CryptoPrices/Coins";
 import { Link } from "react-router-dom";
 import Footer from "./../components/Footer";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -130,10 +130,10 @@ export default function Feeds() {
                   style={{ marginBottom: "10px", marginTop: "5px" }}
                 >
                   <Linkk>
-                    <Link to="/markets">Top Social Cryptocurrencies</Link>
+                    <Link to="/markets">Top Cryptocurrencies</Link>
                   </Linkk>
                 </SmallerTitle>
-                <CryptoPrices />
+                <Coins />
               </RightNavbarContent>
             </RightNavbar>
           </div>
