@@ -15,11 +15,13 @@ export default function CoinItem(props) {
     >
       {colorMode === "dark" ? (
         <CoinRowDark>
-          <span>
+          <Coin>
             <Flex>
               <Avatar src={props.coins.image} />
               <Flex marginLeft="10px" flexDirection="column">
-                <p style={{ fontSize: "18px" }}>{props.coins.name}</p>
+                <p style={{ fontSize: "18px", marginLeft: "4px" }}>
+                  {props.coins.name}
+                </p>
                 <Flex>
                   <Badge width="30px" colorScheme="green">
                     <p style={{ textAlign: "center", marginTop: "2px" }}>
@@ -39,10 +41,10 @@ export default function CoinItem(props) {
                 </Flex>
               </Flex>
             </Flex>
-          </span>
+          </Coin>
 
-          <span>
-            <p>
+          <Price>
+            <p style={{}}>
               <NumberFormat
                 thousandSeparator={true}
                 prefix={"$"}
@@ -50,9 +52,9 @@ export default function CoinItem(props) {
                 displayType="text"
               />
             </p>
-          </span>
+          </Price>
 
-          <span>
+          <Percentage>
             {props.coins.price_change_percentage_24h < 2 ? (
               <p style={{ color: "red" }}>
                 {" "}
@@ -64,9 +66,9 @@ export default function CoinItem(props) {
                 {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
               </p>
             )}
-          </span>
+          </Percentage>
 
-          <span>
+          <Volume>
             <HideMobile>
               <NumberFormat
                 thousandSeparator={true}
@@ -75,9 +77,9 @@ export default function CoinItem(props) {
                 displayType="text"
               />
             </HideMobile>
-          </span>
+          </Volume>
 
-          <span>
+          <Mkt>
             <HideMobile>
               <NumberFormat
                 thousandSeparator={true}
@@ -86,7 +88,7 @@ export default function CoinItem(props) {
                 displayType="text"
               />
             </HideMobile>
-          </span>
+          </Mkt>
         </CoinRowDark>
       ) : (
         <CoinRowLight>
@@ -168,24 +170,58 @@ export default function CoinItem(props) {
   );
 }
 
+const Mkt = styled.div`
+  text-align: right;
+  width: 20%;
+`;
+
+const Percentage = styled.div`
+  text-align: right;
+  width: 15%;
+  font-size: 20px;
+`;
+
+const Volume = styled.div`
+  text-align: right;
+  width: 20%;
+  font-size: 18px;
+`;
+
+const Coin = styled.div`
+  width: 20%;
+  background-color: #1f2434;
+  border-width: 1px;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+`;
+
+const Price = styled.div`
+  width: 20%;
+
+  text-align: right;
+  border-radius: 8px;
+
+  p {
+    font-size: 20px;
+  }
+`;
+
 const CoinRowDark = styled.div`
   display: flex;
 
-  justify-content: space-between;
+  font-size: 18px;
+
   align-items: center;
   box-shadow: 0px 0px 12px #18191b;
   background-color: #26272b;
   border-radius: 8px;
-  margin: 2rem 1rem;
-  padding: 0.7rem 1rem;
+  border-width: 1px;
+  margin-top: 2px;
 
   &:hover {
-    transform: scale(1.04);
+    transform: scale(1.01);
     transition: 0.3s ease-in-out;
     cursor: pointer;
-  }
-
-  span {
   }
 `;
 
