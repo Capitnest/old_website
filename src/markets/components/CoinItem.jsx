@@ -15,7 +15,7 @@ export default function CoinItem(props) {
     >
       {colorMode === "dark" ? (
         <CoinRowDark>
-          <Coin>
+          <CoinDark>
             <Flex>
               <Avatar src={props.coins.image} />
               <Flex marginLeft="10px" flexDirection="column">
@@ -41,7 +41,7 @@ export default function CoinItem(props) {
                 </Flex>
               </Flex>
             </Flex>
-          </Coin>
+          </CoinDark>
 
           <Price>
             <p style={{}}>
@@ -56,7 +56,82 @@ export default function CoinItem(props) {
 
           <Percentage>
             {props.coins.price_change_percentage_24h < 2 ? (
-              <p style={{ color: "red" }}>
+              <p style={{ color: "rgb(245, 0, 87)" }}>
+                {" "}
+                {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
+              </p>
+            ) : (
+              <p style={{ color: "rgb(33, 247, 158)" }}>
+                {" "}
+                {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
+              </p>
+            )}
+          </Percentage>
+
+          <Volume>
+            <HideMobile>
+              <NumberFormat
+                thousandSeparator={true}
+                prefix={"$"}
+                value={props.coins.total_volume}
+                displayType="text"
+              />
+            </HideMobile>
+          </Volume>
+
+          <Mkt>
+            <HideMobile>
+              <NumberFormat
+                thousandSeparator={true}
+                prefix={"$"}
+                value={props.coins.market_cap}
+                displayType="text"
+              />
+            </HideMobile>
+          </Mkt>
+        </CoinRowDark>
+      ) : (
+        <CoinRowLight>
+          <CoinWhite>
+            <Flex>
+              <Avatar src={props.coins.image} />
+              <Flex marginLeft="10px" flexDirection="column">
+                <p style={{ fontSize: "18px" }}>{props.coins.name}</p>
+                <Flex>
+                  <Badge width="30px" colorScheme="green">
+                    <p style={{ textAlign: "center", marginTop: "2px" }}>
+                      {props.coins.market_cap_rank}
+                    </p>
+                  </Badge>
+                  <p
+                    style={{
+                      textTransform: "uppercase",
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      marginLeft: "5px",
+                    }}
+                  >
+                    {props.coins.symbol}
+                  </p>
+                </Flex>
+              </Flex>
+            </Flex>
+          </CoinWhite>
+
+          <Price>
+            <p>
+              <NumberFormat
+                thousandSeparator={true}
+                prefix={"$"}
+                value={props.coins.current_price}
+                displayType="text"
+              />
+            </p>
+          </Price>
+
+          <Percentage>
+            {props.coins.price_change_percentage_24h < 2 ? (
+              <p style={{ color: "rgb(245, 0, 87)" }}>
                 {" "}
                 {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
               </p>
@@ -89,81 +164,6 @@ export default function CoinItem(props) {
               />
             </HideMobile>
           </Mkt>
-        </CoinRowDark>
-      ) : (
-        <CoinRowLight>
-          <span>
-            <Flex>
-              <Avatar src={props.coins.image} />
-              <Flex marginLeft="10px" flexDirection="column">
-                <p style={{ fontSize: "18px" }}>{props.coins.name}</p>
-                <Flex>
-                  <Badge width="30px" colorScheme="green">
-                    <p style={{ textAlign: "center", marginTop: "2px" }}>
-                      {props.coins.market_cap_rank}
-                    </p>
-                  </Badge>
-                  <p
-                    style={{
-                      textTransform: "uppercase",
-                      fontSize: "14px",
-                      fontWeight: 700,
-                      marginLeft: "5px",
-                    }}
-                  >
-                    {props.coins.symbol}
-                  </p>
-                </Flex>
-              </Flex>
-            </Flex>
-          </span>
-
-          <span>
-            <p>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.current_price}
-                displayType="text"
-              />
-            </p>
-          </span>
-
-          <span>
-            {props.coins.price_change_percentage_24h < 2 ? (
-              <p style={{ color: "red" }}>
-                {" "}
-                {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
-              </p>
-            ) : (
-              <p style={{ color: "green" }}>
-                {" "}
-                {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
-              </p>
-            )}
-          </span>
-
-          <span>
-            <HideMobile>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.total_volume}
-                displayType="text"
-              />
-            </HideMobile>
-          </span>
-
-          <span>
-            <HideMobile>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.market_cap}
-                displayType="text"
-              />
-            </HideMobile>
-          </span>
         </CoinRowLight>
       )}
     </a>
@@ -171,38 +171,79 @@ export default function CoinItem(props) {
 }
 
 const Mkt = styled.div`
-  text-align: right;
+  text-align: center;
   width: 20%;
+
+  @media (max-width: 770px) {
+    display: none;
+  }
 `;
 
 const Percentage = styled.div`
-  text-align: right;
+  text-align: center;
   width: 15%;
-  font-size: 20px;
+
+  @media (max-width: 770px) {
+    width: 30%;
+  }
 `;
 
 const Volume = styled.div`
-  text-align: right;
+  text-align: center;
   width: 20%;
-  font-size: 18px;
+
+  @media (max-width: 770px) {
+    display: none;
+  }
 `;
 
-const Coin = styled.div`
-  width: 20%;
-  background-color: #1f2434;
-  border-width: 1px;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
+const CoinDark = styled.div`
+  width: 23%;
+  background-color: rgba(0, 0, 0, 0.24);
+
+  padding: 0.6rem 1rem;
+  border-radius: 0px;
+
+  @media (max-width: 770px) {
+    width: 35%;
+  }
+
+  @media (max-width: 600px) {
+    width: 40%;
+  }
+
+  @media (max-width: 550px) {
+    width: 50%;
+  }
+`;
+
+const CoinWhite = styled.div`
+  width: 23%;
+  background-color: #edf2f7;
+
+  padding: 0.6rem 1rem;
+  border-radius: 0px;
+
+  @media (max-width: 770px) {
+    width: 35%;
+  }
+
+  @media (max-width: 600px) {
+    width: 40%;
+  }
+
+  @media (max-width: 550px) {
+    width: 50%;
+  }
 `;
 
 const Price = styled.div`
   width: 20%;
 
-  text-align: right;
-  border-radius: 8px;
+  text-align: center;
 
-  p {
-    font-size: 20px;
+  @media (max-width: 770px) {
+    width: 30%;
   }
 `;
 
@@ -210,35 +251,38 @@ const CoinRowDark = styled.div`
   display: flex;
 
   font-size: 18px;
-
+  font-weight: bold;
   align-items: center;
-  box-shadow: 0px 0px 12px #18191b;
-  background-color: #26272b;
-  border-radius: 8px;
-  border-width: 1px;
-  margin-top: 2px;
+
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 0px;
 
   &:hover {
     transform: scale(1.01);
     transition: 0.3s ease-in-out;
     cursor: pointer;
   }
+
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
 `;
 
 const CoinRowLight = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 0px 4px #18191b;
-  background-color: #fff;
-  border-radius: 8px;
-  margin: 2rem 1rem;
-  padding: 0.7rem 1rem;
+  background-color: #f7fafc;
+  border-radius: 0px;
+  font-weight: bold;
 
   &:hover {
-    transform: scale(1.04);
+    transform: scale(1.01);
     transition: 0.3s ease-in-out;
     cursor: pointer;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 16px;
   }
 `;
 
@@ -254,7 +298,7 @@ const ImgSymbol = styled.div`
 `;
 
 const HideMobile = styled.p`
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 770px) {
     display: none;
   }
 `;

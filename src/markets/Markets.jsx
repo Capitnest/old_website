@@ -43,6 +43,9 @@ export default function Markets() {
             Beta
           </Badge>
         </Flex>
+
+        <br />
+
         <Coins coins={coins} />
       </Layout>
 
