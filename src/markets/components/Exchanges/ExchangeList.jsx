@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Box, Flex, Avatar, Badge } from "@chakra-ui/react";
+import { Box, Flex, Avatar, Badge, Progress } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
 import Numeral from "react-numeral";
 import NumberFormat from "react-number-format";
@@ -10,7 +10,7 @@ export default function CoinItem(props) {
 
   return (
     <a
-      href={"/coins/" + props.coins.id}
+      href={"/markets/" + props.coins.id}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       {colorMode === "dark" ? (
@@ -25,19 +25,9 @@ export default function CoinItem(props) {
                 <Flex>
                   <Badge width="30px" colorScheme="green">
                     <p style={{ textAlign: "center", marginTop: "2px" }}>
-                      {props.coins.market_cap_rank}
+                      {props.coins.trust_score_rank}
                     </p>
                   </Badge>
-                  <p
-                    style={{
-                      textTransform: "uppercase",
-                      fontSize: "14px",
-                      fontWeight: 700,
-                      marginLeft: "5px",
-                    }}
-                  >
-                    {props.coins.symbol}
-                  </p>
                 </Flex>
               </Flex>
             </Flex>
@@ -48,45 +38,25 @@ export default function CoinItem(props) {
               <NumberFormat
                 thousandSeparator={true}
                 prefix={"$"}
-                value={props.coins.current_price}
+                value={props.coins.trade_volume_24h_btc}
                 displayType="text"
               />
             </p>
           </Price>
 
           <Percentage>
-            {props.coins.price_change_percentage_24h < 2 ? (
-              <p style={{ color: "rgb(245, 0, 87)" }}>
-                {" "}
-                {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
-              </p>
-            ) : (
-              <p style={{ color: "rgb(33, 247, 158)" }}>
-                {" "}
-                {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
-              </p>
-            )}
+            <p>dsada</p>
           </Percentage>
 
           <Volume>
             <HideMobile>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.total_volume}
-                displayType="text"
-              />
+              <p>dsdsa</p>
             </HideMobile>
           </Volume>
 
           <Mkt>
             <HideMobile>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.market_cap}
-                displayType="text"
-              />
+              <p>dsadsa</p>
             </HideMobile>
           </Mkt>
         </CoinRowDark>
@@ -96,72 +66,49 @@ export default function CoinItem(props) {
             <Flex>
               <Avatar src={props.coins.image} />
               <Flex marginLeft="10px" flexDirection="column">
-                <p style={{ fontSize: "18px" }}>{props.coins.name}</p>
+                <p style={{ fontSize: "18px", marginLeft: "4px" }}>
+                  {props.coins.name}
+                </p>
                 <Flex>
                   <Badge width="30px" colorScheme="green">
                     <p style={{ textAlign: "center", marginTop: "2px" }}>
-                      {props.coins.market_cap_rank}
+                      {props.coins.trust_score_rank}
                     </p>
                   </Badge>
-                  <p
-                    style={{
-                      textTransform: "uppercase",
-                      fontSize: "14px",
-                      fontWeight: 700,
-                      marginLeft: "5px",
-                    }}
-                  >
-                    {props.coins.symbol}
-                  </p>
                 </Flex>
               </Flex>
             </Flex>
           </CoinWhite>
 
           <Price>
-            <p>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.current_price}
-                displayType="text"
-              />
-            </p>
+            <p>{props.coins.trust_score} / 10</p>
           </Price>
 
           <Percentage>
-            {props.coins.price_change_percentage_24h < 2 ? (
-              <p style={{ color: "rgb(245, 0, 87)" }}>
-                {" "}
-                {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
-              </p>
-            ) : (
-              <p style={{ color: "green" }}>
-                {" "}
-                {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
-              </p>
-            )}
+            <p>
+              <NumberFormat
+                thousandSeparator={true}
+                value={props.coins.trade_volume_24h_btc}
+                displayType="text"
+              />
+            </p>
           </Percentage>
 
           <Volume>
             <HideMobile>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.total_volume}
-                displayType="text"
-              />
+              <p>
+                <NumberFormat
+                  thousandSeparator={true}
+                  value={props.coins.trade_volume_24h_btc_normalized}
+                  displayType="text"
+                />
+              </p>
             </HideMobile>
           </Volume>
 
           <Mkt>
             <HideMobile>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.market_cap}
-                displayType="text"
-              />
+              <a href={props.coins.url}>Visit</a>
             </HideMobile>
           </Mkt>
         </CoinRowLight>

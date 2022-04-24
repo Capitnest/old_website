@@ -21,8 +21,10 @@ import Feeds from "../feeds/Feeds";
 import Nfts from "../nft/Nfts";
 import Dashboard from "../pages/Dashboard/Dashboard";
 
+import Exchanges from "../markets/Exchanges";
 import Markets from "../markets/Markets";
 import CoinPage from "../markets/CoinPage";
+import Categories from "../markets/Categories";
 
 import Influencers from "../feeds/Influencers";
 
@@ -45,8 +47,10 @@ export default function AppRouter(props) {
           <Route exact path="/news" component={News} />
           <Route path="/news/:id" component={Blog} />
 
+          <Route path="/exchanges" component={Exchanges} />
+          <Route path="/coins/:id" component={CoinPage} />
           <Route exact path="/markets" component={Markets} />
-          <Route path="/markets/:id" component={CoinPage} />
+          <Route path="/markets/categories/:id" component={Categories} />
 
           <Route exact path="/feeds" component={Feeds} />
           <Route path="/feeds/:id" component={Hashtag} />

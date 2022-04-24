@@ -1,6 +1,145 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const tweets = [
+  {
+    authorName: "Yahoo News",
+    authorUsername: "news.yahoo.com",
+    authorProfilePic:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fkahoot.com%2Ffiles%2F2020%2F05%2Fyahoo-news-logo.png&f=1&nofb=1",
+    authorLink: "news.yahoo.com",
+    tweet: (
+      <p>
+        Many millennials expect crypto to fund their retirement, survey found
+        <img
+          src="https://s.yimg.com/ny/api/res/1.2/bAwkzBJIZYG1O.S3f_Lq8w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2022-03/528b3320-af0e-11ec-b77f-dd50792d9804"
+          alt="yahoo"
+        />
+        A survey of 4,000 investors across the country from Investopedia found
+        that 38% of millennials own some form of cryptocurrency.
+      </p>
+    ),
+    date: "4/11/2022",
+    source:
+      "https://news.yahoo.com/millennials-crypto-retirement-153231709.html",
+    searchKeywords:
+      "Yahoo News news.yahoo.com  Many millennials expect crypto to fund their retirement, survey found A survey of 4,000 investors across the country from Investopedia found that 38% of millennials own some form of cryptocurrency.",
+  },
+  {
+    authorName: "Decrypt",
+    authorUsername: "decrypt.co",
+    authorProfilePic:
+      "https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/images/favicon-32x32.png",
+    authorLink: "https://decrypt.co/",
+    tweet: (
+      <p>
+        Jack Dorsey: Ethereum Has 'Many Single Points of Failure'
+        <img
+          src="https://cdn.decrypt.co/resize/1024/wp-content/uploads/2021/03/jack-dorsey-bitcoin-clock-gID_4.jpg.webp"
+          alt="post"
+        />
+        Block CEO Jack Dorsey has laid into Ethereum before, but this is the
+        first time he's shared his criticisms of the number two crypto network.
+      </p>
+    ),
+    date: "4/20/2022",
+    source:
+      "https://decrypt.co/98160/jack-dorsey-ethereum-many-single-points-failure",
+    searchKeywords:
+      "decrypt decrypt.co Jack Dorsey: Ethereum Has 'Many Single Points of Failure' Block CEO Jack Dorsey has laid into Ethereum before, but this is the first time he's shared his criticisms of the number two crypto network. ",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "@WatcherGuru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/WatcherGuru",
+    tweet: (
+      <p>
+        JUST IN: Car dealership Porsche Towson now accepts payments using
+        #Bitcoin, #Ethereum, Shiba Inu, and other #cryptocurrencies.
+      </p>
+    ),
+    date: "3/19/2022",
+    source: "https://twitter.com/WatcherGuru/status/1516444927680561167",
+    searchKeywords:
+      "Watcher.Guru @WatcherGuru JUST IN: Car dealership Porsche Towson now accepts payments using #Bitcoin, #Ethereum, Shiba Inu, and other #cryptocurrencies.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "@WatcherGuru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/WatcherGuru",
+    tweet: (
+      <p>
+        JUST IN: <a href="/feeds/cardano"> #Cardano</a>(ADA) Network has added
+        almost 400 new projects building on its network in the last month.
+      </p>
+    ),
+    date: "3/19/2022",
+    source: "https://twitter.com/WatcherGuru/status/1516529998735319045",
+    searchKeywords:
+      "Watcher.Guru @WatcherGuru JUST IN: #Cardano Network has added almost 400 new projects building on its network in the last month.",
+  },
+  {
+    authorName: "Decrypt",
+    authorUsername: "decrypt.co",
+    authorProfilePic:
+      "https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/images/favicon-32x32.png",
+    authorLink: "https://decrypt.co/",
+    tweet: (
+      <p>
+        Ethereum’s MakerDAO to Launch on StarkNet, Promises 10x Lower Gas Costs
+        <br />
+        <br />
+        DeFi "blue chip" project MakerDAO is adding an integration with StarkNet
+        to cut transaction costs and speed up withdrawal times.
+      </p>
+    ),
+    date: "4/20/2022",
+    source:
+      "https://decrypt.co/98252/ethereum-makerdao-launch-starknet-10x-lower-gas-costs",
+    searchKeywords:
+      "decrypt decrypt.co Ethereum’s MakerDAO to Launch on StarkNet, Promises 10x Lower Gas Costs DeFi blue chip project MakerDAO is adding an integration with StarkNet to cut transaction costs and speed up withdrawal times. ",
+  },
+  {
+    authorName: "U.Today",
+    authorUsername: "u.today",
+    authorProfilePic: "https://u.today/img/favicon/favicon.ico",
+    authorLink: "https://u.today/",
+    tweet: (
+      <p>
+        1.2 Billion SHIB Burned in Last 7 Days, Terra Spikes 9%, Crypto Will
+        Surge Should Fed Raise Inflation Target: Crypto News Digest by U.Today
+      </p>
+    ),
+    date: "4/19/2022",
+    source:
+      "https://u.today/12-billion-shib-burned-in-last-7-days-terra-spikes-9-crypto-will-surge-should-fed-raise-inflation",
+    searchKeywords:
+      "U.Today u.today cardano 1.2 Billion SHIB Burned in Last 7 Days, Terra Spikes 9%, Crypto Will Surge Should Fed Raise Inflation Target: Crypto News Digest by U.Today",
+  },
+  {
+    authorName: "🔥 xrp jenna 🔥",
+    authorUsername: "@XRPjenna",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1516598721705820165/DaSWkmzC_400x400.jpg",
+    authorLink: "https://twitter.com/XRPjenna",
+    tweet: (
+      <p>
+        They legit want to keep you poor. Wake up. Do as much research as you
+        can. They will tell you you’re dumb. They will laugh. They will
+        manipulate and twist your thoughts and rewrite laws. Keep your chin up
+        and keep going. Don’t give up now. We’ve come so far.
+        <Link to="/feeds/xrp">#XRP</Link>
+      </p>
+    ),
+    date: "4/20/2022",
+    source: "https://twitter.com/XRPjenna/status/1516586937078980620",
+    searchKeywords:
+      "xrp jenna @XRPjenna #XRP They legit want to keep you poor. Wake up. Do as much research as you can. They will tell you you’re dumb. They will laugh. They will manipulate and twist your thoughts and rewrite laws. Keep your chin up and keep going. Don’t give up now. We’ve come so far. ",
+  },
   {
     authorName: "U.Today",
     authorUsername: "u.today",

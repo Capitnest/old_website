@@ -8,23 +8,20 @@ import { Link } from "react-router-dom";
 import { Badge, Flex } from "@chakra-ui/react";
 
 //Components
-import Coins from "./components/Coins";
-import CoinItem from "./components/CoinItem";
+import Exchange from "./components/Exchanges/Exchange";
 import NavbarCategories from "./components/NavbarCategories";
 
-export default function Markets() {
+export default function Exchanges() {
   const [coins, setCoins] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  const url =
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false";
+  const url = "https://api.coingecko.com/api/v3/exchanges?per_page=200";
 
   useEffect(() => {
     axios
       .get(url)
       .then((response) => {
         setCoins(response.data);
-        setLoading(false);
+        console.log(response.data[0]);
       })
       .catch((error) => {
         console.log(error);
@@ -35,33 +32,14 @@ export default function Markets() {
     <>
       <Layout>
         <Flex justifyContent="center">
-          <Title>Markets</Title>
-          <Badge
-            colorScheme="red"
-            marginLeft="5px"
-            marginTop="30px"
-            marginBottom="20px"
-            fontSize="13px"
-          >
-            Beta
-          </Badge>
+          <Title>Exchanges</Title>
         </Flex>
 
         <NavbarCategories />
 
         <br />
 
-        {loading === true ? (
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img
-              src="/images/loading.gif"
-              style={{ textAlign: "center", marginTop: "30px" }}
-              width="20%"
-            />
-          </div>
-        ) : (
-          <Coins coins={coins} />
-        )}
+        <Exchange coins={coins} />
       </Layout>
 
       <Footerr />

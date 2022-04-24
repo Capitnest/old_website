@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "../components/Layout";
 import styled from "styled-components";
 import useScript from "../functions/useScript";
 import { Button } from "@chakra-ui/react";
 import Footerr from "../components/Footer";
+import { Line } from "react-chartjs-2";
+import axios from "axios";
 
 export default function CoinPage() {
   const { id } = useParams();
+  const [historicData, setHistoricData] = useState();
+  const [flag, setflag] = useState(false);
+  const [days, setDays] = useState(1);
+
+  const fetchHistoricData = async () => {
+    const { data } = await axios.get(
+      `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=max`
+    );
+    setflag(true);
+    setHistoricData(data.prices);
+  };
+
+  useEffect(() => {
+    fetchHistoricData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -30,6 +48,8 @@ export default function CoinPage() {
           ></coingecko-coin-ticker-widget>
 
           <br />
+          <br />
+
           <br />
 
           {useScript(
