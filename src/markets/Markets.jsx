@@ -21,6 +21,7 @@ import Coins from "./components/Coins";
 import CoinItem from "./components/CoinItem";
 import NavbarCategories from "./components/NavbarCategories";
 import GlobalStats from "./components/GlobalStats";
+import MarketsPaginations from "./components/MarketsPaginations";
 
 export default function Markets() {
   const [coins, setCoins] = useState([]);
@@ -73,6 +74,10 @@ export default function Markets() {
             <Coins coins={coins} />
           </>
         )}
+
+        <br />
+
+        <MarketsPaginations />
       </Layout>
 
       <Footerr />

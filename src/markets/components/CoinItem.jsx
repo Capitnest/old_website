@@ -137,7 +137,27 @@ export default function CoinItem(props) {
             </p>
           </Price>
 
-          <Percentage>{props.coins.price_change_percentage_24h}</Percentage>
+          <Percentage>
+            {props.coins.price_change_percentage_24h < 0 ? (
+              <p style={{ color: "rgb(245, 0, 87)" }}>
+                <NumberFormat
+                  value={props.coins.price_change_percentage_24h}
+                  decimalScale={1}
+                  displayType="text"
+                />
+                %
+              </p>
+            ) : (
+              <p style={{ color: "rgb(33, 247, 158)" }}>
+                <NumberFormat
+                  value={props.coins.price_change_percentage_24h}
+                  decimalScale={1}
+                  displayType="text"
+                />
+                %
+              </p>
+            )}
+          </Percentage>
 
           <Volume>
             <HideMobile>

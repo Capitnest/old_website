@@ -44,7 +44,7 @@ export default function NavbarCategories() {
       </a>
       <Button onClick={onOpen}>Categories</Button>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} size="lg">
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Categories</ModalHeader>
@@ -58,13 +58,15 @@ export default function NavbarCategories() {
               <Input type="tel" placeholder="Search for a category" />
             </InputGroup>
             <br />
-            <Wrap>
-              {categories.map((category) => (
-                <a href={`/markets/categories/${category.link}`}>
-                  <Box>{category.name}</Box>
-                </a>
-              ))}
-            </Wrap>
+            <div style={{ overflowY: "scroll", height: "600px" }}>
+              <Wrap>
+                {categories.map((category) => (
+                  <a href={`/markets/categories/${category.link}`}>
+                    <Box>{category.name}</Box>
+                  </a>
+                ))}
+              </Wrap>
+            </div>
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>

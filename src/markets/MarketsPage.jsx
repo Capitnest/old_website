@@ -21,6 +21,7 @@ import Coins from "./components/Coins";
 import CoinItem from "./components/CoinItem";
 import NavbarCategories from "./components/NavbarCategories";
 import GlobalStats from "./components/GlobalStats";
+import MarketsPaginations from "./components/MarketsPaginations";
 
 export default function MarketsPage() {
   const { id } = useParams();
@@ -75,6 +76,10 @@ export default function MarketsPage() {
             <Coins coins={coins} />
           </>
         )}
+
+        <br />
+
+        <MarketsPaginations />
       </Layout>
 
       <Footerr />

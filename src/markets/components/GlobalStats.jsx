@@ -14,7 +14,7 @@ export default function GlobalStats() {
         <StatLabel fontSize="18px" fontWeight="700">
           Coins
         </StatLabel>
-        <StatNumber>3800</StatNumber>
+        <StatNumber>3868</StatNumber>
         <StatHelpText>Tracked</StatHelpText>
       </Stat>
 
@@ -22,7 +22,7 @@ export default function GlobalStats() {
         <StatLabel fontSize="18px" fontWeight="700">
           Exchanges
         </StatLabel>
-        <StatNumber>2000</StatNumber>
+        <StatNumber>250</StatNumber>
         <StatHelpText>Tracked</StatHelpText>
       </Stat>
 
@@ -38,7 +38,7 @@ export default function GlobalStats() {
         <StatLabel fontSize="18px" fontWeight="700">
           Categories
         </StatLabel>
-        <StatNumber>26</StatNumber>
+        <StatNumber>75</StatNumber>
         <StatHelpText>Available</StatHelpText>
       </Stat>
     </Flex>
