@@ -25,6 +25,7 @@ import Exchanges from "../markets/Exchanges";
 import Markets from "../markets/Markets";
 import CoinPage from "../markets/CoinPage";
 import Categories from "../markets/Categories";
+import MarketsPage from "../markets/MarketsPage";
 
 import Influencers from "../feeds/Influencers";
 
@@ -51,6 +52,7 @@ export default function AppRouter(props) {
           <Route path="/coins/:id" component={CoinPage} />
           <Route exact path="/markets" component={Markets} />
           <Route path="/markets/categories/:id" component={Categories} />
+          <Route path="/markets/page/:id" component={MarketsPage} />
 
           <Route exact path="/feeds" component={Feeds} />
           <Route path="/feeds/:id" component={Hashtag} />
