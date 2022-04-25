@@ -60,59 +60,10 @@ export default function NavbarCategories() {
             <br />
             <Wrap>
               {categories.map((category) => (
-                <a href={category.link}>
+                <a href={`/markets/categories/${category.link}`}>
                   <Box>{category.name}</Box>
                 </a>
               ))}
-
-              <a href="/markets/categories/non-fungible-tokens-nft">
-                <Box>NFT</Box>
-              </a>
-              <a href="/markets/categories/metaverse">
-                <Box>Metaverse</Box>
-              </a>
-              <a href="/markets/categories/solana-ecosystem">
-                <Box>Solana Ecosystem</Box>
-              </a>
-              <a href="/markets/categories/smart-contract-platform">
-                <Box>Smart Contract Platform</Box>
-              </a>
-              <a href="/markets/categories/stablecoins">
-                <Box>Stablecoins</Box>
-              </a>
-              <a href="/markets/categories/binance-smart-chain">
-                <Box>BNB Chain Ecosystem</Box>
-              </a>
-              <a href="/markets/categories/avalanche-ecosystem">
-                <Box>Avalanche Ecosystem</Box>
-              </a>
-              <a href="/markets/categories/ethereum-ecosystem">
-                <Box>Ethereum Ecosystem</Box>
-              </a>
-              <a href="/markets/categories/polygon-ecosystem">
-                <Box>Polygon Ecosystem</Box>
-              </a>
-              <a href="/markets/categories/solana-ecosystem">
-                <Box>Solana Ecosystem</Box>
-              </a>
-              <a href="/markets/categories/cardano-ecosystem">
-                <Box>Cardano Ecosystem</Box>
-              </a>
-              <a href="/markets/categories/dot-ecosystem">
-                <Box>Polkadot Ecosystem</Box>
-              </a>
-              <a href="/markets/categories/moonriver-ecosystem">
-                <Box>Moonriver Ecosystem</Box>
-              </a>
-              <a href="/markets/categories/terra-ecosystem">
-                <Box>Terra Ecosystem</Box>
-              </a>
-              <a href="/markets/categories/near-protocol-ecosystem">
-                <Box>Near Protocol Ecosystem</Box>
-              </a>
-              <a href="/markets/categories/fantom-ecosystem">
-                <Box>Fantom Ecosystem</Box>
-              </a>
             </Wrap>
           </ModalBody>
           <ModalFooter>
