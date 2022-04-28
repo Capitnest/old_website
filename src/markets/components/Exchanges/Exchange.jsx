@@ -27,10 +27,10 @@ export default function Exchange(props) {
           <>
             <HeadingLight>
               <Name>Coin</Name>
-              <Price>Price</Price>
-              <Percentage>24h</Percentage>
-              <HideMobile>Volume</HideMobile>
-              <HideMobile>Mkt Cap</HideMobile>
+              <Price>Trust Score</Price>
+              <Percentage>24h Volume</Percentage>
+              <HideMobile>24h Volume(normalized)</HideMobile>
+              <HideMobile>Website</HideMobile>
             </HeadingLight>
 
             {props.coins.map((coinss) => {

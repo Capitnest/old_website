@@ -21,7 +21,9 @@ import Feeds from "../feeds/Feeds";
 import Nfts from "../nft/Nfts";
 import Dashboard from "../pages/Dashboard/Dashboard";
 
+import Indexes from "../markets/Indexes";
 import Exchanges from "../markets/Exchanges";
+import ExchangesPage from "../markets/ExchangesPage";
 import Markets from "../markets/Markets";
 import CoinPage from "../markets/CoinPage";
 import Categories from "../markets/Categories";
@@ -48,6 +50,8 @@ export default function AppRouter(props) {
           <Route exact path="/news" component={News} />
           <Route path="/news/:id" component={Blog} />
 
+          <Route path="/indexes" component={Indexes} />
+          <Route path="/exchanges/page/:id" component={ExchangesPage} />
           <Route path="/exchanges" component={Exchanges} />
           <Route path="/coins/:id" component={CoinPage} />
           <Route exact path="/markets" component={Markets} />

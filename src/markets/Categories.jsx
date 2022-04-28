@@ -11,6 +11,7 @@ import { Badge, Flex } from "@chakra-ui/react";
 import Coins from "./components/Coins";
 import CoinItem from "./components/CoinItem";
 import NavbarCategories from "./components/NavbarCategories";
+import MarketsNavbar from "./components/MarketsNavbar";
 
 export default function Categories() {
   const [coins, setCoins] = useState([]);
@@ -35,18 +36,11 @@ export default function Categories() {
       <Layout>
         <Flex justifyContent="center">
           <Title>{id}</Title>
-          <Badge
-            colorScheme="red"
-            marginLeft="5px"
-            marginTop="30px"
-            marginBottom="20px"
-            fontSize="13px"
-          >
-            Beta
-          </Badge>
         </Flex>
 
-        <NavbarCategories />
+        <br />
+
+        <MarketsNavbar />
 
         <br />
 

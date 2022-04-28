@@ -13,6 +13,7 @@ import {
   Stat,
   StatLabel,
   StatNumber,
+  Skeleton,
   StatHelpText,
 } from "@chakra-ui/react";
 
@@ -22,6 +23,7 @@ import CoinItem from "./components/CoinItem";
 import NavbarCategories from "./components/NavbarCategories";
 import GlobalStats from "./components/GlobalStats";
 import MarketsPaginations from "./components/MarketsPaginations";
+import MarketsNavbar from "./components/MarketsNavbar";
 
 export default function MarketsPage() {
   const { id } = useParams();
@@ -52,24 +54,24 @@ export default function MarketsPage() {
       <Layout>
         <Flex justifyContent="center" flexDirection="column">
           <Title>Markets</Title>
+          <br />
           <p style={{ textAlign: "center", fontSize: "20px" }}>Page: {id}</p>
         </Flex>
 
-        <NavbarCategories />
-
         <br />
 
-        <GlobalStats />
+        <MarketsNavbar />
 
         <br />
 
         {loading === true ? (
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img
-              src="/images/loading.gif"
-              style={{ textAlign: "center", marginTop: "30px" }}
-              width="20%"
-            />
+          <div>
+            <Skeleton height="60px" marginTop="5px" />
+            <Skeleton height="60px" marginTop="5px" />
+            <Skeleton height="60px" marginTop="5px" />
+            <Skeleton height="60px" marginTop="5px" />
+            <Skeleton height="60px" marginTop="5px" />
+            <Skeleton height="60px" marginTop="5px" />
           </div>
         ) : (
           <>

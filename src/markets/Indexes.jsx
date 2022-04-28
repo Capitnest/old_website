@@ -17,7 +17,6 @@ import {
   Tabs,
   TabList,
   Tab,
-  Skeleton,
 } from "@chakra-ui/react";
 
 //Components
@@ -26,18 +25,14 @@ import CoinItem from "./components/CoinItem";
 import NavbarCategories from "./components/NavbarCategories";
 import GlobalStats from "./components/GlobalStats";
 import MarketsPaginations from "./components/MarketsPaginations";
-import MarketsNavbar from "./components/MarketsNavbar";
+import IndexesNavbar from "./components/Indexes/IndexesNavbar";
 
 export default function Markets() {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
 
-  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=${page}&sparkline=false`;
-
-  function ChangePage(number) {
-    return setPage(number);
-  }
+  const url =
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=index-coin&order=market_cap_desc&per_page=200&page=1&sparkline=false";
 
   useEffect(() => {
     axios
@@ -49,29 +44,28 @@ export default function Markets() {
       .catch((error) => {
         console.log(error);
       });
-  }, [page]);
+  }, []);
 
   return (
     <>
       <Layout>
         <Flex justifyContent="center">
-          <Title>Markets</Title>
+          <Title>Indexes</Title>
         </Flex>
 
         <br />
 
-        <MarketsNavbar />
+        <IndexesNavbar />
 
         <br />
 
         {loading === true ? (
-          <div>
-            <Skeleton height="60px" marginTop="5px" />
-            <Skeleton height="60px" marginTop="5px" />
-            <Skeleton height="60px" marginTop="5px" />
-            <Skeleton height="60px" marginTop="5px" />
-            <Skeleton height="60px" marginTop="5px" />
-            <Skeleton height="60px" marginTop="5px" />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <img
+              src="/images/loading.gif"
+              style={{ textAlign: "center", marginTop: "30px" }}
+              width="20%"
+            />
           </div>
         ) : (
           <>
@@ -80,8 +74,6 @@ export default function Markets() {
         )}
 
         <br />
-
-        <MarketsPaginations />
       </Layout>
 
       <Footerr />

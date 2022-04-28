@@ -8,6 +8,16 @@ import NumberFormat from "react-number-format";
 export default function CoinItem(props) {
   const { colorMode, toggleColorMode } = useColorMode();
 
+  function ProgressColor(score) {
+    if (score > 6) {
+      return "green";
+    } else if (score <= 6 && score > 4) {
+      return "orange";
+    } else {
+      return "red";
+    }
+  }
+
   return (
     <a
       href={"/markets/" + props.coins.id}
@@ -81,7 +91,18 @@ export default function CoinItem(props) {
           </CoinWhite>
 
           <Price>
-            <p>{props.coins.trust_score} / 10</p>
+            <Flex justifyContent="center">
+              <Progress
+                value={props.coins.trust_score * 10}
+                width="50%"
+                borderRadius="6px"
+                height="12px"
+                marginTop="4px"
+                colorScheme={ProgressColor(props.coins.trust_score)}
+              />
+
+              <p style={{ marginLeft: "6px" }}>{props.coins.trust_score}</p>
+            </Flex>
           </Price>
 
           <Percentage>
@@ -90,6 +111,7 @@ export default function CoinItem(props) {
                 thousandSeparator={true}
                 value={props.coins.trade_volume_24h_btc}
                 displayType="text"
+                decimalScale={1}
               />
             </p>
           </Percentage>
@@ -101,6 +123,7 @@ export default function CoinItem(props) {
                   thousandSeparator={true}
                   value={props.coins.trade_volume_24h_btc_normalized}
                   displayType="text"
+                  decimalScale={3}
                 />
               </p>
             </HideMobile>
