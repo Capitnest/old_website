@@ -63,12 +63,6 @@ export default function CoinItem(props) {
               <p>dsdsa</p>
             </HideMobile>
           </Volume>
-
-          <Mkt>
-            <HideMobile>
-              <p>dsadsa</p>
-            </HideMobile>
-          </Mkt>
         </CoinRowDark>
       ) : (
         <CoinRowLight>
@@ -107,9 +101,10 @@ export default function CoinItem(props) {
 
           <Percentage>
             <p>
+              $
               <NumberFormat
                 thousandSeparator={true}
-                value={props.coins.trade_volume_24h_btc}
+                value={props.coins.trade_volume_24h_btc * 40000}
                 displayType="text"
                 decimalScale={1}
               />
@@ -121,37 +116,22 @@ export default function CoinItem(props) {
               <p>
                 <NumberFormat
                   thousandSeparator={true}
-                  value={props.coins.trade_volume_24h_btc_normalized}
+                  value={props.coins.trade_volume_24h_btc}
                   displayType="text"
                   decimalScale={3}
                 />
               </p>
             </HideMobile>
           </Volume>
-
-          <Mkt>
-            <HideMobile>
-              <a href={props.coins.url}>Visit</a>
-            </HideMobile>
-          </Mkt>
         </CoinRowLight>
       )}
     </a>
   );
 }
 
-const Mkt = styled.div`
-  text-align: center;
-  width: 20%;
-
-  @media (max-width: 770px) {
-    display: none;
-  }
-`;
-
 const Percentage = styled.div`
   text-align: center;
-  width: 15%;
+  width: 25%;
 
   @media (max-width: 770px) {
     width: 30%;
@@ -160,7 +140,7 @@ const Percentage = styled.div`
 
 const Volume = styled.div`
   text-align: center;
-  width: 20%;
+  width: 25%;
 
   @media (max-width: 770px) {
     display: none;

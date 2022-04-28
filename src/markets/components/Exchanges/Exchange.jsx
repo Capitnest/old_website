@@ -16,7 +16,6 @@ export default function Exchange(props) {
               <Price>Price</Price>
               <Percentage>24h</Percentage>
               <HideMobile>Volume</HideMobile>
-              <HideMobile>Mkt Cap</HideMobile>
             </HeadingDark>
 
             {props.coins.map((coinss) => {
@@ -28,9 +27,8 @@ export default function Exchange(props) {
             <HeadingLight>
               <Name>Coin</Name>
               <Price>Trust Score</Price>
-              <Percentage>24h Volume</Percentage>
-              <HideMobile>24h Volume(normalized)</HideMobile>
-              <HideMobile>Website</HideMobile>
+              <Percentage>24h Volume (USD)</Percentage>
+              <HideMobile>24h Volume (BTC)</HideMobile>
             </HeadingLight>
 
             {props.coins.map((coinss) => {
@@ -90,7 +88,7 @@ const Name = styled.p`
 `;
 
 const HideMobile = styled.p`
-  width: 20%;
+  width: 30%;
   text-align: center;
 
   @media screen and (max-width: 770px) {
@@ -108,7 +106,7 @@ const Price = styled.div`
 `;
 
 const Percentage = styled.div`
-  width: 15%;
+  width: 30%;
   text-align: center;
 
   @media (max-width: 770px) {
