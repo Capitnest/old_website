@@ -44,23 +44,42 @@ export default function CoinItem(props) {
           </CoinDark>
 
           <Price>
-            <p style={{}}>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.trade_volume_24h_btc}
-                displayType="text"
+            <Flex justifyContent="center">
+              <Progress
+                value={props.coins.trust_score * 10}
+                width="50%"
+                borderRadius="6px"
+                height="12px"
+                marginTop="4px"
+                colorScheme={ProgressColor(props.coins.trust_score)}
               />
-            </p>
+
+              <p style={{ marginLeft: "6px" }}>{props.coins.trust_score}</p>
+            </Flex>
           </Price>
 
           <Percentage>
-            <p>dsada</p>
+            <p>
+              $
+              <NumberFormat
+                thousandSeparator={true}
+                value={props.coins.trade_volume_24h_btc * 40000}
+                displayType="text"
+                decimalScale={1}
+              />
+            </p>
           </Percentage>
 
           <Volume>
             <HideMobile>
-              <p>dsdsa</p>
+              <p>
+                <NumberFormat
+                  thousandSeparator={true}
+                  value={props.coins.trade_volume_24h_btc}
+                  displayType="text"
+                  decimalScale={3}
+                />
+              </p>
             </HideMobile>
           </Volume>
         </CoinRowDark>
@@ -131,10 +150,11 @@ export default function CoinItem(props) {
 
 const Percentage = styled.div`
   text-align: center;
-  width: 25%;
+  width: 30%;
 
   @media (max-width: 770px) {
     width: 30%;
+    font-size: 15px;
   }
 `;
 

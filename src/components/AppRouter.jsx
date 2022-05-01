@@ -29,8 +29,6 @@ import CoinPage from "../markets/CoinPage";
 import Categories from "../markets/Categories";
 import MarketsPage from "../markets/MarketsPage";
 
-import Influencers from "../feeds/Influencers";
-
 import RoadMap from "../pages/company/roadmap/RoadMap";
 import Hashtag from "../feeds/Hashtag";
 
@@ -60,7 +58,6 @@ export default function AppRouter(props) {
 
           <Route exact path="/feeds" component={Feeds} />
           <Route path="/feeds/:id" component={Hashtag} />
-          <Route path="/influencer/:id" component={Influencers} />
 
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/login" component={Loginpage} />
