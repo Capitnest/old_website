@@ -20,7 +20,7 @@ export default function CoinItem(props) {
 
   return (
     <a
-      href={"/markets/" + props.coins.id}
+      href={"/exchange/" + props.coins.id}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       {colorMode === "dark" ? (

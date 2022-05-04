@@ -27,6 +27,7 @@ import NavbarCategories from "./components/NavbarCategories";
 import GlobalStats from "./components/GlobalStats";
 import MarketsPaginations from "./components/MarketsPaginations";
 import MarketsNavbar from "./components/MarketsNavbar";
+import ScrollToTop from "react-scroll-to-top";
 
 export default function Markets() {
   const [coins, setCoins] = useState([]);

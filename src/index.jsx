@@ -15,7 +15,7 @@ const theme = extendTheme({
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <ColorModeScript initialColorMode="dark" />
       <App />
     </ChakraProvider>
   </React.StrictMode>,

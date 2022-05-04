@@ -23,6 +23,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 
 import Indexes from "../markets/Indexes";
 import Exchanges from "../markets/Exchanges";
+import ExchangePage from "../markets/ExchangePage";
 import ExchangesPage from "../markets/ExchangesPage";
 import Markets from "../markets/Markets";
 import CoinPage from "../markets/CoinPage";
@@ -49,6 +50,8 @@ export default function AppRouter(props) {
           <Route path="/news/:id" component={Blog} />
 
           <Route path="/indexes" component={Indexes} />
+
+          <Route path="/exchange/:id" component={ExchangePage} />
           <Route path="/exchanges/page/:id" component={ExchangesPage} />
           <Route path="/exchanges" component={Exchanges} />
           <Route path="/coins/:id" component={CoinPage} />

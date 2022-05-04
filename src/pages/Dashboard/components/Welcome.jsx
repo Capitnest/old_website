@@ -19,4 +19,6 @@ export default function Welcome() {
 const Title = styled.div`
   font-size: 30px;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: -100px;
 `;
