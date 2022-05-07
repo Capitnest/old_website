@@ -11,7 +11,11 @@ export default function CoinItem(props) {
   return (
     <a
       href={"/coins/" + props.coins.id}
-      style={{ textDecoration: "none", color: "inherit" }}
+      style={{
+        textDecoration: "none",
+        color: "inherit",
+        fontFamily: "'Inter', sans-serif",
+      }}
     >
       {colorMode === "dark" ? (
         <CoinRowDark>

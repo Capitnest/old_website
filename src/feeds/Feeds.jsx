@@ -169,6 +169,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: "Inter", sans-serif;
 `;
 
 const Title = styled.h1`

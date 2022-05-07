@@ -8,7 +8,7 @@ export default function Coins(props) {
 
   return (
     <Container>
-      <div>
+      <div style={{ fontFamily: "'Inter', sans-serif" }}>
         {colorMode === "dark" ? (
           <>
             <HeadingDark>

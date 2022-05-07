@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Tabs,
   Tab,
@@ -26,12 +26,36 @@ import { Link } from "react-router-dom";
 import { SearchIcon } from "@chakra-ui/icons";
 import styled from "styled-components";
 import { categories } from "./../data/categories";
+import SearchBar from "../../news/components/SearchBar";
 
 export default function MarketsNavbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [blogs, setBlogs] = useState(categories);
+  const [searchKey, setSearchKey] = useState("");
+
+  //Search submit
+  const handleSearchBar = (e) => {
+    e.preventDefault();
+    handleSearchResults();
+  };
+
+  //Search for blog by category
+  const handleSearchResults = () => {
+    const allBlogs = categories;
+    const filteredBlogs = allBlogs.filter((blog) =>
+      blog.name.toLowerCase().includes(searchKey.toLowerCase().trim())
+    );
+    setBlogs(filteredBlogs);
+  };
+
+  //Clear search and show all blogs
+  const handleClearSearch = () => {
+    setBlogs(categories);
+    setSearchKey("");
+  };
 
   return (
-    <>
+    <div style={{ fontFamily: "'Inter', sans-serif" }}>
       <Tabs>
         <TabList>
           <Tab>Coins</Tab>
@@ -89,21 +113,20 @@ export default function MarketsNavbar() {
             <ModalHeader>Categories</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <InputGroup>
-                <InputLeftElement
-                  pointerEvents="none"
-                  children={<SearchIcon />}
-                />
-                <Input type="tel" placeholder="Search for a category" />
-              </InputGroup>
+              <SearchBar
+                value={searchKey}
+                clearSearch={handleClearSearch}
+                formSubmit={handleSearchBar}
+                handleSearchKey={(e) => setSearchKey(e.target.value)}
+              />
               <br />
               <div style={{ overflowY: "scroll", height: "600px" }}>
                 <Wrap>
-                  {categories.map((category) => (
-                    <a href={`/markets/categories/${category.link}`}>
-                      <Box>{category.name}</Box>
-                    </a>
-                  ))}
+                  {!blogs.length ? (
+                    <h1>Category not found</h1>
+                  ) : (
+                    <CategoryList blogs={blogs} />
+                  )}
                 </Wrap>
               </div>
             </ModalBody>
@@ -115,6 +138,18 @@ export default function MarketsNavbar() {
           </ModalContent>
         </Modal>
       </div>
+    </div>
+  );
+}
+
+function CategoryList({ blogs }) {
+  return (
+    <>
+      {blogs.map((blog) => (
+        <a href={`/markets/categories/${blog.link}`}>
+          <Box>{blog.name}</Box>
+        </a>
+      ))}
     </>
   );
 }

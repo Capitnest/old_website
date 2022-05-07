@@ -81,7 +81,7 @@ export function Navbar() {
                     size="md"
                     fontSize="15px"
                     fontFamily='"Inter", sans-serif'
-                    colorScheme="teal"
+                    colorScheme="green"
                   >
                     Sign in / Register
                   </Button>

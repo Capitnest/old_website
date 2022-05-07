@@ -7,6 +7,7 @@ import {
   Flex,
   Button,
   useColorMode,
+  Card,
 } from "@chakra-ui/react";
 import styled from "styled-components";
 import Like from "./Like";

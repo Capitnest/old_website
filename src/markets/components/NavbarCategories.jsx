@@ -24,7 +24,7 @@ export default function NavbarCategories() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex>
+    <Flex fontFamily="'Inter', sans-serif">
       <Link to="/markets">
         <Box>Coins</Box>
       </Link>
@@ -50,13 +50,6 @@ export default function NavbarCategories() {
           <ModalHeader>Categories</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <InputGroup>
-              <InputLeftElement
-                pointerEvents="none"
-                children={<SearchIcon />}
-              />
-              <Input type="tel" placeholder="Search for a category" />
-            </InputGroup>
             <br />
             <div style={{ overflowY: "scroll", height: "600px" }}>
               <Wrap>
