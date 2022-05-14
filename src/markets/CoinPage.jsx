@@ -28,8 +28,14 @@ import {
   Th,
   Td,
   Tbody,
-  Tfoot,
+  Hide,
+  Show,
+  Slider,
+  SliderTrack,
+  SliderThumb,
+  SliderFilledTrack,
 } from "@chakra-ui/react";
+import dateFormat, { masks } from "dateformat";
 import Footerr from "../components/Footer";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
@@ -68,21 +74,26 @@ export default function CoinPage() {
     <>
       <Helmet>
         {loading === true ? (
-          <title>Capitnest</title>
+          <title>{id} Price & Chart | Capitnest</title>
         ) : (
           <title>
             {coins.name} ({coins.symbol.toUpperCase()}) Price & Chart |
-            Capitnest{" "}
+            Capitnest
           </title>
         )}
       </Helmet>
       <Layout>
         <Content>
-          <Link className="blog-goBack" to="/markets">
-            <Button colorScheme="teal" marginBottom="10px">
-              <span> &#8592; </span> <span>Go Back </span>
+          <Flex marginBottom="20px" color="#A0AEC0" marginLeft="-15px">
+            <Link to="/markets">
+              <Button variant="Link">coins</Button>
+            </Link>
+            <span style={{ marginTop: "7px" }}>/</span>
+
+            <Button variant="Link">
+              {loading === true ? <></> : <>{id}</>}
             </Button>
-          </Link>
+          </Flex>
 
           {loading === true ? (
             <>Loading...</>
@@ -141,71 +152,107 @@ export default function CoinPage() {
                   </StatHelpText>
                 </Stat>
 
-                <Stat borderWidth="2px" padding="10px">
-                  <StatLabel>24h Trading Volume </StatLabel>
-                  <StatNumber>
-                    $
-                    <NumberFormat
-                      thousandSeparator={true}
-                      value={coins.market_data.total_volume.usd}
-                      displayType="text"
-                      decimalScale={1}
-                    />
-                  </StatNumber>
+                <Show below="md">
+                  <Stat
+                    borderWidth="2px"
+                    padding="10px"
+                    borderRightRadius="10px"
+                  >
+                    <StatLabel>24h Trading Volume </StatLabel>
+                    <StatNumber fontSize="23px">
+                      $
+                      <NumberFormat
+                        thousandSeparator={true}
+                        value={coins.market_data.total_volume.usd}
+                        displayType="text"
+                        decimalScale={1}
+                      />
+                    </StatNumber>
 
-                  <StatHelpText>
-                    <NumberFormat
-                      thousandSeparator={true}
-                      value={coins.market_data.total_volume.btc}
-                      displayType="text"
-                      decimalScale={3}
-                    />{" "}
-                    BTC
-                  </StatHelpText>
-                </Stat>
-                <Stat borderWidth="2px" padding="10px" borderRightRadius="10px">
-                  <StatLabel>Circulating Supply</StatLabel>
-                  <StatNumber>
-                    <NumberFormat
-                      thousandSeparator={true}
-                      value={coins.market_data.circulating_supply}
-                      displayType="text"
-                      decimalScale={1}
-                    />
-                  </StatNumber>
+                    <StatHelpText>
+                      <NumberFormat
+                        thousandSeparator={true}
+                        value={coins.market_data.total_volume.btc}
+                        displayType="text"
+                        decimalScale={3}
+                      />{" "}
+                      BTC
+                    </StatHelpText>
+                  </Stat>
+                </Show>
 
-                  <StatHelpText>
-                    {coins.market_data.max_supply === null ? (
-                      <>-</>
-                    ) : (
-                      <>MAX {coins.market_data.max_supply}</>
-                    )}
-                  </StatHelpText>
-                </Stat>
+                <Hide below="md">
+                  <Stat borderWidth="2px" padding="10px">
+                    <StatLabel>24h Trading Volume </StatLabel>
+                    <StatNumber>
+                      $
+                      <NumberFormat
+                        thousandSeparator={true}
+                        value={coins.market_data.total_volume.usd}
+                        displayType="text"
+                        decimalScale={1}
+                      />
+                    </StatNumber>
+
+                    <StatHelpText>
+                      <NumberFormat
+                        thousandSeparator={true}
+                        value={coins.market_data.total_volume.btc}
+                        displayType="text"
+                        decimalScale={3}
+                      />{" "}
+                      BTC
+                    </StatHelpText>
+                  </Stat>
+                  <Stat
+                    borderWidth="2px"
+                    padding="10px"
+                    borderRightRadius="10px"
+                  >
+                    <StatLabel>Circulating Supply</StatLabel>
+                    <StatNumber>
+                      <NumberFormat
+                        thousandSeparator={true}
+                        value={coins.market_data.circulating_supply}
+                        displayType="text"
+                        decimalScale={1}
+                      />
+                    </StatNumber>
+
+                    <StatHelpText>
+                      {coins.market_data.max_supply === null ? (
+                        <>-</>
+                      ) : (
+                        <>MAX {coins.market_data.max_supply}</>
+                      )}
+                    </StatHelpText>
+                  </Stat>
+                </Hide>
               </Flex>
             </>
           )}
 
-          <br />
+          <div style={{ marginTop: "10px", marginBottom: "10px" }}>
+            {useScript(
+              "https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"
+            )}
 
-          {useScript(
-            "https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"
-          )}
-
-          <script src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></script>
-          <coingecko-coin-compare-chart-widget
-            coin-ids={id}
-            currency="usd"
-            locale="en"
-          ></coingecko-coin-compare-chart-widget>
-
-          <br />
+            <script src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></script>
+            <coingecko-coin-compare-chart-widget
+              coin-ids={id}
+              currency="usd"
+              locale="en"
+            ></coingecko-coin-compare-chart-widget>
+          </div>
 
           <Tabs>
             <TabList>
               <Tab>General</Tab>
+              <Tab>About</Tab>
               <Tab>Social</Tab>
               <Tab>Developer</Tab>
+              <Tab>Advanced</Tab>
+              <Tab>Top 100 Markets</Tab>
             </TabList>
 
             {loading == true ? (
@@ -351,13 +398,12 @@ export default function CoinPage() {
                       </Table>
                     </TableContainer>
 
-                    <br />
-
                     <h1
                       style={{
                         fontSize: "30px",
                         fontWeight: "700",
                         marginBottom: "10px",
+                        marginTop: "15px",
                       }}
                     >
                       Scores
@@ -420,6 +466,101 @@ export default function CoinPage() {
                   </Flex>
                 </TabPanel>
                 <TabPanel>
+                  <Wrap marginTop="20px">
+                    <Stat>
+                      <StatLabel>Name</StatLabel>
+                      <StatNumber fontSize="18px">
+                        {coins.name} ({coins.symbol})
+                      </StatNumber>
+                    </Stat>
+
+                    <Stat>
+                      <StatLabel>Website</StatLabel>
+                      <StatNumber fontSize="18px">
+                        <a href={coins.links.homepage[0]} target="_blank">
+                          {coins.links.homepage[0]}
+                        </a>
+                      </StatNumber>
+                    </Stat>
+
+                    <Stat>
+                      <StatLabel>Forum</StatLabel>
+                      <StatNumber fontSize="18px">
+                        <a
+                          href={coins.links.official_forum_url[0]}
+                          target="_blank"
+                        >
+                          {coins.links.official_forum_url[0]}
+                        </a>
+                      </StatNumber>
+                    </Stat>
+                  </Wrap>
+
+                  <Stat marginTop="20px">
+                    <StatLabel marginBottom="10px" fontSize="18px">
+                      Links
+                    </StatLabel>
+                    <StatNumber
+                      fontSize="15px"
+                      flexDirection="column"
+                      display="flex"
+                      color="#4299E1"
+                    >
+                      {coins.links.twitter_screen_name === "" ? (
+                        <></>
+                      ) : (
+                        <div style={{ display: "flex" }}>
+                          <BsTwitter size={20} style={{ marginRight: "5px" }} />
+                          <a
+                            href={`https://www.twitter.com/${coins.links.twitter_screen_name}`}
+                            target="_blank"
+                          >
+                            {`https://www.twitter.com/${coins.links.twitter_screen_name}`}
+                          </a>
+                        </div>
+                      )}
+
+                      {coins.links.facebook_username === "" ? (
+                        <></>
+                      ) : (
+                        <div style={{ display: "flex" }}>
+                          <BsFacebook
+                            size={20}
+                            style={{ marginRight: "5px" }}
+                          />
+                          <a
+                            href={`https://www.facebook.com/${coins.links.facebook_username}`}
+                            target="_blank"
+                          >
+                            {`https://www.facebook.com/${coins.links.facebook_username}`}
+                          </a>
+                        </div>
+                      )}
+
+                      {coins.links.subreddit_url === "" ? (
+                        <></>
+                      ) : (
+                        <div style={{ display: "flex" }}>
+                          <BsReddit size={20} style={{ marginRight: "5px" }} />
+                          <a href={coins.links.subreddit_url} target="_blank">
+                            {coins.links.subreddit_url}
+                          </a>
+                        </div>
+                      )}
+                    </StatNumber>
+                  </Stat>
+                </TabPanel>
+                <TabPanel>
+                  <h1
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: 700,
+                      marginBottom: "10px",
+                      marginTop: "10px",
+                    }}
+                  >
+                    Social Statistics
+                  </h1>
                   <Wrap>
                     <Box
                       padding="10px"
@@ -587,6 +728,38 @@ export default function CoinPage() {
                       </Flex>
                     </Box>
                   </Wrap>
+
+                  <h1
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: 700,
+                      marginBottom: "10px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    Today's Market Sentiment
+                  </h1>
+
+                  <div>
+                    <p style={{ textAlign: "left" }}>👍 Good</p>
+
+                    <Slider
+                      marginTop="0px"
+                      defaultValue={coins.sentiment_votes_up_percentage}
+                      min={0}
+                      max={100}
+                      step={30}
+                      disabled
+                    >
+                      <SliderTrack bg="rgb(245, 0, 87)">
+                        <Box position="relative" right={10} />
+                        <SliderFilledTrack bg="rgb(4, 209, 146)" />
+                      </SliderTrack>
+                      <SliderThumb boxSize={2} />
+                    </Slider>
+
+                    <p style={{ textAlign: "right" }}>👎 Bad</p>
+                  </div>
                 </TabPanel>
                 <TabPanel>
                   <Wrap>
@@ -771,6 +944,637 @@ export default function CoinPage() {
                     </Box>
                   </Wrap>
                 </TabPanel>
+                <TabPanel>
+                  <Flex flexDirection="column">
+                    <h1
+                      style={{
+                        fontSize: "22px",
+                        fontWeight: 700,
+                        marginBottom: "10px",
+                        marginTop: "10px",
+                      }}
+                    >
+                      Advanced Stats
+                    </h1>
+                    <TableContainer>
+                      <Table variant="simple">
+                        <Thead>
+                          <Tr>
+                            <Th></Th>
+                            <Th></Th>
+                          </Tr>
+                        </Thead>
+                        <Tbody>
+                          <Tr>
+                            <Td>Current Price</Td>
+                            <Td fontWeight="700">
+                              $
+                              <NumberFormat
+                                thousandSeparator={true}
+                                value={coins.market_data.current_price.usd}
+                                displayType="text"
+                              />
+                            </Td>
+                          </Tr>
+                          {coins.market_data.roi === null ? (
+                            <></>
+                          ) : (
+                            <Tr>
+                              <Td>{coins.name} ROI</Td>
+                              <Td fontWeight="700">
+                                <NumberFormat
+                                  thousandSeparator={true}
+                                  value={coins.market_data.roi.percentage}
+                                  displayType="text"
+                                  decimalScale={1}
+                                />
+                                %
+                              </Td>
+                            </Tr>
+                          )}
+
+                          <Tr>
+                            <Td>Market Cap</Td>
+                            <Td fontWeight="700">
+                              $
+                              <NumberFormat
+                                thousandSeparator={true}
+                                value={coins.market_data.market_cap.usd}
+                                displayType="text"
+                                decimalScale={1}
+                              />
+                            </Td>
+                          </Tr>
+                          <Tr>
+                            <Td>Market Cap Rank</Td>
+                            <Td fontWeight="700"># {coins.market_cap_rank}</Td>
+                          </Tr>
+                          <Tr>
+                            <Td>Trading Volume</Td>
+                            <Td fontWeight="700">
+                              $
+                              <NumberFormat
+                                thousandSeparator={true}
+                                value={coins.market_data.total_volume.usd}
+                                displayType="text"
+                                decimalScale={1}
+                              />
+                            </Td>
+                          </Tr>
+                          <Tr>
+                            <Td>Circulating Supply</Td>
+                            <Td fontWeight="700">
+                              <NumberFormat
+                                thousandSeparator={true}
+                                value={coins.market_data.circulating_supply}
+                                displayType="text"
+                                decimalScale={2}
+                              />
+                            </Td>
+                          </Tr>
+                          {coins.market_data.total_supply === null ? (
+                            <></>
+                          ) : (
+                            <Tr>
+                              <Td>Total Supply</Td>
+                              <Td fontWeight="700">
+                                <NumberFormat
+                                  thousandSeparator={true}
+                                  value={coins.market_data.total_supply}
+                                  displayType="text"
+                                  decimalScale={2}
+                                />
+                              </Td>
+                            </Tr>
+                          )}
+                          {coins.market_data.max_supply === null ? (
+                            <></>
+                          ) : (
+                            <Tr>
+                              <Td>Max Supply</Td>
+                              <Td fontWeight="700">
+                                <NumberFormat
+                                  thousandSeparator={true}
+                                  value={coins.market_data.max_supply}
+                                  displayType="text"
+                                  decimalScale={2}
+                                />
+                              </Td>
+                            </Tr>
+                          )}
+                          <Tr>
+                            <Td>24h Low / 24h High</Td>
+                            <Td fontWeight="700">
+                              $
+                              <NumberFormat
+                                thousandSeparator={true}
+                                value={coins.market_data.low_24h.usd}
+                                displayType="text"
+                                decimalScale={1}
+                              />{" "}
+                              / $
+                              <NumberFormat
+                                thousandSeparator={true}
+                                value={coins.market_data.high_24h.usd}
+                                displayType="text"
+                                decimalScale={1}
+                              />
+                            </Td>
+                          </Tr>
+                        </Tbody>
+                      </Table>
+                    </TableContainer>
+
+                    <h1
+                      style={{
+                        fontSize: "22px",
+                        fontWeight: 700,
+                        marginBottom: "10px",
+                        marginTop: "30px",
+                      }}
+                    >
+                      All Time Highs & Lows
+                    </h1>
+                    <TableContainer>
+                      <Table variant="simple">
+                        <Thead>
+                          <Tr>
+                            <Th></Th>
+                            <Th></Th>
+                          </Tr>
+                        </Thead>
+                        <Tbody>
+                          <Tr>
+                            <Td>All Time High Price</Td>
+                            <Td fontWeight="700">
+                              $
+                              <NumberFormat
+                                thousandSeparator={true}
+                                value={coins.market_data.ath.usd}
+                                displayType="text"
+                              />
+                            </Td>
+                          </Tr>
+                          <Tr>
+                            <Td>All Time High Percentage</Td>
+                            <Td fontWeight="700">
+                              {coins.market_data.ath_change_percentage.usd <
+                              0 ? (
+                                <p style={{ color: "rgb(245, 0, 87)" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data.ath_change_percentage
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              ) : (
+                                <p style={{ color: "#04d192" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data.ath_change_percentage
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              )}
+                            </Td>
+                          </Tr>
+                          <Tr>
+                            <Td>All Time High Date</Td>
+                            <Td fontWeight="700">
+                              {dateFormat(coins.market_data.ath_date.usd)}
+                            </Td>
+                          </Tr>
+
+                          <Tr>
+                            <Td>All Time Low Price</Td>
+                            <Td fontWeight="700">
+                              $
+                              <NumberFormat
+                                thousandSeparator={true}
+                                value={coins.market_data.atl.usd}
+                                displayType="text"
+                              />
+                            </Td>
+                          </Tr>
+                          <Tr>
+                            <Td>All Time Low Percentage</Td>
+                            <Td fontWeight="700">
+                              {coins.market_data.atl_change_percentage.usd <
+                              0 ? (
+                                <p style={{ color: "rgb(245, 0, 87)" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data.atl_change_percentage
+                                        .usd
+                                    }
+                                    thousandSeparator={true}
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              ) : (
+                                <p style={{ color: "#04d192" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data.atl_change_percentage
+                                        .usd
+                                    }
+                                    thousandSeparator={true}
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              )}
+                            </Td>
+                          </Tr>
+                          <Tr>
+                            <Td>All Time Low Date</Td>
+                            <Td fontWeight="700">
+                              {dateFormat(coins.market_data.atl_date.usd)}
+                            </Td>
+                          </Tr>
+                        </Tbody>
+                      </Table>
+                    </TableContainer>
+
+                    <h1
+                      style={{
+                        fontSize: "22px",
+                        fontWeight: 700,
+                        marginBottom: "10px",
+                        marginTop: "30px",
+                      }}
+                    >
+                      Price Change Percentage
+                    </h1>
+
+                    <TableContainer>
+                      <Table variant="simple">
+                        <Thead>
+                          <Tr>
+                            <Th></Th>
+                            <Th></Th>
+                          </Tr>
+                        </Thead>
+                        <Tbody>
+                          <Tr>
+                            <Td>Price Change Percentage 1h</Td>
+                            <Td fontWeight="700">
+                              {coins.market_data
+                                .price_change_percentage_1h_in_currency.usd <
+                              0 ? (
+                                <p style={{ color: "rgb(245, 0, 87)" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_1h_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              ) : (
+                                <p style={{ color: "#04d192" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_1h_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              )}
+                            </Td>
+                          </Tr>
+
+                          <Tr>
+                            <Td>Price Change Percentage 24h</Td>
+                            <Td fontWeight="700">
+                              {coins.market_data
+                                .price_change_percentage_24h_in_currency.usd <
+                              0 ? (
+                                <p style={{ color: "rgb(245, 0, 87)" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_24h_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              ) : (
+                                <p style={{ color: "#04d192" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_24h_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              )}
+                            </Td>
+                          </Tr>
+
+                          <Tr>
+                            <Td>Price Change Percentage 7d</Td>
+                            <Td fontWeight="700">
+                              {coins.market_data
+                                .price_change_percentage_7d_in_currency.usd <
+                              0 ? (
+                                <p style={{ color: "rgb(245, 0, 87)" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_7d_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              ) : (
+                                <p style={{ color: "#04d192" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_7d_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              )}
+                            </Td>
+                          </Tr>
+
+                          <Tr>
+                            <Td>Price Change Percentage 14d</Td>
+                            <Td fontWeight="700">
+                              {coins.market_data
+                                .price_change_percentage_14d_in_currency.usd <
+                              0 ? (
+                                <p style={{ color: "rgb(245, 0, 87)" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_14d_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              ) : (
+                                <p style={{ color: "#04d192" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_14d_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              )}
+                            </Td>
+                          </Tr>
+
+                          <Tr>
+                            <Td>Price Change Percentage 30d</Td>
+                            <Td fontWeight="700">
+                              {coins.market_data
+                                .price_change_percentage_30d_in_currency.usd <
+                              0 ? (
+                                <p style={{ color: "rgb(245, 0, 87)" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_30d_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              ) : (
+                                <p style={{ color: "#04d192" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_30d_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              )}
+                            </Td>
+                          </Tr>
+
+                          <Tr>
+                            <Td>Price Change Percentage 60d</Td>
+                            <Td fontWeight="700">
+                              {coins.market_data
+                                .price_change_percentage_60d_in_currency.usd <
+                              0 ? (
+                                <p style={{ color: "rgb(245, 0, 87)" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_60d_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              ) : (
+                                <p style={{ color: "#04d192" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_60d_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              )}
+                            </Td>
+                          </Tr>
+
+                          <Tr>
+                            <Td>Price Change Percentage 200d</Td>
+                            <Td fontWeight="700">
+                              {coins.market_data
+                                .price_change_percentage_200d_in_currency.usd <
+                              0 ? (
+                                <p style={{ color: "rgb(245, 0, 87)" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_200d_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              ) : (
+                                <p style={{ color: "#04d192" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_200d_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              )}
+                            </Td>
+                          </Tr>
+
+                          <Tr>
+                            <Td>Price Change Percentage 1year</Td>
+                            <Td fontWeight="700">
+                              {coins.market_data
+                                .price_change_percentage_1y_in_currency.usd <
+                              0 ? (
+                                <p style={{ color: "rgb(245, 0, 87)" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_1y_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              ) : (
+                                <p style={{ color: "#04d192" }}>
+                                  <NumberFormat
+                                    value={
+                                      coins.market_data
+                                        .price_change_percentage_1y_in_currency
+                                        .usd
+                                    }
+                                    decimalScale={1}
+                                    displayType="text"
+                                  />
+                                  %
+                                </p>
+                              )}
+                            </Td>
+                          </Tr>
+                        </Tbody>
+                      </Table>
+                    </TableContainer>
+                  </Flex>
+                </TabPanel>
+                <TabPanel>
+                  <h1
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: 700,
+                      marginBottom: "20px",
+                      marginTop: "10px",
+                    }}
+                  >
+                    Top 100 {coins.name} Markets
+                  </h1>
+                  <Flex flexDirection="column" justifyContent="center">
+                    <TableContainer>
+                      <Table variant="simple">
+                        <Thead>
+                          <Tr>
+                            <Th fontFamily="'Inter', sans-serif">Base</Th>
+                            <Th fontFamily="'Inter', sans-serif">Target</Th>
+
+                            <Th fontFamily="'Inter', sans-serif">Volume</Th>
+
+                            <Th fontFamily="'Inter', sans-serif">Market</Th>
+
+                            <HideMobile>
+                              <Th fontFamily="'Inter', sans-serif">
+                                Trade Url
+                              </Th>
+                            </HideMobile>
+                          </Tr>
+                        </Thead>
+                        <Tbody>
+                          {coins.tickers.map((ticker) => {
+                            return (
+                              <Tr>
+                                <Td>{ticker.base}</Td>
+                                <Td>{ticker.target}</Td>
+
+                                <Td>
+                                  $
+                                  <NumberFormat
+                                    thousandSeparator={true}
+                                    value={ticker.converted_volume.usd}
+                                    displayType="text"
+                                    decimalScale={0}
+                                  />
+                                </Td>
+
+                                <Td>{ticker.market.name}</Td>
+
+                                <HideMobile>
+                                  <Td color="#4299E1">
+                                    <a href={ticker.trade_url} target="_blank">
+                                      url
+                                    </a>
+                                  </Td>
+                                </HideMobile>
+                              </Tr>
+                            );
+                          })}
+                        </Tbody>
+                      </Table>
+                    </TableContainer>
+                  </Flex>
+                </TabPanel>
               </TabPanels>
             )}
           </Tabs>
@@ -788,6 +1592,7 @@ const Content = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-family: "Inter", sans-serif;
 `;
 
 const Title = styled.h1`
@@ -795,4 +1600,10 @@ const Title = styled.h1`
   font-size: 50px;
   font-weight: 700;
   text-align: center;
+`;
+
+const HideMobile = styled.div`
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;

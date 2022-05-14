@@ -15,6 +15,7 @@
     "ansi-regex": "^6.0.1",
     "axios": "^0.26.1",
     "chart.js": "^3.7.1",
+    "dateformat": "^5.0.3",
     "firebase": "^9.0.2",
     "framer-motion": "^4.1.17",
     "friendly-numbers": "^1.0.1",

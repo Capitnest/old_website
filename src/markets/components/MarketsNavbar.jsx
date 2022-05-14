@@ -17,10 +17,8 @@ import {
   Button,
   useDisclosure,
   Wrap,
-  InputGroup,
-  Input,
-  InputLeftElement,
   TabList,
+  useColorMode,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { SearchIcon } from "@chakra-ui/icons";
@@ -143,20 +141,63 @@ export default function MarketsNavbar() {
 }
 
 function CategoryList({ blogs }) {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <>
       {blogs.map((blog) => (
         <a href={`/markets/categories/${blog.link}`}>
-          <Box>{blog.name}</Box>
+          {colorMode === "dark" ? (
+            <>
+              <BoxDark>{blog.name}</BoxDark>
+            </>
+          ) : (
+            <>
+              <BoxWhite>{blog.name}</BoxWhite>
+            </>
+          )}
         </a>
       ))}
     </>
   );
 }
 
-const Box = styled.div`
-  border-radius: 12px;
+const BoxDark = styled.div`
+  border-radius: 4px;
+  border-width: 1px;
   padding: 6px 10px;
   border-width: 2px;
   margin-right: 10px;
+  background-color: #4a5568;
+  color: RGBA(255, 255, 255, 0.8);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  border-color: RGBA(255, 255, 255, 0.16);
+
+  &:hover {
+    color: #04d192;
+    transform: scale(1.01);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+  }
+`;
+
+const BoxWhite = styled.div`
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 6px 10px;
+  border-width: 2px;
+  margin-right: 10px;
+  background-color: rgb(240, 244, 248);
+  color: rgb(110, 125, 135);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  border-color: rgb(218, 221, 236);
+
+  &:hover {
+    color: #04d192;
+    transform: scale(1.01);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+  }
 `;
