@@ -16,32 +16,22 @@ const BlogItem = ({
   },
 }) => {
   return (
-    <div className="blogItem-wrap">
-      <a href={`/news/${id}`}>
-        <img className="blogItem-cover" src={cover} alt="cover" />
-      </a>
-      <div style={{ marginTop: "7px" }}>
-        <Badge colorScheme="green">{category}</Badge>
-      </div>
-      <a className="title" href={`/news/${id}`}>
-        <h3 style={{ fontWeight: "600", fontSize: "20px" }}>{title}</h3>
-      </a>
-      <p className="blogItem-desc">{description}</p>
-      <footer>
-        <div className="blogItem-author">
-          <img src={authorAvatar} alt="avatar" />
-          <div>
-            <h6>{authorName}</h6>
-            <p>{createdAt}</p>
-          </div>
+    <Link to={`/news/${id}`}>
+      <div className="blogItem-wrap">
+        <a href={`/news/${id}`}>
+          <img className="blogItem-cover" src={cover} alt="cover" />
+        </a>
+        <div style={{ marginTop: "7px" }}>
+          <Badge colorScheme="green">{category}</Badge>
         </div>
-        <Link className="blogItem-link" to={`/news/${id}`}>
-          <Button colorScheme="teal" size="sm">
-            Read More ➝
-          </Button>
-        </Link>
-      </footer>
-    </div>
+        <a className="title" href={`/news/${id}`}>
+          <h3 style={{ fontWeight: "600", fontSize: "22px" }}>{title}</h3>
+        </a>
+        <p className="blogItem-desc" style={{ fontSize: "14px" }}>
+          {description}
+        </p>
+      </div>
+    </Link>
   );
 };
 
