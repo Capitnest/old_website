@@ -31,14 +31,6 @@ export default function Profilepage() {
                 <Nav.Item>
                   <Nav.Link eventKey="first">Profile</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="second">Notifications</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="third" href="/">
-                    Dashboard
-                  </Nav.Link>
-                </Nav.Item>
               </Nav>
             </Col>
             <Col sm={9}>
@@ -49,10 +41,6 @@ export default function Profilepage() {
                   <Tab.Pane eventKey="first">
                     <Profile />
                   </Tab.Pane>
-                  <Tab.Pane eventKey="second">
-                    <Notifications />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey="third"></Tab.Pane>
                 </Tab.Content>
               </Content>
             </Col>
