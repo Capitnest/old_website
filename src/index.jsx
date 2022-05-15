@@ -9,14 +9,14 @@ import {
 } from "@chakra-ui/react";
 
 const theme = extendTheme({
-  // Initial color mode will be dark
-  initialColorMode: "dark",
+  config: {
+    initialColorMode: "dark",
+  },
 });
 
 ReactDOM.render(
   <>
     <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode={theme.initialColorMode} />
       <App />
     </ChakraProvider>
   </>,
