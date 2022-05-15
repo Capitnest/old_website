@@ -85,34 +85,6 @@ export default function Content() {
             borderColor="#6d4bd0"
             height="100%"
           >
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <img src="/images/nft.png" width="200px" />
-            </div>
-            <h1>NFTs</h1>
-            <p style={{ fontSize: "16px", marginTop: "5px" }}>
-              See the Upcomming NFTs & Information about them
-            </p>
-            <Center>
-              <a href="/nfts">
-                <Button colorScheme="green" size="sm" marginTop="7px">
-                  Explore
-                </Button>
-              </a>
-            </Center>
-          </Box>
-        </span>
-
-        <span>
-          <Box
-            maxW="sm"
-            borderWidth="2px"
-            borderRadius="lg"
-            overflow="hidden"
-            padding="10px"
-            backgroundColor={backgroundClr}
-            borderColor="#6d4bd0"
-            height="100%"
-          >
             <div>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <img src="/images/markets.png" width="200px" />
