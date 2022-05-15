@@ -27,29 +27,15 @@ export default function Footerr() {
               url: "/dashboard",
             },
             {
+              title: "Profile",
+              url: "/profile",
+            },
+            {
               title: "Forgot Password",
               url: "/forgot-password",
             },
           ],
         },
-        // {
-        //   title: "Company",
-        //   items: [
-        //     {
-        //       title: "About Us",
-        //       url: "/company#about",
-        //     },
-        //     {
-        //       title: "Team",
-        //       url: "/company#team",
-        //     },
-        //     {
-        //       title: "Career",
-        //       url: "https://kitchen.alipay.com/",
-        //       description: "Join our Team",
-        //     },
-        //   ],
-        // },
         {
           title: "Legal",
 
