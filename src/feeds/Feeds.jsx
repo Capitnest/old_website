@@ -11,6 +11,7 @@ import {
   useColorMode,
   Box,
   Container,
+  Button,
 } from "@chakra-ui/react";
 import styled from "styled-components";
 import Influencer from "./components/Influencer";
@@ -65,17 +66,7 @@ export default function Feeds() {
             </LeftSide>
 
             <MiddleSide>
-              <Search
-                style={{
-                  backgroundColor: () => {
-                    if (colorMode === "dark") {
-                      return "#fff";
-                    } else {
-                      return "#fff";
-                    }
-                  },
-                }}
-              >
+              <Search>
                 {colorMode === "dark" ? (
                   <SearchBarDark
                     value={searchKey}
@@ -98,7 +89,7 @@ export default function Feeds() {
                   display: "flex",
                   justifyContent: "center",
                   flexDirection: "column",
-                  marginTop: "50px",
+                  marginTop: "75px",
                 }}
               >
                 {!blogs.length ? (

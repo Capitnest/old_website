@@ -121,8 +121,13 @@ export default function CoinPage() {
                   <StatHelpText fontSize="1.2rem" fontWeight="700">
                     {coins.market_data.price_change_percentage_24h < 0 ? (
                       <>
-                        <StatArrow type="decrease" />
-                        {coins.market_data.price_change_percentage_24h}%
+                        <StatArrow
+                          type="decrease"
+                          color="var(--chakra-colors-red-400)"
+                        />
+                        <span style={{ color: "var(--chakra-colors-red-400)" }}>
+                          {coins.market_data.price_change_percentage_24h}%
+                        </span>
                       </>
                     ) : (
                       <>

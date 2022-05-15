@@ -6,6 +6,8 @@ import {
   InputRightElement,
   Spacer,
   useColorMode,
+  Flex,
+  Button,
 } from "@chakra-ui/react";
 import { CloseIcon, Search2Icon } from "@chakra-ui/icons";
 import styled from "styled-components";
@@ -86,7 +88,30 @@ export const SearchBarDark = ({
         </InputGroup>
       </form>
     </FormDark>
-    <br />
+    <Flex marginTop="7px" fontsize="16px">
+      <Button padding="0px" size="sm">
+        1d
+      </Button>
+      <Button variant="link" disabled>
+        1w
+      </Button>
+      <Button variant="link" disabled>
+        1m
+      </Button>
+      <Button variant="link" disabled>
+        3m
+      </Button>
+      <Button variant="link" disabled>
+        6m
+      </Button>
+      <Button variant="link" disabled>
+        1y
+      </Button>
+      <Button variant="link" disabled>
+        max
+      </Button>
+    </Flex>
+    <div style={{ height: "7px" }}></div>
   </ContentDark>
 );
 

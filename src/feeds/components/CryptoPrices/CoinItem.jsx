@@ -38,12 +38,12 @@ export default function CoinItem(props) {
 
             <div style={{ display: "flex", justifyContent: "right" }}>
               {props.coins.price_change_percentage_24h < 2 ? (
-                <p style={{ color: "red" }}>
+                <p style={{ color: "var(--chakra-colors-red-500)" }}>
                   {" "}
                   {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
                 </p>
               ) : (
-                <p style={{ color: "green" }}>
+                <p style={{ color: "var(--chakra-colors-green-400)" }}>
                   {" "}
                   {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
                 </p>
@@ -78,12 +78,12 @@ export default function CoinItem(props) {
 
             <div style={{ display: "flex", justifyContent: "right" }}>
               {props.coins.price_change_percentage_24h < 2 ? (
-                <p style={{ color: "red" }}>
+                <p style={{ color: "var(--chakra-colors-red-400)" }}>
                   {" "}
                   {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
                 </p>
               ) : (
-                <p style={{ color: "green" }}>
+                <p style={{ color: "var(--chakra-colors-green-400)" }}>
                   {" "}
                   {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
                 </p>

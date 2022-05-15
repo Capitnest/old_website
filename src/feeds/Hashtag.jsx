@@ -10,6 +10,7 @@ import {
   WrapItem,
   useColorMode,
   Box,
+  Button,
   Badge,
   Container,
 } from "@chakra-ui/react";
@@ -18,11 +19,11 @@ import styled from "styled-components";
 import Influencer from "./components/Influencer";
 import useScript from "./../functions/useScript";
 import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
-import CryptoPrices from "./components/CryptoPrices";
 import { Link, useParams } from "react-router-dom";
 import Footer from "./../components/Footer";
 import InfiniteScroll from "react-infinite-scroll-component";
 import HashtagsNav from "./components/HashtagsNav";
+import Coins from "./components/CryptoPrices/Coins";
 
 export default function Hashtag() {
   const { id } = useParams();
@@ -67,31 +68,89 @@ export default function Hashtag() {
             </HashtagComponent>
 
             <LeftSide>
-              <h1
-                style={{
-                  fontFamily: '"Inter", sans-serif',
-                  fontSize: "25px",
-                  fontWeight: 700,
-                }}
-              >
-                Posts about{" "}
-                <Link to="/feeds">
-                  <Badge
-                    marginBottom="5px"
-                    colorScheme="green"
-                    fontSize="20px"
-                    padding="2px 10px"
+              {colorMode === "dark" ? (
+                <>
+                  <Box
+                    maxW="lg"
+                    backgroundColor="rgb(26, 32, 44)"
+                    color="white"
+                    marginRight="20px"
+                    padding="5px 10px"
+                    height="60px"
+                    marginTop="-30px"
+                    width="100%"
+                    position="fixed"
+                    zIndex="2"
                   >
-                    #{id} <CloseIcon w={4} h={4} marginBottom="4px" />
-                  </Badge>
-                </Link>
-              </h1>
+                    <h1
+                      style={{
+                        fontFamily: '"Inter", sans-serif',
+                        fontSize: "25px",
+                        fontWeight: 700,
+                        position: "fixed",
+                        marginTop: "20px",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      Posts about{" "}
+                      <Link to="/feeds">
+                        <Badge
+                          marginBottom="5px"
+                          colorScheme="green"
+                          fontSize="20px"
+                          padding="2px 10px"
+                        >
+                          {id} <CloseIcon w={4} h={4} marginBottom="4px" />
+                        </Badge>
+                      </Link>
+                    </h1>
+                  </Box>
+                </>
+              ) : (
+                <>
+                  <Box
+                    maxW="lg"
+                    backgroundColor="white"
+                    marginRight="20px"
+                    padding="5px 10px"
+                    height="60px"
+                    marginTop="-30px"
+                    width="100%"
+                    position="fixed"
+                    zIndex="2"
+                  >
+                    <h1
+                      style={{
+                        fontFamily: '"Inter", sans-serif',
+                        fontSize: "25px",
+                        fontWeight: 700,
+                        position: "fixed",
+                        marginTop: "20px",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      Posts about{" "}
+                      <Link to="/feeds">
+                        <Badge
+                          marginBottom="5px"
+                          colorScheme="green"
+                          fontSize="20px"
+                          padding="2px 10px"
+                        >
+                          {id} <CloseIcon w={4} h={4} marginBottom="4px" />
+                        </Badge>
+                      </Link>
+                    </h1>
+                  </Box>
+                </>
+              )}
 
               <div
                 style={{
                   display: "flex",
                   justifyContent: "center",
                   flexDirection: "column",
+                  marginTop: "20px",
                 }}
               >
                 <InfiniteScroll dataLength={blogs.length}>
@@ -143,7 +202,7 @@ export default function Hashtag() {
                     <Link to="/markets">Top Social Cryptocurrencies</Link>
                   </Linkk>
                 </SmallerTitle>
-                <CryptoPrices />
+                <Coins />
               </RightNavbar>
             </div>
           </div>
