@@ -6,6 +6,14 @@ import {
   useColorMode,
   useColorModeValue,
   Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
 } from "@chakra-ui/react";
 import React, { useState, useRef } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
@@ -24,6 +32,10 @@ export function Navbar() {
 
   // const { logout, currentUser } = useAuth()
   const { logout, currentUser } = useAuth();
+
+  function signOut() {
+    return auth.signOut();
+  }
 
   return (
     <>
@@ -88,9 +100,41 @@ export function Navbar() {
                 </a>
               )}
               {currentUser && (
-                <a href="/profile">
-                  <IconButton variant="ghost" icon={<CgProfile size={25} />} />
-                </a>
+                <Menu>
+                  <MenuButton
+                    as={IconButton}
+                    aria-label="Options"
+                    icon={
+                      <CgProfile
+                        size={25}
+                        color={colorMode === "dark" ? "white" : "black"}
+                      />
+                    }
+                    variant="link"
+                  />
+                  <MenuList>
+                    <MenuItem>
+                      <Link to="/" style={{ color: "inherit" }}>
+                        Dashboard
+                      </Link>
+                    </MenuItem>
+                    <MenuItem>
+                      <Link to="/profile" style={{ color: "inherit" }}>
+                        Settings
+                      </Link>
+                    </MenuItem>
+                    <MenuDivider />
+                    <MenuItem color="danger">
+                      <Button
+                        onClick={signOut}
+                        variant="link"
+                        colorScheme="red"
+                      >
+                        👋 Sign Out
+                      </Button>
+                    </MenuItem>
+                  </MenuList>
+                </Menu>
               )}
             </Navbarr.Collapse>
 
