@@ -100,10 +100,8 @@ const ContentLight = styled.div`
 `;
 
 const FormLight = styled.div`
-  -moz-box-shadow: 0 0 3px #ccc;
-  -webkit-box-shadow: 0 0 3px #ccc;
-  box-shadow: 0 0 3px #ccc;
   border-radius: 8px;
+  border-width: 2px;
 `;
 
 const ContentDark = styled.div`
@@ -118,4 +116,6 @@ const ContentDark = styled.div`
 const FormDark = styled.div`
   border-width: 2px;
   border-radius: 8px;
+
+  background-color: #1f2434;
 `;

@@ -12,7 +12,7 @@ export default function HashtagsNav() {
       {colorMode === "dark" ? (
         <Box
           maxW="md"
-          borderWidth="1px"
+          borderWidth="2px"
           borderRadius="lg"
           overflow="hidden"
           backgroundColor="#1f2434"
@@ -63,7 +63,7 @@ export default function HashtagsNav() {
       ) : (
         <Box
           maxW="md"
-          borderWidth="1px"
+          borderWidth="2px"
           borderRadius="lg"
           overflow="hidden"
           backgroundColor="var(--chakra-colors-gray-100)"

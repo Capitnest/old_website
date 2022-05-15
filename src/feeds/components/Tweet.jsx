@@ -34,11 +34,11 @@ export default function Tweet({
         <Content>
           <Box
             maxW="lg"
-            borderWidth="3px"
+            borderWidth="2px"
             borderRadius="lg"
             overflow="hidden"
             padding="5px"
-            borderColor="#019165"
+            borderColor="#04d192"
             backgroundColor="rgb(18, 22, 31)"
           >
             <Wrap>
@@ -88,11 +88,11 @@ export default function Tweet({
         <Content>
           <Box
             maxW="lg"
-            borderWidth="3px"
+            borderWidth="2px"
             borderRadius="lg"
             overflow="hidden"
             padding="5px"
-            borderColor="#019165"
+            borderColor="#04d192"
             backgroundColor="var(--chakra-colors-gray-100)"
           >
             <Wrap>
