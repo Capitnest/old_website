@@ -56,23 +56,41 @@ export default function CoinItem(props) {
         <CoinRowLight>
           <ImgSymbol>
             <img src={props.coins.image} alt="" />
-            <p>{props.coins.name}</p>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <p
+                style={{
+                  textTransform: "uppercase",
+                  fontWeight: 700,
+                  fontSize: "20px",
+                }}
+              >
+                {props.coins.symbol}
+              </p>
+              <p>{props.coins.name}</p>
+            </div>
           </ImgSymbol>
-          <p>
-            <Numeral value={props.coins.current_price} format={"0.0"} />$
-          </p>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <p
+              style={{ fontWeight: 700, fontSize: "20px", textAlign: "right" }}
+            >
+              <Numeral value={props.coins.current_price} format={"0.0"} />$
+            </p>
 
-          {props.coins.price_change_percentage_24h < 2 ? (
-            <p style={{ color: "red" }}>
-              {" "}
-              {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
-            </p>
-          ) : (
-            <p style={{ color: "green" }}>
-              {" "}
-              {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
-            </p>
-          )}
+            <div style={{ display: "flex", justifyContent: "right" }}>
+              {props.coins.price_change_percentage_24h < 2 ? (
+                <p style={{ color: "red" }}>
+                  {" "}
+                  {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
+                </p>
+              ) : (
+                <p style={{ color: "green" }}>
+                  {" "}
+                  {props.coins.price_change_percentage_24h.toFixed(2)}%{" "}
+                </p>
+              )}{" "}
+              <p style={{ marginLeft: "5px" }}>24h</p>
+            </div>
+          </div>
         </CoinRowLight>
       )}
     </a>
@@ -85,8 +103,7 @@ const CoinRowDark = styled.div`
   align-items: center;
   box-shadow: 0px 0px 12px #18191b;
   background-color: #1f2434;
-  color: #ffffff;
-  border-width: 1px;
+  border-width: 2px;
 
   border-radius: 8px;
   margin-top: 10px;
@@ -103,11 +120,13 @@ const CoinRowLight = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 0px 4px #18191b;
-  background-color: #fff;
+
+  background-color: var(--chakra-colors-gray-100);
+  border-width: 2px;
+
   border-radius: 8px;
   margin-top: 10px;
-  padding: 0.7rem 1rem;
+  padding: 0.3rem 0.5rem;
 
   &:hover {
     transform: scale(1.04);
