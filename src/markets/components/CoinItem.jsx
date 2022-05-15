@@ -69,7 +69,7 @@ export default function CoinItem(props) {
                 %
               </p>
             ) : (
-              <p style={{ color: "rgb(33, 247, 158)" }}>
+              <p style={{ color: "var(--chakra-colors-green-400)" }}>
                 <NumberFormat
                   value={props.coins.price_change_percentage_24h}
                   decimalScale={1}
