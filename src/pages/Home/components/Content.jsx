@@ -185,14 +185,14 @@ const Component = styled.div`
   span {
     margin-right: 10px;
     margin-left: 10px;
-    width: 220px;
+    width: 250px;
 
     @media (max-width: 1000px) {
-      width: 200px;
+      width: 250px;
     }
 
     @media (max-width: 950px) {
-      width: 180px;
+      width: 250px;
     }
 
     @media (max-width: 850px) {
