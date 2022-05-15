@@ -101,15 +101,25 @@ export default function Feeds() {
                   marginTop: "50px",
                 }}
               >
-                <InfiniteScroll dataLength={blogs.length}>
-                  {blogs.map((tweet) => (
+                {!blogs.length ? (
+                  <h1
+                    style={{
+                      fontSize: "30px",
+                      marginBottom: "100%",
+                      marginTop: "10px",
+                    }}
+                  >
+                    No results found :(
+                  </h1>
+                ) : (
+                  blogs.map((tweet) => (
                     <div style={{ marginTop: "10px", marginBottom: "10px" }}>
                       <WrapItem>
                         <Tweet blog={tweet} />
                       </WrapItem>
                     </div>
-                  ))}
-                </InfiniteScroll>
+                  ))
+                )}
               </div>
             </MiddleSide>
 
