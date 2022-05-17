@@ -1,18 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { Search2Icon } from "@chakra-ui/icons";
+import dateFormat from "dateformat";
 
 const Header = () => (
   <NewsHeader>
     <br />
     <div style={{ display: "flex", justifyContent: "center" }}>
       <h1>News</h1>
-      <a href="#search" style={{ marginTop: "24px", marginLeft: "7px" }}>
-        <Search2Icon />
-      </a>
     </div>
     <p style={{ marginTop: "-15px" }}>
-      Get the most recent news about crypto & nfts
+      {dateFormat(new Date(), "mmmm dS, yyyy")}
+      <a href="#search" style={{ marginLeft: "7px" }}>
+        <Search2Icon />
+      </a>
     </p>
   </NewsHeader>
 );
@@ -28,18 +29,17 @@ const NewsHeader = styled.header`
   }
 
   h1 {
-    font-size: 3rem;
-    color: #04d192;
+    font-size: 4rem;
+
     margin-bottom: 1rem;
     font-weight: 600;
   }
 
   h1 span {
-    color: #00ad79;
   }
 
   p {
-    color: #a9a9a9;
+    font-size: 20px;
     font-weight: 500;
   }
 `;

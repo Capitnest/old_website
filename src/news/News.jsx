@@ -6,6 +6,7 @@ import { blogList } from "./data/data";
 import Header from "./components/Header";
 import Featured from "./components/Featured/Featured";
 import { Layout } from "../components/Layout";
+import Footer from "../components/Footer";
 
 import styled from "styled-components";
 
@@ -35,72 +36,92 @@ const Home = () => {
   };
 
   return (
-    <Layout>
-      <Content>
-        {/* Page Header */}
+    <>
+      <Layout>
+        <Content>
+          {/* Page Header */}
 
-        <Header />
+          <Header />
 
-        <Featured />
+          <Featured />
 
-        <a name="search" />
+          <a name="search" />
+          <br />
+          <br />
+          <br />
 
-        <br />
-        <br />
+          {/* Blog List & Empty View */}
+          <div>
+            <LatestNews>
+              <h1>Latest News</h1>
+              {/* Search Bar */}
 
-        {/* Blog List & Empty View */}
-        <div>
-          <div style={{ display: "flex", marginBottom: "10px" }}>
-            <h1
-              style={{
-                fontFamily: '"Inter", sans-serif',
-                fontSize: "30px",
-                fontWeight: 600,
-                fontStyle: "italic",
-                marginBottom: "10px",
-                marginTop: "10px",
-              }}
-            >
-              Latest News
-            </h1>
-            {/* Search Bar */}
+              <SearchBox>
+                <SearchBar
+                  value={searchKey}
+                  clearSearch={handleClearSearch}
+                  formSubmit={handleSearchBar}
+                  handleSearchKey={(e) => setSearchKey(e.target.value)}
+                />
+              </SearchBox>
+            </LatestNews>
 
             <div
               style={{
                 display: "flex",
                 justifyContent: "center",
-                marginTop: "8px",
-                marginLeft: "13%",
+                marginTop: "10px",
               }}
             >
-              <SearchBar
-                value={searchKey}
-                clearSearch={handleClearSearch}
-                formSubmit={handleSearchBar}
-                handleSearchKey={(e) => setSearchKey(e.target.value)}
-              />
+              {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
             </div>
           </div>
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
-          </div>
-        </div>
-      </Content>
-    </Layout>
+        </Content>
+      </Layout>
+      <Footer />
+    </>
   );
 };
 
 export default Home;
 
-const Content = styled.div`
-  margin-top: 50px;
+const LatestNews = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 
+  @media (max-width: 800px) {
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+`;
+
+const SearchBox = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  margin-left: 13%;
+  width: 100%;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+`;
+
+const Content = styled.div`
   *,
   *::after,
   *::before {

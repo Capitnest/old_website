@@ -39,8 +39,7 @@ export default function SearchBar({
               backgroundColor="#4A5568"
               borderRadius="4px"
               borderWidth="1px"
-              boxShadow="RGBA(255, 255, 255, 0.16) 0px 1px 2px 0px"
-              borderColor="RGBA(255, 255, 255, 0.16)"
+              borderColor="#718096"
               value={value}
               onChange={handleSearchKey}
             />
@@ -51,12 +50,9 @@ export default function SearchBar({
               placeholder="Search"
               fontSize="16px"
               fontFamily='"Inter", sans-serif'
-              color="rgb(110, 125, 135)"
-              backgroundColor="rgb(240, 244, 248)"
               borderRadius="4px"
               borderWidth="1px"
-              boxShadow="rgb(221, 225, 227) 0px 1px 2px 0px"
-              borderColor="rgb(218, 221, 236)"
+              borderColor="#718096"
               value={value}
               onChange={handleSearchKey}
             />

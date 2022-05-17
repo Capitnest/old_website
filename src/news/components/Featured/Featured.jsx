@@ -1,14 +1,12 @@
 import { Spacer } from "@chakra-ui/react";
 import React from "react";
 import styled from "styled-components";
-import useScript from "../../../functions/useScript";
 
 export default function Featured() {
   const FeaturedImg =
     "https://static.news.bitcoin.com/wp-content/uploads/2022/03/shutterstock_1261992364.jpg";
   const FeaturedTitle =
     "EU Policymakers may vote on Environmental Standard that could Ban some Cryptocurrencies";
-  const FeaturedDate = "March 14, 2022";
 
   const PopularImgOne =
     "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcryptogazette.com%2Fwp-content%2Fuploads%2F2020%2F01%2Felon-musk-1024x597.png&f=1&nofb=1";
@@ -29,57 +27,43 @@ export default function Featured() {
     <>
       <Content>
         <Feature>
-          <h1 style={{ fontStyle: "italic" }}>Featured</h1>
+          <h1>Featured</h1>
           <a href="/news/5">
             <img src={FeaturedImg} />
           </a>
           <a href="/news/5">
             <h1 style={{ marginTop: "10px" }}>{FeaturedTitle}</h1>
           </a>
-          <p>{FeaturedDate}</p>
-          {useScript("https://www.livecoinwatch.com/static/lcw-widget.js")}
-          <script
-            defer
-            src="https://www.livecoinwatch.com/static/lcw-widget.js"
-          ></script>{" "}
-          <div
-            class="livecoinwatch-widget-5"
-            lcw-base="USD"
-            lcw-color-tx="#abb8c3"
-            lcw-marquee-1="coins"
-            lcw-marquee-2="movers"
-            lcw-marquee-items="10"
-          ></div>
+          <span>
+            <hr />
+          </span>
         </Feature>
         <Spacer />
         <Popular>
           <h1>Popular</h1>
           <PopularList>
             <PopularArticle>
-              <a href="/news/4">
-                <img src={PopularImgOne} />
-              </a>
-              <a href="/news/4">
-                <h2>{PopularTitleOne}</h2>
-              </a>
+              <span>
+                <a href="/news/4">
+                  <img src={PopularImgOne} />
+                </a>
+                <a href="/news/4">
+                  <h2>{PopularTitleOne}</h2>
+                </a>
+              </span>
             </PopularArticle>
             <PopularArticle>
-              <a href="/news/2">
-                <img src={PopularImgTwo} />
-              </a>
-              <a href="/news/2">
-                <h2>{PopularTitleTwo}</h2>
-              </a>
-            </PopularArticle>
-            <PopularArticle>
-              <a href="/news/3">
-                <img src={PopularImgThree} />
-              </a>
-              <a href="/news/3">
-                <h2>{PopularTitleThree}</h2>
-              </a>
+              <div>
+                <a href="/news/2">
+                  <img src={PopularImgTwo} />
+                </a>
+                <a href="/news/2">
+                  <h2>{PopularTitleTwo}</h2>
+                </a>
+              </div>
             </PopularArticle>
           </PopularList>
+          <hr />
         </Popular>
       </Content>
     </>
@@ -103,6 +87,10 @@ const Feature = styled.div`
   width: 70%;
   flex-wrap: wrap;
 
+  span {
+    display: none;
+  }
+
   h1 {
     font-size: 30px;
     font-weight: 600;
@@ -118,6 +106,11 @@ const Feature = styled.div`
   @media (max-width: 800px) {
     width: 90%;
     margin-left: 5%;
+    margin-bottom: 20px;
+
+    span {
+      display: inline;
+    }
   }
 `;
 
@@ -126,19 +119,27 @@ const Popular = styled.div`
   flex-direction: column;
   width: 25%;
 
+  hr {
+    display: none;
+  }
+
   h1 {
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 10px;
-    font-style: italic;
   }
 
   @media (max-width: 800px) {
     width: 90%;
     margin-left: 4%;
+    margin-top: 0px;
 
     h1 {
       margin-left: 1%;
+    }
+
+    hr {
+      display: inline;
     }
   }
 `;
@@ -149,6 +150,7 @@ const PopularList = styled.div`
 
   @media (max-width: 800px) {
     flex-direction: row;
+    margin-bottom: 20px;
   }
 
   @media (max-width: 600px) {
@@ -161,8 +163,14 @@ const PopularArticle = styled.div`
   flex-direction: column;
 
   h2 {
+    font-size: 20px;
+    font-weight: bold;
     margin-top: 5px;
     margin-bottom: 5px;
+  }
+
+  div {
+    margin-top: 20px;
   }
 
   a {
@@ -172,8 +180,16 @@ const PopularArticle = styled.div`
   }
 
   @media (max-width: 800px) {
-    margin-right: 1%;
-    margin-left: 1%;
+    flex: 1 0 50%;
+
+    span {
+      margin-right: 10px;
+    }
+
+    div {
+      margin-top: 0px;
+      margin-left: 10px;
+    }
   }
 
   @media (max-width: 600px) {
