@@ -56,7 +56,11 @@ export function Navbar() {
           boxShadow: "0 2px 2px -2px gray",
         }}
       >
-        <Navbarr expand="md" variant={colorMode === "dark" ? "dark" : "light"}>
+        <Navbarr
+          expand="md"
+          variant={colorMode === "dark" ? "dark" : "light"}
+          style={{ justifyContent: "space-between" }}
+        >
           <Container>
             <Navbarr.Brand>
               <Link to="/">
@@ -138,7 +142,7 @@ export function Navbar() {
               )}
             </Navbarr.Collapse>
 
-            <ThemeIconColapse>
+            <div style={{ display: "flex" }}>
               <IconButton
                 variant="ghost"
                 marginLeft="10px"
@@ -148,45 +152,24 @@ export function Navbar() {
                 }}
                 aria-label="toggle-dark-mode"
               />
-            </ThemeIconColapse>
-            <Navbarr.Toggle aria-controls="basic-navbar-nav">
-              {colorMode === "dark" ? (
-                <GiHamburgerMenu size={25} color="white" />
-              ) : (
-                <GiHamburgerMenu size={25} color="black" />
-              )}
-            </Navbarr.Toggle>
+
+              <Navbarr.Toggle
+                aria-controls="basic-navbar-nav"
+                style={{ marginRight: "1%" }}
+              >
+                {colorMode === "dark" ? (
+                  <GiHamburgerMenu size={25} color="white" />
+                ) : (
+                  <GiHamburgerMenu size={25} color="black" />
+                )}
+              </Navbarr.Toggle>
+            </div>
           </Container>
         </Navbarr>
       </div>
     </>
   );
 }
-
-/*
-Make the theme IconButton be on the left side next to the 
-menu button, idk how to make it fixed so I am basically moving it
-to the left manually
-*/
-const ThemeIconColapse = styled.div`
-  @media (max-width: 767px) {
-    margin-left: 37%;
-    display: flex;
-    justify-content: right;
-  }
-
-  @media (max-width: 541px) {
-    margin-left: 30%;
-  }
-
-  @media (max-width: 500px) {
-    margin-left: 25%;
-  }
-
-  @media (max-width: 450px) {
-    margin-left: 20%;
-  }
-`;
 
 const Title = styled.h1`
   font-family: "Inter", sans-serif;
@@ -199,5 +182,15 @@ const Title = styled.h1`
 
   &:hover {
     color: #04b681;
+  }
+
+  @media (max-width: 350px) {
+    font-size: 24px;
+    margin-top: 6px;
+  }
+
+  @media (max-width: 310px) {
+    font-size: 18px;
+    margin-top: 7px;
   }
 `;
