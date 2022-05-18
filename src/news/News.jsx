@@ -43,7 +43,9 @@ const Home = () => {
 
           <Header />
 
-          <Featured />
+          <div style={{ marginTop: "20px" }}>
+            <Featured />
+          </div>
 
           <a name="search" />
           <br />
@@ -70,7 +72,7 @@ const Home = () => {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                marginTop: "10px",
+                marginTop: "30px",
               }}
             >
               {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
