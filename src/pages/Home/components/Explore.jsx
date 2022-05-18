@@ -21,7 +21,6 @@ export default function Explore() {
       <FilterImage>
         <img
           src="https://cdni.iconscout.com/illustration/premium/thumb/man-working-on-nft-blockchain-5017552-4173581.png"
-          style={{ marginTop: "-50px" }}
           width="1200px"
         />
       </FilterImage>
@@ -130,6 +129,46 @@ const Content = styled.div`
     img {
       width: 450px;
     }
+
+    h1 {
+      margin-top: 0px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    p {
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 365px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 340px) {
+    h1 {
+      font-size: 25px;
+    }
+  }
+
+  @media (max-width: 310px) {
+    h1 {
+      font-size: 22px;
+    }
   }
 `;
 
@@ -146,7 +185,7 @@ const FilterImage = styled.div`
   }
 
   @media (max-width: 1100px) {
-    margin-top: 35px;
+    margin-top: 0px;
   }
 `;
 

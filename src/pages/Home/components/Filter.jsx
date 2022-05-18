@@ -124,6 +124,28 @@ const Content = styled.div`
       font-size: 35px;
     }
   }
+
+  @media (max-width: 370px) {
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 310px) {
+    h1 {
+      font-size: 27px;
+    }
+  }
+
+  @media (max-width: 285px) {
+    h1 {
+      font-size: 25px;
+    }
+  }
 `;
 
 const FilterImage = styled.div`

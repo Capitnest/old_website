@@ -127,6 +127,7 @@ const Head = styled.div`
   }
 
   @media (max-width: 750px) {
+    margin-top: 0px;
     img {
       width: 1000px;
       margin-top: 70px;
@@ -185,6 +186,28 @@ const Head = styled.div`
 
     h1 {
       font-size: 41px;
+    }
+  }
+
+  @media (max-width: 330px) {
+    h1 {
+      font-size: 37px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 300px) {
+    h1 {
+      font-size: 34px;
+    }
+  }
+
+  @media (max-width: 280px) {
+    h1 {
+      font-size: 30px;
     }
   }
 `;

@@ -5,6 +5,7 @@ import {
   CircularProgress,
   CircularProgressLabel,
   useColorMode,
+  Center,
 } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 import styled from "styled-components";
@@ -12,10 +13,19 @@ import styled from "styled-components";
 export default function Stats() {
   const { colorMode, toggleColorMode } = useColorMode();
 
-  // choose the background color in
+  // choose the border color
+  function borderClr() {
+    if (colorMode == "light") {
+      return "rgba(0, 0, 0, 0.80)";
+    } else {
+      return "rgba(0, 0, 0, 0.24)";
+    }
+  }
+
+  // choose the background color
   function backgroundClr() {
     if (colorMode == "light") {
-      return "#fafafa";
+      return "rgba(0, 0, 0, 0.08)";
     } else {
       return "#2D3748";
     }
@@ -23,7 +33,7 @@ export default function Stats() {
 
   return (
     <>
-      <Statss>
+      <BigScreen>
         <span>
           <Box
             maxW="sm"
@@ -31,6 +41,7 @@ export default function Stats() {
             borderRadius="lg"
             overflow="hidden"
             padding="10px"
+            borderColor={borderClr}
             background={backgroundClr}
           >
             <div style={{ display: "flex", justifyContent: "center" }}>
@@ -47,6 +58,7 @@ export default function Stats() {
             borderRadius="lg"
             overflow="hidden"
             padding="10px"
+            borderColor={borderClr}
             background={backgroundClr}
           >
             <CircularProgress
@@ -76,6 +88,7 @@ export default function Stats() {
             borderRadius="lg"
             overflow="hidden"
             padding="10px"
+            borderColor={borderClr}
             background={backgroundClr}
           >
             <div style={{ display: "flex", justifyContent: "center" }}>
@@ -87,7 +100,75 @@ export default function Stats() {
             </p>
           </Box>
         </span>
-      </Statss>
+      </BigScreen>
+
+      <Center>
+        <SmallScreen>
+          <div>
+            <Box
+              maxW="sm"
+              borderWidth="2px"
+              borderRadius="lg"
+              overflow="hidden"
+              padding="8px"
+              borderColor={borderClr}
+              background={backgroundClr}
+            >
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <img src="/images/post.png" width="100px" />
+              </div>
+              <h1>536k</h1>
+              <p>Posts Filtered Through</p>
+            </Box>
+          </div>
+          <span>
+            <Box
+              maxW="sm"
+              borderWidth="2px"
+              borderRadius="lg"
+              overflow="hidden"
+              padding="8px"
+              marginTop="5px"
+              borderColor={borderClr}
+              background={backgroundClr}
+            >
+              <CircularProgress
+                value={100}
+                color="#04d192"
+                size="120px"
+                style={{
+                  textAlign: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <CircularProgressLabel>
+                  <h3 style={{ fontWeight: "bold" }}>11,5k</h3>
+                </CircularProgressLabel>
+              </CircularProgress>
+
+              <p>People Trusted Our Information</p>
+            </Box>
+            <Box
+              maxW="sm"
+              borderWidth="2px"
+              borderRadius="lg"
+              overflow="hidden"
+              padding="8px"
+              marginTop="5px"
+              marginLeft="5px"
+              borderColor={borderClr}
+              background={backgroundClr}
+            >
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <img src="/images/interact.webp" width="77px" />
+              </div>
+              <h1>1,47k</h1>
+              <p>People Interacted with Our Content</p>
+            </Box>
+          </span>
+        </SmallScreen>
+      </Center>
 
       <div
         style={{
@@ -140,7 +221,45 @@ const Button = styled.button`
   }
 `;
 
-const Statss = styled.div`
+const SmallScreen = styled.div`
+  display: none;
+  margin-top: 20px;
+  margin-right: 2%;
+  margin-left: 2%;
+
+  span {
+    display: flex;
+  }
+
+  h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 7px;
+  }
+
+  p {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  @media (max-width: 450px) {
+    display: inline;
+  }
+
+  @media (max-width: 385px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 330px) {
+    font-size: 13px;
+  }
+`;
+
+const BigScreen = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 60px;
@@ -163,5 +282,9 @@ const Statss = styled.div`
   span {
     margin-right: 5px;
     margin-left: 5px;
+  }
+
+  @media (max-width: 450px) {
+    display: none;
   }
 `;
