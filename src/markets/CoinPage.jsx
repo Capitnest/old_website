@@ -262,14 +262,64 @@ export default function CoinPage() {
             ></coingecko-coin-compare-chart-widget>
           </div>
 
+          {loading === true ? (
+            <>Loading...</>
+          ) : (
+            <>
+              {coins.sentiment_votes_up_percentage !== null ? (
+                <>
+                  <h1
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: 700,
+                      marginBottom: "10px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    Today's {coins.name} Sentiment
+                  </h1>
+
+                  <div style={{ marginBottom: "20px" }}>
+                    <Flex justifyContent="space-between" width="100%">
+                      <p>👍 Good</p>
+                      <p>Bad 👎</p>
+                    </Flex>
+
+                    <Slider
+                      marginTop="0px"
+                      defaultValue={coins.sentiment_votes_up_percentage}
+                      min={0}
+                      max={100}
+                      disabled
+                    >
+                      {console.log(coins.sentiment_votes_up_percentage)}
+                      <SliderTrack bg="rgb(245, 0, 87)">
+                        <Box position="relative" right={10} />
+                        <SliderFilledTrack bg="rgb(4, 209, 146)" />
+                      </SliderTrack>
+                      <SliderThumb boxSize={2} />
+                    </Slider>
+
+                    <Flex justifyContent="space-between" width="100%">
+                      <p>{coins.sentiment_votes_up_percentage}%</p>
+                      <p>{coins.sentiment_votes_down_percentage}%</p>
+                    </Flex>
+                  </div>
+                </>
+              ) : (
+                <></>
+              )}
+            </>
+          )}
+
           <Tabs>
-            <TabList>
+            <TabList flexWrap="wrap" display="flex">
               <Tab>General</Tab>
               <Tab>About</Tab>
               <Tab>Social</Tab>
               <Tab>Developer</Tab>
               <Tab>Advanced</Tab>
-              <Tab>Top 100 Markets</Tab>
+              <Tab>Markets</Tab>
             </TabList>
 
             {loading == true ? (
@@ -277,6 +327,17 @@ export default function CoinPage() {
             ) : (
               <TabPanels>
                 <TabPanel>
+                  <h1
+                    style={{
+                      fontSize: "30px",
+                      fontWeight: "700",
+                      marginBottom: "10px",
+                      marginTop: "15px",
+                      fontFamily: "'Inter', sans-serif",
+                    }}
+                  >
+                    General Information
+                  </h1>
                   <Flex flexDirection="column">
                     <TableContainer>
                       <Table variant="simple">
@@ -421,6 +482,7 @@ export default function CoinPage() {
                         fontWeight: "700",
                         marginBottom: "10px",
                         marginTop: "15px",
+                        fontFamily: "'Inter', sans-serif",
                       }}
                     >
                       Scores
@@ -483,6 +545,17 @@ export default function CoinPage() {
                   </Flex>
                 </TabPanel>
                 <TabPanel>
+                  <h1
+                    style={{
+                      fontSize: "25px",
+                      fontWeight: "700",
+                      marginBottom: "10px",
+                      marginTop: "15px",
+                      fontFamily: "'Inter', sans-serif",
+                    }}
+                  >
+                    About {coins.name}
+                  </h1>
                   <Wrap marginTop="20px">
                     <Stat>
                       <StatLabel>Name</StatLabel>
@@ -745,40 +818,19 @@ export default function CoinPage() {
                       </Flex>
                     </Box>
                   </Wrap>
-
-                  <h1
-                    style={{
-                      fontSize: "22px",
-                      fontWeight: 700,
-                      marginBottom: "10px",
-                      marginTop: "20px",
-                    }}
-                  >
-                    Today's Market Sentiment
-                  </h1>
-
-                  <div>
-                    <p style={{ textAlign: "left" }}>👍 Good</p>
-
-                    <Slider
-                      marginTop="0px"
-                      defaultValue={coins.sentiment_votes_up_percentage}
-                      min={0}
-                      max={100}
-                      step={30}
-                      disabled
-                    >
-                      <SliderTrack bg="rgb(245, 0, 87)">
-                        <Box position="relative" right={10} />
-                        <SliderFilledTrack bg="rgb(4, 209, 146)" />
-                      </SliderTrack>
-                      <SliderThumb boxSize={2} />
-                    </Slider>
-
-                    <p style={{ textAlign: "right" }}>👎 Bad</p>
-                  </div>
                 </TabPanel>
                 <TabPanel>
+                  <h1
+                    style={{
+                      fontSize: "25px",
+                      fontWeight: "700",
+                      marginBottom: "10px",
+                      marginTop: "15px",
+                      fontFamily: "'Inter', sans-serif",
+                    }}
+                  >
+                    Developer Statistics
+                  </h1>
                   <Wrap>
                     <Box
                       padding="10px"
@@ -1537,7 +1589,7 @@ export default function CoinPage() {
                       marginTop: "10px",
                     }}
                   >
-                    Top 100 {coins.name} Markets
+                    {coins.name}'s' Markets
                   </h1>
                   <Flex flexDirection="column" justifyContent="center">
                     <TableContainer>
