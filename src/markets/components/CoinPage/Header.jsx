@@ -9,7 +9,7 @@ import {
   Hide,
   Show,
 } from "@chakra-ui/react";
-
+import { format } from "friendly-numbers";
 import NumberFormat from "react-number-format";
 
 export default function Header(props) {
@@ -66,12 +66,21 @@ export default function Header(props) {
           <StatLabel>Market Cap</StatLabel>
           <StatNumber>
             $
-            <NumberFormat
-              thousandSeparator={true}
-              value={coins.market_data.market_cap.usd}
-              displayType="text"
-              decimalScale={1}
-            />
+            <Hide breakpoint="(max-width: 485px)">
+              <NumberFormat
+                thousandSeparator={true}
+                value={coins.market_data.market_cap.usd}
+                displayType="text"
+                decimalScale={1}
+              />
+            </Hide>
+            <Show breakpoint="(max-width: 485px">
+              {format(coins.market_data.market_cap.usd, {
+                decimals: 2,
+                formattedDecimals: 1,
+                smallMinimumMeaningfulDigits: 2,
+              })}
+            </Show>
           </StatNumber>
 
           <StatHelpText>Rank {coins.market_cap_rank} / 3789</StatHelpText>
@@ -82,12 +91,21 @@ export default function Header(props) {
             <StatLabel>24h Trading Volume </StatLabel>
             <StatNumber fontSize="23px">
               $
-              <NumberFormat
-                thousandSeparator={true}
-                value={coins.market_data.total_volume.usd}
-                displayType="text"
-                decimalScale={1}
-              />
+              <Hide breakpoint="(max-width: 485px)">
+                <NumberFormat
+                  thousandSeparator={true}
+                  value={coins.market_data.total_volume.usd}
+                  displayType="text"
+                  decimalScale={1}
+                />
+              </Hide>
+              <Show breakpoint="(max-width: 485px">
+                {format(coins.market_data.total_volume.usd, {
+                  decimals: 2,
+                  formattedDecimals: 1,
+                  smallMinimumMeaningfulDigits: 2,
+                })}
+              </Show>
             </StatNumber>
 
             <StatHelpText>
