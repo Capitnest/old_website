@@ -156,6 +156,14 @@ const Content = styled.div`
       color: #04d192;
     }
   }
+
+  @media (max-width: 310px) {
+    width: 280px;
+  }
+
+  @media (max-width: 296px) {
+    width: 250px;
+  }
 `;
 
 const Date = styled.p`
@@ -163,7 +171,6 @@ const Date = styled.p`
   color: gray;
   margin-top: 16px;
   margin-bottom: 0px;
-  margin-left: 39%;
 
   @media (max-width: 1038px) {
     margin-left: 160px;
@@ -201,5 +208,33 @@ const Date = styled.p`
     margin-top: 18px;
     margin-bottom: 0px;
     margin-right: 2px;
+  }
+
+  @media (max-width: 450px) {
+    margin-left: 90px;
+  }
+
+  @media (max-width: 400px) {
+    margin-left: 70px;
+  }
+
+  @media (max-width: 385px) {
+    margin-left: 50px;
+  }
+
+  @media (max-width: 355px) {
+    margin-left: 30px;
+  }
+
+  @media (max-width: 340px) {
+    margin-left: 10px;
+  }
+
+  @media (max-width: 320px) {
+    margin-left: 5px;
+  }
+
+  @media (max-width: 310px) {
+    display: none;
   }
 `;

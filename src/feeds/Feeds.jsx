@@ -233,6 +233,10 @@ const Search = styled.div`
   @media (max-width: 840px) {
     width: 415px;
   }
+
+  @media (max-width: 430px) {
+    width: 100%;
+  }
 `;
 
 const MiddleSide = styled.div`
