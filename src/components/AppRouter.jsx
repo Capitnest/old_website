@@ -18,7 +18,6 @@ import TestPage from "../pages/TestPage";
 import News from "../news/News";
 import Blog from "../news/Blog";
 import Feeds from "../feeds/Feeds";
-import Nfts from "../nft/Nfts";
 import Dashboard from "../pages/Dashboard/Dashboard";
 
 import Indexes from "../markets/Indexes";
@@ -30,7 +29,6 @@ import CoinPage from "../markets/CoinPage";
 import Categories from "../markets/Categories";
 import MarketsPage from "../markets/MarketsPage";
 
-import RoadMap from "../pages/company/roadmap/RoadMap";
 import Hashtag from "../feeds/Hashtag";
 
 export default function AppRouter(props) {
