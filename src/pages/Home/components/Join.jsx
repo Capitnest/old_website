@@ -13,7 +13,7 @@ export default function Join() {
       <FilterImage>
         <img
           src="/images/join.webp"
-          style={{ marginRight: "40px", marginTop: "-100px" }}
+          style={{ marginTop: "-100px" }}
           width="900px"
         />
       </FilterImage>
@@ -124,6 +124,12 @@ const Content = styled.div`
 
     img {
       width: 400px;
+    }
+  }
+
+  @media (max-width: 300px) {
+    h1 {
+      font-size: 35px;
     }
   }
 `;
