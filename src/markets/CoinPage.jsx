@@ -1,55 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Layout } from "../components/Layout";
 import styled from "styled-components";
-import useScript from "../functions/useScript";
 import { Helmet } from "react-helmet";
-import {
-  Button,
-  Flex,
-  Tabs,
-  TabList,
-  TabPanels,
-  TabPanel,
-  Tab,
-  Stat,
-  StatLabel,
-  StatNumber,
-  StatHelpText,
-  StatArrow,
-  Box,
-  Wrap,
-  Center,
-  TableContainer,
-  Table,
-  TableCaption,
-  Thead,
-  Tr,
-  Th,
-  Td,
-  Tbody,
-  Hide,
-  Show,
-  Slider,
-  SliderTrack,
-  SliderThumb,
-  SliderFilledTrack,
-} from "@chakra-ui/react";
-import dateFormat, { masks } from "dateformat";
+import { Tabs, TabList, TabPanels, TabPanel, Tab } from "@chakra-ui/react";
 import Footerr from "../components/Footer";
-import { Line } from "react-chartjs-2";
 import axios from "axios";
-import NumberFormat from "react-number-format";
-import {
-  BsTwitter,
-  BsReddit,
-  BsTelegram,
-  BsFacebook,
-  BsGithub,
-} from "react-icons/bs";
-import { BiGitRepoForked } from "react-icons/bi";
-import { RiStarSFill } from "react-icons/ri";
-import { DiGitPullRequest } from "react-icons/di";
 
 // COMPONENTS
 import Header from "./components/CoinPage/Header";
@@ -98,12 +54,12 @@ export default function CoinPage() {
       </Helmet>
       <Layout>
         <Content>
-          <Navigation id={id} />
-
           {loading === true ? (
             <>Loading...</>
           ) : (
             <>
+              <Navigation id={id} />
+
               <Header data={coins} />
 
               <Chart id={id} />
