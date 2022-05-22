@@ -28,20 +28,28 @@ export default function About(props) {
 
         <Stat>
           <StatLabel>Website</StatLabel>
-          <StatNumber fontSize="18px">
-            <a href={coins.links.homepage[0]} target="_blank">
-              {coins.links.homepage[0]}
-            </a>
-          </StatNumber>
+          {coins.links.homepage[0] === "" ? (
+            <StatNumber fontSize="18px">-</StatNumber>
+          ) : (
+            <StatNumber fontSize="18px">
+              <a href={coins.links.homepage[0]} target="_blank">
+                {coins.links.homepage[0]}
+              </a>
+            </StatNumber>
+          )}
         </Stat>
 
         <Stat>
           <StatLabel>Forum</StatLabel>
-          <StatNumber fontSize="18px">
-            <a href={coins.links.official_forum_url[0]} target="_blank">
-              {coins.links.official_forum_url[0]}
-            </a>
-          </StatNumber>
+          {coins.links.official_forum_url[0] === "" ? (
+            <StatNumber fontSize="18px">-</StatNumber>
+          ) : (
+            <StatNumber fontSize="18px">
+              <a href={coins.links.official_forum_url[0]} target="_blank">
+                {coins.links.official_forum_url[0]}
+              </a>
+            </StatNumber>
+          )}
         </Stat>
       </Wrap>
 
