@@ -8,9 +8,12 @@ import {
   Th,
   Td,
   Tbody,
+  Hide,
+  Show,
 } from "@chakra-ui/react";
 import dateFormat from "dateformat";
 import NumberFormat from "react-number-format";
+import { format } from "friendly-numbers";
 
 export default function Advanced(props) {
   const coins = props.data;
@@ -69,12 +72,21 @@ export default function Advanced(props) {
                 <Td>Market Cap</Td>
                 <Td fontWeight="700">
                   $
-                  <NumberFormat
-                    thousandSeparator={true}
-                    value={coins.market_data.market_cap.usd}
-                    displayType="text"
-                    decimalScale={1}
-                  />
+                  <Hide breakpoint="(max-width: 450px)">
+                    <NumberFormat
+                      thousandSeparator={true}
+                      value={coins.market_data.market_cap.usd}
+                      displayType="text"
+                      decimalScale={1}
+                    />
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">
+                    {format(coins.market_data.market_cap.usd, {
+                      decimals: 2,
+                      formattedDecimals: 1,
+                      smallMinimumMeaningfulDigits: 2,
+                    })}
+                  </Show>
                 </Td>
               </Tr>
               <Tr>
@@ -85,23 +97,41 @@ export default function Advanced(props) {
                 <Td>Trading Volume</Td>
                 <Td fontWeight="700">
                   $
-                  <NumberFormat
-                    thousandSeparator={true}
-                    value={coins.market_data.total_volume.usd}
-                    displayType="text"
-                    decimalScale={1}
-                  />
+                  <Hide breakpoint="(max-width: 450px)">
+                    <NumberFormat
+                      thousandSeparator={true}
+                      value={coins.market_data.total_volume.usd}
+                      displayType="text"
+                      decimalScale={1}
+                    />
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">
+                    {format(coins.market_data.total_volume.usd, {
+                      decimals: 2,
+                      formattedDecimals: 1,
+                      smallMinimumMeaningfulDigits: 2,
+                    })}
+                  </Show>
                 </Td>
               </Tr>
               <Tr>
                 <Td>Circulating Supply</Td>
                 <Td fontWeight="700">
-                  <NumberFormat
-                    thousandSeparator={true}
-                    value={coins.market_data.circulating_supply}
-                    displayType="text"
-                    decimalScale={2}
-                  />
+                  <Hide breakpoint="(max-width: 450px)">
+                    <NumberFormat
+                      thousandSeparator={true}
+                      value={coins.market_data.circulating_supply}
+                      displayType="text"
+                      decimalScale={1}
+                    />
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">
+                    {format(coins.market_data.circulating_supply, {
+                      decimals: 2,
+                      formattedDecimals: 1,
+                      smallMinimumMeaningfulDigits: 2,
+                    })}
+                  </Show>
                 </Td>
               </Tr>
               {coins.market_data.total_supply === null ? (
@@ -110,12 +140,21 @@ export default function Advanced(props) {
                 <Tr>
                   <Td>Total Supply</Td>
                   <Td fontWeight="700">
-                    <NumberFormat
-                      thousandSeparator={true}
-                      value={coins.market_data.total_supply}
-                      displayType="text"
-                      decimalScale={2}
-                    />
+                    <Hide breakpoint="(max-width: 450px)">
+                      <NumberFormat
+                        thousandSeparator={true}
+                        value={coins.market_data.total_supply}
+                        displayType="text"
+                        decimalScale={1}
+                      />
+                    </Hide>
+                    <Show breakpoint="(max-width: 450px)">
+                      {format(coins.market_data.total_supply, {
+                        decimals: 2,
+                        formattedDecimals: 1,
+                        smallMinimumMeaningfulDigits: 2,
+                      })}
+                    </Show>
                   </Td>
                 </Tr>
               )}
@@ -125,34 +164,67 @@ export default function Advanced(props) {
                 <Tr>
                   <Td>Max Supply</Td>
                   <Td fontWeight="700">
-                    <NumberFormat
-                      thousandSeparator={true}
-                      value={coins.market_data.max_supply}
-                      displayType="text"
-                      decimalScale={2}
-                    />
+                    <Hide breakpoint="(max-width: 450px)">
+                      <NumberFormat
+                        thousandSeparator={true}
+                        value={coins.market_data.max_supply}
+                        displayType="text"
+                        decimalScale={1}
+                      />
+                    </Hide>
+                    <Show breakpoint="(max-width: 450px)">
+                      {format(coins.market_data.max_supply, {
+                        decimals: 2,
+                        formattedDecimals: 1,
+                        smallMinimumMeaningfulDigits: 2,
+                      })}
+                    </Show>
                   </Td>
                 </Tr>
               )}
-              <Tr>
-                <Td>24h Low / 24h High</Td>
-                <Td fontWeight="700">
-                  $
-                  <NumberFormat
-                    thousandSeparator={true}
-                    value={coins.market_data.low_24h.usd}
-                    displayType="text"
-                    decimalScale={1}
-                  />{" "}
-                  / $
-                  <NumberFormat
-                    thousandSeparator={true}
-                    value={coins.market_data.high_24h.usd}
-                    displayType="text"
-                    decimalScale={1}
-                  />
-                </Td>
-              </Tr>
+              <Hide breakpoint="(max-width: 450px)">
+                <Tr>
+                  <Td>24h Low / 24h High</Td>
+                  <Td fontWeight="700">
+                    $
+                    <NumberFormat
+                      thousandSeparator={true}
+                      value={coins.market_data.low_24h.usd}
+                      displayType="text"
+                    />{" "}
+                    / $
+                    <NumberFormat
+                      thousandSeparator={true}
+                      value={coins.market_data.high_24h.usd}
+                      displayType="text"
+                    />
+                  </Td>
+                </Tr>
+              </Hide>
+              <Show breakpoint="(max-width: 450px)">
+                <Tr>
+                  <Td>24h Low</Td>
+                  <Td fontWeight="700">
+                    $
+                    <NumberFormat
+                      thousandSeparator={true}
+                      value={coins.market_data.low_24h.usd}
+                      displayType="text"
+                    />{" "}
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>24h High</Td>
+                  <Td fontWeight="700">
+                    $
+                    <NumberFormat
+                      thousandSeparator={true}
+                      value={coins.market_data.high_24h.usd}
+                      displayType="text"
+                    />{" "}
+                  </Td>
+                </Tr>
+              </Show>
             </Tbody>
           </Table>
         </TableContainer>
@@ -161,12 +233,22 @@ export default function Advanced(props) {
           style={{
             fontSize: "22px",
             fontWeight: 700,
-            marginBottom: "10px",
+            marginBottom: "0px",
             marginTop: "30px",
           }}
         >
           All Time Highs & Lows
+          <Show breakpoint="(max-width: 450px)">
+            <p
+              style={{
+                fontSize: "18px",
+              }}
+            >
+              ATH & ATL
+            </p>
+          </Show>
         </h1>
+
         <TableContainer>
           <Table variant="simple">
             <Thead>
@@ -177,7 +259,13 @@ export default function Advanced(props) {
             </Thead>
             <Tbody>
               <Tr>
-                <Td>All Time High Price</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    All Time High Price
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">ATH Price</Show>
+                </Td>
+
                 <Td fontWeight="700">
                   $
                   <NumberFormat
@@ -188,7 +276,12 @@ export default function Advanced(props) {
                 </Td>
               </Tr>
               <Tr>
-                <Td>All Time High Percentage</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    All Time High Percentage
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">ATH Percentage</Show>
+                </Td>
                 <Td fontWeight="700">
                   {coins.market_data.ath_change_percentage.usd < 0 ? (
                     <p style={{ color: "rgb(245, 0, 87)" }}>
@@ -212,14 +305,26 @@ export default function Advanced(props) {
                 </Td>
               </Tr>
               <Tr>
-                <Td>All Time High Date</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    All Time High Date
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">ATH Date</Show>
+                </Td>
+
                 <Td fontWeight="700">
                   {dateFormat(coins.market_data.ath_date.usd)}
                 </Td>
               </Tr>
 
               <Tr>
-                <Td>All Time Low Price</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    All Time Low Price
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">ATL Price</Show>
+                </Td>
+
                 <Td fontWeight="700">
                   $
                   <NumberFormat
@@ -230,7 +335,12 @@ export default function Advanced(props) {
                 </Td>
               </Tr>
               <Tr>
-                <Td>All Time Low Percentage</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    All Time Low Percentage
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">ATL Percentage</Show>
+                </Td>
                 <Td fontWeight="700">
                   {coins.market_data.atl_change_percentage.usd < 0 ? (
                     <p style={{ color: "rgb(245, 0, 87)" }}>
@@ -256,7 +366,10 @@ export default function Advanced(props) {
                 </Td>
               </Tr>
               <Tr>
-                <Td>All Time Low Date</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">All Time Low Date</Hide>
+                  <Show breakpoint="(max-width: 450px)">ATL Date</Show>
+                </Td>
                 <Td fontWeight="700">
                   {dateFormat(coins.market_data.atl_date.usd)}
                 </Td>
@@ -286,7 +399,13 @@ export default function Advanced(props) {
             </Thead>
             <Tbody>
               <Tr>
-                <Td>Price Change Percentage 1h</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    Price Change Percentage 1h
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">1 hour</Show>
+                </Td>
+
                 <Td fontWeight="700">
                   {coins.market_data.price_change_percentage_1h_in_currency
                     .usd < 0 ? (
@@ -318,7 +437,13 @@ export default function Advanced(props) {
               </Tr>
 
               <Tr>
-                <Td>Price Change Percentage 24h</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    Price Change Percentage 24h
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">24 hours</Show>
+                </Td>
+
                 <Td fontWeight="700">
                   {coins.market_data.price_change_percentage_24h_in_currency
                     .usd < 0 ? (
@@ -350,7 +475,12 @@ export default function Advanced(props) {
               </Tr>
 
               <Tr>
-                <Td>Price Change Percentage 7d</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    Price Change Percentage 7d
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">7 days</Show>
+                </Td>
                 <Td fontWeight="700">
                   {coins.market_data.price_change_percentage_7d_in_currency
                     .usd < 0 ? (
@@ -382,7 +512,12 @@ export default function Advanced(props) {
               </Tr>
 
               <Tr>
-                <Td>Price Change Percentage 14d</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    Price Change Percentage 14d
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">14 days</Show>
+                </Td>
                 <Td fontWeight="700">
                   {coins.market_data.price_change_percentage_14d_in_currency
                     .usd < 0 ? (
@@ -414,7 +549,12 @@ export default function Advanced(props) {
               </Tr>
 
               <Tr>
-                <Td>Price Change Percentage 30d</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    Price Change Percentage 30d
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">30 days</Show>
+                </Td>
                 <Td fontWeight="700">
                   {coins.market_data.price_change_percentage_30d_in_currency
                     .usd < 0 ? (
@@ -446,7 +586,12 @@ export default function Advanced(props) {
               </Tr>
 
               <Tr>
-                <Td>Price Change Percentage 60d</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    Price Change Percentage 60d
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">60 days</Show>
+                </Td>
                 <Td fontWeight="700">
                   {coins.market_data.price_change_percentage_60d_in_currency
                     .usd < 0 ? (
@@ -478,7 +623,12 @@ export default function Advanced(props) {
               </Tr>
 
               <Tr>
-                <Td>Price Change Percentage 200d</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    Price Change Percentage 200d
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">200 days</Show>
+                </Td>
                 <Td fontWeight="700">
                   {coins.market_data.price_change_percentage_200d_in_currency
                     .usd < 0 ? (
@@ -510,7 +660,12 @@ export default function Advanced(props) {
               </Tr>
 
               <Tr>
-                <Td>Price Change Percentage 1year</Td>
+                <Td>
+                  <Hide breakpoint="(max-width: 450px)">
+                    Price Change Percentage 1year
+                  </Hide>
+                  <Show breakpoint="(max-width: 450px)">1 year</Show>
+                </Td>
                 <Td fontWeight="700">
                   {coins.market_data.price_change_percentage_1y_in_currency
                     .usd < 0 ? (
