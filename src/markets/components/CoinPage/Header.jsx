@@ -8,12 +8,32 @@ import {
   StatArrow,
   Hide,
   Show,
+  useColorMode,
 } from "@chakra-ui/react";
 import { format } from "friendly-numbers";
 import NumberFormat from "react-number-format";
 
 export default function Header(props) {
+  const { colorMode, toggleColorMode } = useColorMode();
   const coins = props.data;
+
+  // choose the border color
+  function borderClr() {
+    if (colorMode == "light") {
+      return "rgba(0, 0, 0, 0.80)";
+    } else {
+      return "rgba(0, 0, 0, 0.24)";
+    }
+  }
+
+  // choose the background color
+  function backgroundClr() {
+    if (colorMode == "light") {
+      return "rgba(0, 0, 0, 0.08)";
+    } else {
+      return "#2D3748";
+    }
+  }
 
   return (
     <>
@@ -62,7 +82,13 @@ export default function Header(props) {
       </div>
 
       <Flex>
-        <Stat borderWidth="2px" padding="10px" borderLeftRadius="10px">
+        <Stat
+          borderWidth="2px"
+          padding="10px"
+          borderLeftRadius="10px"
+          backgroundColor={backgroundClr}
+          borderColor={borderClr}
+        >
           <StatLabel>Market Cap</StatLabel>
           <StatNumber>
             $
@@ -87,7 +113,13 @@ export default function Header(props) {
         </Stat>
 
         <Show below="md">
-          <Stat borderWidth="2px" padding="10px" borderRightRadius="10px">
+          <Stat
+            borderWidth="2px"
+            padding="10px"
+            borderRightRadius="10px"
+            backgroundColor={backgroundClr}
+            borderColor={borderClr}
+          >
             <StatLabel>24h Trading Volume </StatLabel>
             <StatNumber fontSize="23px">
               $
@@ -121,7 +153,12 @@ export default function Header(props) {
         </Show>
 
         <Hide below="md">
-          <Stat borderWidth="2px" padding="10px">
+          <Stat
+            borderWidth="2px"
+            padding="10px"
+            backgroundColor={backgroundClr}
+            borderColor={borderClr}
+          >
             <StatLabel>24h Trading Volume </StatLabel>
             <StatNumber>
               $
@@ -143,7 +180,13 @@ export default function Header(props) {
               BTC
             </StatHelpText>
           </Stat>
-          <Stat borderWidth="2px" padding="10px" borderRightRadius="10px">
+          <Stat
+            borderWidth="2px"
+            padding="10px"
+            borderRightRadius="10px"
+            backgroundColor={backgroundClr}
+            borderColor={borderClr}
+          >
             <StatLabel>Circulating Supply</StatLabel>
             <StatNumber>
               <NumberFormat
