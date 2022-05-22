@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Box, Flex, Avatar, Badge } from "@chakra-ui/react";
+import { Flex, Avatar, Badge, Hide, Show } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
-import Numeral from "react-numeral";
 import NumberFormat from "react-number-format";
 
 export default function CoinItem(props) {
@@ -18,173 +17,316 @@ export default function CoinItem(props) {
       }}
     >
       {colorMode === "dark" ? (
-        <CoinRowDark>
-          <CoinDark>
-            <Flex>
-              <Avatar src={props.coins.image} />
-              <Flex marginLeft="10px" flexDirection="column">
-                <p style={{ fontSize: "18px", marginLeft: "4px" }}>
-                  {props.coins.name}
+        <>
+          <Hide breakpoint="(max-width: 550px)">
+            <CoinRowDark>
+              <CoinDark>
+                <Flex>
+                  <Avatar src={props.coins.image} />
+                  <Flex marginLeft="10px" flexDirection="column">
+                    <p style={{ fontSize: "18px", marginLeft: "4px" }}>
+                      {props.coins.name}
+                    </p>
+                    <Flex>
+                      <Badge width="30px" colorScheme="green">
+                        <p style={{ textAlign: "center", marginTop: "2px" }}>
+                          {props.coins.market_cap_rank}
+                        </p>
+                      </Badge>
+                      <p
+                        style={{
+                          textTransform: "uppercase",
+                          fontSize: "14px",
+                          fontWeight: 700,
+                          marginLeft: "5px",
+                        }}
+                      >
+                        {props.coins.symbol}
+                      </p>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </CoinDark>
+
+              <Price>
+                <p style={{}}>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    prefix={"$"}
+                    value={props.coins.current_price}
+                    displayType="text"
+                  />
                 </p>
-                <Flex>
-                  <Badge width="30px" colorScheme="green">
-                    <p style={{ textAlign: "center", marginTop: "2px" }}>
-                      {props.coins.market_cap_rank}
-                    </p>
-                  </Badge>
-                  <p
-                    style={{
-                      textTransform: "uppercase",
-                      fontSize: "14px",
-                      fontWeight: 700,
-                      marginLeft: "5px",
-                    }}
-                  >
-                    {props.coins.symbol}
+              </Price>
+
+              <Percentage>
+                {props.coins.price_change_percentage_24h < 0 ? (
+                  <p style={{ color: "rgb(245, 0, 87)" }}>
+                    <NumberFormat
+                      value={props.coins.price_change_percentage_24h}
+                      decimalScale={1}
+                      displayType="text"
+                    />
+                    %
                   </p>
+                ) : (
+                  <p style={{ color: "var(--chakra-colors-green-400)" }}>
+                    <NumberFormat
+                      value={props.coins.price_change_percentage_24h}
+                      decimalScale={1}
+                      displayType="text"
+                    />
+                    %
+                  </p>
+                )}
+              </Percentage>
+
+              <Volume>
+                <HideMobile>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    prefix={"$"}
+                    value={props.coins.total_volume}
+                    displayType="text"
+                  />
+                </HideMobile>
+              </Volume>
+
+              <Mkt>
+                <HideMobile>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    prefix={"$"}
+                    value={props.coins.market_cap}
+                    displayType="text"
+                  />
+                </HideMobile>
+              </Mkt>
+            </CoinRowDark>
+          </Hide>
+          <Show breakpoint="(max-width: 550px)">
+            <CoinRowDark>
+              <CoinDark>
+                <Flex>
+                  <Avatar src={props.coins.image} />
+                  <Flex marginLeft="10px" flexDirection="column">
+                    <p style={{ fontSize: "18px", marginLeft: "4px" }}>
+                      {props.coins.name}
+                    </p>
+                    <Flex>
+                      <Badge width="30px" colorScheme="green">
+                        <p style={{ textAlign: "center", marginTop: "2px" }}>
+                          {props.coins.market_cap_rank}
+                        </p>
+                      </Badge>
+                      <p
+                        style={{
+                          textTransform: "uppercase",
+                          fontSize: "14px",
+                          fontWeight: 700,
+                          marginLeft: "5px",
+                        }}
+                      >
+                        {props.coins.symbol}
+                      </p>
+                    </Flex>
+                  </Flex>
                 </Flex>
+              </CoinDark>
+
+              <Flex
+                flexDirection="column"
+                justifyContent="right"
+                textAlign="right"
+                width="40%"
+              >
+                <div style={{ textAlign: "right" }}>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    prefix={"$"}
+                    value={props.coins.current_price}
+                    displayType="text"
+                  />
+                </div>
+
+                {props.coins.price_change_percentage_24h < 0 ? (
+                  <p style={{ color: "rgb(245, 0, 87)" }}>
+                    <NumberFormat
+                      value={props.coins.price_change_percentage_24h}
+                      decimalScale={1}
+                      displayType="text"
+                    />
+                    %
+                  </p>
+                ) : (
+                  <p style={{ color: "#318353" }}>
+                    <NumberFormat
+                      value={props.coins.price_change_percentage_24h}
+                      decimalScale={1}
+                      displayType="text"
+                    />
+                    %
+                  </p>
+                )}
               </Flex>
-            </Flex>
-          </CoinDark>
-
-          <Price>
-            <p style={{}}>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.current_price}
-                displayType="text"
-              />
-            </p>
-          </Price>
-
-          <Percentage>
-            {props.coins.price_change_percentage_24h < 0 ? (
-              <p style={{ color: "rgb(245, 0, 87)" }}>
-                <NumberFormat
-                  value={props.coins.price_change_percentage_24h}
-                  decimalScale={1}
-                  displayType="text"
-                />
-                %
-              </p>
-            ) : (
-              <p style={{ color: "var(--chakra-colors-green-400)" }}>
-                <NumberFormat
-                  value={props.coins.price_change_percentage_24h}
-                  decimalScale={1}
-                  displayType="text"
-                />
-                %
-              </p>
-            )}
-          </Percentage>
-
-          <Volume>
-            <HideMobile>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.total_volume}
-                displayType="text"
-              />
-            </HideMobile>
-          </Volume>
-
-          <Mkt>
-            <HideMobile>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.market_cap}
-                displayType="text"
-              />
-            </HideMobile>
-          </Mkt>
-        </CoinRowDark>
+            </CoinRowDark>
+            <hr />
+          </Show>
+        </>
       ) : (
-        <CoinRowLight>
-          <CoinWhite>
-            <Flex>
-              <Avatar src={props.coins.image} />
-              <Flex marginLeft="10px" flexDirection="column">
-                <p style={{ fontSize: "18px" }}>{props.coins.name}</p>
+        <>
+          <Hide breakpoint="(max-width: 550px)">
+            <CoinRowLight>
+              <CoinWhite>
                 <Flex>
-                  <Badge width="30px" colorScheme="green">
-                    <p style={{ textAlign: "center", marginTop: "2px" }}>
-                      {props.coins.market_cap_rank}
-                    </p>
-                  </Badge>
-                  <p
-                    style={{
-                      textTransform: "uppercase",
-                      fontSize: "14px",
-                      fontWeight: 700,
-                      marginLeft: "5px",
-                    }}
-                  >
-                    {props.coins.symbol}
-                  </p>
+                  <Avatar src={props.coins.image} />
+                  <Flex marginLeft="10px" flexDirection="column">
+                    <p style={{ fontSize: "18px" }}>{props.coins.name}</p>
+                    <Flex>
+                      <Badge width="30px" colorScheme="green">
+                        <p style={{ textAlign: "center", marginTop: "2px" }}>
+                          {props.coins.market_cap_rank}
+                        </p>
+                      </Badge>
+                      <p
+                        style={{
+                          textTransform: "uppercase",
+                          fontSize: "14px",
+                          fontWeight: 700,
+                          marginLeft: "5px",
+                        }}
+                      >
+                        {props.coins.symbol}
+                      </p>
+                    </Flex>
+                  </Flex>
                 </Flex>
+              </CoinWhite>
+
+              <Price>
+                <p>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    prefix={"$"}
+                    value={props.coins.current_price}
+                    displayType="text"
+                  />
+                </p>
+              </Price>
+
+              <Percentage>
+                {props.coins.price_change_percentage_24h < 0 ? (
+                  <p style={{ color: "rgb(245, 0, 87)" }}>
+                    <NumberFormat
+                      value={props.coins.price_change_percentage_24h}
+                      decimalScale={1}
+                      displayType="text"
+                    />
+                    %
+                  </p>
+                ) : (
+                  <p style={{ color: "#318353" }}>
+                    <NumberFormat
+                      value={props.coins.price_change_percentage_24h}
+                      decimalScale={1}
+                      displayType="text"
+                    />
+                    %
+                  </p>
+                )}
+              </Percentage>
+
+              <Volume>
+                <HideMobile>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    prefix={"$"}
+                    value={props.coins.total_volume}
+                    displayType="text"
+                  />
+                </HideMobile>
+              </Volume>
+
+              <Mkt>
+                <HideMobile>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    prefix={"$"}
+                    value={props.coins.market_cap}
+                    displayType="text"
+                  />
+                </HideMobile>
+              </Mkt>
+            </CoinRowLight>
+          </Hide>
+
+          <Show breakpoint="(max-width: 550px)">
+            <CoinRowLight>
+              <CoinWhite>
+                <Flex>
+                  <Avatar src={props.coins.image} />
+                  <Flex marginLeft="10px" flexDirection="column">
+                    <p style={{ fontSize: "18px" }}>{props.coins.name}</p>
+                    <Flex>
+                      <Badge width="30px" colorScheme="green">
+                        <p style={{ textAlign: "center", marginTop: "2px" }}>
+                          {props.coins.market_cap_rank}
+                        </p>
+                      </Badge>
+                      <p
+                        style={{
+                          textTransform: "uppercase",
+                          fontSize: "14px",
+                          fontWeight: 700,
+                          marginLeft: "5px",
+                        }}
+                      >
+                        {props.coins.symbol}
+                      </p>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </CoinWhite>
+
+              <Flex
+                flexDirection="column"
+                justifyContent="right"
+                textAlign="right"
+                width="40%"
+              >
+                <div style={{ textAlign: "right" }}>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    prefix={"$"}
+                    value={props.coins.current_price}
+                    displayType="text"
+                  />
+                </div>
+
+                {props.coins.price_change_percentage_24h < 0 ? (
+                  <p style={{ color: "rgb(245, 0, 87)" }}>
+                    <NumberFormat
+                      value={props.coins.price_change_percentage_24h}
+                      decimalScale={1}
+                      displayType="text"
+                    />
+                    %
+                  </p>
+                ) : (
+                  <p style={{ color: "#318353" }}>
+                    <NumberFormat
+                      value={props.coins.price_change_percentage_24h}
+                      decimalScale={1}
+                      displayType="text"
+                    />
+                    %
+                  </p>
+                )}
               </Flex>
-            </Flex>
-          </CoinWhite>
-
-          <Price>
-            <p>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.current_price}
-                displayType="text"
-              />
-            </p>
-          </Price>
-
-          <Percentage>
-            {props.coins.price_change_percentage_24h < 0 ? (
-              <p style={{ color: "rgb(245, 0, 87)" }}>
-                <NumberFormat
-                  value={props.coins.price_change_percentage_24h}
-                  decimalScale={1}
-                  displayType="text"
-                />
-                %
-              </p>
-            ) : (
-              <p style={{ color: "rgb(33, 247, 158)" }}>
-                <NumberFormat
-                  value={props.coins.price_change_percentage_24h}
-                  decimalScale={1}
-                  displayType="text"
-                />
-                %
-              </p>
-            )}
-          </Percentage>
-
-          <Volume>
-            <HideMobile>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.total_volume}
-                displayType="text"
-              />
-            </HideMobile>
-          </Volume>
-
-          <Mkt>
-            <HideMobile>
-              <NumberFormat
-                thousandSeparator={true}
-                prefix={"$"}
-                value={props.coins.market_cap}
-                displayType="text"
-              />
-            </HideMobile>
-          </Mkt>
-        </CoinRowLight>
+            </CoinRowLight>
+            <hr />
+          </Show>
+        </>
       )}
     </a>
   );
@@ -303,6 +445,10 @@ const CoinRowLight = styled.div`
 
   @media (max-width: 900px) {
     font-size: 16px;
+  }
+
+  @media (max-width: 550px) {
+    background-color: #edf2f7;
   }
 `;
 

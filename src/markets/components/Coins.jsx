@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CoinItem from "./CoinItem";
-import { useColorMode } from "@chakra-ui/react";
+import { useColorMode, Hide, Show } from "@chakra-ui/react";
 
 export default function Coins(props) {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -13,8 +13,15 @@ export default function Coins(props) {
           <>
             <HeadingDark>
               <Name>Coin</Name>
-              <Price>Price</Price>
-              <Percentage>24h</Percentage>
+              <Price>
+                <Hide breakpoint="(max-width: 550px)">Price</Hide>
+              </Price>
+
+              <Percentage>
+                <Hide breakpoint="(max-width: 550px)">24h</Hide>
+                <Show breakpoint="(max-width: 550px)">Price</Show>
+              </Percentage>
+
               <HideMobile>Volume</HideMobile>
               <HideMobile>Mkt Cap</HideMobile>
             </HeadingDark>
@@ -27,8 +34,14 @@ export default function Coins(props) {
           <>
             <HeadingLight>
               <Name>Coin</Name>
-              <Price>Price</Price>
-              <Percentage>24h</Percentage>
+              <Price>
+                <Hide breakpoint="(max-width: 550px)">Price</Hide>
+              </Price>
+
+              <Percentage>
+                <Hide breakpoint="(max-width: 550px)">24h</Hide>
+                <Show breakpoint="(max-width: 550px)">Price</Show>
+              </Percentage>
               <HideMobile>Volume</HideMobile>
               <HideMobile>Mkt Cap</HideMobile>
             </HeadingLight>
