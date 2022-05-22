@@ -8,6 +8,7 @@ import {
   StatLabel,
   StatNumber,
   TabList,
+  Hide,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
@@ -54,13 +55,15 @@ export default function ExchangeNavbar() {
           <StatHelpText>Tracked</StatHelpText>
         </Stat>
 
-        <Stat>
-          <StatLabel fontSize="18px" fontWeight="700">
-            Categories
-          </StatLabel>
-          <StatNumber>75</StatNumber>
-          <StatHelpText>Available</StatHelpText>
-        </Stat>
+        <Hide breakpoint="(max-width: 550px)">
+          <Stat>
+            <StatLabel fontSize="18px" fontWeight="700">
+              Categories
+            </StatLabel>
+            <StatNumber>75</StatNumber>
+            <StatHelpText>Available</StatHelpText>
+          </Stat>
+        </Hide>
       </Flex>
     </>
   );

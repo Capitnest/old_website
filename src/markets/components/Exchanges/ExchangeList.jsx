@@ -1,8 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { Box, Flex, Avatar, Badge, Progress } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Avatar,
+  Badge,
+  Progress,
+  Hide,
+  Show,
+} from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
-import Numeral from "react-numeral";
+import { format } from "friendly-numbers";
 import NumberFormat from "react-number-format";
 
 export default function CoinItem(props) {
@@ -24,125 +32,228 @@ export default function CoinItem(props) {
       style={{ textDecoration: "none", color: "inherit" }}
     >
       {colorMode === "dark" ? (
-        <CoinRowDark>
-          <CoinDark>
-            <Flex>
-              <Avatar src={props.coins.image} />
-              <Flex marginLeft="10px" flexDirection="column">
-                <p style={{ fontSize: "18px", marginLeft: "4px" }}>
-                  {props.coins.name}
-                </p>
+        <>
+          <Hide breakpoint="(max-width: 550px)">
+            <CoinRowDark>
+              <CoinDark>
                 <Flex>
-                  <Badge width="30px" colorScheme="green">
-                    <p style={{ textAlign: "center", marginTop: "2px" }}>
-                      {props.coins.trust_score_rank}
+                  <Avatar src={props.coins.image} />
+                  <Flex marginLeft="10px" flexDirection="column">
+                    <p style={{ fontSize: "18px", marginLeft: "4px" }}>
+                      {props.coins.name}
                     </p>
-                  </Badge>
+                    <Flex>
+                      <Badge width="30px" colorScheme="green">
+                        <p style={{ textAlign: "center", marginTop: "2px" }}>
+                          {props.coins.trust_score_rank}
+                        </p>
+                      </Badge>
+                    </Flex>
+                  </Flex>
                 </Flex>
+              </CoinDark>
+
+              <Price>
+                <Flex justifyContent="center">
+                  <Progress
+                    value={props.coins.trust_score * 10}
+                    width="50%"
+                    borderRadius="6px"
+                    height="12px"
+                    marginTop="4px"
+                    colorScheme={ProgressColor(props.coins.trust_score)}
+                  />
+
+                  <p style={{ marginLeft: "6px" }}>{props.coins.trust_score}</p>
+                </Flex>
+              </Price>
+
+              <Percentage>
+                <p>
+                  $
+                  <Hide breakpoint="(max-width: 600px)">
+                    <NumberFormat
+                      thousandSeparator={true}
+                      value={props.coins.trade_volume_24h_btc * 30000}
+                      displayType="text"
+                      decimalScale={1}
+                    />
+                  </Hide>
+                  <Show breakpoint="(max-width: 600px)">
+                    {format(props.coins.trade_volume_24h_btc * 30000, {
+                      decimals: 2,
+                      formattedDecimals: 1,
+                      smallMinimumMeaningfulDigits: 2,
+                    })}
+                  </Show>
+                </p>
+              </Percentage>
+
+              <Volume>
+                <HideMobile>
+                  <p>
+                    <NumberFormat
+                      thousandSeparator={true}
+                      value={props.coins.trade_volume_24h_btc}
+                      displayType="text"
+                      decimalScale={3}
+                    />
+                  </p>
+                </HideMobile>
+              </Volume>
+            </CoinRowDark>
+          </Hide>
+
+          <Show breakpoint="(max-width: 550px)">
+            <CoinRowDark>
+              <CoinDark>
+                <Flex>
+                  <Avatar src={props.coins.image} />
+                  <Flex marginLeft="10px" flexDirection="column">
+                    <p style={{ fontSize: "18px", marginLeft: "4px" }}>
+                      {props.coins.name}
+                    </p>
+                    <Flex>
+                      <Badge width="30px" colorScheme="green">
+                        <p style={{ textAlign: "center", marginTop: "2px" }}>
+                          {props.coins.trust_score_rank}
+                        </p>
+                      </Badge>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </CoinDark>
+              <Flex
+                flexDirection="column"
+                justifyContent="right"
+                textAlign="right"
+                width="30%"
+              >
+                <p>
+                  $
+                  {format(props.coins.trade_volume_24h_btc * 30000, {
+                    decimals: 2,
+                    formattedDecimals: 1,
+                    smallMinimumMeaningfulDigits: 2,
+                  })}
+                </p>
               </Flex>
-            </Flex>
-          </CoinDark>
-
-          <Price>
-            <Flex justifyContent="center">
-              <Progress
-                value={props.coins.trust_score * 10}
-                width="50%"
-                borderRadius="6px"
-                height="12px"
-                marginTop="4px"
-                colorScheme={ProgressColor(props.coins.trust_score)}
-              />
-
-              <p style={{ marginLeft: "6px" }}>{props.coins.trust_score}</p>
-            </Flex>
-          </Price>
-
-          <Percentage>
-            <p>
-              $
-              <NumberFormat
-                thousandSeparator={true}
-                value={props.coins.trade_volume_24h_btc * 40000}
-                displayType="text"
-                decimalScale={1}
-              />
-            </p>
-          </Percentage>
-
-          <Volume>
-            <HideMobile>
-              <p>
-                <NumberFormat
-                  thousandSeparator={true}
-                  value={props.coins.trade_volume_24h_btc}
-                  displayType="text"
-                  decimalScale={3}
-                />
-              </p>
-            </HideMobile>
-          </Volume>
-        </CoinRowDark>
+            </CoinRowDark>
+            <hr />
+          </Show>
+        </>
       ) : (
-        <CoinRowLight>
-          <CoinWhite>
-            <Flex>
-              <Avatar src={props.coins.image} />
-              <Flex marginLeft="10px" flexDirection="column">
-                <p style={{ fontSize: "18px", marginLeft: "4px" }}>
-                  {props.coins.name}
-                </p>
+        <>
+          <Hide breakpoint="(max-width: 550px)">
+            <CoinRowLight>
+              <CoinWhite>
                 <Flex>
-                  <Badge width="30px" colorScheme="green">
-                    <p style={{ textAlign: "center", marginTop: "2px" }}>
-                      {props.coins.trust_score_rank}
+                  <Avatar src={props.coins.image} />
+                  <Flex marginLeft="10px" flexDirection="column">
+                    <p style={{ fontSize: "18px", marginLeft: "4px" }}>
+                      {props.coins.name}
                     </p>
-                  </Badge>
+                    <Flex>
+                      <Badge width="30px" colorScheme="green">
+                        <p style={{ textAlign: "center", marginTop: "2px" }}>
+                          {props.coins.trust_score_rank}
+                        </p>
+                      </Badge>
+                    </Flex>
+                  </Flex>
                 </Flex>
+              </CoinWhite>
+
+              <Price>
+                <Flex justifyContent="center">
+                  <Progress
+                    value={props.coins.trust_score * 10}
+                    width="50%"
+                    borderRadius="6px"
+                    height="12px"
+                    marginTop="4px"
+                    colorScheme={ProgressColor(props.coins.trust_score)}
+                  />
+
+                  <p style={{ marginLeft: "6px" }}>{props.coins.trust_score}</p>
+                </Flex>
+              </Price>
+
+              <Percentage>
+                <p>
+                  $
+                  <Hide breakpoint="(max-width: 600px)">
+                    <NumberFormat
+                      thousandSeparator={true}
+                      value={props.coins.trade_volume_24h_btc * 30000}
+                      displayType="text"
+                      decimalScale={1}
+                    />
+                  </Hide>
+                  <Show breakpoint="(max-width: 600px)">
+                    {format(props.coins.trade_volume_24h_btc * 30000, {
+                      decimals: 2,
+                      formattedDecimals: 1,
+                      smallMinimumMeaningfulDigits: 2,
+                    })}
+                  </Show>
+                </p>
+              </Percentage>
+
+              <Volume>
+                <HideMobile>
+                  <p>
+                    <NumberFormat
+                      thousandSeparator={true}
+                      value={props.coins.trade_volume_24h_btc}
+                      displayType="text"
+                      decimalScale={3}
+                    />
+                  </p>
+                </HideMobile>
+              </Volume>
+            </CoinRowLight>
+          </Hide>
+
+          <Show breakpoint="(max-width: 550px)">
+            <CoinRowLight>
+              <CoinWhite>
+                <Flex>
+                  <Avatar src={props.coins.image} />
+                  <Flex marginLeft="10px" flexDirection="column">
+                    <p style={{ fontSize: "18px", marginLeft: "4px" }}>
+                      {props.coins.name}
+                    </p>
+                    <Flex>
+                      <Badge width="30px" colorScheme="green">
+                        <p style={{ textAlign: "center", marginTop: "2px" }}>
+                          {props.coins.trust_score_rank}
+                        </p>
+                      </Badge>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </CoinWhite>
+
+              <Flex
+                flexDirection="column"
+                justifyContent="right"
+                textAlign="right"
+                width="30%"
+              >
+                <p>
+                  $
+                  {format(props.coins.trade_volume_24h_btc * 30000, {
+                    decimals: 2,
+                    formattedDecimals: 1,
+                    smallMinimumMeaningfulDigits: 2,
+                  })}
+                </p>
               </Flex>
-            </Flex>
-          </CoinWhite>
-
-          <Price>
-            <Flex justifyContent="center">
-              <Progress
-                value={props.coins.trust_score * 10}
-                width="50%"
-                borderRadius="6px"
-                height="12px"
-                marginTop="4px"
-                colorScheme={ProgressColor(props.coins.trust_score)}
-              />
-
-              <p style={{ marginLeft: "6px" }}>{props.coins.trust_score}</p>
-            </Flex>
-          </Price>
-
-          <Percentage>
-            <p>
-              $
-              <NumberFormat
-                thousandSeparator={true}
-                value={props.coins.trade_volume_24h_btc * 40000}
-                displayType="text"
-                decimalScale={1}
-              />
-            </p>
-          </Percentage>
-
-          <Volume>
-            <HideMobile>
-              <p>
-                <NumberFormat
-                  thousandSeparator={true}
-                  value={props.coins.trade_volume_24h_btc}
-                  displayType="text"
-                  decimalScale={3}
-                />
-              </p>
-            </HideMobile>
-          </Volume>
-        </CoinRowLight>
+            </CoinRowLight>
+            <hr />
+          </Show>
+        </>
       )}
     </a>
   );
@@ -155,6 +266,10 @@ const Percentage = styled.div`
   @media (max-width: 770px) {
     width: 30%;
     font-size: 15px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 18px;
   }
 `;
 
@@ -183,7 +298,7 @@ const CoinDark = styled.div`
   }
 
   @media (max-width: 550px) {
-    width: 50%;
+    width: 60%;
   }
 `;
 
@@ -203,7 +318,7 @@ const CoinWhite = styled.div`
   }
 
   @media (max-width: 550px) {
-    width: 50%;
+    width: 60%;
   }
 `;
 
@@ -236,6 +351,10 @@ const CoinRowDark = styled.div`
   @media (max-width: 900px) {
     font-size: 16px;
   }
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
 `;
 
 const CoinRowLight = styled.div`
@@ -253,6 +372,14 @@ const CoinRowLight = styled.div`
 
   @media (max-width: 900px) {
     font-size: 16px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 550px) {
+    background-color: #edf2f7;
   }
 `;
 

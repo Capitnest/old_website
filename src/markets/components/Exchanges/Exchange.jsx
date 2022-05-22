@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ExchangeList from "./ExchangeList";
-import { useColorMode } from "@chakra-ui/react";
+import { useColorMode, Hide, Show } from "@chakra-ui/react";
 
 export default function Exchange(props) {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -13,8 +13,16 @@ export default function Exchange(props) {
           <>
             <HeadingDark>
               <Name>Coin</Name>
-              <Price>Trust Score</Price>
-              <Percentage>24h Volume (USD)</Percentage>
+
+              <Price>
+                <Hide breakpoint="(max-width: 550px)">Trust Score</Hide>
+              </Price>
+
+              <Percentage>
+                <Hide breakpoint="(max-width: 550px)">24h Volume (USD)</Hide>
+                <Show breakpoint="(max-width: 550px)">24h Volume</Show>
+              </Percentage>
+
               <HideMobile>24h Volume (BTC)</HideMobile>
             </HeadingDark>
 
@@ -26,8 +34,14 @@ export default function Exchange(props) {
           <>
             <HeadingLight>
               <Name>Coin</Name>
-              <Price>Trust Score</Price>
-              <Percentage>24h Volume (USD)</Percentage>
+              <Price>
+                <Hide breakpoint="(max-width: 550px)">Trust Score</Hide>
+              </Price>
+
+              <Percentage>
+                <Hide breakpoint="(max-width: 550px)">24h Volume (USD)</Hide>
+                <Show breakpoint="(max-width: 550px)">24h Volume</Show>
+              </Percentage>
               <HideMobile>24h Volume (BTC)</HideMobile>
             </HeadingLight>
 
@@ -83,7 +97,7 @@ const Name = styled.p`
   }
 
   @media (max-width: 550px) {
-    width: 50%;
+    width: 60%;
   }
 `;
 
@@ -103,6 +117,10 @@ const Price = styled.div`
   @media (max-width: 770px) {
     width: 30%;
   }
+
+  @media (max-width: 550px) {
+    width: 0%;
+  }
 `;
 
 const Percentage = styled.div`
@@ -111,5 +129,9 @@ const Percentage = styled.div`
 
   @media (max-width: 770px) {
     width: 33%;
+  }
+
+  @media (max-width: 550px) {
+    width: 40%;
   }
 `;
