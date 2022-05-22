@@ -46,6 +46,7 @@ export default function Social(props) {
         Social Statistics
       </h1>
 
+      {/* Desktop Desgin */}
       <Hide breakpoint="(max-width: 650px)">
         <Wrap>
           <Box
@@ -241,6 +242,7 @@ export default function Social(props) {
         </Wrap>
       </Hide>
 
+      {/* Mobile Desgin */}
       <Show breakpoint="(max-width: 650px)">
         <Flex flexDirection="column">
           <Flex>
