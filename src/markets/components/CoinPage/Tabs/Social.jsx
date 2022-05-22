@@ -242,7 +242,7 @@ export default function Social(props) {
         </Wrap>
       </Hide>
 
-      {/* Mobile Desgin */}
+      {/* Mobile Design */}
       <Show breakpoint="(max-width: 650px)">
         <Flex flexDirection="column">
           <Flex>
