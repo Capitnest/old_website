@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "../components/Layout";
 import styled from "styled-components";
-import useScript from "../functions/useScript";
 import { Helmet } from "react-helmet";
+import { format } from "friendly-numbers";
 import {
   Button,
   Flex,
@@ -13,29 +13,24 @@ import {
   TabPanel,
   Tab,
   Stat,
+  Hide,
+  Show,
   StatLabel,
   StatNumber,
   StatHelpText,
-  StatArrow,
-  Box,
   Wrap,
-  Center,
   TableContainer,
   Table,
-  TableCaption,
   Thead,
   Tr,
   Th,
   Td,
   Tbody,
-  Tfoot,
   Badge,
   Avatar,
-  Progress,
-  Square,
+  useColorMode,
 } from "@chakra-ui/react";
 import Footerr from "../components/Footer";
-import { Line } from "react-chartjs-2";
 import axios from "axios";
 import NumberFormat from "react-number-format";
 import {
@@ -46,22 +41,30 @@ import {
   BsSlack,
   BsGlobe,
 } from "react-icons/bs";
-import { TheatersOutlined } from "@material-ui/icons";
 
 export default function ExchangePage() {
   const { id } = useParams();
   const [exchange, setExchange] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const url = `https://api.coingecko.com/api/v3/exchanges/${id}`;
 
-  function ProgressColor(score) {
-    if (score > 6) {
-      return "green";
-    } else if (score <= 6 && score > 4) {
-      return "orange";
+  // choose the border color
+  function borderClr() {
+    if (colorMode == "light") {
+      return "rgba(0, 0, 0, 0.80)";
     } else {
-      return "red";
+      return "rgba(0, 0, 0, 0.24)";
+    }
+  }
+
+  // choose the background color
+  function backgroundClr() {
+    if (colorMode == "light") {
+      return "rgba(0, 0, 0, 0.08)";
+    } else {
+      return "#2D3748";
     }
   }
 
@@ -81,7 +84,7 @@ export default function ExchangePage() {
     <>
       <Helmet>
         {loading === true ? (
-          <title>Capitnest</title>
+          <title>{id} Trade Volume, Trust Score | Capitnest </title>
         ) : (
           <title>{exchange.name} Trade Volume, Trust Score | Capitnest</title>
         )}
@@ -134,12 +137,20 @@ export default function ExchangePage() {
                     borderWidth="2px"
                     padding="10px"
                     borderLeftRadius="10px"
+                    borderColor={borderClr}
+                    backgroundColor={backgroundClr}
                   >
                     <StatLabel>Trust Score</StatLabel>
                     <StatNumber>{exchange.trust_score}</StatNumber>
                   </Stat>
                   <HideMobile>
-                    <Stat borderWidth="2px" padding="10px" width="300px">
+                    <Stat
+                      borderWidth="2px"
+                      padding="10px"
+                      width="300px"
+                      borderColor={borderClr}
+                      backgroundColor={backgroundClr}
+                    >
                       <StatLabel>24h Trade Volume BTC</StatLabel>
                       <StatNumber>
                         <NumberFormat
@@ -155,16 +166,30 @@ export default function ExchangePage() {
                     borderWidth="2px"
                     padding="10px"
                     borderRightRadius="10px"
+                    borderColor={borderClr}
+                    backgroundColor={backgroundClr}
                   >
-                    <StatLabel>24h Trade Volume USD</StatLabel>
+                    <StatLabel>
+                      24h Trade Volume{" "}
+                      <Hide breakpoint="(max-width: 485px)">USD</Hide>
+                    </StatLabel>
                     <StatNumber>
                       $
-                      <NumberFormat
-                        thousandSeparator={true}
-                        value={exchange.trade_volume_24h_btc * 40000}
-                        displayType="text"
-                        decimalScale={1}
-                      />
+                      <Hide breakpoint="(max-width: 485px)">
+                        <NumberFormat
+                          thousandSeparator={true}
+                          value={exchange.trade_volume_24h_btc * 40000}
+                          displayType="text"
+                          decimalScale={1}
+                        />
+                      </Hide>
+                      <Show breakpoint="(max-width: 485px">
+                        {format(exchange.trade_volume_24h_btc * 40000, {
+                          decimals: 2,
+                          formattedDecimals: 1,
+                          smallMinimumMeaningfulDigits: 2,
+                        })}
+                      </Show>
                     </StatNumber>
                   </Stat>
                 </Flex>
@@ -191,45 +216,52 @@ export default function ExchangePage() {
                             </Thead>
                             <Tbody>
                               <Tr>
-                                <Td>24h Trade Volume USD Estimated</Td>
+                                <Td>24h Trade Volume</Td>
                                 <Td fontWeight="700">
                                   $
-                                  <NumberFormat
-                                    thousandSeparator={true}
-                                    value={
-                                      exchange.trade_volume_24h_btc * 40000
-                                    }
-                                    displayType="text"
-                                    decimalScale={0}
-                                  />
+                                  <Hide breakpoint="(max-width: 485px)">
+                                    <NumberFormat
+                                      thousandSeparator={true}
+                                      value={
+                                        exchange.trade_volume_24h_btc * 30000
+                                      }
+                                      displayType="text"
+                                      decimalScale={0}
+                                    />
+                                  </Hide>
+                                  <Show breakpoint="(max-width: 485px)">
+                                    {format(
+                                      exchange.trade_volume_24h_btc * 30000,
+                                      {
+                                        decimals: 2,
+                                        formattedDecimals: 1,
+                                        smallMinimumMeaningfulDigits: 2,
+                                      }
+                                    )}
+                                  </Show>
                                 </Td>
                               </Tr>
                               <Tr>
                                 <Td>24h BTC Trade Volume</Td>
                                 <Td fontWeight="700">
-                                  <NumberFormat
-                                    thousandSeparator={true}
-                                    value={exchange.trade_volume_24h_btc}
-                                    displayType="text"
-                                    decimalScale={3}
-                                  />{" "}
-                                  BTC
+                                  <Hide breakpoint="(max-width: 485px)">
+                                    <NumberFormat
+                                      thousandSeparator={true}
+                                      value={exchange.trade_volume_24h_btc}
+                                      displayType="text"
+                                      decimalScale={3}
+                                    />
+                                  </Hide>
+                                  <Show breakpoint="(max-width: 485px)">
+                                    {format(exchange.trade_volume_24h_btc, {
+                                      decimals: 2,
+                                      formattedDecimals: 1,
+                                      smallMinimumMeaningfulDigits: 2,
+                                    })}
+                                  </Show>
                                 </Td>
                               </Tr>
-                              <Tr>
-                                <Td>24h BTC Trade Volume Normalized</Td>
-                                <Td fontWeight="700">
-                                  <NumberFormat
-                                    thousandSeparator={true}
-                                    value={
-                                      exchange.trade_volume_24h_btc_normalized
-                                    }
-                                    displayType="text"
-                                    decimalScale={3}
-                                  />{" "}
-                                  BTC
-                                </Td>
-                              </Tr>
+
                               <Tr>
                                 <Td>Trust Score Rank</Td>
                                 <Td fontWeight="700">
@@ -244,12 +276,7 @@ export default function ExchangePage() {
                               <Tr>
                                 <Td>Trust Score</Td>
                                 <Td fontWeight="700">
-                                  <NumberFormat
-                                    thousandSeparator={true}
-                                    value={exchange.trust_score}
-                                    displayType="text"
-                                    decimalScale={0}
-                                  />
+                                  {exchange.trust_score} / 10
                                 </Td>
                               </Tr>
                               <Tr>
@@ -442,12 +469,21 @@ export default function ExchangePage() {
                                     <Td>{ticker.target}</Td>
                                     <Td>
                                       $
-                                      <NumberFormat
-                                        thousandSeparator={true}
-                                        value={ticker.converted_volume.usd}
-                                        displayType="text"
-                                        decimalScale={0}
-                                      />
+                                      <Hide breakpoint="(max-width: 485px)">
+                                        <NumberFormat
+                                          thousandSeparator={true}
+                                          value={ticker.converted_volume.usd}
+                                          displayType="text"
+                                          decimalScale={0}
+                                        />
+                                      </Hide>
+                                      <Show breakpoint="(max-width: 485px)">
+                                        {format(ticker.converted_volume.usd, {
+                                          decimals: 2,
+                                          formattedDecimals: 1,
+                                          smallMinimumMeaningfulDigits: 2,
+                                        })}
+                                      </Show>
                                     </Td>
 
                                     <HideMobile>
@@ -491,4 +527,16 @@ const Content = styled.div`
   justify-content: center;
   flex-direction: column;
   font-family: "Inter", sans-serif;
+
+  @media (max-width: 400px) {
+    td {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    td {
+      font-size: 14px;
+    }
+  }
 `;
