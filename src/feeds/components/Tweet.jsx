@@ -61,22 +61,24 @@ export default function Tweet({
               </WrapItem>
               <Flex flexDirection="column">
                 <WrapItem>{tweet}</WrapItem>
-                <Flex marginTop="10px">
-                  <Like />
+                <Flex marginTop="10px" justifyContent="space-between">
+                  <Flex>
+                    <Like />
 
-                  <div style={{ marginLeft: "5px" }}>
-                    <Report />
-                  </div>
-
-                  <a href={source} style={{ display: "flex" }} target="_blank">
-                    <Button marginLeft="5px">
-                      {" "}
-                      <div style={{ marginTop: "1px" }}>
-                        <FaGlobe />{" "}
-                      </div>{" "}
-                      <div style={{ marginLeft: "5px" }}>Source</div>
-                    </Button>
-                  </a>
+                    <a
+                      href={source}
+                      style={{ display: "flex" }}
+                      target="_blank"
+                    >
+                      <Button marginLeft="5px">
+                        {" "}
+                        <div style={{ marginTop: "1px" }}>
+                          <FaGlobe />{" "}
+                        </div>{" "}
+                        <div style={{ marginLeft: "5px" }}>Source</div>
+                      </Button>
+                    </a>
+                  </Flex>
 
                   <Date>{date}</Date>
                 </Flex>
@@ -115,22 +117,24 @@ export default function Tweet({
               </WrapItem>
               <Flex flexDirection="column">
                 <WrapItem>{tweet}</WrapItem>
-                <Flex marginTop="10px">
-                  <Like />
+                <Flex marginTop="10px" justifyContent="space-between">
+                  <Flex>
+                    <Like />
 
-                  <div style={{ marginLeft: "5px" }}>
-                    <Report />
-                  </div>
-
-                  <a href={source} style={{ display: "flex" }} target="_blank">
-                    <Button marginLeft="5px">
-                      {" "}
-                      <div style={{ marginTop: "1px" }}>
-                        <FaGlobe />{" "}
-                      </div>{" "}
-                      <div style={{ marginLeft: "5px" }}>Source</div>
-                    </Button>
-                  </a>
+                    <a
+                      href={source}
+                      style={{ display: "flex" }}
+                      target="_blank"
+                    >
+                      <Button marginLeft="5px">
+                        {" "}
+                        <div style={{ marginTop: "1px" }}>
+                          <FaGlobe />{" "}
+                        </div>{" "}
+                        <div style={{ marginLeft: "5px" }}>Source</div>
+                      </Button>
+                    </a>
+                  </Flex>
 
                   <Date>{date}</Date>
                 </Flex>
@@ -157,12 +161,40 @@ const Content = styled.div`
     }
   }
 
+  @media (max-width: 786px) {
+    width: 410px;
+  }
+
+  @media (max-width: 430px) {
+    width: 390px;
+  }
+
+  @media (max-width: 400px) {
+    width: 360px;
+  }
+
+  @media (max-width: 370px) {
+    width: 340px;
+  }
+
+  @media (max-width: 350px) {
+    width: 320px;
+  }
+
+  @media (max-width: 330px) {
+    width: 300px;
+  }
+
   @media (max-width: 310px) {
     width: 280px;
   }
 
-  @media (max-width: 296px) {
-    width: 250px;
+  @media (max-width: 290px) {
+    width: 260px;
+  }
+
+  @media (max-width: 270px) {
+    width: 240px;
   }
 `;
 
@@ -171,70 +203,4 @@ const Date = styled.p`
   color: gray;
   margin-top: 16px;
   margin-bottom: 0px;
-
-  @media (max-width: 1038px) {
-    margin-left: 160px;
-  }
-
-  @media (max-width: 1000px) {
-    margin-left: 160px;
-  }
-
-  @media (max-width: 980px) {
-    margin-left: 150px;
-  }
-
-  @media (max-width: 960px) {
-    margin-left: 130px;
-  }
-
-  @media (max-width: 940px) {
-    margin-left: 130px;
-  }
-
-  @media (max-width: 920px) {
-    margin-left: 120px;
-  }
-
-  @media (max-width: 900px) {
-    margin-left: 110px;
-  }
-
-  @media (max-width: 850px) {
-    position: static;
-    top: 0px;
-    left: 0px;
-    margin-left: 100px;
-    margin-top: 18px;
-    margin-bottom: 0px;
-    margin-right: 2px;
-  }
-
-  @media (max-width: 450px) {
-    margin-left: 90px;
-  }
-
-  @media (max-width: 400px) {
-    margin-left: 70px;
-  }
-
-  @media (max-width: 385px) {
-    margin-left: 50px;
-  }
-
-  @media (max-width: 355px) {
-    margin-left: 30px;
-  }
-
-  @media (max-width: 340px) {
-    margin-left: 10px;
-  }
-
-  @media (max-width: 320px) {
-    margin-left: 5px;
-  }
-
-  @media (max-width: 310px) {
-    display: none;
-  }
 `;

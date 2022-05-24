@@ -143,6 +143,10 @@ const ContentLight = styled.div`
     box-shadow: none;
     outline: none;
   }
+
+  @media (max-width: 786px) {
+    width: 100%;
+  }
 `;
 
 const Options = styled.div`

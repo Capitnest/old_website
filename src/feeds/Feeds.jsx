@@ -140,8 +140,6 @@ export default function Feeds() {
           </div>
         </Content>
       </Layout>
-
-      <Footer />
     </>
   );
 }
@@ -250,7 +248,8 @@ const MiddleSide = styled.div`
   @media (max-width: 786px) {
     display: flex;
     justify-content: center;
-    margin-right: 30%;
-    margin-left: 30%;
+    margin-right: 10%;
+    margin-left: 10%;
+    width: 100%;
   }
 `;
