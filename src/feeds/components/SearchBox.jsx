@@ -19,8 +19,7 @@ export const SearchBarLight = ({
   clearSearch,
 }) => (
   <ContentLight>
-    <br />
-
+    <div style={{ height: "24px" }}></div>
     <FormLight>
       <form onSubmit={formSubmit} style={{ backgroundColor: "#fafafa" }}>
         <InputGroup>
@@ -82,8 +81,7 @@ export const SearchBarDark = ({
   clearSearch,
 }) => (
   <ContentDark>
-    <br />
-
+    <div style={{ height: "24px" }}></div>
     <FormDark>
       <form onSubmit={formSubmit}>
         <InputGroup>
