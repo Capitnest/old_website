@@ -44,8 +44,8 @@ export default function AppRouter(props) {
             <Route exact path="/" component={Homepage} />
           )}
 
-          <Route exact path="/news" component={News} />
-          <Route path="/news/:id" component={Blog} />
+          {/* <Route exact path="/news" component={News} />
+          <Route path="/news/:id" component={Blog} /> */}
 
           <Route path="/indexes" component={Indexes} />
 

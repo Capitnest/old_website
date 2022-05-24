@@ -85,9 +85,9 @@ export function Navbar() {
                   <Navlink to="/markets" name="Markets" />
                 </Link>
 
-                <a href="/news">
+                {/* <a href="/news">
                   <Navlink to="/news" name="News" />
-                </a>
+                </a> */}
               </Nav>
 
               {!currentUser && (
