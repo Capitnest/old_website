@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Layout } from "../components/Layout";
 import Footerr from "../components/Footer";
 import axios from "axios";
-import useScript from "./../functions/useScript";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Badge, Flex, Skeleton } from "@chakra-ui/react";
+import { Flex, Skeleton } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 
 //Components
 import ExchangeNavbar from "./components/Exchanges/ExchangeNavbar";
@@ -32,6 +31,13 @@ export default function Exchanges() {
 
   return (
     <>
+      <Helmet>
+        <title>Crypto Exchanges | Capitnest</title>
+        <meta
+          name="description"
+          content="See the top crypto exchanges, their trade volume, trust score and more advanced statistics."
+        />
+      </Helmet>
       <Layout>
         <Flex justifyContent="center">
           <Title>Exchanges</Title>

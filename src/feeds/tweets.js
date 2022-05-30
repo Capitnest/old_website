@@ -481,6 +481,7 @@ export const tweets = [
         <br />
         Walmart alone would save up to $6.1 Billion and we haven’t even gotten
         into the cost of chargebacks and fraud.
+        <br />
       </p>
     ),
     date: "3/7/2022",

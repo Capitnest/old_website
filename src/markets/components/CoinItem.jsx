@@ -361,7 +361,7 @@ const Volume = styled.div`
 
 const CoinDark = styled.div`
   width: 23%;
-  background-color: rgba(0, 0, 0, 0.24);
+  background-color: #171923;
 
   padding: 0.6rem 1rem;
   border-radius: 0px;
@@ -427,6 +427,10 @@ const CoinRowDark = styled.div`
 
   @media (max-width: 900px) {
     font-size: 16px;
+  }
+
+  @media (max-width: 550px) {
+    background-color: #171923;
   }
 `;
 

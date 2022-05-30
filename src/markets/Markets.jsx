@@ -2,32 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Layout } from "../components/Layout";
 import Footerr from "../components/Footer";
 import axios from "axios";
-import useScript from "./../functions/useScript";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import {
-  Badge,
-  Flex,
-  Center,
-  Button,
-  Stat,
-  StatLabel,
-  StatNumber,
-  StatHelpText,
-  Tabs,
-  TabList,
-  Tab,
-  Skeleton,
-} from "@chakra-ui/react";
+import { Flex, Skeleton } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 
 //Components
 import Coins from "./components/Coins";
-import CoinItem from "./components/CoinItem";
-import NavbarCategories from "./components/NavbarCategories";
-import GlobalStats from "./components/GlobalStats";
-import MarketsPaginations from "./components/MarketsPaginations";
-import MarketsNavbar from "./components/MarketsNavbar";
-import ScrollToTop from "react-scroll-to-top";
+import MarketsPaginations from "./components/Markets/MarketsPaginations";
+import MarketsNavbar from "./components/Markets/MarketsNavbar";
 
 export default function Markets() {
   const [coins, setCoins] = useState([]);
@@ -54,6 +36,13 @@ export default function Markets() {
 
   return (
     <>
+      <Helmet>
+        <title>Coins & Cryptocurrency Prices | Capitnest</title>
+        <meta
+          name="description"
+          content="See the currenct price of over 3000 cryptocurrencies & advanced statistics about each of them."
+        />
+      </Helmet>
       <Layout>
         <Flex justifyContent="center">
           <Title>Markets</Title>

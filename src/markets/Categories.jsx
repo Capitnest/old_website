@@ -2,16 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Layout } from "../components/Layout";
 import Footerr from "../components/Footer";
 import axios from "axios";
-import useScript from "./../functions/useScript";
 import styled from "styled-components";
-import { Link, useParams } from "react-router-dom";
-import { Badge, Flex } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
+import { Flex } from "@chakra-ui/react";
 
 //Components
 import Coins from "./components/Coins";
-import CoinItem from "./components/CoinItem";
-import NavbarCategories from "./components/NavbarCategories";
-import MarketsNavbar from "./components/MarketsNavbar";
+import MarketsNavbar from "./components/Markets/MarketsNavbar";
 
 export default function Categories() {
   const [coins, setCoins] = useState([]);

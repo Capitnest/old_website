@@ -21,10 +21,6 @@ import {
 
 //Components
 import Coins from "./components/Coins";
-import CoinItem from "./components/CoinItem";
-import NavbarCategories from "./components/NavbarCategories";
-import GlobalStats from "./components/GlobalStats";
-import MarketsPaginations from "./components/MarketsPaginations";
 import IndexesNavbar from "./components/Indexes/IndexesNavbar";
 
 export default function Markets() {

@@ -25,8 +25,8 @@ import {
 import { Link } from "react-router-dom";
 import { SearchIcon } from "@chakra-ui/icons";
 import styled from "styled-components";
-import { categories } from "./../data/categories";
-import SearchBar from "../../news/components/SearchBar";
+import { categories } from "../../data/categories";
+import SearchBar from "../../../news/components/SearchBar";
 
 export default function MarketsNavbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -69,42 +69,6 @@ export default function MarketsNavbar() {
       </Tabs>
 
       <br />
-
-      <Flex>
-        <Stat>
-          <StatLabel fontSize="18px" fontWeight="700">
-            Coins
-          </StatLabel>
-          <StatNumber>3868</StatNumber>
-          <StatHelpText>Tracked</StatHelpText>
-        </Stat>
-
-        <Stat>
-          <StatLabel fontSize="18px" fontWeight="700">
-            Exchanges
-          </StatLabel>
-          <StatNumber>250</StatNumber>
-          <StatHelpText>Tracked</StatHelpText>
-        </Stat>
-
-        <Stat>
-          <StatLabel fontSize="18px" fontWeight="700">
-            Indexes
-          </StatLabel>
-          <StatNumber>29</StatNumber>
-          <StatHelpText>Tracked</StatHelpText>
-        </Stat>
-
-        <Hide breakpoint="(max-width: 550px)">
-          <Stat>
-            <StatLabel fontSize="18px" fontWeight="700">
-              Categories
-            </StatLabel>
-            <StatNumber>75</StatNumber>
-            <StatHelpText>Available</StatHelpText>
-          </Stat>
-        </Hide>
-      </Flex>
 
       <div>
         <Button onClick={onOpen}>Categories</Button>

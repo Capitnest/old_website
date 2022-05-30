@@ -2,28 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Layout } from "../components/Layout";
 import Footerr from "../components/Footer";
 import axios from "axios";
-import useScript from "./../functions/useScript";
 import styled from "styled-components";
-import { Link, useParams } from "react-router-dom";
-import {
-  Badge,
-  Flex,
-  Center,
-  Button,
-  Stat,
-  StatLabel,
-  StatNumber,
-  Skeleton,
-  StatHelpText,
-} from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
+import { Flex, Skeleton } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 
 //Components
 import Coins from "./components/Coins";
-import CoinItem from "./components/CoinItem";
-import NavbarCategories from "./components/NavbarCategories";
-import GlobalStats from "./components/GlobalStats";
-import MarketsPaginations from "./components/MarketsPaginations";
-import MarketsNavbar from "./components/MarketsNavbar";
+import MarketsPaginations from "./components/Markets/MarketsPaginations";
+import MarketsNavbar from "./components/Markets/MarketsNavbar";
 
 export default function MarketsPage() {
   const { id } = useParams();
@@ -32,10 +19,6 @@ export default function MarketsPage() {
   const [page, setPage] = useState(1);
 
   const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=${id}&sparkline=false`;
-
-  function ChangePage(number) {
-    return setPage(number);
-  }
 
   useEffect(() => {
     axios
@@ -51,6 +34,11 @@ export default function MarketsPage() {
 
   return (
     <>
+      <title>Coins & Cryptocurrency Prices | Capitnest</title>
+      <meta
+        name="description"
+        content="See the currenct price of over 3000 cryptocurrencies & advanced statistics about each of them."
+      />
       <Layout>
         <Flex justifyContent="center" flexDirection="column">
           <Title>Markets</Title>

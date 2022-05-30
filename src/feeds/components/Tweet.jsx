@@ -61,7 +61,8 @@ export default function Tweet({
               </WrapItem>
               <Flex flexDirection="column">
                 <WrapItem>{tweet}</WrapItem>
-                <Flex marginTop="10px" justifyContent="space-between">
+                <br />
+                <Flex marginTop="20px" justifyContent="space-between">
                   <Flex>
                     <Like />
 

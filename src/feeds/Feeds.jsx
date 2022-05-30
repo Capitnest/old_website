@@ -1,33 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Layout } from "../components/Layout";
 import Tweet from "./components/Tweet";
 import { tweets } from "./tweets.js";
 import { influencers } from "./influencers";
-import {
-  Flex,
-  Spacer,
-  Wrap,
-  WrapItem,
-  useColorMode,
-  Box,
-  Container,
-  Button,
-} from "@chakra-ui/react";
+import { Wrap, WrapItem, useColorMode } from "@chakra-ui/react";
 import styled from "styled-components";
 import Influencer from "./components/Influencer";
-import useScript from "./../functions/useScript";
 import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
 import Coins from "./components/CryptoPrices/Coins";
 import { Link } from "react-router-dom";
-import Footer from "./../components/Footer";
-import InfiniteScroll from "react-infinite-scroll-component";
+
 import HashtagsNav from "./components/HashtagsNav";
 
 export default function Feeds() {
   const [blogs, setBlogs] = useState(tweets);
   const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
-  const i = 5;
+
+  useEffect(() => {
+    //scroll to the top
+    window.scrollTo(0, 0);
+  }, []);
 
   //Search submit
   const handleSearchBar = (e) => {

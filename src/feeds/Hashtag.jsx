@@ -1,29 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Layout } from "../components/Layout";
 import Tweet from "./components/Tweet";
 import { tweets } from "./tweets.js";
 import { influencers } from "./influencers";
-import {
-  Flex,
-  Spacer,
-  Wrap,
-  WrapItem,
-  useColorMode,
-  Box,
-  Button,
-  Badge,
-  Container,
-} from "@chakra-ui/react";
+import { Wrap, WrapItem, useColorMode, Box, Badge } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 import styled from "styled-components";
 import Influencer from "./components/Influencer";
-import useScript from "./../functions/useScript";
-import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
 import { Link, useParams } from "react-router-dom";
-import Footer from "./../components/Footer";
 import InfiniteScroll from "react-infinite-scroll-component";
 import HashtagsNav from "./components/HashtagsNav";
 import Coins from "./components/CryptoPrices/Coins";
+
+// data
+import { bitcoin } from "../data/feeds/hashtag/bitcoin";
+import { ethereum } from "../data/feeds/hashtag/ethereum";
+import { cardano } from "../data/feeds/hashtag/cardano";
+import { solana } from "../data/feeds/hashtag/solana";
 
 export default function Hashtag() {
   const { id } = useParams();
@@ -31,26 +24,22 @@ export default function Hashtag() {
   const [searchKey, setSearchKey] = useState(id);
   const { colorMode, toggleColorMode } = useColorMode();
 
-  //Search submit
-  const handleSearchBar = (e) => {
-    e.preventDefault();
-    handleSearchResults();
-  };
+  useEffect(() => {
+    //scroll to the top
+    window.scrollTo(0, 0);
 
-  //Search for blog by category
-  const handleSearchResults = () => {
-    const allBlogs = tweets;
-    const filteredBlogs = allBlogs.filter((blog) =>
-      blog.searchKeywords.toLowerCase().includes(id.toLowerCase().trim())
-    );
-    setBlogs(filteredBlogs);
-  };
-
-  //Clear search and show all blogs
-  const handleClearSearch = () => {
-    setBlogs(tweets);
-    setSearchKey("bitcoin");
-  };
+    if (id === "bitcoin") {
+      setBlogs(bitcoin);
+    } else if (id === "ethereum") {
+      setBlogs(ethereum);
+    } else if (id === "cardano") {
+      setBlogs(cardano);
+    } else if (id === "solana") {
+      setBlogs(solana);
+    } else {
+      setBlogs(null);
+    }
+  }, [id]);
 
   return (
     <>
@@ -67,109 +56,111 @@ export default function Hashtag() {
               <HashtagsNav />
             </HashtagComponent>
 
-            <LeftSide>
-              {colorMode === "dark" ? (
-                <>
-                  <Box
-                    maxW="lg"
-                    backgroundColor="rgb(26, 32, 44)"
-                    color="white"
-                    marginRight="20px"
-                    padding="5px 10px"
-                    height="60px"
-                    marginTop="-30px"
-                    width="100%"
-                    position="fixed"
-                    zIndex="2"
-                  >
-                    <h1
-                      style={{
-                        fontFamily: '"Inter", sans-serif',
-                        fontSize: "25px",
-                        fontWeight: 700,
-                        position: "fixed",
-                        marginTop: "20px",
-                        marginBottom: "20px",
-                      }}
-                    >
-                      Posts about{" "}
-                      <Link to="/feeds">
-                        <Badge
-                          marginBottom="5px"
-                          colorScheme="green"
-                          fontSize="20px"
-                          padding="2px 10px"
+            {blogs === null ? (
+              <h1>Not found</h1>
+            ) : (
+              <>
+                <LeftSide>
+                  {colorMode === "dark" ? (
+                    <>
+                      <Box
+                        maxW="lg"
+                        backgroundColor="rgb(26, 32, 44)"
+                        color="white"
+                        marginRight="20px"
+                        padding="5px 10px"
+                        height="60px"
+                        marginTop="-30px"
+                        width="100%"
+                        position="fixed"
+                        zIndex="2"
+                      >
+                        <h1
+                          style={{
+                            fontFamily: '"Inter", sans-serif',
+                            fontSize: "25px",
+                            fontWeight: 700,
+                            position: "fixed",
+                            marginTop: "20px",
+                            marginBottom: "20px",
+                          }}
                         >
-                          {id} <CloseIcon w={4} h={4} marginBottom="4px" />
-                        </Badge>
-                      </Link>
-                    </h1>
-                  </Box>
-                </>
-              ) : (
-                <>
-                  <Box
-                    maxW="lg"
-                    backgroundColor="white"
-                    marginRight="20px"
-                    padding="5px 10px"
-                    height="60px"
-                    marginTop="-30px"
-                    width="100%"
-                    position="fixed"
-                    zIndex="2"
-                  >
-                    <h1
-                      style={{
-                        fontFamily: '"Inter", sans-serif',
-                        fontSize: "25px",
-                        fontWeight: 700,
-                        position: "fixed",
-                        marginTop: "20px",
-                        marginBottom: "20px",
-                      }}
-                    >
-                      Posts about{" "}
-                      <Link to="/feeds">
-                        <Badge
-                          marginBottom="5px"
-                          colorScheme="green"
-                          fontSize="20px"
-                          padding="2px 10px"
+                          Posts about{" "}
+                          <Link to="/feeds">
+                            <Badge
+                              marginBottom="5px"
+                              colorScheme="green"
+                              fontSize="20px"
+                              padding="2px 10px"
+                            >
+                              {id} <CloseIcon w={4} h={4} marginBottom="4px" />
+                            </Badge>
+                          </Link>
+                        </h1>
+                      </Box>
+                    </>
+                  ) : (
+                    <>
+                      <Box
+                        maxW="lg"
+                        backgroundColor="white"
+                        marginRight="20px"
+                        padding="5px 10px"
+                        height="60px"
+                        marginTop="-30px"
+                        width="100%"
+                        position="fixed"
+                        zIndex="2"
+                      >
+                        <h1
+                          style={{
+                            fontFamily: '"Inter", sans-serif',
+                            fontSize: "25px",
+                            fontWeight: 700,
+                            position: "fixed",
+                            marginTop: "20px",
+                            marginBottom: "20px",
+                          }}
                         >
-                          {id} <CloseIcon w={4} h={4} marginBottom="4px" />
-                        </Badge>
-                      </Link>
-                    </h1>
-                  </Box>
-                </>
-              )}
+                          Posts about{" "}
+                          <Link to="/feeds">
+                            <Badge
+                              marginBottom="5px"
+                              colorScheme="green"
+                              fontSize="20px"
+                              padding="2px 10px"
+                            >
+                              {id} <CloseIcon w={4} h={4} marginBottom="4px" />
+                            </Badge>
+                          </Link>
+                        </h1>
+                      </Box>
+                    </>
+                  )}
 
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                  marginTop: "20px",
-                }}
-              >
-                <InfiniteScroll dataLength={blogs.length}>
-                  {blogs
-                    .filter((blog) =>
-                      blog.searchKeywords
-                        .toLowerCase()
-                        .includes(id.toLowerCase().trim())
-                    )
-                    .map((tweet) => (
-                      <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-                        <WrapItem>
-                          <Tweet blog={tweet} />
-                        </WrapItem>
-                      </div>
-                    ))}
-                </InfiniteScroll>
-              </div>
-            </LeftSide>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      flexDirection: "column",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <InfiniteScroll dataLength={blogs.length}>
+                      {blogs.map((tweet) => (
+                        <div
+                          style={{ marginTop: "10px", marginBottom: "10px" }}
+                        >
+                          <WrapItem>
+                            <Tweet blog={tweet} />
+                          </WrapItem>
+                        </div>
+                      ))}
+                    </InfiniteScroll>
+                  </div>
+                </LeftSide>
+              </>
+            )}
 
             <div
               style={{
@@ -208,8 +199,6 @@ export default function Hashtag() {
           </div>
         </Content>
       </Layout>
-
-      <Footer />
     </>
   );
 }
