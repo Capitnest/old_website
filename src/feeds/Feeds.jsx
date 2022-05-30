@@ -8,11 +8,12 @@ import styled from "styled-components";
 import Influencer from "./components/Influencer";
 import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
 import Coins from "./components/CryptoPrices/Coins";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import HashtagsNav from "./components/HashtagsNav";
 
 export default function Feeds() {
+  const { id } = useParams();
   const [blogs, setBlogs] = useState(tweets);
   const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
@@ -20,7 +21,7 @@ export default function Feeds() {
   useEffect(() => {
     //scroll to the top
     window.scrollTo(0, 0);
-  }, []);
+  }, [id]);
 
   //Search submit
   const handleSearchBar = (e) => {
