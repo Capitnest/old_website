@@ -56,96 +56,103 @@ export default function Hashtag() {
               <HashtagsNav />
             </HashtagComponent>
 
-            {blogs === null ? (
-              <h1>Not found</h1>
-            ) : (
-              <>
-                <LeftSide>
-                  {colorMode === "dark" ? (
-                    <>
-                      <Box
-                        maxW="lg"
-                        backgroundColor="rgb(26, 32, 44)"
-                        color="white"
-                        marginRight="20px"
-                        padding="5px 10px"
-                        height="60px"
-                        marginTop="-30px"
-                        width="100%"
-                        position="fixed"
-                        zIndex="2"
+            <>
+              <LeftSide>
+                {colorMode === "dark" ? (
+                  <>
+                    <Box
+                      maxW="lg"
+                      backgroundColor="rgb(26, 32, 44)"
+                      color="white"
+                      marginRight="20px"
+                      padding="5px 10px"
+                      height="60px"
+                      marginTop="-30px"
+                      width="100%"
+                      position="fixed"
+                      zIndex="2"
+                    >
+                      <h1
+                        style={{
+                          fontFamily: '"Inter", sans-serif',
+                          fontSize: "25px",
+                          fontWeight: 700,
+                          position: "fixed",
+                          marginTop: "20px",
+                          marginBottom: "20px",
+                        }}
                       >
-                        <h1
-                          style={{
-                            fontFamily: '"Inter", sans-serif',
-                            fontSize: "25px",
-                            fontWeight: 700,
-                            position: "fixed",
-                            marginTop: "20px",
-                            marginBottom: "20px",
-                          }}
-                        >
-                          Posts about{" "}
-                          <Link to="/feeds">
-                            <Badge
-                              marginBottom="5px"
-                              colorScheme="green"
-                              fontSize="20px"
-                              padding="2px 10px"
-                            >
-                              {id} <CloseIcon w={4} h={4} marginBottom="4px" />
-                            </Badge>
-                          </Link>
-                        </h1>
-                      </Box>
-                    </>
-                  ) : (
-                    <>
-                      <Box
-                        maxW="lg"
-                        backgroundColor="white"
-                        marginRight="20px"
-                        padding="5px 10px"
-                        height="60px"
-                        marginTop="-30px"
-                        width="100%"
-                        position="fixed"
-                        zIndex="2"
+                        Posts about{" "}
+                        <Link to="/feeds">
+                          <Badge
+                            marginBottom="5px"
+                            colorScheme="green"
+                            fontSize="20px"
+                            padding="2px 10px"
+                          >
+                            {id} <CloseIcon w={4} h={4} marginBottom="4px" />
+                          </Badge>
+                        </Link>
+                      </h1>
+                    </Box>
+                  </>
+                ) : (
+                  <>
+                    <Box
+                      maxW="lg"
+                      backgroundColor="white"
+                      marginRight="20px"
+                      padding="5px 10px"
+                      height="60px"
+                      marginTop="-30px"
+                      width="100%"
+                      position="fixed"
+                      zIndex="2"
+                    >
+                      <h1
+                        style={{
+                          fontFamily: '"Inter", sans-serif',
+                          fontSize: "25px",
+                          fontWeight: 700,
+                          position: "fixed",
+                          marginTop: "20px",
+                          marginBottom: "20px",
+                        }}
                       >
-                        <h1
-                          style={{
-                            fontFamily: '"Inter", sans-serif',
-                            fontSize: "25px",
-                            fontWeight: 700,
-                            position: "fixed",
-                            marginTop: "20px",
-                            marginBottom: "20px",
-                          }}
-                        >
-                          Posts about{" "}
-                          <Link to="/feeds">
-                            <Badge
-                              marginBottom="5px"
-                              colorScheme="green"
-                              fontSize="20px"
-                              padding="2px 10px"
-                            >
-                              {id} <CloseIcon w={4} h={4} marginBottom="4px" />
-                            </Badge>
-                          </Link>
-                        </h1>
-                      </Box>
-                    </>
-                  )}
+                        Posts about{" "}
+                        <Link to="/feeds">
+                          <Badge
+                            marginBottom="5px"
+                            colorScheme="green"
+                            fontSize="20px"
+                            padding="2px 10px"
+                          >
+                            {id} <CloseIcon w={4} h={4} marginBottom="4px" />
+                          </Badge>
+                        </Link>
+                      </h1>
+                    </Box>
+                  </>
+                )}
 
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      flexDirection: "column",
-                      marginTop: "20px",
-                    }}
-                  >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    marginTop: "20px",
+                  }}
+                >
+                  {blogs === null ? (
+                    <h1
+                      style={{
+                        marginTop: "30px",
+                        fontSize: "22px",
+                      }}
+                    >
+                      Couldn't find any posts about this hashtag :(
+                    </h1>
+                  ) : (
                     <InfiniteScroll dataLength={blogs.length}>
                       {blogs.map((tweet) => (
                         <div
@@ -157,10 +164,10 @@ export default function Hashtag() {
                         </div>
                       ))}
                     </InfiniteScroll>
-                  </div>
-                </LeftSide>
-              </>
-            )}
+                  )}
+                </div>
+              </LeftSide>
+            </>
 
             <div
               style={{
