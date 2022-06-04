@@ -37,6 +37,23 @@ export default function Footerr() {
           ],
         },
         {
+          title: "Company",
+          items: [
+            {
+              title: "Manifesto",
+              url: "/manifesto",
+            },
+            {
+              title: "Advertise & Sponsors",
+              url: "/advertise",
+            },
+            {
+              title: "Contact Us",
+              url: "/contact",
+            },
+          ],
+        },
+        {
           title: "Legal",
 
           items: [

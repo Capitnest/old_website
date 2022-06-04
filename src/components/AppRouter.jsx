@@ -14,9 +14,6 @@ import NotfoundPage from "../pages/NotfoundPage";
 import Profilepage from "../pages/Profile/Profilepage";
 import Registerpage from "../pages/Registerpage";
 import ResetPasswordPage from "../pages/ResetPasswordPage";
-import TestPage from "../pages/TestPage";
-import News from "../news/News";
-import Blog from "../news/Blog";
 import Feeds from "../feeds/Feeds";
 import Dashboard from "../pages/Dashboard/Dashboard";
 
@@ -28,8 +25,11 @@ import Markets from "../markets/Markets";
 import CoinPage from "../markets/CoinPage";
 import Categories from "../markets/Categories";
 import MarketsPage from "../markets/MarketsPage";
-
 import Hashtag from "../feeds/Hashtag";
+
+import Manifesto from "../pages/company/manifesto/Manifesto";
+import Contact from "../pages/company/contact/Contact";
+import Advertise from "../pages/company/advertise/Advertise";
 
 export default function AppRouter(props) {
   const { logout, currentUser } = useAuth();
@@ -44,9 +44,6 @@ export default function AppRouter(props) {
             <Route exact path="/" component={Homepage} />
           )}
 
-          {/* <Route exact path="/news" component={News} />
-          <Route path="/news/:id" component={Blog} /> */}
-
           <Route path="/indexes" component={Indexes} />
 
           <Route path="/exchange/:id" component={ExchangePage} />
@@ -60,11 +57,14 @@ export default function AppRouter(props) {
           <Route exact path="/feeds" component={Feeds} />
           <Route path="/feeds/:id" component={Hashtag} />
 
+          <Route path="/manifesto" component={Manifesto} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/advertise" component={Advertise} />
+
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/login" component={Loginpage} />
           <ProtectedRoute exact path="/register" component={Registerpage} />
           <ProtectedRoute exact path="/profile" component={Profilepage} />
-          <ProtectedRoute exact path="/test" component={TestPage} />
           <ProtectedRoute
             exact
             path="/forgot-password"
