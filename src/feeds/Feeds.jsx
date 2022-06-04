@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Layout } from "../components/Layout";
 import Tweet from "./components/Tweet";
-import { tweets } from "./tweets.js";
+import { daily } from "../data/feeds/general/daily";
 import { influencers } from "./influencers";
-import { Wrap, WrapItem, useColorMode } from "@chakra-ui/react";
+import { Wrap, WrapItem, useColorMode, Box } from "@chakra-ui/react";
 import styled from "styled-components";
 import Influencer from "./components/Influencer";
 import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
@@ -14,7 +14,7 @@ import HashtagsNav from "./components/HashtagsNav";
 
 export default function Feeds() {
   const { id } = useParams();
-  const [blogs, setBlogs] = useState(tweets);
+  const [blogs, setBlogs] = useState(daily);
   const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -31,7 +31,7 @@ export default function Feeds() {
 
   //Search for blog by category
   const handleSearchResults = () => {
-    const allBlogs = tweets;
+    const allBlogs = daily;
     const filteredBlogs = allBlogs.filter((blog) =>
       blog.searchKeywords.toLowerCase().includes(searchKey.toLowerCase().trim())
     );
@@ -40,7 +40,7 @@ export default function Feeds() {
 
   //Clear search and show all blogs
   const handleClearSearch = () => {
-    setBlogs(tweets);
+    setBlogs(daily);
     setSearchKey("");
   };
 
@@ -61,21 +61,23 @@ export default function Feeds() {
 
             <MiddleSide>
               <Search>
-                {colorMode === "dark" ? (
-                  <SearchBarDark
-                    value={searchKey}
-                    clearSearch={handleClearSearch}
-                    formSubmit={handleSearchBar}
-                    handleSearchKey={(e) => setSearchKey(e.target.value)}
-                  />
-                ) : (
-                  <SearchBarLight
-                    value={searchKey}
-                    clearSearch={handleClearSearch}
-                    formSubmit={handleSearchBar}
-                    handleSearchKey={(e) => setSearchKey(e.target.value)}
-                  />
-                )}
+                <div style={{ marginTop: "0px" }}>
+                  {colorMode === "dark" ? (
+                    <SearchBarDark
+                      value={searchKey}
+                      clearSearch={handleClearSearch}
+                      formSubmit={handleSearchBar}
+                      handleSearchKey={(e) => setSearchKey(e.target.value)}
+                    />
+                  ) : (
+                    <SearchBarLight
+                      value={searchKey}
+                      clearSearch={handleClearSearch}
+                      formSubmit={handleSearchBar}
+                      handleSearchKey={(e) => setSearchKey(e.target.value)}
+                    />
+                  )}
+                </div>
               </Search>
 
               <div
