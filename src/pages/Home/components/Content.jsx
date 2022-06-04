@@ -28,7 +28,7 @@ export default function Content() {
       <BigScreen>
         <span>
           <Box
-            maxW="sm"
+            maxW="md"
             borderWidth="2px"
             borderRadius="lg"
             overflow="hidden"
@@ -56,7 +56,7 @@ export default function Content() {
 
         <span>
           <Box
-            maxW="sm"
+            maxW="md"
             borderWidth="2px"
             borderRadius="lg"
             overflow="hidden"
@@ -80,47 +80,6 @@ export default function Content() {
                 </Button>
               </a>
             </Center>
-          </Box>
-        </span>
-
-        <span>
-          <Box
-            maxW="sm"
-            borderWidth="2px"
-            borderRadius="lg"
-            overflow="hidden"
-            padding="10px"
-            backgroundColor={backgroundClr}
-            borderColor={borderClr}
-            height="100%"
-          >
-            <div>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <img src="/images/markets.png" width="200px" />
-              </div>
-              <h1>Markets</h1>
-              <p style={{ fontSize: "15px", marginTop: "5px" }}>
-                See the current prices of cryptocurrencies
-              </p>
-              <Center>
-                <a
-                  href="/markets"
-                  style={{
-                    fontSize: "15px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  <Button
-                    colorScheme="green"
-                    size="sm"
-                    marginTop="7px"
-                    bottom="0"
-                  >
-                    Markets
-                  </Button>
-                </a>
-              </Center>
-            </div>
           </Box>
         </span>
       </BigScreen>

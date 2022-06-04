@@ -45,10 +45,6 @@ export default function Homepage() {
 
         <br />
 
-        <Content />
-
-        {/* <Text my={6}>{currentUser?.email}</Text> */}
-
         <br />
         <br />
         <br />
@@ -56,13 +52,9 @@ export default function Homepage() {
         <Newsletter />
 
         <br />
-        <br />
-        <br />
-        <br />
 
         <Join />
 
-        <br />
         <br />
       </Container>
       <Footerr />
