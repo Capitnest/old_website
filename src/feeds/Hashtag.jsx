@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Layout } from "../components/Layout";
 import Tweet from "./components/Tweet";
-import { tweets } from "./tweets.js";
+import { daily } from "../data/feeds/general/daily";
 import { influencers } from "./influencers";
 import { Wrap, WrapItem, useColorMode, Box, Badge } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
@@ -11,6 +11,7 @@ import { Link, useParams } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import HashtagsNav from "./components/HashtagsNav";
 import Coins from "./components/CryptoPrices/Coins";
+import { Helmet } from "react-helmet";
 
 // data
 import { bitcoin } from "../data/feeds/hashtag/bitcoin";
@@ -20,7 +21,7 @@ import { solana } from "../data/feeds/hashtag/solana";
 
 export default function Hashtag() {
   const { id } = useParams();
-  const [blogs, setBlogs] = useState(tweets);
+  const [blogs, setBlogs] = useState(daily);
   const [searchKey, setSearchKey] = useState(id);
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -43,6 +44,9 @@ export default function Hashtag() {
 
   return (
     <>
+      <Helmet>
+        <title>#{id} Feeds | Capitnest</title>
+      </Helmet>
       <Layout>
         <Content>
           <div
@@ -82,7 +86,7 @@ export default function Hashtag() {
                           marginBottom: "20px",
                         }}
                       >
-                        Posts about{" "}
+                        Top posts about{" "}
                         <Link to="/feeds">
                           <Badge
                             marginBottom="5px"
@@ -119,7 +123,7 @@ export default function Hashtag() {
                           marginBottom: "20px",
                         }}
                       >
-                        Posts about{" "}
+                        Top posts about{" "}
                         <Link to="/feeds">
                           <Badge
                             marginBottom="5px"
@@ -153,7 +157,7 @@ export default function Hashtag() {
                       Couldn't find any posts about this hashtag :(
                     </h1>
                   ) : (
-                    <InfiniteScroll dataLength={blogs.length}>
+                    <>
                       {blogs.map((tweet) => (
                         <div
                           style={{ marginTop: "10px", marginBottom: "10px" }}
@@ -163,7 +167,7 @@ export default function Hashtag() {
                           </WrapItem>
                         </div>
                       ))}
-                    </InfiniteScroll>
+                    </>
                   )}
                 </div>
               </LeftSide>

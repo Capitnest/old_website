@@ -9,7 +9,7 @@ import Influencer from "./components/Influencer";
 import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
 import Coins from "./components/CryptoPrices/Coins";
 import { Link, useParams } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
 import HashtagsNav from "./components/HashtagsNav";
 
 export default function Feeds() {
@@ -46,6 +46,9 @@ export default function Feeds() {
 
   return (
     <>
+      <Helmet>
+        <title>Feeds | Capitnest</title>
+      </Helmet>
       <Layout>
         <Content>
           <div

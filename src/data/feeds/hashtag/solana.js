@@ -1,5 +1,15 @@
 export const solana = [
   {
+    authorName: "The Moon",
+    authorUsername: "@themooncarl",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1490246864259719169/xdaghUss_400x400.jpg",
+    authorLink: "https://twitter.com/themooncarl",
+    tweet: <p>Would you rather hold $ADA or $SOL?</p>,
+    date: "04/06/2022",
+    source: "https://twitter.com/TheMoonCarl/status/1533113032389316609",
+  },
+  {
     authorName: "ΞxitLiquidity // 454.eth",
     authorUsername: "@exitliquidity1",
     authorProfilePic:

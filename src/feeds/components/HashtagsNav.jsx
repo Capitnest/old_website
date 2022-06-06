@@ -52,10 +52,10 @@ export default function HashtagsNav() {
               <Navlink to="/feeds/ethereum" name="#Ethereum" />
               <Navlink to="/feeds/solana" name="#Solana" />
               <Navlink to="/feeds/cardano" name="#Cardano" />
-              <Navlink to="/feeds/polkadot" name="#Polkadot" />
+              {/* <Navlink to="/feeds/polkadot" name="#Polkadot" />
               <Navlink to="/feeds/bnb" name="#BNB" />
               <Navlink to="/feeds/xrp" name="#XRP" />
-              <Navlink to="/feeds/doge" name="#Doge" />
+              <Navlink to="/feeds/doge" name="#Doge" /> */}
             </div>
           </div>
         </Box>
@@ -101,10 +101,10 @@ export default function HashtagsNav() {
               <Navlink to="/feeds/ethereum" name="#Ethereum" />
               <Navlink to="/feeds/solana" name="#Solana" />
               <Navlink to="/feeds/cardano" name="#Cardano" />
-              <Navlink to="/feeds/polkadot" name="#Polkadot" />
+              {/* <Navlink to="/feeds/polkadot" name="#Polkadot" />
               <Navlink to="/feeds/bnb" name="#BNB" />
               <Navlink to="/feeds/xrp" name="#XRP" />
-              <Navlink to="/feeds/doge" name="#Doge" />
+              <Navlink to="/feeds/doge" name="#Doge" /> */}
             </div>
           </div>
         </Box>

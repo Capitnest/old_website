@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { Box, Flex, Avatar } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
 import Numeral from "react-numeral";
+import { Link } from "react-router-dom";
 
 export default function CoinItem(props) {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <a
-      href={"/markets/" + props.coins.id}
+    <Link
+      to={"/coins/" + props.coins.id}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       {colorMode === "dark" ? (
@@ -93,7 +94,7 @@ export default function CoinItem(props) {
           </div>
         </CoinRowLight>
       )}
-    </a>
+    </Link>
   );
 }
 

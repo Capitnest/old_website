@@ -41,8 +41,8 @@ export default function Tweet({
             borderColor="#04d192"
             backgroundColor="rgb(18, 22, 31)"
           >
-            <Wrap>
-              <WrapItem>
+            <Flex flexDirection="column">
+              <Flex>
                 <a href={authorLink} target="_blank">
                   <Avatar name={authorName} src={authorProfilePic} />
                 </a>
@@ -58,9 +58,9 @@ export default function Tweet({
                     {authorUsername}
                   </a>
                 </Flex>
-              </WrapItem>
+              </Flex>
               <Flex flexDirection="column">
-                <WrapItem>{tweet}</WrapItem>
+                <p style={{ width: "100%", marginTop: "2px" }}>{tweet}</p>
                 <br />
                 <Flex marginTop="20px" justifyContent="space-between">
                   <Flex>
@@ -84,7 +84,7 @@ export default function Tweet({
                   <Date>{date}</Date>
                 </Flex>
               </Flex>
-            </Wrap>
+            </Flex>
           </Box>
         </Content>
       ) : (
@@ -98,8 +98,8 @@ export default function Tweet({
             borderColor="#04d192"
             backgroundColor="var(--chakra-colors-gray-100)"
           >
-            <Wrap>
-              <WrapItem>
+            <Flex flexDirection="column">
+              <Flex>
                 <a href={authorLink} target="_blank">
                   <Avatar name={authorName} src={authorProfilePic} />
                 </a>
@@ -115,9 +115,10 @@ export default function Tweet({
                     {authorUsername}
                   </a>
                 </Flex>
-              </WrapItem>
+              </Flex>
               <Flex flexDirection="column">
-                <WrapItem>{tweet}</WrapItem>
+                <p style={{ width: "100%", marginTop: "2px" }}>{tweet}</p>
+                <br />
                 <Flex marginTop="10px" justifyContent="space-between">
                   <Flex>
                     <Like />
@@ -140,7 +141,7 @@ export default function Tweet({
                   <Date>{date}</Date>
                 </Flex>
               </Flex>
-            </Wrap>
+            </Flex>
           </Box>
         </Content>
       )}
@@ -160,6 +161,14 @@ const Content = styled.div`
       text-decoration: none;
       color: #04d192;
     }
+  }
+
+  @media (min-width: 1150px) {
+    width: 500px;
+  }
+
+  @media (max-width: 1150px) {
+    width: 100%;
   }
 
   @media (max-width: 786px) {

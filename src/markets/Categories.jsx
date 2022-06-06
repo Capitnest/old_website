@@ -5,6 +5,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 
 //Components
 import Coins from "./components/Coins";
@@ -30,6 +31,9 @@ export default function Categories() {
 
   return (
     <>
+      <Helmet>
+        <title>{id} Coins - Markets | Capitnest</title>
+      </Helmet>
       <Layout>
         <Flex justifyContent="center">
           <Title>{id}</Title>

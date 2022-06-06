@@ -18,6 +18,7 @@ import {
   TabList,
   Tab,
 } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 
 //Components
 import Coins from "./components/Coins";
@@ -44,6 +45,9 @@ export default function Markets() {
 
   return (
     <>
+      <Helmet>
+        <title>Crypto Indexes | Capitnest</title>
+      </Helmet>
       <Layout>
         <Flex justifyContent="center">
           <Title>Indexes</Title>

@@ -1,5 +1,24 @@
 export const cardano = [
   {
+    authorName: "big pey",
+    authorUsername: "@bigpeyYT",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1527700467328995329/LM9du_Bu_400x400.jpg",
+    authorLink: "https://twitter.com/bigpeyYT",
+    tweet: (
+      <p>
+        #Cardano is trending again! If you're new to the community, one thing
+        about the $ADA community that is unique is that we're all willing to
+        educate.
+        <br /> <br />
+        If you have any questions about staking, #CNFTs, blockchain, voting,
+        reach out. I will help you personally. May take some time. 😊
+      </p>
+    ),
+    date: "05/06/2022",
+    source: "https://twitter.com/bigpeyYT/status/1533485512727601153",
+  },
+  {
     authorName: "Watcher.Guru",
     authorUsername: "@WatcherGuru",
     authorProfilePic:
