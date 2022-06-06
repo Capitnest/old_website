@@ -11,12 +11,9 @@ export default function Contact() {
         <Content>
           <Title>Contact Us</Title>
           <hr />
-          <Description>
-            You can contact our CEO at calin.petru.ungureanu@gmail.com and he
-            will answer any questions that you have.
-          </Description>
+          <Description>You can contact us at capitnest@proton.me</Description>
 
-          <div style={{ height: "30px" }}></div>
+          <div style={{ height: "450px" }}></div>
         </Content>
       </Layout>
       <Footerr />
