@@ -79,6 +79,13 @@ export default function Contact() {
             Description Character Limit: 200 max (the text below the image)
             <br />
           </Description>
+          <div style={{ height: "50px" }} />
+          <Title>Contact Details</Title>
+          <hr />
+          <Description>
+            If you want to start growing your brand with Capitnest or you have
+            any questions you can contact us at capitnest@proton.me
+          </Description>
         </Content>
       </Layout>
       <Footerr />

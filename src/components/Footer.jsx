@@ -78,28 +78,28 @@ export default function Footerr() {
           ),
           title: "Follow Us",
           items: [
-            {
-              icon: (
-                <img
-                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fendix-expo.com%2Fwp-content%2Fuploads%2F2020%2F12%2Fdiscord-white-icon-13.png&f=1&nofb=1"
-                  alt="discord"
-                />
-              ),
-              title: "Discord",
-              url: "https://discord.gg/6rmB5W8Wuq",
-              openExternal: true,
-            },
-            {
-              icon: (
-                <img
-                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.iconsdb.com%2Ficons%2Fpreview%2Fwhite%2Ftwitter-xxl.png&f=1&nofb=1"
-                  alt="Twitter"
-                />
-              ),
-              title: "Twitter",
-              url: "https://www.twitter.com/capitnest",
-              openExternal: true,
-            },
+            // {
+            //   icon: (
+            //     <img
+            //       src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fendix-expo.com%2Fwp-content%2Fuploads%2F2020%2F12%2Fdiscord-white-icon-13.png&f=1&nofb=1"
+            //       alt="discord"
+            //     />
+            //   ),
+            //   title: "Discord",
+            //   url: "https://discord.gg/6rmB5W8Wuq",
+            //   openExternal: true,
+            // },
+            // {
+            //   icon: (
+            //     <img
+            //       src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.iconsdb.com%2Ficons%2Fpreview%2Fwhite%2Ftwitter-xxl.png&f=1&nofb=1"
+            //       alt="Twitter"
+            //     />
+            //   ),
+            //   title: "Twitter",
+            //   url: "https://www.twitter.com/capitnest",
+            //   openExternal: true,
+            // },
             {
               icon: (
                 <img
@@ -138,7 +138,7 @@ export default function Footerr() {
       ]}
       title="Capitnest"
       backgroundColor={backgroundClr}
-      bottom="Made with ❤️ in Romania 🇷🇴"
+      bottom="© 2022 Capitnest.com | All rights reserved."
     />
   );
 }
