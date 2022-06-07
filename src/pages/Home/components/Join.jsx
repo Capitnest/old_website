@@ -33,10 +33,10 @@ export default function Join() {
             <Icons>
               {/* <a href="https://discord.gg/6rmB5W8Wuq" target="_blank">
                 <FaDiscord size={35} />
-              </a>
-              <a href="https://twitter.com/capitnest" target="_blank">
-                <AiFillTwitterCircle size={35} />
               </a> */}
+              <a href="https://twitter.com/thecapitnest" target="_blank">
+                <AiFillTwitterCircle size={35} />
+              </a>
               <a href="https://instagram.com/capitnest" target="_blank">
                 <AiOutlineInstagram size={35} />
               </a>

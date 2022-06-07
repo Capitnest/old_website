@@ -89,17 +89,17 @@ export default function Footerr() {
             //   url: "https://discord.gg/6rmB5W8Wuq",
             //   openExternal: true,
             // },
-            // {
-            //   icon: (
-            //     <img
-            //       src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.iconsdb.com%2Ficons%2Fpreview%2Fwhite%2Ftwitter-xxl.png&f=1&nofb=1"
-            //       alt="Twitter"
-            //     />
-            //   ),
-            //   title: "Twitter",
-            //   url: "https://www.twitter.com/capitnest",
-            //   openExternal: true,
-            // },
+            {
+              icon: (
+                <img
+                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.iconsdb.com%2Ficons%2Fpreview%2Fwhite%2Ftwitter-xxl.png&f=1&nofb=1"
+                  alt="Twitter"
+                />
+              ),
+              title: "Twitter",
+              url: "https://www.twitter.com/thecapitnest",
+              openExternal: true,
+            },
             {
               icon: (
                 <img
