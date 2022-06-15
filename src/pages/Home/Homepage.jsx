@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 //COMPONENTS
 import Header from "./components/Header";
@@ -20,41 +21,34 @@ import { Navbar } from "../../components/Navbar";
 export default function Homepage() {
   return (
     <>
+      <Helmet>
+        <title>Capitnest | The Truth in Crypto</title>
+      </Helmet>
+
       <Navbar />
       <Container maxW="container.lg">
         <Header />
 
         <Stats />
-
         <a
           name="more"
           style={{ position: "relative", zIndex: "-2", top: "-80px" }}
         />
-
         <br />
         <br />
         <br />
         <br />
-
         <Filter />
-
         <br />
         <br />
-
         <Explore />
-
-        <br />
-
         <br />
         <br />
         <br />
-
+        <br />
         <Newsletter />
-
         <br />
-
         <Join />
-
         <br />
       </Container>
       <Footerr />

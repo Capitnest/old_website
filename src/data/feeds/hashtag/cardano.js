@@ -1,5 +1,68 @@
 export const cardano = [
   {
+    authorName: "Dan Gambardello",
+    authorUsername: "@cryptorecruitr",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1508820802258489354/xLH9p49q_400x400.jpg",
+    authorLink: "https://twitter.com/hoskytoken",
+    tweet: (
+      <p>
+        Anyone else notice that a lot of people are warming up to #Cardano?
+        <br /> <br />
+        $ADA
+      </p>
+    ),
+    source: "https://twitter.com/cryptorecruitr/status/1536740201451626498",
+    date: "15/06/2022",
+  },
+  {
+    authorName: "Charles Hoskinson",
+    authorUsername: "@IOHK_Charles",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1472752344131682305/a1_VLs8Q_400x400.jpg",
+    authorLink: "https://twitter.com/IOHK_Charles",
+    tweet: (
+      <p>
+        It's like cardano is a decentralized, community driven, open source
+        protocol or something like that
+      </p>
+    ),
+    source: "https://twitter.com/anyuser/status/1536927810136076288",
+    date: "15/06/2022",
+  },
+  {
+    authorName: "$HOSKY Token",
+    authorUsername: "@hoskytoken",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1526791255308615680/DJqtUlN7_400x400.jpg",
+    authorLink: "https://twitter.com/hoskytoken",
+    tweet: (
+      <p>
+        So, people are coming around on #Cardano. The sentiment is changing.
+        Let’s welcome them instead of getting on our high horse and telling then
+        “we told you so.”
+        <br /> <br />
+        #cardano #ada $ada #hosky
+      </p>
+    ),
+    source: "https://twitter.com/anyuser/status/1536751160958275585",
+    date: "15/06/2022",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "@watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>#Cardano has surpassed 1,000 projects being built on its network.</p>
+    ),
+    source: "https://twitter.com/WatcherGuru/status/1534137684284915712",
+    date: "07/06/2022",
+    searchKeywords:
+      "Watcher.Guru watcherguru #Cardano has surpassed 1,000 projects being built on its network.",
+  },
+  {
     authorName: "big pey",
     authorUsername: "@bigpeyYT",
     authorProfilePic:

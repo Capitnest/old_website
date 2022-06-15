@@ -38,6 +38,7 @@
     "react-scripts": "4.0.3",
     "react-scroll-to-top": "^1.0.8",
     "react-simple-captcha": "^8.2.6",
+    "react-twitter-widgets": "^1.10.0",
     "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2"
   },

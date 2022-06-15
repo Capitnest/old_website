@@ -11,13 +11,13 @@ export const influencers = [
   },
   {
     name: "Bitcoin Archive",
-    logo: "https://pbs.twimg.com/profile_images/1362740544741466128/yJ99sdb4_400x400.jpg",
+    logo: "https://pbs.twimg.com/profile_images/1523608991422722049/NnAUKAZ-_400x400.jpg",
     src: "https://twitter.com/BTC_Archive",
   },
   {
-    name: "Dennis Porter",
-    logo: "https://pbs.twimg.com/profile_images/1459785836765925383/hHThGRg8_400x400.jpg",
-    src: "https://twitter.com/Dennis_Porter_",
+    name: "Bitcoin Magazine",
+    logo: "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    src: "https://twitter.com/bitcoinMagazined",
   },
   {
     name: "Decrypt",
@@ -30,8 +30,8 @@ export const influencers = [
     src: "https://u.today",
   },
   {
-    name: "Crypto Panic",
-    logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsteemitimages.com%2FDQmXUH6jKiNfegCPksgS5eLPhZDpLjakckTSvj3xB7Mp9ns%2Fcryptopanic-coin.png&f=1&nofb=1",
+    name: "bsc_daily",
+    logo: "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
     src: "https://cryptopanic.com",
   },
   {
@@ -40,8 +40,8 @@ export const influencers = [
     src: "https://coindesk.com",
   },
   {
-    name: "AZCoin News",
-    logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.coindesk.com%2Fwp-content%2Fuploads%2F2019%2F01%2Fshutterstock_716334343.jpg&f=1&nofb=1",
+    name: "Saylor",
+    logo: "https://pbs.twimg.com/profile_images/1485632175932383235/8t0DGo6V_400x400.jpg",
     src: "https://azcoinnews.com",
   },
   {

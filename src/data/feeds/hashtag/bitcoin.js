@@ -1,5 +1,135 @@
 export const bitcoin = [
   {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: <p>FUN FACT: 5 years ago today, #Bitcoin was $2,779</p>,
+    date: "15/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1536871123547312131",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+  },
+  {
+    authorName: "Bitcoin News",
+    authorUsername: "news.bitcoin.com",
+    authorProfilePic:
+      "https://static.news.bitcoin.com/wp-content/uploads/2019/07/favicon-3.png",
+    authorLink: "news.bitcoin.com",
+    tweet: (
+      <p>
+        Nearly 70,000 Issued Binance Refugee Crypto Card for Ukrainians –
+        Exchanges Bitcoin News
+        <img
+          src="https://static.news.bitcoin.com/wp-content/uploads/2022/06/shutterstock_2131281231.jpg"
+          alt="article image"
+        />
+        Thousands of Ukrainians have ordered a crypto card issued by the digital
+        asset exchange Binance for users from the war-torn country.
+      </p>
+    ),
+    date: "",
+    source:
+      "https://news.bitcoin.com/nearly-70000-issued-binance-refugee-crypto-card-for-ukrainians/",
+    searchKeywords:
+      "Bitcoin Newsnews.bitcoin.comNearly 70,000 Issued Binance Refugee Crypto Card for Ukrainians – Exchanges Bitcoin News Thousands of Ukrainians have ordered a crypto card issued by the digital asset exchange Binance for users from the war-torn country.",
+  },
+  {
+    authorName: "Luna ($LUNA)",
+    authorUsername: "lunaterraglobal",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1530503148149919744/AOMzQ870_400x400.jpg",
+    authorLink: "https://twitter.com/lunaterraglobal",
+    tweet: <p>#Bitcoin under $20k means —&gt;&gt; 15k</p>,
+    date: "15/06/2022",
+    source: "https://twitter.com/LunaTerraGlobal/status/1536993795576848384",
+    searchKeywords:
+      "Luna ($LUNA)LunaTerraGlobalPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>
+        #Bitcoin'Fear and Greed' Index has dropped to 7, extreme fear.
+        https://t.co/GtpdTn2W8A
+      </p>
+    ),
+    date: "15/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1536924309712781314",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+  },
+  {
+    authorName: "Bitcoin Magazine",
+    authorUsername: "bitcoinmagazine",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    authorLink: "https://twitter.com/bitcoinmagazine",
+    tweet: (
+      <p>
+        JUST IN: Tesla is currently down over $600 million in its #Bitcoin
+        investment. When buy the dip, Elon?
+      </p>
+    ),
+    date: "15/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537052216443420672",
+    searchKeywords:
+      "Bitcoin MagazineBitcoinMagazinePWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+  },
+  {
+    authorName: "Decrypt",
+    authorUsername: "decrypt.co",
+    authorProfilePic:
+      "https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/images/favicon-32x32.png",
+    authorLink: "decrypt.co",
+    tweet: (
+      <p>
+        PayPal Lets Users Transfer Bitcoin and Ethereum to External Wallets -
+        Decrypt
+        <img
+          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2021/04/paypal-bitcoin-gID_1.jpg"
+          alt="article image"
+        />
+        Crypto users can now move funds off its platform, a long-awaited feature
+        similar to those of other popular services.
+      </p>
+    ),
+    date: "07/06/2022",
+    source:
+      "https://decrypt.co/102210/paypal-lets-users-transfer-bitcoin-and-ethereum-to-external-wallets",
+    searchKeywords:
+      "Decrypt decrypt.co PayPal Lets Users Transfer Bitcoin and Ethereum to External Wallets - Decrypt Crypto users can now move funds off its platform, a long-awaited feature similar to those of other popular services.",
+  },
+  {
+    authorName: "Bitcoin News",
+    authorUsername: "news.bitcoin.com",
+    authorProfilePic:
+      "https://static.news.bitcoin.com/wp-content/uploads/2019/07/favicon-3.png",
+    authorLink: "news.bitcoin.com",
+    tweet: (
+      <p>
+        Bitcoin, Ethereum Technical Analysis: BTC Surges Above $30,000 to Start
+        the Week – Market Updates Bitcoin News
+        <img
+          src="https://static.news.bitcoin.com/wp-content/uploads/2022/06/shutterstock_1883164375.jpg"
+          alt="article image"
+        />
+        Following a weekend which saw bitcoin trading mainly in the red, prices
+        rebounded to start the week. ETH surged 6% on Monday.
+      </p>
+    ),
+    date: "",
+    source:
+      "https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-btc-surges-above-30000-to-start-the-week/",
+    searchKeywords:
+      "Bitcoin News news.bitcoin.com Bitcoin, Ethereum Technical Analysis: BTC Surges Above $30,000 to Start the Week – Market Updates Bitcoin News Following a weekend which saw bitcoin trading mainly in the red, prices rebounded to start the week. ETH surged 6% on Monday.",
+  },
+  {
     authorName: "Dan Held",
     authorUsername: "@danheld",
     authorProfilePic:
