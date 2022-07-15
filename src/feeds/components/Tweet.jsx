@@ -17,13 +17,18 @@ import { FaGlobe } from "react-icons/fa";
 export default function Tweet({
   blog: {
     id,
-    authorName,
-    authorUsername,
+    name,
+    username,
     authorProfilePic,
     authorLink,
     tweet,
     date,
+    user_url,
     source,
+    profile,
+    picture,
+    description,
+    title,
   },
 }) {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -43,24 +48,36 @@ export default function Tweet({
           >
             <Flex flexDirection="column">
               <Flex>
-                <a href={authorLink} target="_blank">
-                  <Avatar name={authorName} src={authorProfilePic} />
+                <a href={user_url} target="_blank">
+                  <Avatar name={name} src={profile} />
                 </a>
                 <Flex flexDirection="column">
-                  <a href={authorLink} target="_blank">
-                    <h1 style={{ marginLeft: "5px" }}>{authorName}</h1>
+                  <a href={user_url} target="_blank">
+                    <h1 style={{ marginLeft: "5px" }}>{name}</h1>
                   </a>
                   <a
                     style={{ marginLeft: "5px" }}
-                    href={authorLink}
+                    href={user_url}
                     target="_blank"
                   >
-                    {authorUsername}
+                    {username}
                   </a>
                 </Flex>
               </Flex>
               <Flex flexDirection="column">
-                <p style={{ width: "100%", marginTop: "2px" }}>{tweet}</p>
+                <p style={{ width: "100%", marginTop: "2px" }}>
+                  {title}
+                  {picture !== "" ? (
+                    <>
+                      <br />
+                      {/* <img src={picture} /> */}
+                      <br />
+                      {description}
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </p>
                 <br />
                 <Flex marginTop="20px" justifyContent="space-between">
                   <Flex>
@@ -100,19 +117,19 @@ export default function Tweet({
           >
             <Flex flexDirection="column">
               <Flex>
-                <a href={authorLink} target="_blank">
-                  <Avatar name={authorName} src={authorProfilePic} />
+                <a href={user_url} target="_blank">
+                  <Avatar name={name} src={authorProfilePic} />
                 </a>
                 <Flex flexDirection="column">
-                  <a href={authorLink} target="_blank">
-                    <h1 style={{ marginLeft: "5px" }}>{authorName}</h1>
+                  <a href={user_url} target="_blank">
+                    <h1 style={{ marginLeft: "5px" }}>{name}</h1>
                   </a>
                   <a
                     style={{ marginLeft: "5px" }}
                     href={authorLink}
                     target="_blank"
                   >
-                    {authorUsername}
+                    {username}
                   </a>
                 </Flex>
               </Flex>

@@ -31,6 +31,13 @@ import Manifesto from "../pages/company/manifesto/Manifesto";
 import Contact from "../pages/company/contact/Contact";
 import Advertise from "../pages/company/advertise/Advertise";
 
+import Test from "../Test";
+
+// Learn
+import Blog from "../learn/pages/Blog";
+import Home from "../learn/pages/Home";
+import Explore from "../learn/pages/Explore/Explore";
+
 export default function AppRouter(props) {
   const { logout, currentUser } = useAuth();
 
@@ -46,6 +53,8 @@ export default function AppRouter(props) {
 
           <Route path="/indexes" component={Indexes} />
 
+          <Route path="/test" component={Test} />
+
           <Route path="/exchange/:id" component={ExchangePage} />
           <Route path="/exchanges/page/:id" component={ExchangesPage} />
           <Route path="/exchanges" component={Exchanges} />
@@ -53,6 +62,10 @@ export default function AppRouter(props) {
           <Route exact path="/markets" component={Markets} />
           <Route path="/markets/categories/:id" component={Categories} />
           <Route path="/markets/page/:id" component={MarketsPage} />
+
+          <Route path="/learn" exact component={Home} />
+          <Route exact path="/explore" component={Explore} />
+          <Route path="/wiki/:id" component={Blog} />
 
           <Route exact path="/feeds" component={Feeds} />
           <Route path="/feeds/:id" component={Hashtag} />

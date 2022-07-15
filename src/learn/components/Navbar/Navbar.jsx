@@ -17,17 +17,17 @@ import {
 } from "@chakra-ui/react";
 import React, { useState, useRef } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../../../contexts/AuthContext";
 import Navlink from "./Navlink";
 import styled from "styled-components";
 import { TriangleDownIcon } from "@chakra-ui/icons";
-import { auth } from "../utils/init-firebase";
+import { auth } from "../../../utils/init-firebase";
 import { Navbar as Navbarr, Nav, Container } from "react-bootstrap";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-export function Navbar() {
+export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   // const { logout, currentUser } = useAuth()

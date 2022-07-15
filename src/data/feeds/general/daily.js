@@ -1,39 +1,102 @@
 export const daily = [
   {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
     authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: <p> https://t.co/3w9xEDs7VW</p>,
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1536941281829695488",
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        “I believe in a long-term future for bitcoin … That’s why we’ve been so
+        adamant that this is where we want the entry point to be.” @alexadelman
+        of @trylolli discusses how bitcoin rewards can be an effective on-ramp
+        to crypto. https://t.co/6TAgr7AKl2
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537482913927012352",
     searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
     authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: <p>FUN FACT: 5 years ago today, #Bitcoin was $2,779</p>,
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1536871123547312131",
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        The EU needs to take a step back from its digital euro plans and ask if
+        it's worth issuing one at all, says financial services lobby group @IIF.
+        @jackschickler reports. https://t.co/IQINWIQ38J
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537466542589353985",
     searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
-    authorName: "Luna ($LUNA)",
-    authorUsername: "lunaterraglobal",
+    authorName: "Decrypt",
+    authorUsername: "decrypt.co",
     authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1530503148149919744/AOMzQ870_400x400.jpg",
-    authorLink: "https://twitter.com/lunaterraglobal",
-    tweet: <p>#Bitcoin under $20k means —&gt;&gt; 15k</p>,
-    date: "15/06/2022",
-    source: "https://twitter.com/LunaTerraGlobal/status/1536993795576848384",
+      "https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/images/favicon-32x32.png",
+    authorLink: "decrypt.co",
+    tweet: (
+      <p>
+        Most of the World’s Wealthiest Individuals Have Bought Digital Assets:
+        Capgemini - Decrypt
+        <img
+          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2022/06/thought-catalog-Xeo_7HSwYsA-unsplash-gID_1.jpg"
+          alt="article image"
+        />
+        Capgemini's "World Wealth Report" for 2022 says that 71% of nearly 3,000
+        high net worth individuals polled have invested in digital assets.
+      </p>
+    ),
+    date: "16/06/2022",
+    source:
+      "https://decrypt.co/103070/most-wealthiest-individuals-digital-assets-capgemini",
     searchKeywords:
-      "Luna ($LUNA)LunaTerraGlobalPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Decryptdecrypt.coMost of the World’s Wealthiest Individuals Have Bought Digital Assets: Capgemini - Decrypt Capgemini's World Wealth Report for 2022 says that 71% of nearly 3,000 high net worth individuals polled have invested in digital assets.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        .@USTreasury Secretary Janet Yellen is meeting with Wall Street bank
+        CEOs on the global economy and digital assets, even as the Department is
+        paying closer attention to market turmoil. @jesseahamilton reports
+        https://t.co/OfHNhKfAw2
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537472097915748354",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        .@CelsiusNetwork will go to zero, @kevinolearytv predicts. But it's not
+        enough. You need bigger players to collapse for the market to be "more
+        educated, more institutional, more stable." Watch his markets analysis,
+        presented by @kucoincom: https://t.co/GdvLQU7ZHV https://t.co/wihqXQ0vbW
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537502899571507203",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "BSCDaily",
@@ -43,17 +106,70 @@ export const daily = [
     authorLink: "https://twitter.com/bsc_daily",
     tweet: (
       <p>
-        We're excited to announce that we'll be hosting an AMA with
-        @SnapN_Official ❓AMA type: Telegram Call 🗓️Date: June 17th at 2PM UTC
-        📍Venue: https://t.co/MolFvaNBIk 💰Prize Pool: $200 👉The top questions
-        will be selected in the AMA. Prepare your questions everyone!
-        https://t.co/GwoeeKcGf6
+        🎉 @itamcube is Now Available on @gate_io 🚀 #ITAMCUBE - #CUBE brings
+        entertainment powered by blockchain on the #Metaverse 🔥 #Gateio was
+        created to empower a new generation of #crypto enthusiasts with the
+        means to discuss🎉 #BNB #BSC #METAFI #WEB3 https://t.co/ZDisLQaEMu
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537042237552349184",
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537450223546642432",
     searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        @binance @splytech More Details #Splyt - The leading B2B global
+        lifestyle services network. We integrate ridehailing, transfer, scooter,
+        bikesharing and food delivery suppliers into superapps. #BNB #BSC
+        #BINANCE #BNBCHAIN https://t.co/TKUAfpUOFA
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537472922528399364",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Decrypt",
+    authorUsername: "decrypt.co",
+    authorProfilePic:
+      "https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/images/favicon-32x32.png",
+    authorLink: "decrypt.co",
+    tweet: (
+      <p>
+        Huobi Shutting Down in Thailand Following Agency Ruling - Decrypt
+        <img
+          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2020/01/huobi-brokerage-davos-gID_2.jpg"
+          alt="article image"
+        />
+        Thailand’s Securities and Exchange Commission has revoked the Huobi
+        crypto exchange’s operating license in the country.
+      </p>
+    ),
+    date: "16/06/2022",
+    source:
+      "https://decrypt.co/103088/huobi-shutting-down-in-thailand-following-agency-ruling",
+    searchKeywords:
+      "Decryptdecrypt.coHuobi Shutting Down in Thailand Following Agency Ruling - Decrypt Thailand’s Securities and Exchange Commission has revoked the Huobi crypto exchange’s operating license in the country.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: <p>JUST IN: 🇮🇳 Coinbase has fired 8% of its staff in India.</p>,
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537292204103852035",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "Bitcoin Magazine",
@@ -63,14 +179,14 @@ export const daily = [
     authorLink: "https://twitter.com/bitcoinmagazine",
     tweet: (
       <p>
-        Kraken exchange: It's time to take your paycheck in #Bitcoin. "The
-        fundamentals have only improved." 🔥 https://t.co/bamPZ4jweE
+        "Nobody has ever lost money investing in #Bitcoin for 4 years." –
+        MicroStrategy CEO 🙌 https://t.co/wKB6emjKlj
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/BitcoinMagazine/status/1537026419477426182",
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537397414809706498",
     searchKeywords:
-      "Bitcoin MagazineBitcoinMagazinePWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "BSCDaily",
@@ -80,17 +196,29 @@ export const daily = [
     authorLink: "https://twitter.com/bsc_daily",
     tweet: (
       <p>
-        @CelerNetwork @aurigami_PLY @auroraisnear @binance More Details
-        #CELERNETWORK - a blockchain interoperability protocol enabling a
-        one-click user experience accessing tokens, DeFi, GameFi, NFTs,
-        governance, and more across multiple chains. #AURIGAMI - Lend, borrow,
-        and earn with ease on Aurora. https://t.co/ABci226p6l
+        @Nodereal_io @coin98_wallet More Details NodeReal - a one-stop
+        blockchain infrastructure and services provider that embraces the
+        high-speed blockchain era, providing scalable, reliable &amp; efficient
+        solutions, aiming to support the adoption, growth &amp; long-term
+        success of the #Web3 https://t.co/YsFGDsshwv
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537074070017265668",
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537454432597815298",
     searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: <p>JUST IN: Yahoo is launching #metaverse events in Hong Kong.</p>,
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537327046921113600",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "CoinDesk",
@@ -100,35 +228,40 @@ export const daily = [
     authorLink: "https://twitter.com/coindesk",
     tweet: (
       <p>
-        “It’s so opaque what’s going on in Celsius,” @SwanBitcoin CEO
-        @coryklippsten told CoinDesk TV, following the cryptocurrency lending
-        firm’s announcement that it would freeze withdrawals due to “extreme
-        market conditions.” @_franvela reports https://t.co/k0t2atVRlO
+        LIVE: Making Web3 accessible to all in Texas and beyond. @Web3TX founder
+        @crypt0l0gical joins "Community Crypto" host @bitcoinzay on
+        https://t.co/yHMYaDyzNy to talk about his mission to educate and help
+        grow the Web3 community through education: https://t.co/5wmFK0hhqW
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1536886253127344128",
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537525493611872264",
     searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
+    authorName: "Decrypt",
+    authorUsername: "decrypt.co",
     authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
+      "https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/images/favicon-32x32.png",
+    authorLink: "decrypt.co",
     tweet: (
       <p>
-        Bitcoin prices could tumble to 2017 highs under $20,000 before long-term
-        buyers return to the market, and provided macroeconomic sentiment
-        improves, says one analyst; BTC, ETH struggled in Tuesday trading.
-        @shauryamalwa and @JPRubin23 report https://t.co/nYzzIsiNpO
+        Regulators in Five States Target Celsius Over Withdrawal Freeze: Report
+        - Decrypt
+        <img
+          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2022/06/celsius-crypto-bitcoin-lender-gID_2.jpeg"
+          alt="article image"
+        />
+        State securities regulators have opened investigations into Celsius over
+        its decision to freeze accounts, according to Reuters.
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1536880307760160771",
+    date: "16/06/2022",
+    source:
+      "https://decrypt.co/103096/regulators-five-states-target-celsius-withdrawal-freeze",
     searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Decryptdecrypt.coRegulators in Five States Target Celsius Over Withdrawal Freeze: Report - Decrypt State securities regulators have opened investigations into Celsius over its decision to freeze accounts, according to Reuters.",
   },
   {
     authorName: "Bitcoin News",
@@ -138,91 +271,21 @@ export const daily = [
     authorLink: "news.bitcoin.com",
     tweet: (
       <p>
-        Nearly 70,000 Issued Binance Refugee Crypto Card for Ukrainians –
-        Exchanges Bitcoin News
+        Elon Musk, Tesla, Spacex Facing $258 Billion Lawsuit for Promoting
+        Dogecoin – Featured Bitcoin News
         <img
-          src="https://static.news.bitcoin.com/wp-content/uploads/2022/06/shutterstock_2131281231.jpg"
+          src="https://static.news.bitcoin.com/wp-content/uploads/2022/06/elon-musk-sued.jpg"
           alt="article image"
         />
-        Thousands of Ukrainians have ordered a crypto card issued by the digital
-        asset exchange Binance for users from the war-torn country.
+        Elon Musk, Tesla, and Spacex are being sued over claims that they are
+        engaged in a dogecoin "crypto pyramid scheme (aka Ponzi scheme)."
       </p>
     ),
     date: "",
     source:
-      "https://news.bitcoin.com/nearly-70000-issued-binance-refugee-crypto-card-for-ukrainians/",
+      "https://news.bitcoin.com/elon-musk-tesla-spacex-facing-258-billion-lawsuit-for-promoting-dogecoin/",
     searchKeywords:
-      "Bitcoin Newsnews.bitcoin.comNearly 70,000 Issued Binance Refugee Crypto Card for Ukrainians – Exchanges Bitcoin News Thousands of Ukrainians have ordered a crypto card issued by the digital asset exchange Binance for users from the war-torn country.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        NFT infrastructure provider @nftport_xyz raised $26 million in a Series
-        A round co-led by Taavet+Sten and @atomico. By @BrandyBetz
-        https://t.co/7lOn8RsNsL
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1536976097493008385",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        Three Arrows Faces Possible Insolvency After Unforeseen Liquidations.
-        @shauryamalwa reports. https://t.co/tJaHRxe1ZC
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1537011928731684864",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        .@chainlink price feeds have gone live on @Polkadot-based
-        @MoonbeamNetwork. @shauryamalwa reports. https://t.co/Lz7Jrdx45F
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1537073202572271619",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        .@Tether_to has denied claims that its commercial paper portfolio is 85%
-        backed by Chinese or Asian commercial papers and that it has exposure to
-        Three Arrows Capital. By @JamieCrawleyCD https://t.co/Ak9XrZHOhz
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1536990363881246720",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Bitcoin Newsnews.bitcoin.comElon Musk, Tesla, Spacex Facing $258 Billion Lawsuit for Promoting Dogecoin – Featured Bitcoin News Elon Musk, Tesla, and Spacex are being sued over claims that they are engaged in a dogecoin crypto pyramid scheme (aka Ponzi scheme).",
   },
   {
     authorName: "Watcher.Guru",
@@ -232,14 +295,38 @@ export const daily = [
     authorLink: "https://twitter.com/watcherguru",
     tweet: (
       <p>
-        #Bitcoin'Fear and Greed' Index has dropped to 7, extreme fear.
-        https://t.co/GtpdTn2W8A
+        Texas Reportedly Launches an Investigation Into Celsius Network
+        https://t.co/hIoYFLpmdL
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1536924309712781314",
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537498135525834754",
     searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin News",
+    authorUsername: "news.bitcoin.com",
+    authorProfilePic:
+      "https://static.news.bitcoin.com/wp-content/uploads/2019/07/favicon-3.png",
+    authorLink: "news.bitcoin.com",
+    tweet: (
+      <p>
+        Report: Celsius Hires Citigroup to Help the Startup Find 'Potential
+        Financing' – Bitcoin News
+        <img
+          src="https://static.news.bitcoin.com/wp-content/uploads/2022/06/shutterstock_2109701024.jpg"
+          alt="article image"
+        />
+        According to “two people familiar with the matter,” the cryptocurrency
+        lending company Celsius is working with the financial giant Citigroup.
+      </p>
+    ),
+    date: "",
+    source:
+      "https://news.bitcoin.com/report-celsius-hires-citigroup-to-help-the-startup-find-potential-financing/",
+    searchKeywords:
+      "Bitcoin Newsnews.bitcoin.comReport: Celsius Hires Citigroup to Help the Startup Find 'Potential Financing' – Bitcoin News According to “two people familiar with the matter,” the cryptocurrency lending company Celsius is working with the financial giant Citigroup.",
   },
   {
     authorName: "Bitcoin Magazine",
@@ -249,14 +336,17 @@ export const daily = [
     authorLink: "https://twitter.com/bitcoinmagazine",
     tweet: (
       <p>
-        JUST IN: Tesla is currently down over $600 million in its #Bitcoin
-        investment. When buy the dip, Elon?
+        @saylor Counterparty Risk and Collateral Contagion Bitcoin Magazine PRO
+        is breaking down the latest on industry insolvencies and balance sheet
+        impairment amongst major players. Get today's report as soon as its
+        released when you become a free subscriber: 📩👇 https://t.co/aZZZgOyahZ
+        https://t.co/JRsaakV7FW
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/BitcoinMagazine/status/1537052216443420672",
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537503008350609408",
     searchKeywords:
-      "Bitcoin MagazineBitcoinMagazinePWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "CoinDesk",
@@ -266,91 +356,16 @@ export const daily = [
     authorLink: "https://twitter.com/coindesk",
     tweet: (
       <p>
-        Confused about what's been going on with Celsius? @NLW breaks down
-        halted withdrawals at Celsius and the recent market turndown.
-        https://t.co/xpNtMKQDwL
+        LIVE: @trondao deploys $220 million to pump $TRX token, #tether sees a
+        new wave of redemptions and a major discount on a Manhattan building
+        after the market crash. "The Hash" crew has today's top stories on
+        https://t.co/yHMYaDyzNy: https://t.co/TuVfSsFkNK
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1536910022327795713",
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537465087568617472",
     searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        .@CelsiusNetwork has hired a restructuring specialist law firm after the
-        crypto lender on Monday halted withdrawals and its swap and transfer
-        products, according to The Wall Street Journal. @realDannyNelson
-        reports. https://t.co/2akMXRs9PS
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1536934813566902272",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
-    tweet: (
-      <p>
-        🎉 Recent Project Spotlights in @BNBCHAIN 🚀 They are #GAMEFI #METAVERSE
-        #NFT #WEB3 &amp; #DEFI 🔥 What are the next lego? Which ones are you
-        bullish the most? 😍 🔥 $DAR &amp; $GAL are available on @binance 
-        Register &amp; Trade now 👇 https://t.co/SnH70xeCFs #BNB #BSC #BINANCE
-        #METAFI https://t.co/CS56RtePY9
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537064559768395776",
-    searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
-    tweet: (
-      <p>
-        🎉 @RadioCacaNFT $RACA will Be Listed on @BitwellGlobal soon😍 #RACA -
-        Home of the United States of Mars #3D #Metaverse,Popular blockchain game
-        #Metamon World, #NFT Marketplaces, and more🔥 #BitWell - The world's
-        leading growth asset trading platform🚀 #BNB #BSC #WEB3 #WERACA
-        https://t.co/y0N61jOZlK
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537074280315461632",
-    searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
-    tweet: (
-      <p>
-        "It’s a bloodbath out there. Hunker down. Make sure you can last." -
-        @cz_binance 💪
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537019585848872960",
-    searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "Watcher.Guru",
@@ -360,14 +375,342 @@ export const daily = [
     authorLink: "https://twitter.com/watcherguru",
     tweet: (
       <p>
-        JUST IN: The number of #Ethereum addresses at loss has reached an
-        all-time high of 38,011,694.226
+        JUST IN: TRON DAO Reserve will withdraw another 3 billion #TRX to
+        safeguard the overall blockchain and crypto market.
+        https://t.co/oIa6CGD6rH
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1537023084535816192",
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537433679403683845",
     searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        📢 @OxalusWallet &amp; @GunFireAVAX are carrying out an AIRDROP EVENT
+        for the community🥳 🌟3,000,000 $GUNX for the first 300,000 users🌟
+        🔥1000 $GUNX for each of the top 10 referrers🔥 Like, retweet and tag 3
+        friends Then finish all tasks HERE 👉 https://t.co/iq3Dsj4zQJ Get Now👇
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537457347236605952",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        NFTs have been through such a massive hype cycle last year,
+        @decentraland's Sam Hamilton says. "Everyone saw that there was going to
+        be a crash coming." Watch his outlook for the metaverse amid this crypto
+        winter, presented by @Nexo: https://t.co/eOJoF4VGvS
+        https://t.co/8CYYn3f0y6
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537513920168185859",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        @shauryamalwa "All former examples of this would indicate that it is not
+        sustainable," @zackseward says on "The Hash," citing the failures of
+        $UST and Basis Cash. Watch the full discussion on stablecoin regulation
+        and whether @justinsuntron can defend the $USDD peg:
+        https://t.co/jnMtq8zLUK https://t.co/1dNT7JqHWc
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537518120423899136",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin Magazine",
+    authorUsername: "bitcoinmagazine",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    authorLink: "https://twitter.com/bitcoinmagazine",
+    tweet: (
+      <p>
+        The #Bitcoin network has been up and running for 3,384 consecutive days
+        👏
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537472485133889537",
+    searchKeywords:
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>Elon Musk Hit With a $258 Billion Lawsuit https://t.co/wxbce6DVoI</p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537513272777363456",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin Magazine",
+    authorUsername: "bitcoinmagazine",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    authorLink: "https://twitter.com/bitcoinmagazine",
+    tweet: (
+      <p>
+        SEC Commissioner: It's time for the SEC to stop denying spot #bitcoin
+        ETFs. https://t.co/1bmuvynJlW
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537453360437149697",
+    searchKeywords:
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        🔥 @Nodereal_io Partnership with @coin98_wallet to foster the
+        infrastructure of financial services and boost the mass adoption of
+        #DeFi in the long run 😍 #COIN98 - an all-in-one DeFi platform for users
+        to swap, stake, borrow, lend, invest and earn with crypto at ease🎉 #BNB
+        🧬 https://t.co/BTAPo42xF1
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537454430047592450",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>
+        JUST IN: Ethereum Founder Vitalik Buterin says he does not expect
+        #crypto to take over the world, but rather be an "alternative asset."
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537410558089211904",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        @PancakeSwap @FEGtoken @PositionEx @Biswap_Dex @bakery_swap @RichQuack
+        @AlpacaFinance @babyswap_bsc @TitanoFinance @ape_swap MOST HELD DEFI
+        TOKENS IN #BNBCHAIN 🚀 $RISE @EverRise  $XVS @VenusProtocol  $VLX
+        @VelasBlockchain  $O3 @O3_Labs  $LEOS @swapleonicorn  $SFUND
+        @SeedifyFund  $ANKR @ankr  $ATA @AutomataNetwork  $OOE @OpenOceanGlobal 
+        $PEX @OfficialPearDAO  $APX @ApolloX_com  $BIFI @finance_beefy
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537450605421113345",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Michael Saylor⚡️",
+    authorUsername: "saylor",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1485632175932383235/8t0DGo6V_400x400.jpg",
+    authorLink: "https://twitter.com/saylor",
+    tweet: (
+      <p>
+        “When you inflate a currency the middle class gets wiped out. If you
+        want to help the economy you need to study monetary theory.” - @RonPaul
+        on #Bitcoin https://t.co/obzpC42Zz8
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/saylor/status/1537486428652830720",
+    searchKeywords:
+      "Michael Saylor⚡️saylorBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        @fightoftheages @HuobiGlobal @FotaDevBlog @Hobbit_Invest $ Let's check
+        out the FOTA's Moonsheet!!! https://t.co/XLa2kPWwaa
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537461707404197889",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        .@elonmusk mentioned potential for digital currency payments integration
+        during Twitter's all-hands meeting. @mikeybellusci reports
+        https://t.co/QWLBeIwOOr
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537506350028177409",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>
+        JUST IN: Largest #Bitcoin whale has purchased an additional 927
+        ($20,000,000) $BTC this month alone.
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537344098696253441",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin Magazine",
+    authorUsername: "bitcoinmagazine",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    authorLink: "https://twitter.com/bitcoinmagazine",
+    tweet: (
+      <p>
+        JUST IN – Elon Musk says it "makes sense" to integrate #Bitcoin and
+        crypto payments into Twitter
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537518820683833344",
+    searchKeywords:
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin Magazine",
+    authorUsername: "bitcoinmagazine",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    authorLink: "https://twitter.com/bitcoinmagazine",
+    tweet: <p>#Bitcoin rewards patience. HODL ✊ https://t.co/APz45d3jpv</p>,
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537384435544248321",
+    searchKeywords:
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        😍 @BabyDogeCoin is Now Available on @CoinTigerEX 🚀 #BABYDOGE -a
+        deflationary token designed to become more scarce over time🔥 All
+        holders will earn more $BABYDOGE that is automatically sent to your
+        wallet by simply holding Baby Doge in your wallet😍 #BSC #BNB #METAVERSE
+        🎉 https://t.co/wsLdkoS5qT
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537450174284345346",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        "Not everything in crypto is revolutionary. And where that’s the case,
+        let’s lean in on what clarity does exist under the law," @TuskVentures'
+        @bradleytusk &amp; Thomas Mack write. Opinion in "The Node" newsletter.
+        https://t.co/cMNJqogFOk
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537504732075409408",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin News",
+    authorUsername: "news.bitcoin.com",
+    authorProfilePic:
+      "https://static.news.bitcoin.com/wp-content/uploads/2019/07/favicon-3.png",
+    authorLink: "news.bitcoin.com",
+    tweet: (
+      <p>
+        Bitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000
+        Following Historic Fed Rate Hike – Market Updates Bitcoin News
+        <img
+          src="https://static.news.bitcoin.com/wp-content/uploads/2022/06/shutterstock_770495719.jpg"
+          alt="article image"
+        />
+        Bitcoin moved away from its recent low of $20,000 on Thursday, following
+        a historic rate hike from the Federal Reserve.
+      </p>
+    ),
+    date: "",
+    source:
+      "https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-btc-moves-away-from-20000-following-historic-fed-rate-hike/",
+    searchKeywords:
+      "Bitcoin Newsnews.bitcoin.comBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "Decrypt",
@@ -377,75 +720,21 @@ export const daily = [
     authorLink: "decrypt.co",
     tweet: (
       <p>
-        Celsius Hires Restructuring Attorneys, Looking for Financing Options:
-        Report - Decrypt
+        Is Multibillion-Dollar Hedge Fund Three Arrows Next to Unravel? Here’s
+        What’s Going On - Decrypt
         <img
-          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2022/04/Celsius-logo-gID_1.jpeg"
+          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2022/06/money-bills-gID_2.jpeg"
           alt="article image"
         />
-        After freezing withdrawals on Sunday, crypto lending firm Celsius has
-        reportedly turned to restructuring lawyers.
+        If two huge loans, which analysts believe belong to Three Arrows, get
+        liquidated, it could be disastrous for lenders and the credit market.
       </p>
     ),
     date: "15/06/2022",
     source:
-      "https://decrypt.co/102964/celsius-hires-restructuring-attorneys-looking-for-financing-options-report",
+      "https://decrypt.co/103030/three-arrows-capital-unravel-heres-whats-going-on",
     searchKeywords:
-      "Decryptdecrypt.coCelsius Hires Restructuring Attorneys, Looking for Financing Options: Report - Decrypt After freezing withdrawals on Sunday, crypto lending firm Celsius has reportedly turned to restructuring lawyers.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        LIVE: Crypto's lending crisis raises regulatory backlash risk, #bitcoin
-        drops toward $20,000 amid contagion risks and more. @Kennedy_School's
-        Timothy Massad, @DAR_crypto's Doug Schwenk and @FrencHMonTanA join
-        "First Mover" on https://t.co/yHMYaDyzNy: https://t.co/eP0VxqegjF
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1537057424531722240",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: (
-      <p>
-        JUST IN: 121,553 #cryptocurrency traders were liquidated in the past 24
-        hours totaling $422 million.
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1536886581688029186",
-    searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        Global asset manager @AB_insights is working with AllFunds Blockchain to
-        introduce blockchain technology. reporting by @oknightcrypto
-        https://t.co/RekBztoiRh
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1536988705575079936",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Decryptdecrypt.coIs Multibillion-Dollar Hedge Fund Three Arrows Next to Unravel? Here’s What’s Going On - Decrypt If two huge loans, which analysts believe belong to Three Arrows, get liquidated, it could be disastrous for lenders and the credit market.",
   },
   {
     authorName: "BSCDaily",
@@ -455,17 +744,36 @@ export const daily = [
     authorLink: "https://twitter.com/bsc_daily",
     tweet: (
       <p>
-        @POODLETOKEN @CrolonMars More Details #POODL - a BEP-20 deflationary,
-        self-LP generating token that is powered by the work and idea of its
-        community. Together with 3D NFTs and Augmented Reality APP, they are
-        taking the whole NFT world one step further. Calling it: NFT 2.0
-        https://t.co/UJVtl2gV1t
+        🔥 @binance #PAY Partnership with @splytech 🎉 👉From this partnership,
+        #Binance becomes the first-ever crypto exchange to offer ride-hailing
+        services on its platform😍 Users can seamlessly access and complete
+        transactions with crypto, without having to download multiple apps🎉
+        https://t.co/hnWpXd7ZzU
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537042769457577985",
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537472919839944706",
     searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        What is Layer 1 blockchain? Thanks to #Binance &amp; @BinanceAcademy 😍
+        Have a look to this informative articles👇 Do not have @binance Account?
+        Register &amp; Trade now 👇 https://t.co/SnH70xeCFs #BNB #BSC #CZ
+        #LAYER1 #METAFI 🎉
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537465022691086336",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "Bitcoin Magazine",
@@ -475,16 +783,142 @@ export const daily = [
     authorLink: "https://twitter.com/bitcoinmagazine",
     tweet: (
       <p>
-        @APompliano @DylanLeClair_ Stay on top of the latest market trends with
-        expert insights from Bitcoin Magazine PRO. Subscribe to our free
-        newsletter and join nearly 12,000 Bitcoiners taking their #Bitcoin
-        accumulation game to the next level! https://t.co/aZZZgOyahZ
+        New to #Bitcoin? Enroll in our FREE 21 Days of Bitcoin email course to
+        stack some sats while you learn the basics! 🙌 🏆 Win at least 2,100
+        sats 📅 21 days of daily educational emails 🧠 Bitcoin basics to get you
+        up to speed Enroll FREE ➡️ https://t.co/rQ2j5myHF4
+        https://t.co/wOwQHfc0sM
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/BitcoinMagazine/status/1537072062778310656",
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537439548606558208",
     searchKeywords:
-      "Bitcoin MagazineBitcoinMagazinePWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: <p>Gm Whales 🐳</p>,
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537389529664987136",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Michael Saylor⚡️",
+    authorUsername: "saylor",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1485632175932383235/8t0DGo6V_400x400.jpg",
+    authorLink: "https://twitter.com/saylor",
+    tweet: <p>#Bitcoin is the antidote to chaos.</p>,
+    date: "16/06/2022",
+    source: "https://twitter.com/saylor/status/1537407754792488969",
+    searchKeywords:
+      "Michael Saylor⚡️saylorBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>
+        JUST IN: The IRS has launched an operation targeting taxpayers who
+        attempt to hide their #crypto income.
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537470034947325952",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        @binance @splytech Do not have #Binance Account? Register &amp; Trade
+        now 👇 https://t.co/SnH70xeCFs #BNB #BSC #BINANCE #BNBCHAIN
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537472923644084229",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin Magazine",
+    authorUsername: "bitcoinmagazine",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    authorLink: "https://twitter.com/bitcoinmagazine",
+    tweet: <p>JUST IN: Spanish airline Vueling will accept #Bitcoin 🇪🇸</p>,
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537408848050405377",
+    searchKeywords:
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin Magazine",
+    authorUsername: "bitcoinmagazine",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    authorLink: "https://twitter.com/bitcoinmagazine",
+    tweet: (
+      <p>
+        Hester Peirce, a commissioner with the SEC, published comments on the
+        failings of the SEC to properly deliver ETPs based on bitcoin and other
+        cryptocurrencies. @Fall_Of_Fiat covers the news: https://t.co/Vu4qwiAWvQ
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537469928105713664",
+    searchKeywords:
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        .@truthdaoxyz founder @leslie_cauley utilizes conferences, student
+        journalists and speakers "for engaging and elevating the conversation
+        around the need for unbiased journalism globally." Watch more from
+        #Consensus2022, presented by @cryptocom: https://t.co/8jBv6jkbSa
+        https://t.co/HxQtkuQyXg
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537495485254184962",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>
+        JUST IN: Billionaire Mike Novogratz says "the economy is going to
+        collapse and we’re heading into a really fast recession."
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537447367472979968",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "Decrypt",
@@ -494,114 +928,46 @@ export const daily = [
     authorLink: "decrypt.co",
     tweet: (
       <p>
-        Dump Discord? Nansen Launches Messaging App for Web3 Communities -
+        OpenSea Moves to Seaport Protocol to Cut Ethereum Gas Fees by 35% -
         Decrypt
         <img
-          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2022/06/messaging-shutterstock-gID_1.png"
+          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2022/06/dorian-mongel-5Rgr_zI7pBw-unsplash-scaled-gID_1.jpg"
           alt="article image"
         />
-        Analytics platform Nansen aims to take a bite out of Discord’s dominance
-        with a new messenger service for NFT projects and more.
+        The move from Wyvern could save users $460 million a year in fees while
+        allowing multiple-item listings in the future.
       </p>
     ),
     date: "15/06/2022",
     source:
-      "https://decrypt.co/102958/dump-discord-nansen-launches-messaging-app-for-web3-communities",
+      "https://decrypt.co/103034/opensea-moves-to-seaport-protocol-to-cut-ethereum-gas-fees-by-35",
     searchKeywords:
-      "Decryptdecrypt.coDump Discord? Nansen Launches Messaging App for Web3 Communities - Decrypt Analytics platform Nansen aims to take a bite out of Discord’s dominance with a new messenger service for NFT projects and more.",
+      "Decryptdecrypt.coOpenSea Moves to Seaport Protocol to Cut Ethereum Gas Fees by 35% - Decrypt The move from Wyvern could save users $460 million a year in fees while allowing multiple-item listings in the future.",
   },
   {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
+    authorName: "Bitcoin News",
+    authorUsername: "news.bitcoin.com",
     authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
+      "https://static.news.bitcoin.com/wp-content/uploads/2019/07/favicon-3.png",
+    authorLink: "news.bitcoin.com",
     tweet: (
       <p>
-        @Nodereal_io @itamcube 2/ How NodeReal is helping? NodeReal has been in
-        close contact with the CUBE team &amp; knowing that they have a need for
-        scalable blockchain infrastructure and services. NodeReal Team has the
-        capacity to bring the vision to life in the most executable and stable
-        way possible. https://t.co/n2lCGhbLRI
+        Bitcoin of America Is Working to Solve the Gender Problem in the
+        Cryptocurrency Industry – Sponsored Bitcoin News
+        <img
+          src="https://static.news.bitcoin.com/wp-content/uploads/2022/06/photo_2022-06-14_14-05-36.jpg"
+          alt="article image"
+        />
+        The cryptocurrency industry has a big gender problem when it comes to
+        female involvement. Bitcoin of America (BOA), a popular virtual currency
+        exchange,
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537033818506506241",
+    date: "",
+    source:
+      "https://news.bitcoin.com/bitcoin-of-america-is-working-to-solve-the-gender-problem-in-the-cryptocurrency-industry/",
     searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        "As the flurries of crypto winter turned into a blizzard, #Consensus2022
-        offered attendees a brief shelter from the storm, a warm hearth to
-        gather around and meet friends, tell stories and plan for the future."
-        https://t.co/ZBGyeqbvoS https://t.co/Ph5bAFWBW2
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1536968198309945344",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: (
-      <p>
-        JUST IN: 🇧🇷 Brazilian Federal Deputy Paulo Martins has introduced a bill
-        that would legalize #crypto payments in the country.
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1536978639505399808",
-    searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
-    tweet: (
-      <p>
-        @Nodereal_io @itamcube 1/ What is #ItamCube?  CUBE is an all-in-one
-        entertainment platform powered by blockchain on the #Metaverse. CUBE
-        provides optimized service for both gamers and game developers, content
-        creators, and content consumers alike, aiming to create a single
-        platform https://t.co/NbRuCPprI5
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537033813720702977",
-    searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: (
-      <p>
-        JUST IN: BlockFi faces a $943,000 fine for allegedly registering
-        improperly.
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1536903236958818304",
-    searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Bitcoin Newsnews.bitcoin.comBitcoin of America Is Working to Solve the Gender Problem in the Cryptocurrency Industry – Sponsored Bitcoin News The cryptocurrency industry has a big gender problem when it comes to female involvement. Bitcoin of America (BOA), a popular virtual currency exchange,",
   },
   {
     authorName: "Decrypt",
@@ -611,20 +977,20 @@ export const daily = [
     authorLink: "decrypt.co",
     tweet: (
       <p>
-        Bitcoin Slips 10% to Touch $20,000, Ethereum Down 15% - Decrypt
+        Embattled Celsius CEO Alex Mashinsky Breaks 3-Day Silence - Decrypt
         <img
-          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2022/06/crypto-crash-gID_6.jpg"
+          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2022/06/2021_-_Centre_Stage_PO1_0057_51654289843-1-gID_4.jpg"
           alt="article image"
         />
-        The crypto market’s slide has continued, with Bitcoin and Ethereum
-        recording new 52-week lows every day this week.
+        Mashinsky touted the strength of the community but had no news for
+        customers looking to withdraw funds from the crypto lender.
       </p>
     ),
-    date: "15/06/2022",
+    date: "16/06/2022",
     source:
-      "https://decrypt.co/102963/bitcoin-down-10-percent-20000-ethereum-down-15-percent",
+      "https://decrypt.co/103035/embattled-celsius-ceo-alex-mashinsky-breaks-3-day-silence",
     searchKeywords:
-      "Decryptdecrypt.coBitcoin Slips 10% to Touch $20,000, Ethereum Down 15% - Decrypt The crypto market’s slide has continued, with Bitcoin and Ethereum recording new 52-week lows every day this week.",
+      "Decryptdecrypt.coEmbattled Celsius CEO Alex Mashinsky Breaks 3-Day Silence - Decrypt Mashinsky touted the strength of the community but had no news for customers looking to withdraw funds from the crypto lender.",
   },
   {
     authorName: "BSCDaily",
@@ -634,17 +1000,15 @@ export const daily = [
     authorLink: "https://twitter.com/bsc_daily",
     tweet: (
       <p>
-        🎉 @CelerNetwork #cBridge is Now Available on @aurigami_PLY 😍 This
-        makes bridging to  @auroraisnear easier than ever, unlocking yield and
-        liquidity for the #NEAR &amp; #Aurora ecosystem 🚀 🔥 $CELR is available
-        on @binance  Register &amp; Trade now 👇 https://t.co/SnH70xeCFs #BNB 🔥
-        https://t.co/1gCsAl98JW
+        @BscPitbull @RiceDeFiWallet More Details 🔥 @RiceDeFiWallet now has
+        integrated 3 DApps of @BscPitbull on #BNBChain: #PitSwap #PitSafe
+        #PitFarm https://t.co/wPiPtCZmk3
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537074067391528960",
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537451136990515202",
     searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "CoinDesk",
@@ -654,16 +1018,105 @@ export const daily = [
     authorLink: "https://twitter.com/coindesk",
     tweet: (
       <p>
-        The Fed's going to hike 75 basis points today, but that's not the big
-        central bank news. The ECB's emergency meeting to deal with the EU bond
-        market crash suggests a waving of the white flag. @liqquidity reports in
-        this morning's First Mover Americas. https://t.co/6jvmBZbnUh
+        Several traders of digital assets have publicly declared how bullish
+        they are about the upcoming Ethereum Merge and what it will do for the
+        price of ETH. Financial advisor @edstromandrew thinks the opposite is
+        more likely: https://t.co/UolYnfeTVg
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1537070197789671431",
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537477532081176582",
     searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin Magazine",
+    authorUsername: "bitcoinmagazine",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    authorLink: "https://twitter.com/bitcoinmagazine",
+    tweet: (
+      <p>JUST IN – FTX CEO: #Bitcoin can "absolutely" be used for payments</p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537436746840805378",
+    searchKeywords:
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>
+        BREAKING: Elon Musk, Tesla, and SpaceX have been sued for $258 billion
+        over an alleged #Dogecoin 'pyramid scheme.'
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537503784808718341",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        LIVE: Four states join the Texas investigation into Celsius' withdrawal
+        pause while @SECGov communicates with the crypto lender. Former SEC
+        Senior Trial Counsel Howard Fischer and @GlobalXETFs' Adam Sze join "All
+        About Bitcoin" on https://t.co/yHMYaDyzNy: https://t.co/jdOb7LYgSi
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537510404083044364",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        With a run in #bitcoin leading positive sentiment in the broader #crypto
+        market before slumping back down, plus a look at the first-ever federal
+        case of NFT insider trading, CoinDesk’s “Markets Daily” is back with the
+        latest news roundup. Tune in here: https://t.co/IkOUge3m8o
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537471786161516544",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        🎉 @BscPitbull #Dapps are fully Supported on @RiceDeFiWallet 🚀 #Pitbull
+        - a auto-staking token that had its ownership renounced and burnt LP
+        given🔥 #RICE - Rice Wallet is a non-custodial wallet that helps you
+        store, invest and manage cryptocurrencies😍 #BNB #BSC #WEB3 💪
+        https://t.co/U7CIg3Bqi6
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537451134096392194",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "CoinDesk",
@@ -676,13 +1129,13 @@ export const daily = [
         Have a few minutes? Help CoinDesk gain insights into the working world
         of crypto by filling out our easy, anonymous Crypto Work Survey by June
         21. The results will be reported in an upcoming CoinDesk feature.
-        https://t.co/my0Bq0UgLt
+        https://t.co/my0Bq0UgLt https://t.co/0ZxO1oFd3I
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1537038964846125056",
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537481892253077510",
     searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "Watcher.Guru",
@@ -692,43 +1145,14 @@ export const daily = [
     authorLink: "https://twitter.com/watcherguru",
     tweet: (
       <p>
-        JUST IN: Tron withdraws 948 million #TRX ($48M) from Binance "to
-        safeguard the blockchain industry and crypto market."
+        JUST IN: Circle has launched a new stablecoin pegged to the euro,
+        $EUROC.
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1537023692093415424",
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537425188211548166",
     searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: (
-      <p>
-        JUST IN: Celsius has hired restructuring attorneys to explore financing
-        options.
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1536968176830820353",
-    searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: <p>JUST IN: Stablecoin $USDD has dropped to $0.96</p>,
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1536982058894929922",
-    searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "Decrypt",
@@ -738,474 +1162,20 @@ export const daily = [
     authorLink: "decrypt.co",
     tweet: (
       <p>
-        SEC Opens Investigation Into Insider Trading on Crypto Exchanges: Report
-        - Decrypt
-        <img
-          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2021/03/shutterstock_1625495629-1-gID_5.jpg"
-          alt="article image"
-        />
-        At least one major crypto exchange has reportedly received a letter from
-        the Securities and Exchange Commission regarding safeguards on its
-        platform.
-      </p>
-    ),
-    date: "15/06/2022",
-    source:
-      "https://decrypt.co/102969/sec-opens-investigation-into-insider-trading-on-crypto-exchanges-report",
-    searchKeywords:
-      "Decryptdecrypt.coSEC Opens Investigation Into Insider Trading on Crypto Exchanges: Report - Decrypt At least one major crypto exchange has reportedly received a letter from the Securities and Exchange Commission regarding safeguards on its platform.",
-  },
-  {
-    authorName: "Luna ($LUNA)",
-    authorUsername: "lunaterraglobal",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1530503148149919744/AOMzQ870_400x400.jpg",
-    authorLink: "https://twitter.com/lunaterraglobal",
-    tweet: <p>Next stop: $15k #btc</p>,
-    date: "15/06/2022",
-    source: "https://twitter.com/LunaTerraGlobal/status/1536986040841474049",
-    searchKeywords:
-      "Luna ($LUNA)LunaTerraGlobalPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Bitcoin Magazine",
-    authorUsername: "bitcoinmagazine",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
-    authorLink: "https://twitter.com/bitcoinmagazine",
-    tweet: (
-      <p>56.1 million millionaires Only 21 million #bitcoin Do the math ✨</p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/BitcoinMagazine/status/1536889618964041728",
-    searchKeywords:
-      "Bitcoin MagazineBitcoinMagazinePWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
-    tweet: <p>@Nodereal_io @itamcube More Details https://t.co/Sh44p672SK</p>,
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537033819995381760",
-    searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Bitcoin News",
-    authorUsername: "news.bitcoin.com",
-    authorProfilePic:
-      "https://static.news.bitcoin.com/wp-content/uploads/2019/07/favicon-3.png",
-    authorLink: "news.bitcoin.com",
-    tweet: (
-      <p>
-        Will Bitcoin Fall to $13,800? — What an 80% Drawdown Will Look Like From
-        Here – Markets and Prices Bitcoin News
-        <img
-          src="https://static.news.bitcoin.com/wp-content/uploads/2022/06/image-2022-06-15-073540.jpg"
-          alt="article image"
-        />
-        Bitcoin is 70% down from the $69K all-time high but traditionally,
-        bitcoin is known to drop around 80% or more from all-time price highs.
-      </p>
-    ),
-    date: "",
-    source:
-      "https://news.bitcoin.com/will-bitcoin-fall-to-13800-what-an-80-drawdown-will-look-like-from-here/",
-    searchKeywords:
-      "Bitcoin Newsnews.bitcoin.comWill Bitcoin Fall to $13,800? — What an 80% Drawdown Will Look Like From Here – Markets and Prices Bitcoin News Bitcoin is 70% down from the $69K all-time high but traditionally, bitcoin is known to drop around 80% or more from all-time price highs.",
-  },
-  {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
-    tweet: (
-      <p>
-        @RadioCacaNFT @BitwellGlobal More Details BEP20-RACA deposit and
-        withdrawal function is now open. BitWell will list RACA/USDT trading
-        pair. At the same time, RACA Trade Competitions will open, and all users
-        with a total trading volume  https://t.co/e9IltwLdz6
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537074282991321090",
-    searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Bitcoin Magazine",
-    authorUsername: "bitcoinmagazine",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
-    authorLink: "https://twitter.com/bitcoinmagazine",
-    tweet: (
-      <p>
-        JUST IN – Kraken exchange CEO: Our balance sheet is "mostly #Bitcoin"
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/BitcoinMagazine/status/1537079718389989376",
-    searchKeywords:
-      "Bitcoin MagazineBitcoinMagazinePWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Michael Saylor⚡️",
-    authorUsername: "saylor",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1485632175932383235/8t0DGo6V_400x400.jpg",
-    authorLink: "https://twitter.com/saylor",
-    tweet: <p>1 BTC = 1 BTC</p>,
-    date: "15/06/2022",
-    source: "https://twitter.com/saylor/status/1537043340973187074",
-    searchKeywords:
-      "Michael Saylor⚡️saylorPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
-    tweet: (
-      <p>
-        TOP GAINERS IN #BNBCHAIN ECOSYSTEM LAST 24 HOURS🚀 🥇 $MARVIN
-        @Marvin_Inu 🥈 $VINU @VitaInuCoin 🥉 $NORD @Nord_Finance $KNC
-        @kybernetwork $AUTO @autofarmnetwork $KIBA @KibaInuWorld $NFTY @nftylab
-        $FIS @Stafi_Protocol $XVS @VenusProtocol $FLOKI @realflokiinu 🔥 #BNB
-        #BSC https://t.co/5gILEVe6Mu
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537049784988540929",
-    searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        Prominent crypto fund Three Arrows Capital is facing possible insolvency
-        after incurring at least $400 million in liquidations. @shauryamalwa
-        reports. https://t.co/o86j1LjgS5
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1536993553301266434",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: (
-      <p>
-        Justin Sun continues to withdraw $TRX as $USDD trades below its peg.
-        https://t.co/zW1uFoRMf5
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1537029097670512640",
-    searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Bitcoin News",
-    authorUsername: "news.bitcoin.com",
-    authorProfilePic:
-      "https://static.news.bitcoin.com/wp-content/uploads/2019/07/favicon-3.png",
-    authorLink: "news.bitcoin.com",
-    tweet: (
-      <p>
-        Bitcoin, Ethereum Technical Analysis: ETH, BTC Remain Lower Ahead of
-        Federal Reserve Rate Decision – Market Updates Bitcoin News
-        <img
-          src="https://static.news.bitcoin.com/wp-content/uploads/2022/06/shutterstock_1978593200.jpg"
-          alt="article image"
-        />
-        ETH was close to falling below $1,000 on Wednesday, as markets began to
-        prepare for the latest Fed policy meeting.
-      </p>
-    ),
-    date: "",
-    source:
-      "https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-btc-remain-lower-ahead-of-federal-reserve-rate-decision/",
-    searchKeywords:
-      "Bitcoin Newsnews.bitcoin.comBitcoin, Ethereum Technical Analysis: ETH, BTC Remain Lower Ahead of Federal Reserve Rate Decision – Market Updates Bitcoin News ETH was close to falling below $1,000 on Wednesday, as markets began to prepare for the latest Fed policy meeting.",
-  },
-  {
-    authorName: "Bitcoin News",
-    authorUsername: "news.bitcoin.com",
-    authorProfilePic:
-      "https://static.news.bitcoin.com/wp-content/uploads/2019/07/favicon-3.png",
-    authorLink: "news.bitcoin.com",
-    tweet: (
-      <p>
-        PWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could
-        Reach $100K by Year-End – Markets and Prices Bitcoin News
-        <img
-          src="https://static.news.bitcoin.com/wp-content/uploads/2022/06/pwc-btc.jpg"
-          alt="article image"
-        />
-        Financial services firm PWC found that the majority of crypto fund
-        managers surveyed expect bitcoin to be between $75K and $100K by
-        year-end.
-      </p>
-    ),
-    date: "",
-    source:
-      "https://news.bitcoin.com/gofrom/featured_rotator/pwc-majority-of-crypto-fund-managers-surveyed-predict-bitcoin-could-reach-100k-by-year-end",
-    searchKeywords:
-      "Bitcoin Newsnews.bitcoin.comPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: (
-      <p>
-        JUST IN: #BNB falls below $200 for the first time since February, 2021.
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1536996992404054017",
-    searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
-    tweet: (
-      <p>
-        TOP #BNBCHAIN PROJECTS MENTIONED THE MOST ON #TWITTER🚀 🥇 $QUACK
-        @RichQuack 🥈 $CAKE @PancakeSwap 🥉 $BABYDOGE @BabyDogeCoin $SFM
-        @safemoon $KIBA @KibaInuWorld $MARVIN @Marvin_Inu $RISE @EverRise $FLOKI
-        @RealFlokiInu $YOOSHI @yooshi_official $LEOS @swapleonicorn #BNB
-        https://t.co/bzBhXNqiB8
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537078724931096576",
-    searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: (
-      <p>
-        JUST IN: 🇷🇺 A bill that would ban #crypto as a payment method in Russia
-        has passed the first reading in the parliament.
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1537069782654242816",
-    searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        .@WonderFi strategic investor @kevinolearytv says a true “panic event”
-        is needed before the crypto market bottoms. @mikeybellusci reports
-        https://t.co/OxIWkqjFFw
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1537012544765939713",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Bitcoin Magazine",
-    authorUsername: "bitcoinmagazine",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
-    authorLink: "https://twitter.com/bitcoinmagazine",
-    tweet: (
-      <p>
-        Bear market is when fortunes are made. #Bitcoin https://t.co/uCCk9ApHOX
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/BitcoinMagazine/status/1537039637973291009",
-    searchKeywords:
-      "Bitcoin MagazineBitcoinMagazinePWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        The bitcoin price dropped toward $20,000, a level not seen since 2020,
-        on Wednesday as it extended a 12-week slide. By @shauryamalwa
-        https://t.co/guNRKgQ0QU
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1537013007498215424",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "CoinDesk",
-    authorUsername: "coindesk",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
-    authorLink: "https://twitter.com/coindesk",
-    tweet: (
-      <p>
-        .@nansen_ai is launching a messaging app to boost security and
-        transparency in crypto @mikeybellusci reports https://t.co/jBUfC5OyaN
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1537058367251816448",
-    searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Decrypt",
-    authorUsername: "decrypt.co",
-    authorProfilePic:
-      "https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/images/favicon-32x32.png",
-    authorLink: "decrypt.co",
-    tweet: (
-      <p>
-        SEC Chair Gensler: Crypto Bill Could ‘Undermine’ Existing Protections -
+        Elon Musk, Tesla and SpaceX Hit With $258 Billion Dogecoin Lawsuit -
         Decrypt
         <img
-          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2021/04/gary-gensler-gID_6.jpg"
+          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2021/05/musk_2021-gID_4.jpg"
           alt="article image"
         />
-        The bipartisan Responsible Financial Innovation Act would shift some
-        responsibility for the crypto sector from the SEC to the CFTC.
+        A man has filed a $258 billion lawsuit against Elon Musk and two of his
+        companies, Tesla and SpaceX, for pumping Dogecoin.
       </p>
     ),
-    date: "15/06/2022",
-    source:
-      "https://decrypt.co/102972/sec-chair-gensler-crypto-bill-could-undermine-existing-protections",
+    date: "16/06/2022",
+    source: "https://decrypt.co/103089/elon-musk-tesla-spacex-dogecoin-lawsuit",
     searchKeywords:
-      "Decryptdecrypt.coSEC Chair Gensler: Crypto Bill Could ‘Undermine’ Existing Protections - Decrypt The bipartisan Responsible Financial Innovation Act would shift some responsibility for the crypto sector from the SEC to the CFTC.",
-  },
-  {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
-    tweet: (
-      <p>
-        📢@GMRCenter Retweet Challenge !!💪 20 post Mega Thread of Battle Leet
-        will be released if GMR tweet below reaches 500 RTs 🔥 No more waiting,
-        the Battle Leet is about to be manifest!! Let's beat the retweet up🔄
-        #BattleLeet #GMRCenter #Play2Earn #Play2Create #BNBChain
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1536990278552526849",
-    searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Bitcoin Magazine",
-    authorUsername: "bitcoinmagazine",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
-    authorLink: "https://twitter.com/bitcoinmagazine",
-    tweet: (
-      <p>
-        JUST IN: #Bitcoin is "technically oversold." – $4.5 trillion Fidelity's
-        director of global macro
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/BitcoinMagazine/status/1537065272460382208",
-    searchKeywords:
-      "Bitcoin MagazineBitcoinMagazinePWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: <p>Gm Whales 🐳</p>,
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1537027142369824769",
-    searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Decrypt",
-    authorUsername: "decrypt.co",
-    authorProfilePic:
-      "https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/images/favicon-32x32.png",
-    authorLink: "decrypt.co",
-    tweet: (
-      <p>
-        Celsius Rival BlockFi to Pay $1 Million to Iowa for Selling Unregistered
-        Securities - Decrypt
-        <img
-          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2022/06/blockfi-app-logo-gID_1.jpeg"
-          alt="article image"
-        />
-        The fine of almost $1 million to Iowa’s Insurance Division is part of a
-        larger $100 million penalty that BlockFi agreed earlier this year with
-        the SEC.
-      </p>
-    ),
-    date: "15/06/2022",
-    source:
-      "https://decrypt.co/102971/celsius-rival-blockfi-to-pay-1-million-to-iowa-for-selling-unregistered-securities",
-    searchKeywords:
-      "Decryptdecrypt.coCelsius Rival BlockFi to Pay $1 Million to Iowa for Selling Unregistered Securities - Decrypt The fine of almost $1 million to Iowa’s Insurance Division is part of a larger $100 million penalty that BlockFi agreed earlier this year with the SEC.",
-  },
-  {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
-    tweet: (
-      <p>
-        🎉 @Nodereal_io Partnership with @itamcube to Bring Revolutionary
-        Entertainment to #BAS😍 #NodeReal - a one-stop blockchain infrastructure
-        and services provider that embraces the high-speed blockchain era🔥 What
-        is #ItamCube?  How NodeReal is helping? Explore More👇 #BNB #BSC
-        https://t.co/oy4tp8OLrv
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537033805743239170",
-    searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Decryptdecrypt.coElon Musk, Tesla and SpaceX Hit With $258 Billion Dogecoin Lawsuit - Decrypt A man has filed a $258 billion lawsuit against Elon Musk and two of his companies, Tesla and SpaceX, for pumping Dogecoin.",
   },
   {
     authorName: "Watcher.Guru",
@@ -1215,14 +1185,15 @@ export const daily = [
     authorLink: "https://twitter.com/watcherguru",
     tweet: (
       <p>
-        JUST IN: Tether $USDT says it has liquidated its Celsius position with
-        no losses.
+        #Binance CEO says it was not easy saying no to Super Bowl ads
+        and sponsor deals months ago, but today they are hiring for 2,000 open
+        positions. https://t.co/9SlmbIUI3r
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1537004487902121984",
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537239573100539904",
     searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "BSCDaily",
@@ -1232,16 +1203,67 @@ export const daily = [
     authorLink: "https://twitter.com/bsc_daily",
     tweet: (
       <p>
-        @BNBCHAIN @binance 🎉 Recent Project Spotlights in @BNBCHAIN 🚀 $GAL
-        @ProjectGalaxyHQ  $DAR @MinesOfDalarnia  $ERA7 @Era7_official  $CO
-        @Coritecom  @SecondLiveReal  @MetaApesGame  @OpenLeverage  #BNB #BSC
-        #BINANCE #METAFI #WEB3 #METAVERSE
+        🎉 MOST HELD #DEFI TOKENS IN #BNBCHAIN ECOSYSTEM🚀 The More Holders, The
+        More Users who are Degens🔥 Check it out &amp; Join their Communities,
+        you will get amazing tips😍 #BNB #BSC #METAFI #WEB3 #BNBCHAIN #BINANCE
+        🚀 https://t.co/ZPmjQf4NVW
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537064562410782720",
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537450601579270144",
     searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        "Can social frameworks be populated and co-created by its constitutes
+        and its owners?" @alexzhang__ answers the question with his
+        establishment of transparency in the @FWBtweets community. Watch more
+        from #Consensus2022, presented by @cryptocom: https://t.co/zxlqztr5XQ
+        https://t.co/NnfWjHlC0M
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537484005045862400",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        @itamcube @gate_io More Details Gate Exchange is the world’s top 10
+        blockchain asset exchange established in 2013. Gate Exchange is operated
+        by Gate Technology and provides cryptocurrency exchange, crypto wallet
+        service, native token ($GT, GateToken), ... https://t.co/6dO42E29cm
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537446464703860737",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: <p> https://t.co/uXN4Py2VzH</p>,
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537469698031464449",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "Watcher.Guru",
@@ -1252,57 +1274,37 @@ export const daily = [
     tweet: (
       <p>
         Celsius Network withdrawals, swaps, and transfers have now been paused
-        for over 48 hours due to "extreme market conditions."
+        for over 72 hours due to "extreme market conditions."
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1536941035485536257",
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537273478482624512",
     searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
-    authorName: "BSCDaily",
-    authorUsername: "bsc_daily",
+    authorName: "Bitcoin News",
+    authorUsername: "news.bitcoin.com",
     authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
-    authorLink: "https://twitter.com/bsc_daily",
+      "https://static.news.bitcoin.com/wp-content/uploads/2019/07/favicon-3.png",
+    authorLink: "news.bitcoin.com",
     tweet: (
       <p>
-        🎉 @POODLETOKEN Partnership with @CrolonMars 🎉 $POOD Team will be the
-        FIRST tribe on Crolon Mars. Below are some of their #NFTs already
-        there😍 Crolon Mars is an ambitious new crypto project launching on CRO!
-        We will land on Mars before recreating it in the METAVERSE🔥 #BNB
-        https://t.co/5ki1SCFOFR
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537042765024055297",
-    searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Decrypt",
-    authorUsername: "decrypt.co",
-    authorProfilePic:
-      "https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/images/favicon-32x32.png",
-    authorLink: "decrypt.co",
-    tweet: (
-      <p>
-        Bill Gates: Crypto and NFTs '100% Based on Greater Fool Theory' -
-        Decrypt
+        Bill Gates: Crypto Is 100% Based on Greater Fool Theory — 'I'm Not
+        Involved in That' – Featured Bitcoin News
         <img
-          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2020/07/shutterstock_2475133901-gID_4.jpg"
+          src="https://static.news.bitcoin.com/wp-content/uploads/2022/06/bill-gates.jpg"
           alt="article image"
         />
-        Billionaire philanthropist Bill Gates has voiced skepticism about NFTs
-        and the broader cryptocurrency space.
+        Microsoft co-founder Bill Gates says crypto is an asset class that is
+        100% based on the Greater Fool Theory.
       </p>
     ),
-    date: "15/06/2022",
+    date: "",
     source:
-      "https://decrypt.co/102973/bill-gates-crypto-and-nfts-100-based-on-greater-fool-theory",
+      "https://news.bitcoin.com/gofrom/featured_rotator/bill-gates-crypto-is-100-based-on-greater-fool-theory-im-not-involved-in-that",
     searchKeywords:
-      "Decryptdecrypt.coBill Gates: Crypto and NFTs '100% Based on Greater Fool Theory' - Decrypt Billionaire philanthropist Bill Gates has voiced skepticism about NFTs and the broader cryptocurrency space.",
+      "Bitcoin Newsnews.bitcoin.comBill Gates: Crypto Is 100% Based on Greater Fool Theory — 'I'm Not Involved in That' – Featured Bitcoin News Microsoft co-founder Bill Gates says crypto is an asset class that is 100% based on the Greater Fool Theory.",
   },
   {
     authorName: "BSCDaily",
@@ -1312,32 +1314,16 @@ export const daily = [
     authorLink: "https://twitter.com/bsc_daily",
     tweet: (
       <p>
-        "If you can't hold, you won't be rich." @cz_binance ✊ That's true in
-        all markets such as gold, stock, and real estate,... #BNB #CZ #BINANCE
-        #WEB3 #METAVERSE 🧬 https://t.co/gKDp8YydTC
+        🔥 @fightoftheages is Now Listed on @HuobiGlobal 🚀 $FOTA is a AAA
+        #Metaverse Gaming project which is under the Hybrid of MOBA-RPG😍 🤝
+        Supported by @FotaDevBlog 🎉 Incubated by @Hobbit_Invest Explore More👇
+        #FOTA #BSC #BNB #BSC #GAMEFI #P2E #WEB3 💪 https://t.co/T1G0UNiEgG
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/bsc_daily/status/1537053559224578048",
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537461701796413440",
     searchKeywords:
-      "BSCDailybsc_dailyPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
-  },
-  {
-    authorName: "Watcher.Guru",
-    authorUsername: "watcherguru",
-    authorProfilePic:
-      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
-    authorLink: "https://twitter.com/watcherguru",
-    tweet: (
-      <p>
-        JUST IN: The global #cryptocurrency market cap has fallen below $900
-        billion.
-      </p>
-    ),
-    date: "15/06/2022",
-    source: "https://twitter.com/WatcherGuru/status/1536994289816899584",
-    searchKeywords:
-      "Watcher.GuruWatcherGuruPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "CoinDesk",
@@ -1347,15 +1333,15 @@ export const daily = [
     authorLink: "https://twitter.com/coindesk",
     tweet: (
       <p>
-        .@fs_insight says the collapse of UST and the troubles with
-        @CelsiusNetwork could have long-term benefits for the crypto industry.
-        By @willcanny99 https://t.co/WesRj1rgbp
+        .@CelsiusNetwork’s recent troubles appear to stem from its DeFi
+        strategies that were utilized to generate customer yield. Reporting by
+        @oknightcrypto. $CEL https://t.co/A3AfLcr6rX
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/CoinDesk/status/1537016577371082752",
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537498836637208579",
     searchKeywords:
-      "CoinDeskCoinDeskPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
   {
     authorName: "Luna ($LUNA)",
@@ -1363,14 +1349,299 @@ export const daily = [
     authorProfilePic:
       "https://pbs.twimg.com/profile_images/1530503148149919744/AOMzQ870_400x400.jpg",
     authorLink: "https://twitter.com/lunaterraglobal",
+    tweet: <p>Another prediction ✅ I told you 😉</p>,
+    date: "16/06/2022",
+    source: "https://twitter.com/LunaTerraGlobal/status/1537403474526228481",
+    searchKeywords:
+      "Luna ($LUNA)LunaTerraGlobalBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
     tweet: (
       <p>
-        We are giving $3000 #Bitcoin among all people who follows and retweets
+        MOST TRADED PROJECT THAT HAVEN'T BEEN LISTED ON #BINANCE🚀 🥇 $RACA
+        @RadioCacaNFT 🥈 $DOME @Everdome_io 🥉 $CEEK @ceek $BABYDOGE
+        @babydogecoin $FLOKI @realflokiinu $MELOS @melos_studio $BABY
+        @babyswap_bsc $GF @GuildFiGlobal $ARV @ArivaCoin $YOOSHI
+        @yooshi_official #BNB https://t.co/e1D93r7OqP
       </p>
     ),
-    date: "15/06/2022",
-    source: "https://twitter.com/LunaTerraGlobal/status/1537080569581948933",
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537501510841430017",
     searchKeywords:
-      "Luna ($LUNA)LunaTerraGlobalPWC: Majority of Crypto Fund Managers Surveyed Predict Bitcoin Could Reach $100K by Year-End – Markets and Prices Bitcoin News Financial services firm PWC found that the majority of crypto fund managers surveyed expect bitcoin to be between $75K and $100K by year-end.",
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        MOST HELD DEFI TOKENS IN #BNBCHAIN 🚀 $CAKE @PancakeSwap  $FEG
+        @FEGtoken  $POSI @PositionEx  $BSW @Biswap_Dex  $BAKE @bakery_swap 
+        $QUACK @RichQuack  $ALPACA @AlpacaFinance  $BABY @babyswap_bsc  $TITANO
+        @TitanoFinance  $BANANA @ape_swap  #BNB #BSC #METAFI #WEB3
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537450604208996352",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        A concern with DeFi is that one asset going to zero "could lead to
+        contagion," @euler_xyz's @euler_mab says. Watch the full discussion on
+        the state of DeFi amid a liquidity crisis, the DAO's recent $32 million
+        raise and more: https://t.co/ufuq4lmQnA https://t.co/v8J1jH4EIe
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537527003838042118",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>
+        JUST IN: 🇬🇧 UK's digital minister, Chris Philp, says the country intends
+        to be a global #crypto center.
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537356951872540672",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin Magazine",
+    authorUsername: "bitcoinmagazine",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    authorLink: "https://twitter.com/bitcoinmagazine",
+    tweet: (
+      <p>
+        Vueling is partnering with cryptocurrency payment provider BitPay and
+        global payment solutions provider UATP to accept #Bitcoin payments by
+        early 2023. @Fall_Of_Fiat covers the news: https://t.co/vhYyOi0CaH
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537422908804538370",
+    searchKeywords:
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        @fightoftheages @HuobiGlobal @FotaDevBlog @Hobbit_Invest More Details
+        FOTA Official Website:  https://t.co/CG4MFrKMlW More activities with
+        generous rewards are coming soon. Please stay tuned!
+        https://t.co/uutiDLWuhq
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537461706212970497",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        The Texas State Securities Board (TSSB) launched an investigation into
+        @CelsiusNetwork on Thursday – four days after the crypto lender halted
+        customer withdrawals. @cheyenneligon reports https://t.co/EVvfopd1Rw
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537495407684722688",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin Magazine",
+    authorUsername: "bitcoinmagazine",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    authorLink: "https://twitter.com/bitcoinmagazine",
+    tweet: (
+      <p>
+        MicroStrategy CEO: #Bitcoin is the first and only legitimate scarcity in
+        the universe. https://t.co/t8qWwQsbxw
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537499232755716096",
+    searchKeywords:
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>
+        JUST IN: Elon Musk says it makes sense to integrate payments into
+        Twitter, currency and #crypto.
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537516813067636738",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Bitcoin Magazine",
+    authorUsername: "bitcoinmagazine",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1444022922377576453/AzvXYXGr_400x400.jpg",
+    authorLink: "https://twitter.com/bitcoinmagazine",
+    tweet: (
+      <p>
+        @Bitcoinfinity #Bitcoin gear by Bitcoiners, for Bitcoiners. ⚡️ Find
+        your favorites at the @BitcoinMagazine store and rock sound money in
+        style! 🙌 🛒👉 https://t.co/7CeTtrovrG https://t.co/W2Q9WZIbYG
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/BitcoinMagazine/status/1537469161856589824",
+    searchKeywords:
+      "Bitcoin MagazineBitcoinMagazineBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: <p> https://t.co/2oSiKw9diZ</p>,
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537446627312558080",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>
+        JUST IN: #Binance CEO Changpeng Zhao says the platform surpassed 120
+        million users last month.
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537417242845057025",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "BSCDaily",
+    authorUsername: "bsc_daily",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1493443033399906311/p-9ltwdB_400x400.jpg",
+    authorLink: "https://twitter.com/bsc_daily",
+    tweet: (
+      <p>
+        @itamcube @gate_io More Details Gate Exchange is the world’s top 10
+        blockchain asset exchange established in 2013. Gate Exchange is operated
+        by Gate Technology and provides cryptocurrency exchange, crypto wallet
+        service, native token ($GT, GateToken), ... https://t.co/6dO42E1BmO
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/bsc_daily/status/1537450226616778752",
+    searchKeywords:
+      "BSCDailybsc_dailyBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Watcher.Guru",
+    authorUsername: "watcherguru",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1475973046133481477/AorQUcvD_400x400.jpg",
+    authorLink: "https://twitter.com/watcherguru",
+    tweet: (
+      <p>
+        BREAKING:🇺🇸 Texas has launched an investigation into Celsius Network.
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/WatcherGuru/status/1537485719416995841",
+    searchKeywords:
+      "Watcher.GuruWatcherGuruBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
+  },
+  {
+    authorName: "Decrypt",
+    authorUsername: "decrypt.co",
+    authorProfilePic:
+      "https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/images/favicon-32x32.png",
+    authorLink: "decrypt.co",
+    tweet: (
+      <p>
+        Ethereum Jumps 10% as Bitcoin and Crypto Markets Stage Mini Rally -
+        Decrypt
+        <img
+          src="https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2022/01/shutterstock_1012491031-gID_5.jpg"
+          alt="article image"
+        />
+        Top cryptocurrencies Bitcoin and Ethereum posted overnight gains
+        following the Fed's rate hike, amid weakened on-chain user activity.
+      </p>
+    ),
+    date: "16/06/2022",
+    source:
+      "https://decrypt.co/103053/ethereum-jumps-10-as-bitcoin-and-crypto-markets-stage-mini-rally",
+    searchKeywords:
+      "Decryptdecrypt.coEthereum Jumps 10% as Bitcoin and Crypto Markets Stage Mini Rally - Decrypt Top cryptocurrencies Bitcoin and Ethereum posted overnight gains following the Fed's rate hike, amid weakened on-chain user activity.",
+  },
+  {
+    authorName: "CoinDesk",
+    authorUsername: "coindesk",
+    authorProfilePic:
+      "https://pbs.twimg.com/profile_images/1430879040156667904/NlbJjd-l_400x400.png",
+    authorLink: "https://twitter.com/coindesk",
+    tweet: (
+      <p>
+        Latin American crypto exchange @Bitso processed $1 billion in crypto
+        remittances between Mexico and the U.S. in the first half of 2022, a
+        400% increase compared to the same period last year. @andresengler
+        reports https://t.co/TusBUoCbJY
+      </p>
+    ),
+    date: "16/06/2022",
+    source: "https://twitter.com/CoinDesk/status/1537519001856790528",
+    searchKeywords:
+      "CoinDeskCoinDeskBitcoin, Ethereum Technical Analysis: BTC Moves Away From $20,000 Following Historic Fed Rate Hike – Market Updates Bitcoin News Bitcoin moved away from its recent low of $20,000 on Thursday, following a historic rate hike from the Federal Reserve.",
   },
 ];

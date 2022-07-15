@@ -11,6 +11,7 @@ import Coins from "./components/CryptoPrices/Coins";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import HashtagsNav from "./components/HashtagsNav";
+import axios from "axios";
 
 export default function Feeds() {
   const { id } = useParams();
@@ -18,10 +19,25 @@ export default function Feeds() {
   const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
 
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const url = `http://127.0.0.1:5000/feeds/general`;
+
   useEffect(() => {
+    axios
+      .get(url)
+      .then((response) => {
+        setPosts(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     //scroll to the top
     window.scrollTo(0, 0);
-  }, [id]);
+  }, []);
 
   //Search submit
   const handleSearchBar = (e) => {
@@ -48,6 +64,7 @@ export default function Feeds() {
     <>
       <Helmet>
         <title>Feeds | Capitnest</title>
+        {console.log("Yes")}
       </Helmet>
       <Layout>
         <Content>
@@ -102,7 +119,7 @@ export default function Feeds() {
                     No results found :(
                   </h1>
                 ) : (
-                  blogs.map((tweet) => (
+                  posts.map((tweet) => (
                     <div style={{ marginTop: "10px", marginBottom: "10px" }}>
                       <WrapItem>
                         <Tweet blog={tweet} />
