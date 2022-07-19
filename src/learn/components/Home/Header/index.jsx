@@ -6,7 +6,7 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 export function Header() {
   return (
     <Head>
-      <Flex flexDirection={"column"} width="120%">
+      <Text>
         <h1>Your WEB3 journey Starts here</h1>
         <p>
           Learn everything you need to know about cryptocurrencies and
@@ -15,7 +15,6 @@ export function Header() {
           cryptocurrencies. How the blockchain works, how the information is
           decentralized and a lot more! Choose your desired topic and dive in!
         </p>
-
         <ButtonN>
           <a href="/register">
             <Button>Start Learning</Button>
@@ -26,7 +25,7 @@ export function Header() {
             </ButtonLink>
           </a>
         </ButtonN>
-      </Flex>
+      </Text>
       <Imagee>
         <img
           src="https://cdn3d.iconscout.com/3d/premium/thumb/crypto-cloud-mining-5401572-4521504.png"
@@ -36,6 +35,16 @@ export function Header() {
     </Head>
   );
 }
+
+const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 120%;
+
+  @media (max-width: 750px) {
+    justify-content: center;
+  }
+`;
 
 const ButtonLink = styled.a`
   margin-left: 20px;
@@ -48,6 +57,14 @@ const ButtonLink = styled.a`
   &:hover {
     margin-left: 22px;
     color: #6d4bd0;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 830px) {
+    margin-left: 0px;
   }
 `;
 
@@ -81,6 +98,11 @@ const Button = styled.button`
   &:active {
     box-shadow: #d6d6e7 0 3px 0px inset;
     transform: translateY(2px);
+  }
+
+  @media (max-width: 900px) {
+    font-size: 16px;
+    height: 35px;
   }
 `;
 
@@ -119,32 +141,25 @@ const Head = styled.div`
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1000px) {
     img {
-      margin-top: 20px;
-      width: 800px;
+      width: 850px;
+      margin-top: 40px;
     }
 
-    margin-bottom: 80px;
-  }
-
-  @media (max-width: 1100px) {
-    img {
-      margin-top: 50px;
-    }
-
-    h1 {
-      font-size: 50px;
+    p {
+      font-size: 17px;
     }
   }
 
   @media (max-width: 900px) {
     img {
       width: 1000px;
+      margin-top: 50px;
     }
 
     h1 {
-      font-size: 45px;
+      font-size: 40px;
     }
   }
 
@@ -154,93 +169,50 @@ const Head = styled.div`
     }
   }
 
-  @media (max-width: 750px) {
-    margin-top: 0px;
-    img {
-      width: 1000px;
-      margin-top: 70px;
-    }
-
+  @media (max-width: 850px) {
     h1 {
-      font-size: 40px;
+      font-size: 35px;
     }
-
-    p {
-      font-size: 18px;
-    }
-  }
-
-  @media (max-width: 680px) {
-    h1 {
-      font-size: 30px;
-    }
-
-    p {
-      font-size: 17px;
-    }
-  }
-
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 30px;
-    }
-  }
-
-  @media (max-width: 600px) {
-    flex-direction: column-reverse;
-    justify-content: center;
-    text-align: center;
-
-    p {
-      margin-right: 2%;
-      margin-left: 2%;
-    }
-
-    h1 {
-      font-size: 47px;
-      margin-top: 0px;
-    }
-
-    img {
-      width: 400px;
-      margin-bottom: 0px;
-    }
-  }
-
-  @media (max-width: 600px) {
-    p {
-      font-size: 17px;
-    }
-
-    h1 {
-      font-size: 41px;
-    }
-  }
-
-  @media (max-width: 330px) {
-    h1 {
-      font-size: 37px;
-    }
-
     p {
       font-size: 16px;
     }
   }
 
-  @media (max-width: 300px) {
-    h1 {
-      font-size: 34px;
-    }
-  }
+  @media (max-width: 750px) {
+    flex-direction: column-reverse;
 
-  @media (max-width: 280px) {
     h1 {
-      font-size: 30px;
+      text-align: center;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
+    img {
+      width: 150px;
     }
   }
 `;
 
 const ButtonN = styled.div`
+  @media (max-width: 900px) {
+    width: 140%;
+  }
+
+  @media (max-width: 830px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-top: 5px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+
   @media (max-width: 600px) {
     margin-top: 0px;
     display: flex;

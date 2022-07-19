@@ -1,4 +1,4 @@
-.searchBar-wrap {
+.searchBar-wrap-dark {
   background-color: #f0f0f0;
   width: fit-content;
   margin: 2.5rem auto 4rem auto;
@@ -6,24 +6,24 @@
   border-radius: 5px;
 }
 
-.searchBar-wrap form {
+.searchBar-wrap-dark form {
   display: flex;
   align-items: center;
 }
 
-.searchBar-wrap input {
+.searchBar-wrap-dark input {
   background-color: #f0f0f0;
   outline: none;
   width: 360px;
   border: none;
 }
 
-.searchBar-wrap span {
+.searchBar-wrap-dark span {
   padding-right: 0.5rem;
   cursor: pointer;
 }
 
-.searchBar-wrap button {
+.searchBar-wrap-dark button {
   outline: none;
   border: none;
   padding: 0.3rem 1rem;

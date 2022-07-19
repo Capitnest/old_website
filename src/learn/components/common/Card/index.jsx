@@ -153,6 +153,14 @@ const Title = styled.h1`
   font-weight: bold;
   font-family: "Inter", sans-serif;
   height: 40px;
+
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 950px) {
+    font-size: 17px;
+  }
 `;
 
 const Button = styled.button`
@@ -202,4 +210,41 @@ const Content = styled.div`
   }
 
   width: 320px;
+
+  @media (max-width: 1000px) {
+    width: 300px;
+  }
+
+  @media (max-width: 950px) {
+    width: 270px;
+  }
+
+  @media (max-width: 850px) {
+    width: 250%;
+  }
+
+  @media (max-width: 810px) {
+    width: 380px;
+  }
+
+  @media (max-width: 800px) {
+    width: 350px;
+  }
+
+  @media (max-width: 740px) {
+    width: 330px;
+  }
+
+  @media (max-width: 700px) {
+    width: 300px;
+  }
+
+  @media (max-width: 635px) {
+    width: 270px;
+  }
+
+  @media (max-width: 580px) {
+    width: 380px;
+    margin-top: 10px;
+  }
 `;

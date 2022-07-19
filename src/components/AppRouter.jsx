@@ -65,7 +65,7 @@ export default function AppRouter(props) {
 
           <Route path="/learn" exact component={Home} />
           <Route exact path="/explore" component={Explore} />
-          <Route path="/wiki/:id" component={Blog} />
+          <Route path="/learn/post/:id" component={Blog} />
 
           <Route exact path="/feeds" component={Feeds} />
           <Route path="/feeds/:id" component={Hashtag} />
