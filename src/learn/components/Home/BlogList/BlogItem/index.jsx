@@ -25,17 +25,37 @@ const BlogItem = ({ blog: { title, topic, time, cover, id } }) => {
       <Box
         marginRight="5px"
         marginLeft="5px"
-        borderWidth="2px"
+        borderWidth="1px"
         borderRadius="4px"
+        style={{
+          backgroundColor: (() => {
+            if (colorMode === "light") {
+              return "#E2E8F0";
+            } else {
+              return "rgba(255, 255, 255, 0.04)";
+            }
+          })(),
+          borderColor: (() => {
+            if (colorMode === "light") {
+              return "#A0AEC0";
+            } else {
+              return "rgba(255, 255, 255, 0.24)";
+            }
+          })(),
+        }}
       >
         <Link to={`/learn/post/${id}`}>
           <Image>
-            <img src={cover} alt="cover" />
+            <img src={cover} alt="cover" style={{ borderRadius: "4px" }} />
           </Image>
         </Link>
         <div style={{ margin: "6px" }}>
           <Link to={`/learn/post/${id}`}>
-            <Title>{title}</Title>
+            {colorMode === "dark" ? (
+              <TitleDark>{title}</TitleDark>
+            ) : (
+              <TitleWhite>{title}</TitleWhite>
+            )}
           </Link>
 
           <Flex justifyContent="space-between" marginTop="10px">
@@ -45,12 +65,20 @@ const BlogItem = ({ blog: { title, topic, time, cover, id } }) => {
               </Button>
             </Link>
 
-            <p style={{ fontSize: "18px", fontFamily: "'Inter', sans-serif" }}>
+            <p
+              style={{
+                fontSize: "16px",
+                fontFamily: "'Inter', sans-serif",
+                marginTop: "4px",
+              }}
+            >
               {time} MIN
             </p>
 
             <Badge colorScheme={topic_badge_color(topic)} fontSize="16px">
-              {topic}
+              <div style={{ marginTop: "5px", textAlign: "center" }}>
+                {topic}
+              </div>
             </Badge>
           </Flex>
         </div>
@@ -69,10 +97,26 @@ const Image = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const TitleDark = styled.h1`
   font-family: "Inter", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
+  height: 60px;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.48);
+  }
+`;
+
+const TitleWhite = styled.h1`
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  height: 60px;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.64);
+  }
 `;
 
 const Button = styled.button`
@@ -93,8 +137,6 @@ const Button = styled.button`
   }
 
   &:hover {
-    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
-      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
     transform: translateY(-2px);
     background-color: #5a35c6;
     color: #e4e4e4;

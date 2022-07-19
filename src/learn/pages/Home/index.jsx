@@ -76,14 +76,23 @@ const Home = () => {
         <Navbar />
 
         {/* Page Header */}
-        <Container maxW="container.lg" marginTop="80px">
+        <Container maxW="container.lg" marginTop="80px" marginBottom="80px">
           <div style={{ display: "flex", justifyContent: "right" }}>
-            <SearchBarDark
-              value={searchKey}
-              clearSearch={handleClearSearch}
-              formSubmit={handleSearchBar}
-              handleSearchKey={(e) => setSearchKey(e.target.value)}
-            />
+            {colorMode === "dark" ? (
+              <SearchBarDark
+                value={searchKey}
+                clearSearch={handleClearSearch}
+                formSubmit={handleSearchBar}
+                handleSearchKey={(e) => setSearchKey(e.target.value)}
+              />
+            ) : (
+              <SearchBarLight
+                value={searchKey}
+                clearSearch={handleClearSearch}
+                formSubmit={handleSearchBar}
+                handleSearchKey={(e) => setSearchKey(e.target.value)}
+              />
+            )}
 
             <Menu>
               <MenuButton
@@ -94,6 +103,15 @@ const Home = () => {
                 borderLeftWidth="0px"
                 borderWidth="2px"
                 borderColor="rgba(255, 255, 255, 0.16)"
+                style={{
+                  borderColor: (() => {
+                    if (colorMode === "light") {
+                      return "rgba(0, 0, 0, 0.24)";
+                    } else {
+                      return "rgba(255, 255, 255, 0.16)";
+                    }
+                  })(),
+                }}
               >
                 Topics
               </MenuButton>
@@ -117,9 +135,6 @@ const Home = () => {
               understand cryptocurrencies. How the blockchain works, how the
               information is decentralized and a lot more! Choose your desired
               topic and dive in!
-              <br /> <br />
-              Are you lost? Don't know where to start? You can try our
-              introduction lecture to understand the basics.
             </p>
 
             <Tabs marginTop="20px" variant="enclosed">
@@ -130,14 +145,19 @@ const Home = () => {
               </TabList>
             </Tabs>
 
-            <div style={{ marginTop: "10px" }}>
+            <div
+              style={{
+                marginTop: "10px",
+                marginLeft: "5px",
+                marginBottom: "10px",
+              }}
+            >
               {results === false ? <h1>Posts:</h1> : <h1>Results:</h1>}
             </div>
           </Header>
 
           {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
         </Container>
-        <Topics />
         <Footerr />
       </div>
     </div>
@@ -147,7 +167,8 @@ const Home = () => {
 const Header = styled.div`
   h1 {
     font-family: "Inter", sans-serif;
-    font-size: 26px;
+    font-size: 30px;
+    margin-bottom: 5px;
     font-weight: bold;
   }
 
