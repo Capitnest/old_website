@@ -29,6 +29,7 @@ export default function Feeds() {
       .get(url)
       .then((response) => {
         setPosts(response.data);
+        console.log(response.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -64,7 +65,6 @@ export default function Feeds() {
     <>
       <Helmet>
         <title>Feeds | Capitnest</title>
-        {console.log("Yes")}
       </Helmet>
       <Layout>
         <Content>
@@ -105,7 +105,7 @@ export default function Feeds() {
                   display: "flex",
                   justifyContent: "center",
                   flexDirection: "column",
-                  marginTop: "75px",
+                  marginTop: "25px",
                 }}
               >
                 {!blogs.length ? (

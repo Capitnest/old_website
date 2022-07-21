@@ -69,9 +69,12 @@ export default function Tweet({
                   {title}
                   {picture !== "" ? (
                     <>
-                      <br />
-                      {/* <img src={picture} /> */}
-                      <br />
+                      <img
+                        src={picture}
+                        alt="picture"
+                        style={{ borderRadius: "4px" }}
+                      />
+
                       {description}
                     </>
                   ) : (

@@ -7,7 +7,6 @@ import { blogList } from "../../config/data";
 import { Helmet } from "react-helmet";
 import Navbar from "../../components/Navbar/Navbar";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import Nav from "react-bootstrap/Nav";
 import {
   Container,
   useColorMode,
@@ -15,21 +14,11 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  Badge,
   Button,
-  MenuOptionGroup,
-  MenuDivider,
   Tabs,
   TabList,
-  TabPanels,
   Tab,
-  TabPanel,
 } from "@chakra-ui/react";
-import { Featured } from "../../components/Home/Featured";
-import { Lost } from "../../components/Home/Lost";
-import { Topics } from "../../components/Home/Topics";
 import Footerr from "../../../components/Footer";
 import styled from "styled-components";
 
@@ -94,35 +83,37 @@ const Home = () => {
               />
             )}
 
-            <Menu>
-              <MenuButton
-                as={Button}
-                rightIcon={<ChevronDownIcon />}
-                borderRadius="4px"
-                borderLeftRadius="0px"
-                borderLeftWidth="0px"
-                borderWidth="2px"
-                borderColor="rgba(255, 255, 255, 0.16)"
-                style={{
-                  borderColor: (() => {
-                    if (colorMode === "light") {
-                      return "rgba(0, 0, 0, 0.24)";
-                    } else {
-                      return "rgba(255, 255, 255, 0.16)";
-                    }
-                  })(),
-                }}
-              >
-                Topics
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Download</MenuItem>
-                <MenuItem>Create a Copy</MenuItem>
-                <MenuItem>Mark as Draft</MenuItem>
-                <MenuItem>Delete</MenuItem>
-                <MenuItem>Attend a Workshop</MenuItem>
-              </MenuList>
-            </Menu>
+            <span style={{ width: "100px" }}>
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rightIcon={<ChevronDownIcon />}
+                  borderRadius="4px"
+                  borderLeftRadius="0px"
+                  borderLeftWidth="0px"
+                  borderWidth="2px"
+                  borderColor="rgba(255, 255, 255, 0.16)"
+                  style={{
+                    borderColor: (() => {
+                      if (colorMode === "light") {
+                        return "rgba(0, 0, 0, 0.24)";
+                      } else {
+                        return "rgba(255, 255, 255, 0.16)";
+                      }
+                    })(),
+                  }}
+                >
+                  Topics
+                </MenuButton>
+                <MenuList>
+                  <MenuItem>Download</MenuItem>
+                  <MenuItem>Create a Copy</MenuItem>
+                  <MenuItem>Mark as Draft</MenuItem>
+                  <MenuItem>Delete</MenuItem>
+                  <MenuItem>Attend a Workshop</MenuItem>
+                </MenuList>
+              </Menu>
+            </span>
           </div>
 
           <Header>
@@ -137,13 +128,13 @@ const Home = () => {
               topic and dive in!
             </p>
 
-            <Tabs marginTop="20px" variant="enclosed">
+            {/* <Tabs marginTop="20px" variant="enclosed">
               <TabList>
                 <Tab>Posts</Tab>
                 <Tab>The Classroom</Tab>
                 <Tab>Courses</Tab>
               </TabList>
-            </Tabs>
+            </Tabs> */}
 
             <div
               style={{
@@ -175,6 +166,14 @@ const Header = styled.div`
   p {
     font-family: "Inter", sans-serif;
     font-size: 16px;
+  }
+
+  @media (max-width: 465px) {
+    margin-top: 10px;
+
+    p {
+      font-size: 15px;
+    }
   }
 `;
 

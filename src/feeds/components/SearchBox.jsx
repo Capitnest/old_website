@@ -20,7 +20,7 @@ export const SearchBarLight = ({
 }) => (
   <ContentLight>
     <div style={{ height: "24px" }}></div>
-    <FormLight>
+    {/* <FormLight>
       <form onSubmit={formSubmit} style={{ backgroundColor: "#fafafa" }}>
         <InputGroup>
           <InputLeftElement>
@@ -46,7 +46,7 @@ export const SearchBarLight = ({
           </InputRightElement>
         </InputGroup>
       </form>
-    </FormLight>
+    </FormLight> */}
     <Options>
       <Button padding="0px" size="sm">
         1d
@@ -82,7 +82,7 @@ export const SearchBarDark = ({
 }) => (
   <ContentDark>
     <div style={{ height: "24px" }}></div>
-    <FormDark>
+    {/* <FormDark>
       <form onSubmit={formSubmit}>
         <InputGroup>
           <InputLeftElement>
@@ -108,7 +108,7 @@ export const SearchBarDark = ({
           </InputRightElement>
         </InputGroup>
       </form>
-    </FormDark>
+    </FormDark> */}
     <Options>
       <Button padding="0px" size="sm">
         1d
@@ -151,7 +151,6 @@ const ContentLight = styled.div`
 
 const Options = styled.div`
   display: flex;
-  margin-top: 7px;
   font-size: 16px;
 
   @media (max-width: 430px) {

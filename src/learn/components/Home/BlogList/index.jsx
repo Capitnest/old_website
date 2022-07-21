@@ -18,10 +18,13 @@ export default BlogList;
 
 const List = styled.div`
   display: flex;
-  flex-wrap: wrap;
   padding-left: 0;
   list-style: none;
   flex: 0 0 33.333333%;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const Item = styled.div`

@@ -12,6 +12,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import HashtagsNav from "./components/HashtagsNav";
 import Coins from "./components/CryptoPrices/Coins";
 import { Helmet } from "react-helmet";
+import axios from "axios";
 
 // data
 import { bitcoin } from "../data/feeds/hashtag/bitcoin";
@@ -24,19 +25,54 @@ export default function Hashtag() {
   const [blogs, setBlogs] = useState(daily);
   const [searchKey, setSearchKey] = useState(id);
   const { colorMode, toggleColorMode } = useColorMode();
+  const { loading, setLoading } = useState(true);
+
+  const url = `http://127.0.0.1:5000/feeds/general`;
 
   useEffect(() => {
     //scroll to the top
     window.scrollTo(0, 0);
 
     if (id === "bitcoin") {
-      setBlogs(bitcoin);
+      axios
+        .get("http://127.0.0.1:5000/feeds/bitcoin")
+        .then((response) => {
+          setBlogs(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } else if (id === "ethereum") {
-      setBlogs(ethereum);
+      axios
+        .get("http://127.0.0.1:5000/feeds/ethereum")
+        .then((response) => {
+          setBlogs(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } else if (id === "cardano") {
-      setBlogs(cardano);
+      axios
+        .get("http://127.0.0.1:5000/feeds/cardano")
+        .then((response) => {
+          setBlogs(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } else if (id === "solana") {
-      setBlogs(solana);
+      axios
+        .get("http://127.0.0.1:5000/feeds/solana")
+        .then((response) => {
+          setBlogs(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } else {
       setBlogs(null);
     }

@@ -3,7 +3,7 @@ import { Box, Badge, Flex, useColorMode } from "@chakra-ui/react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const BlogItem = ({ blog: { title, topic, time, cover, id } }) => {
+const BlogItem = ({ blog: { title, topic, time, cover, id, description } }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   function topic_badge_color(topic) {
@@ -27,6 +27,8 @@ const BlogItem = ({ blog: { title, topic, time, cover, id } }) => {
         marginLeft="5px"
         borderWidth="1px"
         borderRadius="4px"
+        display="flex"
+        flexDirection="column"
         style={{
           backgroundColor: (() => {
             if (colorMode === "light") {
@@ -89,11 +91,28 @@ const BlogItem = ({ blog: { title, topic, time, cover, id } }) => {
 
 export default BlogItem;
 
-const Content = styled.div``;
+const Content = styled.div`
+  @media (max-width: 800px) {
+    margin-bottom: 20px;
+  }
+`;
 
 const Image = styled.div`
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
   &:hover {
     filter: brightness(120%);
+  }
+
+  @media (max-width: 800px) {
+    img {
+      height: 250px;
+      width: 100%;
+    }
   }
 `;
 
@@ -101,7 +120,7 @@ const TitleDark = styled.h1`
   font-family: "Inter", sans-serif;
   font-size: 18px;
   font-weight: bold;
-  height: 60px;
+  height: 40px;
 
   &:hover {
     color: rgba(255, 255, 255, 0.48);
@@ -112,7 +131,7 @@ const TitleWhite = styled.h1`
   font-family: "Inter", sans-serif;
   font-size: 18px;
   font-weight: bold;
-  height: 60px;
+  height: 40px;
 
   &:hover {
     color: rgba(0, 0, 0, 0.64);
