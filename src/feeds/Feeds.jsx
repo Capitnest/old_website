@@ -3,7 +3,16 @@ import { Layout } from "../components/Layout";
 import Tweet from "./components/Tweet";
 import { daily } from "../data/feeds/general/daily";
 import { influencers } from "./influencers";
-import { Wrap, WrapItem, useColorMode, Box } from "@chakra-ui/react";
+import {
+  Wrap,
+  WrapItem,
+  useColorMode,
+  Box,
+  SkeletonCircle,
+  SkeletonText,
+  Show,
+  Hide,
+} from "@chakra-ui/react";
 import styled from "styled-components";
 import Influencer from "./components/Influencer";
 import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
@@ -19,6 +28,8 @@ export default function Feeds() {
   const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
 
+  const [defaultList, setDefaultList] = useState([]);
+
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -29,6 +40,7 @@ export default function Feeds() {
       .get(url)
       .then((response) => {
         setPosts(response.data);
+        setDefaultList(response.data);
         console.log(response.data);
         setLoading(false);
       })
@@ -48,16 +60,16 @@ export default function Feeds() {
 
   //Search for blog by category
   const handleSearchResults = () => {
-    const allBlogs = daily;
+    const allBlogs = defaultList;
     const filteredBlogs = allBlogs.filter((blog) =>
-      blog.searchKeywords.toLowerCase().includes(searchKey.toLowerCase().trim())
+      blog.title.toLowerCase().includes(searchKey.toLowerCase().trim())
     );
-    setBlogs(filteredBlogs);
+    setPosts(filteredBlogs);
   };
 
   //Clear search and show all blogs
   const handleClearSearch = () => {
-    setBlogs(daily);
+    setPosts(defaultList);
     setSearchKey("");
   };
 
@@ -81,23 +93,21 @@ export default function Feeds() {
 
             <MiddleSide>
               <Search>
-                <div style={{ marginTop: "0px" }}>
-                  {colorMode === "dark" ? (
-                    <SearchBarDark
-                      value={searchKey}
-                      clearSearch={handleClearSearch}
-                      formSubmit={handleSearchBar}
-                      handleSearchKey={(e) => setSearchKey(e.target.value)}
-                    />
-                  ) : (
-                    <SearchBarLight
-                      value={searchKey}
-                      clearSearch={handleClearSearch}
-                      formSubmit={handleSearchBar}
-                      handleSearchKey={(e) => setSearchKey(e.target.value)}
-                    />
-                  )}
-                </div>
+                {colorMode === "dark" ? (
+                  <SearchBarDark
+                    value={searchKey}
+                    clearSearch={handleClearSearch}
+                    formSubmit={handleSearchBar}
+                    handleSearchKey={(e) => setSearchKey(e.target.value)}
+                  />
+                ) : (
+                  <SearchBarLight
+                    value={searchKey}
+                    clearSearch={handleClearSearch}
+                    formSubmit={handleSearchBar}
+                    handleSearchKey={(e) => setSearchKey(e.target.value)}
+                  />
+                )}
               </Search>
 
               <div
@@ -105,19 +115,75 @@ export default function Feeds() {
                   display: "flex",
                   justifyContent: "center",
                   flexDirection: "column",
-                  marginTop: "25px",
+                  marginTop: "75px",
                 }}
               >
-                {!blogs.length ? (
-                  <h1
-                    style={{
-                      fontSize: "30px",
-                      marginBottom: "100%",
-                      marginTop: "10px",
-                    }}
-                  >
-                    No results found :(
-                  </h1>
+                {!posts.length ? (
+                  <>
+                    {loading === true ? (
+                      <GhostTweet>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
+                        >
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
+                          marginTop="10px"
+                        >
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
+                          marginTop="10px"
+                        >
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
+                          marginTop="10px"
+                        >
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                      </GhostTweet>
+                    ) : (
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          flexDirection: "column",
+                          textAlign: "center",
+                        }}
+                      >
+                        <img src="/images/empty.png" />
+                        <h1
+                          style={{
+                            fontSize: "30px",
+                            marginBottom: "100%",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          No results found :(
+                        </h1>
+                      </div>
+                    )}
+                  </>
                 ) : (
                   posts.map((tweet) => (
                     <div style={{ marginTop: "10px", marginBottom: "10px" }}>
@@ -167,6 +233,8 @@ const LeftSide = styled.div`
 
   @media (max-width: 1150px) {
     display: none;
+    width: 0px;
+    height: 0px;
   }
 `;
 
@@ -213,6 +281,11 @@ const RightNavbar = styled.div`
   @media (max-width: 1150px) {
     width: 40%;
   }
+
+  @media (max-width: 740px) {
+    width: 0px;
+    height: 0px;
+  }
 `;
 
 const RightNavbarContent = styled.div`
@@ -222,7 +295,7 @@ const RightNavbarContent = styled.div`
     margin-right: 5%;
   }
 
-  @media (max-width: 786px) {
+  @media (max-width: 740px) {
     width: 0px;
     height: 0px;
     position: relative;
@@ -247,10 +320,6 @@ const Search = styled.div`
   @media (max-width: 840px) {
     width: 415px;
   }
-
-  @media (max-width: 430px) {
-    width: 100%;
-  }
 `;
 
 const MiddleSide = styled.div`
@@ -261,11 +330,69 @@ const MiddleSide = styled.div`
     width: 53%;
   }
 
+  @media (max-width: 740px) {
+    width: 600px;
+    margin-right: 0px;
+  }
+
+  @media (max-width: 630px) {
+    width: 550px;
+  }
+
+  @media (max-width: 570px) {
+    width: 470px;
+  }
+
+  @media (max-width: 480px) {
+    width: 370px;
+  }
+
+  @media (max-width: 400px) {
+    width: 350px;
+  }
+
+  @media (max-width: 370px) {
+    width: 320px;
+  }
+
+  @media (max-width: 340px) {
+    width: 290px;
+  }
+
+  @media (max-width: 300px) {
+    width: 270px;
+  }
+`;
+
+const GhostTweet = styled.div`
+  width: 100%;
+  margin-top: 20px;
+
   @media (max-width: 786px) {
-    display: flex;
-    justify-content: center;
-    margin-right: 10%;
-    margin-left: 10%;
-    width: 100%;
+    width: 700px;
+  }
+
+  @media (max-width: 700px) {
+    width: 580px;
+  }
+
+  @media (max-width: 600px) {
+    width: 480px;
+  }
+
+  @media (max-width: 500px) {
+    width: 380px;
+  }
+
+  @media (max-width: 400px) {
+    width: 280px;
+  }
+
+  @media (max-width: 300px) {
+    width: 180px;
+  }
+
+  @media (max-width: 200px) {
+    width: 80px;
   }
 `;

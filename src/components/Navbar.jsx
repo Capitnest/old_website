@@ -14,7 +14,10 @@ import {
   MenuGroup,
   MenuOptionGroup,
   MenuDivider,
+  Show,
+  Hide,
 } from "@chakra-ui/react";
+import { AiOutlineAreaChart } from "react-icons/ai";
 import React, { useState, useRef } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { useAuth } from "../contexts/AuthContext";
@@ -24,11 +27,16 @@ import { TriangleDownIcon } from "@chakra-ui/icons";
 import { auth } from "../utils/init-firebase";
 import { Navbar as Navbarr, Nav, Container } from "react-bootstrap";
 import { CgProfile } from "react-icons/cg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { VscGlobe } from "react-icons/vsc";
+import { RiBookMarkFill } from "react-icons/ri";
+import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
+import { RestoreIcon, FavoriteIcon, LocationOnIcon } from "@material-ui/icons";
 
 export function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const history = useHistory();
 
   // const { logout, currentUser } = useAuth()
   const { logout, currentUser } = useAuth();
@@ -151,7 +159,6 @@ export function Navbar() {
                 }}
                 aria-label="toggle-dark-mode"
               />
-
               <Navbarr.Toggle
                 aria-controls="basic-navbar-nav"
                 style={{ marginRight: "1%" }}
@@ -165,6 +172,131 @@ export function Navbar() {
             </div>
           </Container>
         </Navbarr>
+        <Show breakpoint="(max-width: 767px)">
+          <div
+            style={{
+              position: "fixed",
+              top: "auto",
+              bottom: "0",
+              width: "100%",
+              boxShadow: "0 2px 2px -2px gray",
+            }}
+          >
+            <hr style={{ height: "2px" }} />
+            {colorMode === "dark" ? (
+              <BottomNavigation
+                showLabels
+                style={{ backgroundColor: "rgb(26, 32, 44)", color: "white" }}
+              >
+                <BottomNavigationAction
+                  onClick={() => {
+                    history.push(`/feeds`);
+                  }}
+                  label={
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: "14px",
+                        color: "white",
+                      }}
+                    >
+                      Feeds
+                    </p>
+                  }
+                  icon={<VscGlobe size={30} color="white" />}
+                />
+                <BottomNavigationAction
+                  onClick={() => {
+                    history.push(`/markets`);
+                  }}
+                  label={
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: "14px",
+                        color: "white",
+                      }}
+                    >
+                      Markets
+                    </p>
+                  }
+                  icon={<AiOutlineAreaChart size={30} color="white" />}
+                />
+                <BottomNavigationAction
+                  onClick={() => {
+                    history.push(`/learn`);
+                  }}
+                  label={
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: "14px",
+                        color: "white",
+                      }}
+                    >
+                      Learn
+                    </p>
+                  }
+                  icon={<RiBookMarkFill size={30} color="white" />}
+                />
+              </BottomNavigation>
+            ) : (
+              <BottomNavigation showLabels style={{}}>
+                <BottomNavigationAction
+                  onClick={() => {
+                    history.push(`/feeds`);
+                  }}
+                  label={
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: "14px",
+                        color: "black",
+                      }}
+                    >
+                      Feeds
+                    </p>
+                  }
+                  icon={<VscGlobe size={30} color="black" />}
+                />
+                <BottomNavigationAction
+                  onClick={() => {
+                    history.push(`/markets`);
+                  }}
+                  label={
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: "14px",
+                        color: "black",
+                      }}
+                    >
+                      Markets
+                    </p>
+                  }
+                  icon={<AiOutlineAreaChart size={30} color="black" />}
+                />
+                <BottomNavigationAction
+                  onClick={() => {
+                    history.push(`/learn`);
+                  }}
+                  label={
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: "14px",
+                        color: "black",
+                      }}
+                    >
+                      Learn
+                    </p>
+                  }
+                  icon={<RiBookMarkFill size={30} color="black" />}
+                />
+              </BottomNavigation>
+            )}
+          </div>
+        </Show>
       </div>
     </>
   );

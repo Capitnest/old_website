@@ -4,9 +4,10 @@ import BlogList from "../../components/Home/BlogList";
 import SearchBarDark from "../../components/Home/SearchBarDark";
 import SearchBarLight from "../../components/Home/SearchBarLight";
 import { blogList } from "../../config/data";
+
 import { Helmet } from "react-helmet";
-import Navbar from "../../components/Navbar/Navbar";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { Layout } from "../../../components/Layout";
 import {
   Container,
   useColorMode,
@@ -62,10 +63,9 @@ const Home = () => {
         <title>Capitnest | Learn</title>
       </Helmet>
       <div>
-        <Navbar />
+        <Layout>
+          {/* Page Header */}
 
-        {/* Page Header */}
-        <Container maxW="container.lg" marginTop="80px" marginBottom="80px">
           <div style={{ display: "flex", justifyContent: "right" }}>
             {colorMode === "dark" ? (
               <SearchBarDark
@@ -148,7 +148,7 @@ const Home = () => {
           </Header>
 
           {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
-        </Container>
+        </Layout>
         <Footerr />
       </div>
     </div>

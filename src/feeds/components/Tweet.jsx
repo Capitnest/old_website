@@ -38,7 +38,6 @@ export default function Tweet({
       {colorMode === "dark" ? (
         <Content>
           <Box
-            maxW="lg"
             borderWidth="2px"
             borderRadius="lg"
             overflow="hidden"
@@ -171,6 +170,7 @@ export default function Tweet({
 
 const Content = styled.div`
   font-family: "Inter", sans-serif;
+  width: 100%;
 
   h1 {
     font-weight: bold;
@@ -181,50 +181,6 @@ const Content = styled.div`
       text-decoration: none;
       color: #04d192;
     }
-  }
-
-  @media (min-width: 1150px) {
-    width: 500px;
-  }
-
-  @media (max-width: 1150px) {
-    width: 100%;
-  }
-
-  @media (max-width: 786px) {
-    width: 410px;
-  }
-
-  @media (max-width: 430px) {
-    width: 390px;
-  }
-
-  @media (max-width: 400px) {
-    width: 360px;
-  }
-
-  @media (max-width: 370px) {
-    width: 340px;
-  }
-
-  @media (max-width: 350px) {
-    width: 320px;
-  }
-
-  @media (max-width: 330px) {
-    width: 300px;
-  }
-
-  @media (max-width: 310px) {
-    width: 280px;
-  }
-
-  @media (max-width: 290px) {
-    width: 260px;
-  }
-
-  @media (max-width: 270px) {
-    width: 240px;
   }
 `;
 
