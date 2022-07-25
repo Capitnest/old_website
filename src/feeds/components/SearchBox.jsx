@@ -23,6 +23,7 @@ export const SearchBarLight = ({
   value,
   handleSearchKey,
   clearSearch,
+  coin,
 }) => (
   <ContentLight>
     <div style={{ height: "24px" }}></div>
@@ -52,7 +53,65 @@ export const SearchBarLight = ({
           </InputRightElement>
         </InputGroup>
       </form>
-      <Coins></Coins>
+      <Coins>
+        <Menu>
+          <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+            {coin === null ? (
+              <>All Coins</>
+            ) : (
+              <img
+                src={`/images/icons/${coin}.png`}
+                style={{ height: "30px", width: "30px", marginRight: "30px" }}
+              />
+            )}
+          </MenuButton>
+          <MenuList>
+            {coin === null ? (
+              <></>
+            ) : (
+              <Link to="/feeds">
+                <MenuItem>All Coins</MenuItem>
+              </Link>
+            )}
+            <Link to="/feeds/bitcoin">
+              <MenuItem>
+                <img
+                  src="/images/icons/bitcoin.png"
+                  style={{ height: "25px", width: "25px", marginRight: "5px" }}
+                />
+                Bitcoin
+              </MenuItem>
+            </Link>
+            <Link to="/feeds/ethereum">
+              <MenuItem>
+                <img
+                  src="/images/icons/ethereum.png"
+                  style={{ height: "25px", width: "25px", marginRight: "5px" }}
+                />
+                Ethereum
+              </MenuItem>
+            </Link>
+            <Link to="/feeds/solana">
+              <MenuItem>
+                <img
+                  src="/images/icons/solana.png"
+                  style={{ height: "25px", width: "25px", marginRight: "5px" }}
+                />
+                Solana
+              </MenuItem>
+            </Link>
+            <Link to="/feeds/cardano">
+              <MenuItem>
+                <img
+                  src="/images/icons/cardano.png"
+                  style={{ height: "25px", width: "25px", marginRight: "5px" }}
+                />
+                Cardano
+              </MenuItem>
+            </Link>
+          </MenuList>
+        </Menu>
+      </Coins>
     </FormLight>
     <Options>
       <Button padding="0px" size="sm">
@@ -86,6 +145,7 @@ export const SearchBarDark = ({
   value,
   handleSearchKey,
   clearSearch,
+  coin,
 }) => (
   <ContentDark>
     <div style={{ height: "24px" }}></div>
@@ -118,9 +178,23 @@ export const SearchBarDark = ({
       <Coins>
         <Menu>
           <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-            All Coins
+            {coin === null ? (
+              <>All Coins</>
+            ) : (
+              <img
+                src={`/images/icons/${coin}.png`}
+                style={{ height: "30px", width: "30px", marginRight: "30px" }}
+              />
+            )}
           </MenuButton>
           <MenuList>
+            {coin === null ? (
+              <></>
+            ) : (
+              <Link to="/feeds">
+                <MenuItem>All Coins</MenuItem>
+              </Link>
+            )}
             <Link to="/feeds/bitcoin">
               <MenuItem>
                 <img
@@ -207,8 +281,72 @@ const ContentLight = styled.div`
     outline: none;
   }
 
-  @media (max-width: 768px) {
-    margin-top: -12px;
+  @media (max-width: 1150px) {
+    width: 530px;
+  }
+
+  @media (max-width: 1020px) {
+    width: 98%;
+  }
+
+  @media (max-width: 840px) {
+    width: 430px;
+  }
+
+  @media (max-width: 820px) {
+    width: 420px;
+  }
+
+  @media (max-width: 810px) {
+    width: 415px;
+  }
+
+  @media (max-width: 795px) {
+    width: 405px;
+  }
+
+  @media (max-width: 780px) {
+    width: 98%;
+  }
+
+  @media (max-width: 765px) {
+    width: 96%;
+  }
+
+  @media (max-width: 750px) {
+    width: 94%;
+  }
+
+  @media (max-width: 740px) {
+    width: 600px;
+  }
+
+  @media (max-width: 630px) {
+    width: 550px;
+  }
+
+  @media (max-width: 570px) {
+    width: 470px;
+  }
+
+  @media (max-width: 480px) {
+    width: 370px;
+  }
+
+  @media (max-width: 400px) {
+    width: 350px;
+  }
+
+  @media (max-width: 370px) {
+    width: 320px;
+  }
+
+  @media (max-width: 340px) {
+    width: 290px;
+  }
+
+  @media (max-width: 300px) {
+    width: 270px;
   }
 `;
 
@@ -219,11 +357,20 @@ const Options = styled.div`
 `;
 
 const FormLight = styled.div`
-  border-radius: 8px;
   border-width: 2px;
+  border-radius: 8px;
 
-  @media (max-width: 430px) {
-    width: 92%;
+  @media (max-width: 1150px) {
+    display: flex;
+    border-width: 0px;
+    background-color: #fafafa;
+
+    form {
+      border-width: 2px;
+      border-radius: 8px;
+      width: 1000px;
+      margin-right: 7px;
+    }
   }
 `;
 

@@ -1,33 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Layout } from "../components/Layout";
 import Tweet from "./components/Tweet";
 import { daily } from "../data/feeds/general/daily";
 import { influencers } from "./influencers";
-import { Wrap, WrapItem, useColorMode, Box, Badge } from "@chakra-ui/react";
-import { CloseIcon } from "@chakra-ui/icons";
+import {
+  Wrap,
+  WrapItem,
+  useColorMode,
+  Box,
+  SkeletonCircle,
+  SkeletonText,
+  Show,
+  Hide,
+} from "@chakra-ui/react";
 import styled from "styled-components";
 import Influencer from "./components/Influencer";
-import { Link, useParams } from "react-router-dom";
-import InfiniteScroll from "react-infinite-scroll-component";
-import HashtagsNav from "./components/HashtagsNav";
+import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
 import Coins from "./components/CryptoPrices/Coins";
+import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import HashtagsNav from "./components/HashtagsNav";
 import axios from "axios";
-
-// data
-import { bitcoin } from "../data/feeds/hashtag/bitcoin";
-import { ethereum } from "../data/feeds/hashtag/ethereum";
-import { cardano } from "../data/feeds/hashtag/cardano";
-import { solana } from "../data/feeds/hashtag/solana";
 
 export default function Hashtag() {
   const { id } = useParams();
   const [blogs, setBlogs] = useState(daily);
-  const [searchKey, setSearchKey] = useState(id);
+  const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
-  const { loading, setLoading } = useState(true);
+  const [coin, setCoin] = useState();
+  const [defaultList, setDefaultList] = useState([]);
 
-  const url = `http://127.0.0.1:5000/feeds/general`;
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     //scroll to the top
@@ -37,7 +41,9 @@ export default function Hashtag() {
       axios
         .get("http://127.0.0.1:5000/feeds/bitcoin")
         .then((response) => {
-          setBlogs(response.data);
+          setPosts(response.data);
+          setDefaultList(response.data);
+          setCoin(id);
           setLoading(false);
         })
         .catch((error) => {
@@ -47,7 +53,9 @@ export default function Hashtag() {
       axios
         .get("http://127.0.0.1:5000/feeds/ethereum")
         .then((response) => {
-          setBlogs(response.data);
+          setPosts(response.data);
+          setDefaultList(response.data);
+          setCoin(id);
           setLoading(false);
         })
         .catch((error) => {
@@ -57,7 +65,9 @@ export default function Hashtag() {
       axios
         .get("http://127.0.0.1:5000/feeds/cardano")
         .then((response) => {
-          setBlogs(response.data);
+          setPosts(response.data);
+          setDefaultList(response.data);
+          setCoin(id);
           setLoading(false);
         })
         .catch((error) => {
@@ -67,21 +77,46 @@ export default function Hashtag() {
       axios
         .get("http://127.0.0.1:5000/feeds/solana")
         .then((response) => {
-          setBlogs(response.data);
+          setPosts(response.data);
+          setDefaultList(response.data);
+          setCoin(id);
           setLoading(false);
         })
         .catch((error) => {
           console.log(error);
         });
     } else {
-      setBlogs(null);
+      setDefaultList(null);
+      setCoin(null);
+      setPosts(null);
     }
   }, [id]);
+
+  //Search submit
+  const handleSearchBar = (e) => {
+    e.preventDefault();
+    handleSearchResults();
+  };
+
+  //Search for blog by category
+  const handleSearchResults = () => {
+    const allBlogs = defaultList;
+    const filteredBlogs = allBlogs.filter((blog) =>
+      blog.title.toLowerCase().includes(searchKey.toLowerCase().trim())
+    );
+    setPosts(filteredBlogs);
+  };
+
+  //Clear search and show all blogs
+  const handleClearSearch = () => {
+    setPosts(defaultList);
+    setSearchKey("");
+  };
 
   return (
     <>
       <Helmet>
-        <title>#{id} Feeds | Capitnest</title>
+        <title>Feeds | Capitnest</title>
       </Helmet>
       <Layout>
         <Content>
@@ -92,137 +127,120 @@ export default function Hashtag() {
             }}
             className="scrollbarParent"
           >
-            <HashtagComponent>
+            <LeftSide>
               <HashtagsNav />
-            </HashtagComponent>
+            </LeftSide>
 
-            <>
-              <LeftSide>
+            <MiddleSide>
+              <Search>
                 {colorMode === "dark" ? (
+                  <SearchBarDark
+                    value={searchKey}
+                    clearSearch={handleClearSearch}
+                    formSubmit={handleSearchBar}
+                    handleSearchKey={(e) => setSearchKey(e.target.value)}
+                    coin={coin}
+                  />
+                ) : (
+                  <SearchBarLight
+                    value={searchKey}
+                    clearSearch={handleClearSearch}
+                    formSubmit={handleSearchBar}
+                    handleSearchKey={(e) => setSearchKey(e.target.value)}
+                    coin={coin}
+                  />
+                )}
+              </Search>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  marginTop: "75px",
+                }}
+              >
+                {!posts.length ? (
                   <>
-                    <Box
-                      maxW="lg"
-                      backgroundColor="rgb(26, 32, 44)"
-                      color="white"
-                      marginRight="20px"
-                      padding="5px 10px"
-                      height="60px"
-                      marginTop="-30px"
-                      width="100%"
-                      position="fixed"
-                      zIndex="2"
-                    >
-                      <h1
+                    {loading === true ? (
+                      <GhostTweet>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
+                        >
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
+                          marginTop="10px"
+                        >
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
+                          marginTop="10px"
+                        >
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
+                          marginTop="10px"
+                        >
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                      </GhostTweet>
+                    ) : (
+                      <div
                         style={{
-                          fontFamily: '"Inter", sans-serif',
-                          fontSize: "25px",
-                          fontWeight: 700,
-                          position: "fixed",
-                          marginTop: "20px",
-                          marginBottom: "20px",
+                          display: "flex",
+                          justifyContent: "center",
+                          flexDirection: "column",
+                          textAlign: "center",
                         }}
                       >
-                        Top posts about{" "}
-                        <Link to="/feeds">
-                          <Badge
-                            marginBottom="5px"
-                            colorScheme="green"
-                            fontSize="20px"
-                            padding="2px 10px"
-                          >
-                            {id} <CloseIcon w={4} h={4} marginBottom="4px" />
-                          </Badge>
-                        </Link>
-                      </h1>
-                    </Box>
+                        <img src="/images/empty.png" />
+                        <h1
+                          style={{
+                            fontSize: "30px",
+                            marginBottom: "100%",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          No results found :(
+                        </h1>
+                      </div>
+                    )}
                   </>
                 ) : (
-                  <>
-                    <Box
-                      maxW="lg"
-                      backgroundColor="white"
-                      marginRight="20px"
-                      padding="5px 10px"
-                      height="60px"
-                      marginTop="-30px"
-                      width="100%"
-                      position="fixed"
-                      zIndex="2"
-                    >
-                      <h1
-                        style={{
-                          fontFamily: '"Inter", sans-serif',
-                          fontSize: "25px",
-                          fontWeight: 700,
-                          position: "fixed",
-                          marginTop: "20px",
-                          marginBottom: "20px",
-                        }}
-                      >
-                        Top posts about{" "}
-                        <Link to="/feeds">
-                          <Badge
-                            marginBottom="5px"
-                            colorScheme="green"
-                            fontSize="20px"
-                            padding="2px 10px"
-                          >
-                            {id} <CloseIcon w={4} h={4} marginBottom="4px" />
-                          </Badge>
-                        </Link>
-                      </h1>
-                    </Box>
-                  </>
+                  posts.map((tweet) => (
+                    <div style={{ marginTop: "10px", marginBottom: "10px" }}>
+                      <WrapItem>
+                        <Tweet blog={tweet} />
+                      </WrapItem>
+                    </div>
+                  ))
                 )}
+              </div>
+            </MiddleSide>
 
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    marginTop: "20px",
-                  }}
-                >
-                  {blogs === null ? (
-                    <h1
-                      style={{
-                        marginTop: "30px",
-                        fontSize: "22px",
-                      }}
-                    >
-                      Couldn't find any posts about this hashtag :(
-                    </h1>
-                  ) : (
-                    <>
-                      {blogs.map((tweet) => (
-                        <div
-                          style={{ marginTop: "10px", marginBottom: "10px" }}
-                        >
-                          <WrapItem>
-                            <Tweet blog={tweet} />
-                          </WrapItem>
-                        </div>
-                      ))}
-                    </>
-                  )}
-                </div>
-              </LeftSide>
-            </>
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "30%",
-                marginTop: "0px",
-              }}
-            >
-              <RightNavbar>
-                <SmallerTitle>
-                  <Linkk>
-                    <Link to="/top-influencers">Top Influencers</Link>
-                  </Linkk>
-                </SmallerTitle>
+            <RightNavbar>
+              <RightNavbarContent>
+                <SmallerTitle>Top Influencers</SmallerTitle>
                 <Wrap width="300px">
                   {influencers.map((influ) => (
                     <div style={{ marginTop: "5px", marginBottom: "8px" }}>
@@ -237,12 +255,12 @@ export default function Hashtag() {
                   style={{ marginBottom: "10px", marginTop: "5px" }}
                 >
                   <Linkk>
-                    <Link to="/markets">Top Social Cryptocurrencies</Link>
+                    <Link to="/markets">Top Cryptocurrencies</Link>
                   </Linkk>
                 </SmallerTitle>
                 <Coins />
-              </RightNavbar>
-            </div>
+              </RightNavbarContent>
+            </RightNavbar>
           </div>
         </Content>
       </Layout>
@@ -250,13 +268,15 @@ export default function Hashtag() {
   );
 }
 
-const HashtagComponent = styled.div`
+const LeftSide = styled.div`
   position: fixed;
   margin-right: 1000px;
   margin-top: -7px;
 
   @media (max-width: 1150px) {
     display: none;
+    width: 0px;
+    height: 0px;
   }
 `;
 
@@ -274,6 +294,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: "Inter", sans-serif;
 `;
 
 const Title = styled.h1`
@@ -294,13 +315,29 @@ const SmallerTitle = styled.h1`
 `;
 
 const RightNavbar = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-top: -7px;
+
+  @media (max-width: 1150px) {
+    width: 40%;
+  }
+
+  @media (max-width: 740px) {
+    width: 0px;
+    height: 0px;
+  }
+`;
+
+const RightNavbarContent = styled.div`
   position: fixed;
   margin-right: 20%;
   @media (max-width: 1200px) {
     margin-right: 5%;
   }
 
-  @media (max-width: 786px) {
+  @media (max-width: 740px) {
     width: 0px;
     height: 0px;
     position: relative;
@@ -311,11 +348,15 @@ const RightNavbar = styled.div`
 const Search = styled.div`
   position: fixed;
   z-index: 1;
-  margin-top: -30px;
+  margin-top: -32px;
   width: 496px;
 
-  @media (max-width: 1040px) {
-    width: 49%;
+  @media (max-width: 1150px) {
+    width: 50%;
+  }
+
+  @media (max-width: 1050px) {
+    width: 53%;
   }
 
   @media (max-width: 840px) {
@@ -323,14 +364,77 @@ const Search = styled.div`
   }
 `;
 
-const LeftSide = styled.div`
+const MiddleSide = styled.div`
   width: 50%;
   margin-right: 40px;
 
+  @media (max-width: 1150px) {
+    width: 53%;
+  }
+
+  @media (max-width: 740px) {
+    width: 600px;
+    margin-right: 0px;
+  }
+
+  @media (max-width: 630px) {
+    width: 550px;
+  }
+
+  @media (max-width: 570px) {
+    width: 470px;
+  }
+
+  @media (max-width: 480px) {
+    width: 370px;
+  }
+
+  @media (max-width: 400px) {
+    width: 350px;
+  }
+
+  @media (max-width: 370px) {
+    width: 320px;
+  }
+
+  @media (max-width: 340px) {
+    width: 290px;
+  }
+
+  @media (max-width: 300px) {
+    width: 270px;
+  }
+`;
+
+const GhostTweet = styled.div`
+  width: 100%;
+  margin-top: 20px;
+
   @media (max-width: 786px) {
-    display: flex;
-    justify-content: center;
-    margin-right: 30%;
-    margin-left: 30%;
+    width: 700px;
+  }
+
+  @media (max-width: 700px) {
+    width: 580px;
+  }
+
+  @media (max-width: 600px) {
+    width: 480px;
+  }
+
+  @media (max-width: 500px) {
+    width: 380px;
+  }
+
+  @media (max-width: 400px) {
+    width: 280px;
+  }
+
+  @media (max-width: 300px) {
+    width: 180px;
+  }
+
+  @media (max-width: 200px) {
+    width: 80px;
   }
 `;

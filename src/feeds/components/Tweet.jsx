@@ -109,7 +109,6 @@ export default function Tweet({
       ) : (
         <Content>
           <Box
-            maxW="lg"
             borderWidth="2px"
             borderRadius="lg"
             overflow="hidden"
@@ -120,7 +119,7 @@ export default function Tweet({
             <Flex flexDirection="column">
               <Flex>
                 <a href={user_url} target="_blank">
-                  <Avatar name={name} src={authorProfilePic} />
+                  <Avatar name={name} src={profile} />
                 </a>
                 <Flex flexDirection="column">
                   <a href={user_url} target="_blank">
@@ -128,7 +127,7 @@ export default function Tweet({
                   </a>
                   <a
                     style={{ marginLeft: "5px" }}
-                    href={authorLink}
+                    href={user_url}
                     target="_blank"
                   >
                     {username}
@@ -136,11 +135,28 @@ export default function Tweet({
                 </Flex>
               </Flex>
               <Flex flexDirection="column">
-                <p style={{ width: "100%", marginTop: "2px" }}>{tweet}</p>
+                <p style={{ width: "100%", marginTop: "2px" }}>
+                  {title}
+                  {picture !== "" ? (
+                    <>
+                      <img
+                        src={picture}
+                        alt="picture"
+                        style={{ borderRadius: "4px" }}
+                      />
+
+                      {description}
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </p>
                 <br />
-                <Flex marginTop="10px" justifyContent="space-between">
+                <Flex marginTop="20px" justifyContent="space-between">
                   <Flex>
-                    <Like />
+                    <span style={{}}>
+                      <Like />
+                    </span>
 
                     <a
                       href={source}

@@ -99,6 +99,7 @@ export default function Feeds() {
                     clearSearch={handleClearSearch}
                     formSubmit={handleSearchBar}
                     handleSearchKey={(e) => setSearchKey(e.target.value)}
+                    coin={null}
                   />
                 ) : (
                   <SearchBarLight
@@ -106,6 +107,7 @@ export default function Feeds() {
                     clearSearch={handleClearSearch}
                     formSubmit={handleSearchBar}
                     handleSearchKey={(e) => setSearchKey(e.target.value)}
+                    coin={null}
                   />
                 )}
               </Search>
