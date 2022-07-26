@@ -38,6 +38,10 @@ import Blog from "../learn/pages/Blog";
 import Home from "../learn/pages/Home";
 import Explore from "../learn/pages/Explore/Explore";
 
+// Team
+import TeamUser from "../pages/team/TeamUser";
+import Team from "../pages/team/Team";
+
 export default function AppRouter(props) {
   const { logout, currentUser } = useAuth();
 
@@ -46,14 +50,12 @@ export default function AppRouter(props) {
       <Router>
         <Switch>
           {currentUser ? (
-            <ProtectedRoute exact path="/" component={Dashboard} />
+            <ProtectedRoute exact path="/" component={Feeds} />
           ) : (
             <Route exact path="/" component={Homepage} />
           )}
 
           <Route path="/indexes" component={Indexes} />
-
-          <Route path="/test" component={Test} />
 
           <Route path="/exchange/:id" component={ExchangePage} />
           <Route path="/exchanges/page/:id" component={ExchangesPage} />
@@ -73,6 +75,9 @@ export default function AppRouter(props) {
           <Route path="/manifesto" component={Manifesto} />
           <Route path="/contact" component={Contact} />
           <Route path="/advertise" component={Advertise} />
+
+          <Route path="/team/:id" component={TeamUser} />
+          <Route path="/team" component={Team} />
 
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/login" component={Loginpage} />
