@@ -24,6 +24,9 @@ import {
   Thead,
   Tr,
   Th,
+  Box,
+  SkeletonCircle,
+  SkeletonText,
   Td,
   Tbody,
   Badge,
@@ -103,7 +106,27 @@ export default function ExchangePage() {
           </Flex>
 
           {loading === true ? (
-            <>Loading...</>
+            <>
+              <SkeletonCircle size="50" marginBottom="30px" />
+
+              <Box
+                padding="6"
+                boxShadow="lg"
+                borderRadius="4px"
+                borderWidth="2px"
+              >
+                <SkeletonText mt="4" noOfLines={4} spacing="4" />
+              </Box>
+              <Box
+                padding="6"
+                boxShadow="lg"
+                borderRadius="4px"
+                borderWidth="2px"
+                marginTop="10px"
+              >
+                <SkeletonText mt="4" noOfLines={4} spacing="4" />
+              </Box>
+            </>
           ) : (
             <>
               <div>

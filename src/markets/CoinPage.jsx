@@ -3,7 +3,16 @@ import { useParams } from "react-router-dom";
 import { Layout } from "../components/Layout";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
-import { Tabs, TabList, TabPanels, TabPanel, Tab } from "@chakra-ui/react";
+import {
+  Tabs,
+  TabList,
+  TabPanels,
+  TabPanel,
+  Tab,
+  Box,
+  SkeletonCircle,
+  SkeletonText,
+} from "@chakra-ui/react";
 import Footerr from "../components/Footer";
 import axios from "axios";
 
@@ -55,7 +64,27 @@ export default function CoinPage() {
       <Layout>
         <Content>
           {loading === true ? (
-            <>Loading...</>
+            <>
+              <SkeletonCircle size="50" marginBottom="30px" />
+
+              <Box
+                padding="6"
+                boxShadow="lg"
+                borderRadius="4px"
+                borderWidth="2px"
+              >
+                <SkeletonText mt="4" noOfLines={4} spacing="4" />
+              </Box>
+              <Box
+                padding="6"
+                boxShadow="lg"
+                borderRadius="4px"
+                borderWidth="2px"
+                marginTop="10px"
+              >
+                <SkeletonText mt="4" noOfLines={4} spacing="4" />
+              </Box>
+            </>
           ) : (
             <>
               <Navigation id={id} />
