@@ -48,6 +48,10 @@ export default function Footerr() {
               url: "/advertise",
             },
             {
+              title: "Team",
+              url: "/team",
+            },
+            {
               title: "Contact Us",
               url: "/contact",
             },
