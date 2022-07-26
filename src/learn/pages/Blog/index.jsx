@@ -10,6 +10,7 @@ import { Layout } from "../../../components/Layout";
 import Footerr from "../../../components/Footer";
 import styled from "styled-components";
 import { Badge } from "@chakra-ui/react";
+import { Ad } from "../../components/common/Ad";
 
 const Blog = () => {
   const { id } = useParams();
@@ -69,6 +70,8 @@ const Blog = () => {
             <Description>{blog.description}</Description>
 
             <Text>{blog.text}</Text>
+
+            <Ad />
           </>
         ) : (
           <EmptyList />

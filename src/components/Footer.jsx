@@ -138,7 +138,17 @@ export default function Footerr() {
       ]}
       title="Capitnest"
       backgroundColor={backgroundClr}
-      bottom="© 2022 Capitnest.com | All rights reserved."
+      bottom={
+        <>
+          © 2022 Capitnest.com | All rights reserved.
+          <br />
+          <br />
+          Disclaimer: NOTHING ON THIS WEBSITE IS FINANCIAL NOR INVESTMENT
+          ADVICE.
+          <br /> Only you are responsible for any capital-related decisions you
+          make and only you are accountable for the results.
+        </>
+      }
     />
   );
 }
