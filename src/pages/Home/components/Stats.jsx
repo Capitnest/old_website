@@ -72,7 +72,7 @@ export default function Stats() {
               }}
             >
               <CircularProgressLabel>
-                <p style={{ fontWeight: "bold" }}>11,5k</p>
+                <p style={{ fontWeight: "bold", fontSize: "30px" }}>11,5k</p>
               </CircularProgressLabel>
             </CircularProgress>
 
