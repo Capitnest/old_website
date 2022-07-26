@@ -3,6 +3,13 @@ import styled from "styled-components";
 import { Wrap, Flex, useColorMode } from "@chakra-ui/react";
 import Footer from "rc-footer";
 import "rc-footer/assets/index.css";
+import {
+  BsTelegram,
+  BsDiscord,
+  BsInstagram,
+  BsGithub,
+  BsTwitter,
+} from "react-icons/bs";
 
 export default function Footerr() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -94,34 +101,25 @@ export default function Footerr() {
             //   openExternal: true,
             // },
             {
-              icon: (
-                <img
-                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.iconsdb.com%2Ficons%2Fpreview%2Fwhite%2Ftwitter-xxl.png&f=1&nofb=1"
-                  alt="Twitter"
-                />
-              ),
+              icon: <BsTelegram size={25} />,
+              title: "Telegram",
+              url: "https://t.me/+avFFPwsc6b01N2Zk",
+              openExternal: true,
+            },
+            {
+              icon: <BsTwitter size={25} />,
               title: "Twitter",
               url: "https://www.twitter.com/thecapitnest",
               openExternal: true,
             },
             {
-              icon: (
-                <img
-                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftighestimepieces.com%2Fwp-content%2Fuploads%2F2016%2F11%2FInstagram-icon-WHITE.png&f=1&nofb=1"
-                  alt="instagram"
-                />
-              ),
+              icon: <BsInstagram size={25} />,
               title: "Instagram",
               url: "https://www.instagram.com/capitnest",
               openExternal: true,
             },
             {
-              icon: (
-                <img
-                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpluspng.com%2Fimg-png%2Fgithub-logo-png-white-github-11-icon-free-white-social-icons-512x512.png&f=1&nofb=1"
-                  alt="discord"
-                />
-              ),
+              icon: <BsGithub size={25} />,
               title: "Github",
               url: "https://www.github.com/capitnest",
               openExternal: true,
