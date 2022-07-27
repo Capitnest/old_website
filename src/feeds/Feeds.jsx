@@ -33,7 +33,7 @@ export default function Feeds() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const url = `http://127.0.0.1:5000/feeds/general`;
+  const url = `https://timnik.pythonanywhere.com/feeds/general`;
 
   useEffect(() => {
     axios
@@ -41,7 +41,6 @@ export default function Feeds() {
       .then((response) => {
         setPosts(response.data);
         setDefaultList(response.data);
-        console.log(response.data);
         setLoading(false);
       })
       .catch((error) => {

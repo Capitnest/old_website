@@ -11,6 +11,7 @@ import {
   SkeletonCircle,
   SkeletonText,
   Show,
+  toast,
   Hide,
 } from "@chakra-ui/react";
 import styled from "styled-components";
@@ -39,7 +40,7 @@ export default function Hashtag() {
 
     if (id === "bitcoin") {
       axios
-        .get("http://127.0.0.1:5000/feeds/bitcoin")
+        .get("http://timnik.pythonanywhere.com/feeds/bitcoin")
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -51,7 +52,7 @@ export default function Hashtag() {
         });
     } else if (id === "ethereum") {
       axios
-        .get("http://127.0.0.1:5000/feeds/ethereum")
+        .get("http://timnik.pythonanywhere.com/feeds/ethereum")
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -63,7 +64,7 @@ export default function Hashtag() {
         });
     } else if (id === "cardano") {
       axios
-        .get("http://127.0.0.1:5000/feeds/cardano")
+        .get("http://timnik.pythonanywhere.com/feeds/cardano")
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -75,7 +76,7 @@ export default function Hashtag() {
         });
     } else if (id === "solana") {
       axios
-        .get("http://127.0.0.1:5000/feeds/solana")
+        .get("http://timnik.pythonanywhere.com/feeds/solana")
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
