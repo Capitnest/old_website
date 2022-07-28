@@ -40,7 +40,7 @@ export default function Hashtag() {
 
     if (id === "bitcoin") {
       axios
-        .get("http://timnik.pythonanywhere.com/feeds/bitcoin")
+        .get("https://timnik.pythonanywhere.com/feeds/bitcoin")
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -52,7 +52,7 @@ export default function Hashtag() {
         });
     } else if (id === "ethereum") {
       axios
-        .get("http://timnik.pythonanywhere.com/feeds/ethereum")
+        .get("https://timnik.pythonanywhere.com/feeds/ethereum")
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -64,7 +64,7 @@ export default function Hashtag() {
         });
     } else if (id === "cardano") {
       axios
-        .get("http://timnik.pythonanywhere.com/feeds/cardano")
+        .get("https://timnik.pythonanywhere.com/feeds/cardano")
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -76,7 +76,7 @@ export default function Hashtag() {
         });
     } else if (id === "solana") {
       axios
-        .get("http://timnik.pythonanywhere.com/feeds/solana")
+        .get("https://timnik.pythonanywhere.com/feeds/solana")
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
