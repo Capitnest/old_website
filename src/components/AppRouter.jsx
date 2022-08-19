@@ -42,6 +42,9 @@ import Explore from "../learn/pages/Explore/Explore";
 import TeamUser from "../pages/team/TeamUser";
 import Team from "../pages/team/Team";
 
+// Insights
+import Insights from "../insights/pages/Insights";
+
 export default function AppRouter(props) {
   const { logout, currentUser } = useAuth();
 
@@ -72,12 +75,16 @@ export default function AppRouter(props) {
           <Route exact path="/feeds" component={Feeds} />
           <Route path="/feeds/:id" component={Hashtag} />
 
+          <Route exact path="/research" component={Insights} />
+
           <Route path="/manifesto" component={Manifesto} />
           <Route path="/contact" component={Contact} />
           <Route path="/advertise" component={Advertise} />
 
           <Route path="/team/:id" component={TeamUser} />
           <Route path="/team" component={Team} />
+
+          {/* <Route path="/insights" component={Insights} /> */}
 
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/login" component={Loginpage} />
