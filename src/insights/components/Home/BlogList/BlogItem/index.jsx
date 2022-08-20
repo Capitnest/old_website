@@ -1,172 +1,113 @@
 import React from "react";
-import { Box, Badge, Flex, useColorMode } from "@chakra-ui/react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Avatar, Flex, useColorMode } from "@chakra-ui/react";
 
-const BlogItem = ({ blog: { title, topic, time, cover, id, description } }) => {
+export const BlogItem = ({
+  blog: { title, tags, authorName, date, summary, img },
+}) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
-  function topic_badge_color(topic) {
-    if (topic === "security") {
-      return "teal";
-    } else if (topic === "blockchain") {
-      return "blue";
-    } else if (topic === "crypto") {
-      return "green";
-    } else if (topic === "exchanges") {
-      return "purple";
-    } else {
-      return "green";
-    }
-  }
-
   return (
-    <Content>
-      <Box
-        marginRight="5px"
-        marginLeft="5px"
-        borderWidth="1px"
-        borderRadius="4px"
-        display="flex"
-        flexDirection="column"
-        style={{
-          backgroundColor: (() => {
-            if (colorMode === "light") {
-              return "#E2E8F0";
-            } else {
-              return "rgba(255, 255, 255, 0.04)";
-            }
-          })(),
-          borderColor: (() => {
-            if (colorMode === "light") {
-              return "#A0AEC0";
-            } else {
-              return "rgba(255, 255, 255, 0.24)";
-            }
-          })(),
-        }}
-      >
-        <Link to={`/learn/post/${id}`}>
-          <Image>
-            <img src={cover} alt="cover" style={{ borderRadius: "4px" }} />
-          </Image>
-        </Link>
-        <div style={{ margin: "6px" }}>
-          <Link to={`/learn/post/${id}`}>
-            {colorMode === "dark" ? (
-              <TitleDark>{title}</TitleDark>
-            ) : (
-              <TitleWhite>{title}</TitleWhite>
-            )}
-          </Link>
-
-          <Flex justifyContent="space-between" marginTop="10px">
-            <Link to={`/learn/post/${id}`}>
-              <Button>
-                <p>Read more</p>
-              </Button>
-            </Link>
-
-            <p
-              style={{
-                fontSize: "16px",
-                fontFamily: "'Inter', sans-serif",
-                marginTop: "4px",
-              }}
-            >
-              {time} MIN
-            </p>
-
-            <Badge colorScheme={topic_badge_color(topic)} fontSize="16px">
-              <div style={{ marginTop: "5px", textAlign: "center" }}>
-                {topic}
-              </div>
-            </Badge>
-          </Flex>
-        </div>
-      </Box>
-    </Content>
+    <BoxDark>
+      <Tags>
+        {tags.map((tag) => (
+          <TagDark>{tag}</TagDark>
+        ))}
+      </Tags>
+      <Header>
+        <Avatar name={authorName} />
+        <HeaderText>
+          <h1>{authorName}</h1>
+          <p>{date}</p>
+        </HeaderText>
+      </Header>
+      <Text>
+        <h1>{title}</h1>
+        <Flex marginTop="10px">
+          <p>{summary}</p>
+          <img src={img} />
+        </Flex>
+      </Text>
+    </BoxDark>
   );
 };
 
-export default BlogItem;
+const Header = styled.div`
+  margin-top: 10px;
+  display: flex;
 
-const Content = styled.div`
-  @media (max-width: 800px) {
-    margin-bottom: 20px;
-  }
-`;
-
-const Image = styled.div`
-  img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  &:hover {
-    filter: brightness(120%);
-  }
-
-  @media (max-width: 800px) {
-    img {
-      height: 250px;
-      width: 100%;
-    }
-  }
-`;
-
-const TitleDark = styled.h1`
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  height: 40px;
-
-  &:hover {
-    color: rgba(255, 255, 255, 0.48);
-  }
-`;
-
-const TitleWhite = styled.h1`
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  height: 40px;
-
-  &:hover {
-    color: rgba(0, 0, 0, 0.64);
-  }
-`;
-
-const Button = styled.button`
-  appearance: none;
-  border-radius: 4px;
-
-  cursor: pointer;
-  display: "inline-flex";
-  height: 30px;
-  background-color: #6d4bd0;
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-
-  &:focus {
-    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
-      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    background-color: #5a35c6;
-    color: #e4e4e4;
-  }
-
-  &:active {
-    box-shadow: #d6d6e7 0 3px 0px inset;
-    transform: translateY(2px);
+  h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
   }
 
   p {
-    margin: 6px;
+    font-family: "Inter", sans-serif;
+    color: gray;
+    font-weight: 600;
+  }
+`;
+
+const HeaderText = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 7px;
+  margin-top: 2px;
+`;
+
+const Tag = styled.div``;
+
+const Tags = styled.div`
+  display: flex;
+`;
+
+const TagDark = styled.button`
+  font-size: 14px;
+  padding: 1px 6px;
+  font-family: "Inter", sans-serif;
+  border-width: 0px;
+  border-radius: 5px;
+  margin-right: 7px;
+  background-color: rgb(64, 63, 75);
+`;
+
+const BoxDark = styled.div`
+  margin-bottom: 20px;
+  height: 350px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: rgb(64, 63, 75);
+  background-color: #171923;
+
+  font-family: "Inter", sans-serif;
+`;
+
+const Text = styled.div`
+  margin-top: 15px;
+  font-family: "Inter", sans-serif;
+
+  h1 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 15px;
+    margin-right: 30px;
+  }
+
+  ul {
+    margin-left: 15px;
+  }
+
+  img {
+    object-fit: cover;
+    width: 250px;
+    height: 170px;
+    border-radius: 5px;
   }
 `;

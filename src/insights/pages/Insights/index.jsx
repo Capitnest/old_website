@@ -4,6 +4,7 @@ import BlogList from "../../components/Home/BlogList";
 import SearchBarDark from "../../components/Home/SearchBarDark";
 import SearchBarLight from "../../components/Home/SearchBarLight";
 import { blogList } from "../../config/data";
+import { covers } from "../../config/covers";
 
 import { Helmet } from "react-helmet";
 import { ChevronDownIcon } from "@chakra-ui/icons";
@@ -24,7 +25,7 @@ import Footerr from "../../../components/Footer";
 import styled from "styled-components";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState(blogList);
+  const [blogs, setBlogs] = useState(covers);
   const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
   const { showResults, setShowResults } = useState(false);
@@ -33,17 +34,13 @@ const Home = () => {
   // Search submit
   const handleSearchBar = (e) => {
     e.preventDefault();
-    if (searchKey === "") {
-      setResults(false);
-    } else {
-      setResults(true);
-    }
+
     handleSearchResults();
   };
 
   // Search for blog by category
   const handleSearchResults = () => {
-    const allBlogs = blogList;
+    const allBlogs = covers;
     const filteredBlogs = allBlogs.filter((blog) =>
       blog.title.toLowerCase().includes(searchKey.toLowerCase().trim())
     );
@@ -104,18 +101,6 @@ const Home = () => {
             )}
           </Tags>
 
-          <Header>
-            <div
-              style={{
-                marginTop: "10px",
-                marginLeft: "5px",
-                marginBottom: "10px",
-              }}
-            >
-              {results === false ? <h1>Posts:</h1> : <h1>Results:</h1>}
-            </div>
-          </Header>
-
           {!blogs.length ? <EmptyList /> : <BlogList blogs={blogs} />}
         </Layout>
         <Footerr />
@@ -172,6 +157,8 @@ const TagDark = styled.button`
   border-width: 1px;
   border-radius: 5px;
   border-width: 1px;
+  background-color: #171923;
+  border-color: rgb(64, 63, 75);
 
   &:hover {
     transition: 0.5s;

@@ -1,5 +1,5 @@
 import React from "react";
-import BlogItem from "./BlogItem";
+import { BlogItem } from "./BlogItem";
 import styled from "styled-components";
 
 const BlogList = ({ blogs }) => {
@@ -17,17 +17,7 @@ const BlogList = ({ blogs }) => {
 export default BlogList;
 
 const List = styled.div`
-  display: flex;
-  padding-left: 0;
-  list-style: none;
-  flex: 0 0 33.333333%;
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
+  margin-top: 20px;
 `;
 
-const Item = styled.div`
-  list-style: none;
-  flex: 0 0 33.333333%;
-`;
+const Item = styled.div``;
