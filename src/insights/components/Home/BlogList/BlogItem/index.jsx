@@ -9,27 +9,53 @@ export const BlogItem = ({
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <BoxDark>
-      <Tags>
-        {tags.map((tag) => (
-          <TagDark>{tag}</TagDark>
-        ))}
-      </Tags>
-      <Header>
-        <Avatar name={authorName} />
-        <HeaderText>
-          <h1>{authorName}</h1>
-          <p>{date}</p>
-        </HeaderText>
-      </Header>
-      <Text>
-        <h1>{title}</h1>
-        <Flex marginTop="10px">
-          <p>{summary}</p>
-          <img src={img} />
-        </Flex>
-      </Text>
-    </BoxDark>
+    <>
+      {colorMode === "dark" ? (
+        <BoxDark>
+          <Tags>
+            {tags.map((tag) => (
+              <TagDark>{tag}</TagDark>
+            ))}
+          </Tags>
+          <Header>
+            <Avatar name={authorName} />
+            <HeaderText>
+              <h1>{authorName}</h1>
+              <p>{date}</p>
+            </HeaderText>
+          </Header>
+          <Text>
+            <h1>{title}</h1>
+            <span>
+              <p>{summary}</p>
+              <img src={img} />
+            </span>
+          </Text>
+        </BoxDark>
+      ) : (
+        <BoxLight>
+          <Tags>
+            {tags.map((tag) => (
+              <TagLight>{tag}</TagLight>
+            ))}
+          </Tags>
+          <Header>
+            <Avatar name={authorName} />
+            <HeaderText>
+              <h1>{authorName}</h1>
+              <p>{date}</p>
+            </HeaderText>
+          </Header>
+          <Text>
+            <h1>{title}</h1>
+            <span>
+              <p>{summary}</p>
+              <img src={img} />
+            </span>
+          </Text>
+        </BoxLight>
+      )}
+    </>
   );
 };
 
@@ -73,6 +99,33 @@ const TagDark = styled.button`
   background-color: rgb(64, 63, 75);
 `;
 
+const TagLight = styled.button`
+  font-size: 14px;
+  padding: 1px 6px;
+  font-family: "Inter", sans-serif;
+  border-width: 0px;
+  border-radius: 5px;
+  margin-right: 7px;
+  background-color: #e2e8f0;
+`;
+
+const BoxLight = styled.div`
+  margin-bottom: 20px;
+  height: 350px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: rgb(214, 213, 222);
+  background-color: rgb(249, 249, 250);
+
+  font-family: "Inter", sans-serif;
+
+  @media (max-width: 700px) {
+    height: 100%;
+  }
+`;
+
 const BoxDark = styled.div`
   margin-bottom: 20px;
   height: 350px;
@@ -84,6 +137,10 @@ const BoxDark = styled.div`
   background-color: #171923;
 
   font-family: "Inter", sans-serif;
+
+  @media (max-width: 700px) {
+    height: 100%;
+  }
 `;
 
 const Text = styled.div`
@@ -109,5 +166,26 @@ const Text = styled.div`
     width: 250px;
     height: 170px;
     border-radius: 5px;
+  }
+
+  span {
+    margin-top: 10px;
+    display: flex;
+  }
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      display: flex;
+      flex-direction: column-reverse;
+
+      img {
+        width: 100%;
+        height: 250px;
+        margin-bottom: 15px;
+      }
+    }
   }
 `;
