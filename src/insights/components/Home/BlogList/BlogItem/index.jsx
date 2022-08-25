@@ -2,59 +2,84 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Avatar, Flex, useColorMode } from "@chakra-ui/react";
+import { MdVerified } from "react-icons/md";
 
 export const BlogItem = ({
-  blog: { title, tags, authorName, date, summary, img },
+  blog: { title, tags, authorName, date, summary, img, isVerified, id },
 }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <>
-      {colorMode === "dark" ? (
-        <BoxDark>
-          <Tags>
-            {tags.map((tag) => (
-              <TagDark>{tag}</TagDark>
-            ))}
-          </Tags>
-          <Header>
-            <Avatar name={authorName} />
-            <HeaderText>
-              <h1>{authorName}</h1>
-              <p>{date}</p>
-            </HeaderText>
-          </Header>
-          <Text>
-            <h1>{title}</h1>
-            <span>
-              <p>{summary}</p>
-              <img src={img} />
-            </span>
-          </Text>
-        </BoxDark>
-      ) : (
-        <BoxLight>
-          <Tags>
-            {tags.map((tag) => (
-              <TagLight>{tag}</TagLight>
-            ))}
-          </Tags>
-          <Header>
-            <Avatar name={authorName} />
-            <HeaderText>
-              <h1>{authorName}</h1>
-              <p>{date}</p>
-            </HeaderText>
-          </Header>
-          <Text>
-            <h1>{title}</h1>
-            <span>
-              <p>{summary}</p>
-              <img src={img} />
-            </span>
-          </Text>
-        </BoxLight>
-      )}
+      <Link to={`/research/${id}`}>
+        {colorMode === "dark" ? (
+          <BoxDark>
+            <Tags>
+              {tags.map((tag) => (
+                <TagDark>{tag}</TagDark>
+              ))}
+            </Tags>
+            <Header>
+              <Avatar name={authorName} />
+              <HeaderText>
+                <Flex>
+                  <h1>{authorName}</h1>
+                  {isVerified ? (
+                    <MdVerified
+                      style={{ marginLeft: "3px" }}
+                      size="20"
+                      color="#63b3ed"
+                    />
+                  ) : (
+                    <></>
+                  )}
+                </Flex>
+                <p>{date}</p>
+              </HeaderText>
+            </Header>
+            <Text>
+              <h1>{title}</h1>
+              <span>
+                <p>{summary}</p>
+                <img src={img} />
+              </span>
+            </Text>
+          </BoxDark>
+        ) : (
+          <BoxLight>
+            <Tags>
+              {tags.map((tag) => (
+                <TagLight>{tag}</TagLight>
+              ))}
+            </Tags>
+            <Header>
+              <Avatar name={authorName} />
+              <HeaderText>
+                <Flex>
+                  <h1>{authorName}</h1>
+                  {isVerified ? (
+                    <MdVerified
+                      style={{ marginLeft: "3px" }}
+                      size="20"
+                      color="#4299e1"
+                    />
+                  ) : (
+                    <></>
+                  )}
+                </Flex>
+                <p>{date}</p>
+              </HeaderText>
+            </Header>
+            <Text>
+              <h1>{title}</h1>
+              <span>
+                <p>{summary}</p>
+                <img src={img} />
+              </span>
+            </Text>
+          </BoxLight>
+        )}
+      </Link>
     </>
   );
 };
@@ -110,6 +135,7 @@ const TagLight = styled.button`
 `;
 
 const BoxLight = styled.div`
+  color: black;
   margin-bottom: 20px;
   height: 350px;
   padding: 20px;
@@ -127,6 +153,7 @@ const BoxLight = styled.div`
 `;
 
 const BoxDark = styled.div`
+  color: white;
   margin-bottom: 20px;
   height: 350px;
   padding: 20px;

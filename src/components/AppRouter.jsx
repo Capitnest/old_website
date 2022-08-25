@@ -44,6 +44,9 @@ import Team from "../pages/team/Team";
 
 // Insights
 import Insights from "../insights/pages/Insights";
+import Research from "../insights/pages/Research";
+
+import Pricing from "../pages/Pricing";
 
 export default function AppRouter(props) {
   const { logout, currentUser } = useAuth();
@@ -76,7 +79,7 @@ export default function AppRouter(props) {
           <Route path="/feeds/:id" component={Hashtag} />
 
           <Route exact path="/research" component={Insights} />
-
+          <Route path="/research/:id" component={Research} />
           <Route path="/manifesto" component={Manifesto} />
           <Route path="/contact" component={Contact} />
           <Route path="/advertise" component={Advertise} />
@@ -85,6 +88,8 @@ export default function AppRouter(props) {
           <Route path="/team" component={Team} />
 
           {/* <Route path="/insights" component={Insights} /> */}
+
+          <Route exact path="/pricing" component={Pricing} />
 
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/login" component={Loginpage} />

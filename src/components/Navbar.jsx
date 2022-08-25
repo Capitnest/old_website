@@ -25,7 +25,12 @@ import Navlink from "./Navlink";
 import styled from "styled-components";
 import { TriangleDownIcon } from "@chakra-ui/icons";
 import { auth } from "../utils/init-firebase";
-import { Navbar as Navbarr, Nav, Container } from "react-bootstrap";
+import {
+  Navbar as Navbarr,
+  Nav,
+  Container,
+  NavDropdown,
+} from "react-bootstrap";
 import { CgProfile } from "react-icons/cg";
 import { Link, useHistory } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -95,9 +100,12 @@ export function Navbar() {
                 <Link to="/learn">
                   <Navlink to="/learn" name="Learn" />
                 </Link>
-                {/* <Link to="/insights">
-                  <Navlink to="/insights" name="Insights" />
-                </Link> */}
+                <Link to="/research">
+                  <Navlink to="/research" name="Research" />
+                </Link>
+                <Link to="/pricing">
+                  <Navlink to="/pricing" name="Pricing" />
+                </Link>
               </Nav>
 
               {!currentUser && (

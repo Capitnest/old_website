@@ -1,9 +1,10 @@
 export const covers = [
   {
     id: "yes",
-    tags: ["long-term", "sentimental analysis"],
+    tags: ["long-term", "sentimental-analysis"],
     authorName: "Timnik",
-    authorId: "",
+    isVerified: true,
+    authorId: "test",
     title:
       "Wallet Investigation Report: 2017 BTC investor/trader capitulates and sells 115 BTC",
     summary: (
@@ -26,7 +27,7 @@ export const covers = [
   },
   {
     id: "DA",
-    tags: ["long-term", "sentimental analysis"],
+    tags: ["sentimental-analysis"],
     authorName: "Timnik",
     authorId: "",
     title: "noo",
