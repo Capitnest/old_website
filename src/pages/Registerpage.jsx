@@ -24,6 +24,8 @@ import {
 } from "react-simple-captcha";
 import { AiFillCheckCircle } from "react-icons/ai";
 import styled from "styled-components";
+import { getDatabase, ref, set } from "firebase/database";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function Registerpage() {
   const history = useHistory();
@@ -44,6 +46,15 @@ export default function Registerpage() {
       mounted.current = false;
     };
   }, []);
+
+  function writeUserData(userId, name, email) {
+    const db = getDatabase();
+    set(ref(db, "users/" + userId), {
+      username: name,
+      email: email,
+      plan: "free",
+    });
+  }
 
   return (
     <Layout>
@@ -119,8 +130,18 @@ export default function Registerpage() {
                 });
               })
               .finally(() => {
+                console.log();
                 mounted.current && setIsSubmitting(false);
               });
+
+            const auth = getAuth();
+            onAuthStateChanged(auth, (user) => {
+              if (user) {
+                writeUserData(user.uid, user.displayName, user.email);
+              } else {
+                console.log("NOPPEE!!");
+              }
+            });
           }}
         >
           {colorMode === "dark" ? (
@@ -404,7 +425,7 @@ export default function Registerpage() {
             Login
           </Button>
         </Center>
-        <DividerWithText my={6}>OR</DividerWithText>
+        {/* <DividerWithText my={6}>OR</DividerWithText>
         <Button
           variant="outline"
           isFullWidth
@@ -418,7 +439,7 @@ export default function Registerpage() {
           }
         >
           Sign in with Google
-        </Button>
+        </Button> */}
       </Card>
     </Layout>
   );
