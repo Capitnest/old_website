@@ -9,7 +9,10 @@ import {
   StatArrow,
   StatGroup,
   Switch,
+  Tooltip,
+  Badge,
 } from "@chakra-ui/react";
+import { CheckIcon, QuestionIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function Pricing() {
   const [plan, setPlan] = useState(false);
@@ -20,9 +23,7 @@ export default function Pricing() {
         <Title>
           Choose a <span>Plan</span> that fits you
         </Title>
-        <Description>
-          Pay monthly or yearly, you can cancel at any time.
-        </Description>
+        <Description>Pay monthly or yearly, cancel at any time.</Description>
 
         <PlanType>
           <p
@@ -134,6 +135,192 @@ export default function Pricing() {
             </div>
           </Price>
         </Line>
+        <Hr />
+
+        <Badge colorScheme="teal">Feeds</Badge>
+        <Line>
+          <div className="column">
+            <Tooltip label="Very advanced">Advanced Filters</Tooltip>
+          </div>
+          <div className="column">
+            <CloseIcon width="12px" fontWeight="500" />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+        </Line>
+        <Line>
+          <div className="column">Coin Filters</div>
+          <div className="column">5</div>
+          <div className="column">20</div>
+          <div className="column">20</div>
+          <div className="column">20</div>
+        </Line>
+        <Hr />
+
+        <Badge colorScheme="teal">Markets</Badge>
+
+        <Line>
+          <div className="column">Chart</div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+        </Line>
+
+        <Line>
+          <div className="column">Advanced Coin Metrics</div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+        </Line>
+
+        <Hr />
+
+        <Badge colorScheme="teal">Access</Badge>
+
+        <Line>
+          <div className="column">Discord Server</div>
+          <div className="column">
+            <CloseIcon width="12px" />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+        </Line>
+
+        <Line>
+          <div className="column">Access to Capitnest Events</div>
+          <div className="column">
+            <CloseIcon width="12px" />
+          </div>
+          <div className="column">
+            <CloseIcon width="12px" />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+        </Line>
+
+        <Hr />
+
+        <Badge colorScheme="teal">Content</Badge>
+
+        <Line>
+          <div className="column">Research Reports</div>
+          <div className="column">
+            <CloseIcon width="12px" />
+          </div>
+          <div className="column">
+            <CloseIcon width="12px" />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+        </Line>
+        <Line>
+          <div className="column">Learn Material</div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+        </Line>
+        <Line>
+          <div className="column">Premium Newsletter</div>
+          <div className="column">
+            <CloseIcon width="12px" />
+          </div>
+          <div className="column">
+            <CloseIcon width="12px" />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+        </Line>
+
+        <Hr />
+
+        <Badge colorScheme="teal">Api</Badge>
+
+        <Line>
+          <div className="column">Access to our Full API</div>
+          <div className="column">
+            <CloseIcon width="12px" />
+          </div>
+          <div className="column">
+            <CloseIcon width="12px" />
+          </div>
+          <div className="column">
+            <CloseIcon width="12px" />
+          </div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+        </Line>
+
+        <Line>
+          <div className="column">API Limits</div>
+          <div className="column">-</div>
+          <div className="column">-</div>
+          <div className="column">-</div>
+          <div className="column">100 req/min</div>
+        </Line>
+
+        <Line>
+          <div className="column">Easily Understandable Docs</div>
+          <div className="column">-</div>
+          <div className="column">-</div>
+          <div className="column">-</div>
+          <div className="column">
+            <CheckIcon />
+          </div>
+        </Line>
       </Layout>
     </>
   );
@@ -149,6 +336,11 @@ const Title = styled.div`
   span {
     color: #04d192;
   }
+`;
+
+const Hr = styled.hr`
+  margin-top: 20px;
+  margin-bottom: 20px;
 `;
 
 const PlanType = styled.div`
@@ -173,7 +365,8 @@ const RowHead = styled.div`
   display: flex;
   margin-top: 40px;
   width: 100%;
-  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: #234e52;
   border-radius: 5px;
 
@@ -201,6 +394,8 @@ const Description = styled.div`
 
 const Line = styled.div`
   display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
   width: 100%;
   .column {
     width: 20%;
