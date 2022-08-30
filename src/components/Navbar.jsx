@@ -136,8 +136,8 @@ export function Navbar() {
                   />
                   <MenuList>
                     <MenuItem>
-                      <Link to="/" style={{ color: "inherit" }}>
-                        Dashboard
+                      <Link to="/profile" style={{ color: "inherit" }}>
+                        Profile
                       </Link>
                     </MenuItem>
                     <MenuItem>

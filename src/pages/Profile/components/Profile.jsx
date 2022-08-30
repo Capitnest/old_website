@@ -10,7 +10,9 @@ import {
 import React, { useState, useEffect, useRef } from "react";
 
 import { useAuth } from "../../../contexts/AuthContext";
-import { auth } from "../../../utils/init-firebase";
+import { auth, db } from "../../../utils/init-firebase";
+import { ref, onValue } from "firebase/database";
+
 import { updateProfile } from "firebase/auth";
 
 import styled from "styled-components";
@@ -28,6 +30,8 @@ export default function Profile() {
   const [captcha, setCaptcha] = useState("");
   const mounted = useRef(false);
   const toast = useToast();
+  const [plan, setPlan] = useState("free");
+  const [discord, setDiscord] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   function signOut() {
@@ -41,8 +45,19 @@ export default function Profile() {
   }
 
   useEffect(() => {
+    {
+      /* get the current plan */
+    }
+    const planRef = ref(db, "users/" + currentUser.uid);
+    onValue(planRef, (snapshot) => {
+      console.log(snapshot.val());
+      setPlan(snapshot.val().plan);
+      setDiscord(snapshot.val().discord);
+    });
+
     loadCaptchaEnginge(6);
     mounted.current = true;
+
     return () => {
       mounted.current = false;
     };
@@ -61,6 +76,17 @@ export default function Profile() {
       </p>
 
       <p>Email: {currentUser.email}</p>
+      <p>Plan: {plan}</p>
+      <p>
+        Discord:{" "}
+        {discord === undefined ? (
+          <>
+            <Badge colorScheme="red">Not connected</Badge>
+          </>
+        ) : (
+          <>{discord}</>
+        )}
+      </p>
 
       <br />
 

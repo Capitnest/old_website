@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Redirect,
@@ -7,6 +7,10 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { db } from "../utils/init-firebase";
+import { ref, onValue } from "firebase/database";
+import CheckUserPro from "../hooks/CheckUserPro";
+
 import ForgotPasswordPage from "../pages/ForgotPasswordPage";
 import Homepage from "../pages/Home/Homepage";
 import Loginpage from "../pages/Loginpage";
@@ -79,7 +83,7 @@ export default function AppRouter(props) {
           <Route path="/feeds/:id" component={Hashtag} />
 
           <Route exact path="/research" component={Insights} />
-          <Route path="/research/:id" component={Research} />
+          <ProRoute path="/research/:id" component={Research} />
           <Route path="/manifesto" component={Manifesto} />
           <Route path="/contact" component={Contact} />
           <Route path="/advertise" component={Advertise} />
@@ -133,6 +137,49 @@ function ProtectedRoute(props) {
   }
   return currentUser ? (
     <Route {...props} />
+  ) : (
+    <Redirect
+      to={{
+        pathname: "/login",
+        state: { from: path },
+      }}
+    />
+  );
+}
+
+function ProRoute(props) {
+  const { currentUser } = useAuth();
+  const { path } = props;
+  const location = useLocation();
+
+  if (
+    path === "/login" ||
+    path === "/register" ||
+    path === "/forgot-password" ||
+    path === "/reset-password"
+  ) {
+    return currentUser ? (
+      <Redirect to={location.state?.from ?? "/profile"} />
+    ) : (
+      <Route {...props} />
+    );
+  }
+
+  console.log(CheckUserPro());
+
+  return currentUser ? (
+    <>
+      {CheckUserPro() ? (
+        <Route {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: "/pricing",
+            state: { from: path },
+          }}
+        />
+      )}
+    </>
   ) : (
     <Redirect
       to={{
