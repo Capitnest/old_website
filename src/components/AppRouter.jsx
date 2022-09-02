@@ -8,8 +8,7 @@ import {
 } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { db } from "../utils/init-firebase";
-import { ref, onValue } from "firebase/database";
-import CheckUserPro from "../hooks/CheckUserPro";
+import { ref, onValue, get, child, getDatabase } from "firebase/database";
 
 import ForgotPasswordPage from "../pages/ForgotPasswordPage";
 import Homepage from "../pages/Home/Homepage";
@@ -54,6 +53,27 @@ import Pricing from "../pages/Pricing";
 
 export default function AppRouter(props) {
   const { logout, currentUser } = useAuth();
+  const [plan, setPlan] = useState("");
+
+  useEffect(() => {
+    if (currentUser) {
+      get(child(ref(getDatabase()), `users/${currentUser.uid}`))
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            if (snapshot.val().plan === "pro") {
+              setPlan("pro");
+            } else {
+              setPlan("free");
+            }
+          } else {
+            console.log("No data available");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [currentUser]);
 
   return (
     <>
@@ -83,7 +103,7 @@ export default function AppRouter(props) {
           <Route path="/feeds/:id" component={Hashtag} />
 
           <Route exact path="/research" component={Insights} />
-          <ProRoute path="/research/:id" component={Research} />
+          <ProRoute path="/research/:id" component={Research} plan={plan} />
           <Route path="/manifesto" component={Manifesto} />
           <Route path="/contact" component={Contact} />
           <Route path="/advertise" component={Advertise} />
@@ -119,9 +139,7 @@ export default function AppRouter(props) {
 function ProtectedRoute(props) {
   const { currentUser } = useAuth();
   const { path } = props;
-  console.log("path", path);
   const location = useLocation();
-  console.log("location state", location.state);
 
   if (
     path === "/login" ||
@@ -165,12 +183,12 @@ function ProRoute(props) {
     );
   }
 
-  console.log(CheckUserPro());
-
   return currentUser ? (
     <>
-      {CheckUserPro() ? (
-        <Route {...props} />
+      {props.plan === "pro" ? (
+        <>
+          <Route {...props} />
+        </>
       ) : (
         <Redirect
           to={{
