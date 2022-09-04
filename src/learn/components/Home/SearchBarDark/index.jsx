@@ -30,7 +30,7 @@ const SearchBarDark = ({ formSubmit, value, handleSearchKey, clearSearch }) => (
               fontSize="16px"
               fontFamily='"Inter", sans-serif'
               color="RGBA(255, 255, 255, 0.80)"
-              borderRadius="4px"
+              borderRadius="5px"
               borderWidth="2px"
               borderRightRadius="0px"
               borderColor="rgba(255, 255, 255, 0.16)"

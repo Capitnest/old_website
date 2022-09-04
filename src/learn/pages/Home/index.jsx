@@ -4,7 +4,6 @@ import BlogList from "../../components/Home/BlogList";
 import SearchBarDark from "../../components/Home/SearchBarDark";
 import SearchBarLight from "../../components/Home/SearchBarLight";
 import { blogList } from "../../config/data";
-
 import { Helmet } from "react-helmet";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Layout } from "../../../components/Layout";
@@ -18,13 +17,23 @@ import {
   Button,
   Tabs,
   TabList,
+  useDisclosure,
   Tab,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from "@chakra-ui/react";
 import Footerr from "../../../components/Footer";
 import styled from "styled-components";
+import { RiArticleLine } from "react-icons/ri";
 
 const Home = () => {
   const [blogs, setBlogs] = useState(blogList);
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
   const { showResults, setShowResults } = useState(false);
@@ -66,54 +75,114 @@ const Home = () => {
         <Layout>
           {/* Page Header */}
 
-          <div style={{ display: "flex", justifyContent: "right" }}>
-            {colorMode === "dark" ? (
-              <SearchBarDark
-                value={searchKey}
-                clearSearch={handleClearSearch}
-                formSubmit={handleSearchBar}
-                handleSearchKey={(e) => setSearchKey(e.target.value)}
-              />
-            ) : (
-              <SearchBarLight
-                value={searchKey}
-                clearSearch={handleClearSearch}
-                formSubmit={handleSearchBar}
-                handleSearchKey={(e) => setSearchKey(e.target.value)}
-              />
-            )}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginBottom: "30px",
+            }}
+          >
+            <Ad>
+              <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent fontFamily="'Inter', sans-serif">
+                  <ModalHeader></ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody>
+                    <p
+                      style={{
+                        textAlign: "center",
+                        fontSize: "20px",
+                        fontWeight: 600,
+                      }}
+                    >
+                      You don't have permission to write an article at the
+                      moment!
+                    </p>
+                    <p style={{ textAlign: "center", marginTop: "10px" }}>
+                      Apply to become a verified writer at Capitnest.
+                    </p>
+                  </ModalBody>
 
-            <span style={{ width: "100px" }}>
-              <Menu>
-                <MenuButton
-                  as={Button}
-                  rightIcon={<ChevronDownIcon />}
-                  borderRadius="4px"
-                  borderLeftRadius="0px"
-                  borderLeftWidth="0px"
-                  borderWidth="2px"
-                  borderColor="rgba(255, 255, 255, 0.16)"
-                  style={{
-                    borderColor: (() => {
-                      if (colorMode === "light") {
-                        return "rgba(0, 0, 0, 0.24)";
-                      } else {
-                        return "rgba(255, 255, 255, 0.16)";
-                      }
-                    })(),
-                  }}
-                >
-                  Topics
-                </MenuButton>
-                <MenuList>
-                  <MenuItem>Download</MenuItem>
-                  <MenuItem>Create a Copy</MenuItem>
-                  <MenuItem>Mark as Draft</MenuItem>
-                  <MenuItem>Delete</MenuItem>
-                  <MenuItem>Attend a Workshop</MenuItem>
-                </MenuList>
-              </Menu>
-            </span>
+                  <ModalFooter>
+                    <a
+                      href="https://tally.so/r/w5BgKE"
+                      target="_blank"
+                      style={{ color: "inherit" }}
+                    >
+                      <Button colorScheme="green" mr={3} onClick={onClose}>
+                        Become a Writer
+                      </Button>
+                    </a>
+                    <Button variant="ghost">I am not interested.</Button>
+                  </ModalFooter>
+                </ModalContent>
+              </Modal>
+            </Ad>
+
+            <Search>
+              {colorMode === "dark" ? (
+                <SearchBarDark
+                  value={searchKey}
+                  clearSearch={handleClearSearch}
+                  formSubmit={handleSearchBar}
+                  handleSearchKey={(e) => setSearchKey(e.target.value)}
+                />
+              ) : (
+                <SearchBarLight
+                  value={searchKey}
+                  clearSearch={handleClearSearch}
+                  formSubmit={handleSearchBar}
+                  handleSearchKey={(e) => setSearchKey(e.target.value)}
+                />
+              )}
+
+              <Button
+                borderRadius="5px"
+                borderLeftRadius="0px"
+                borderWidth="2px"
+                fontSize="18px"
+                onClick={onOpen}
+              >
+                <RiArticleLine
+                  size={20}
+                  style={{ marginBottom: "3px", marginRight: "4px" }}
+                />
+                Write
+              </Button>
+
+              {/* <span style={{ width: "100px" }}>
+                <Menu>
+                  <MenuButton
+                    as={Button}
+                    rightIcon={<ChevronDownIcon />}
+                    borderRadius="4px"
+                    borderLeftRadius="0px"
+                    borderLeftWidth="0px"
+                    borderWidth="2px"
+                    borderColor="rgba(255, 255, 255, 0.16)"
+                    style={{
+                      borderColor: (() => {
+                        if (colorMode === "light") {
+                          return "rgba(0, 0, 0, 0.24)";
+                        } else {
+                          return "rgba(255, 255, 255, 0.16)";
+                        }
+                      })(),
+                    }}
+                  >
+                    Topics
+                  </MenuButton>
+                  <MenuList>
+                    <MenuItem>Download</MenuItem>
+                    <MenuItem>Create a Copy</MenuItem>
+                    <MenuItem>Mark as Draft</MenuItem>
+                    <MenuItem>Delete</MenuItem>
+                    <MenuItem>Attend a Workshop</MenuItem>
+                  </MenuList>
+                </Menu>
+              </span> */}
+            </Search>
           </div>
 
           <Header>
@@ -177,10 +246,10 @@ const Header = styled.div`
   }
 `;
 
+const Ad = styled.div``;
+
 const Search = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 100%;
 `;
 
 export default Home;
