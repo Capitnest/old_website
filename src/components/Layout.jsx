@@ -3,12 +3,15 @@ import { Box, Container } from "@chakra-ui/react";
 import { Navbar } from "./Navbar";
 import Footer from "./Footer";
 import ScrollButton from "./ScrollButton";
+import styled from "styled-components";
 
 export function Layout({ children }) {
   return (
     <Box mb={16}>
       <Navbar />
-      <ScrollButton />
+      <Scroll>
+        <ScrollButton />
+      </Scroll>
       <br />
       <br />
       <br />
@@ -17,3 +20,11 @@ export function Layout({ children }) {
     </Box>
   );
 }
+
+const Scroll = styled.span`
+  @media (max-width: 920px) {
+    button {
+      margin-bottom: 30px;
+    }
+  }
+`;
