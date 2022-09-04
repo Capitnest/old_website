@@ -39,6 +39,7 @@ const Blog = () => {
             <Helmet>
               <title>{blog.title} | Capitnest Learn</title>
               <meta name="description" content={blog.description} />
+
               <meta property="og:image" content={blog.cover} />
             </Helmet>
             <header style={{ textAlign: "center" }}>
@@ -49,7 +50,10 @@ const Blog = () => {
                 <h1>{blog.title}</h1>
                 <p>
                   by
-                  <a href={`/team/${blog.authorUsername}`}> {blog.author}</a>
+                  <Link to={`/team/${blog.authorUsername}`}>
+                    {" "}
+                    {blog.author}
+                  </Link>
                 </p>
               </Header>
               <Image>
@@ -61,17 +65,21 @@ const Blog = () => {
                   />
                 </div>
 
-                <p style={{ textAlign: "center" }}>
-                  Image source: {blog.imageSource}
-                </p>
+                {blog.imageSource !== null || blog.imageSource !== "" ? (
+                  <>
+                    <p style={{ textAlign: "center" }}>
+                      Image source: {blog.imageSource}
+                    </p>
+                  </>
+                ) : (
+                  <></>
+                )}
               </Image>
             </header>
 
             <Description>{blog.description}</Description>
 
             <Text>{blog.text}</Text>
-
-            <Ad />
           </>
         ) : (
           <EmptyList />
