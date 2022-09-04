@@ -21,7 +21,6 @@ import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import HashtagsNav from "./components/HashtagsNav";
 import axios from "axios";
-import CustomScroll from "react-custom-scroll";
 
 export default function Feeds() {
   const { id } = useParams();
