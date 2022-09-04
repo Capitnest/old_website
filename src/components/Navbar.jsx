@@ -38,6 +38,10 @@ import { VscGlobe } from "react-icons/vsc";
 import { RiBookMarkFill } from "react-icons/ri";
 import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
 import { RestoreIcon, FavoriteIcon, LocationOnIcon } from "@material-ui/icons";
+import { GiArchiveResearch } from "react-icons/gi";
+
+import Desktop from "./Navbar/Desktop";
+import Mobile from "./Navbar/Mobile";
 
 export function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -52,138 +56,28 @@ export function Navbar() {
 
   return (
     <>
-      <div
-        style={{
-          backgroundColor: (() => {
-            if (colorMode === "light") {
-              return "rgb(255, 255, 255)";
-            } else {
-              return "rgb(26, 32, 44)";
-            }
-          })(),
-          position: "fixed",
-          top: 0,
-          left: 0,
-          zIndex: 999,
-          width: "100%",
-          boxShadow: "0 2px 2px -2px gray",
-        }}
-      >
-        <Navbarr
-          expand="md"
-          variant={colorMode === "dark" ? "dark" : "light"}
-          style={{ justifyContent: "space-between" }}
+      <Hide breakpoint="(max-width: 920px)">
+        <Desktop />
+      </Hide>
+      <Show breakpoint="(max-width: 920px)">
+        <Mobile />
+        <div
+          style={{
+            backgroundColor: (() => {
+              if (colorMode === "light") {
+                return "rgb(255, 255, 255)";
+              } else {
+                return "rgb(26, 32, 44)";
+              }
+            })(),
+            position: "fixed",
+            top: 0,
+            left: 0,
+            zIndex: 999,
+            width: "100%",
+            boxShadow: "0 2px 2px -2px gray",
+          }}
         >
-          <Container>
-            <Navbarr.Brand>
-              <Link to="/">
-                <div style={{ display: "flex" }}>
-                  <img
-                    alt="Capitnest Logo"
-                    src="/images/logo.png"
-                    width="40"
-                    className="d-inline-block align-top"
-                  />
-                  <Title>Capitnest</Title>
-                </div>
-              </Link>
-            </Navbarr.Brand>
-
-            <Navbarr.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto">
-                <Link to="/feeds">
-                  <Navlink to="/feeds" name="Feed" />
-                </Link>
-                <Link to="/markets">
-                  <Navlink to="/markets" name="Markets" />
-                </Link>
-                <Link to="/learn">
-                  <Navlink to="/learn" name="Learn" />
-                </Link>
-                <Link to="/research">
-                  <Navlink to="/research" name="Research" />
-                </Link>
-                <Link to="/pricing">
-                  <Navlink to="/pricing" name="Pricing" />
-                </Link>
-              </Nav>
-
-              {!currentUser && (
-                <a href="/register">
-                  <Button
-                    borderRadius="44px"
-                    size="md"
-                    fontSize="15px"
-                    fontFamily='"Inter", sans-serif'
-                    colorScheme="green"
-                  >
-                    Sign in / Register
-                  </Button>
-                </a>
-              )}
-              {currentUser && (
-                <Menu>
-                  <MenuButton
-                    as={IconButton}
-                    aria-label="Options"
-                    icon={
-                      <CgProfile
-                        size={25}
-                        color={colorMode === "dark" ? "white" : "black"}
-                      />
-                    }
-                    variant="link"
-                  />
-                  <MenuList>
-                    <MenuItem>
-                      <Link to="/profile" style={{ color: "inherit" }}>
-                        Profile
-                      </Link>
-                    </MenuItem>
-                    <MenuItem>
-                      <Link to="/profile" style={{ color: "inherit" }}>
-                        Settings
-                      </Link>
-                    </MenuItem>
-                    <MenuDivider />
-                    <MenuItem color="danger">
-                      <Button
-                        onClick={signOut}
-                        variant="link"
-                        colorScheme="red"
-                      >
-                        👋 Sign Out
-                      </Button>
-                    </MenuItem>
-                  </MenuList>
-                </Menu>
-              )}
-            </Navbarr.Collapse>
-
-            <div style={{ display: "flex" }}>
-              <IconButton
-                variant="ghost"
-                marginLeft="10px"
-                icon={useColorModeValue(<FaMoon />, <FaSun />)}
-                onClick={() => {
-                  toggleColorMode();
-                }}
-                aria-label="toggle-dark-mode"
-              />
-              <Navbarr.Toggle
-                aria-controls="basic-navbar-nav"
-                style={{ marginRight: "1%" }}
-              >
-                {colorMode === "dark" ? (
-                  <GiHamburgerMenu size={25} color="white" />
-                ) : (
-                  <GiHamburgerMenu size={25} color="black" />
-                )}
-              </Navbarr.Toggle>
-            </div>
-          </Container>
-        </Navbarr>
-        <Show breakpoint="(max-width: 767px)">
           <div
             style={{
               position: "fixed",
@@ -250,6 +144,23 @@ export function Navbar() {
                   }
                   icon={<RiBookMarkFill size={30} color="white" />}
                 />
+                <BottomNavigationAction
+                  onClick={() => {
+                    history.push(`/research`);
+                  }}
+                  label={
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: "14px",
+                        color: "white",
+                      }}
+                    >
+                      Research
+                    </p>
+                  }
+                  icon={<GiArchiveResearch size={30} color="white" />}
+                />
               </BottomNavigation>
             ) : (
               <BottomNavigation showLabels style={{}}>
@@ -304,11 +215,28 @@ export function Navbar() {
                   }
                   icon={<RiBookMarkFill size={30} color="black" />}
                 />
+                <BottomNavigationAction
+                  onClick={() => {
+                    history.push(`/research`);
+                  }}
+                  label={
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: "14px",
+                        color: "black",
+                      }}
+                    >
+                      Research
+                    </p>
+                  }
+                  icon={<GiArchiveResearch size={30} color="black" />}
+                />
               </BottomNavigation>
             )}
           </div>
-        </Show>
-      </div>
+        </div>
+      </Show>
     </>
   );
 }
