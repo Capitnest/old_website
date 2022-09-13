@@ -7,6 +7,7 @@ import styled from "styled-components";
 //COMPONENTS
 import Profile from "./components/Profile";
 import Notifications from "./components/Notifications";
+import Activate from "./components/Activate";
 
 export default function Profilepage() {
   return (
@@ -32,6 +33,11 @@ export default function Profilepage() {
                   <Nav.Link eventKey="first">Profile</Nav.Link>
                 </Nav.Item>
               </Nav>
+              <Nav variant="pills" className="flex-column">
+                <Nav.Item>
+                  <Nav.Link eventKey="second">Activate License</Nav.Link>
+                </Nav.Item>
+              </Nav>
             </Col>
             <Col sm={9}>
               <Content>
@@ -40,6 +46,9 @@ export default function Profilepage() {
                   <br />
                   <Tab.Pane eventKey="first">
                     <Profile />
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="second">
+                    <Activate />
                   </Tab.Pane>
                 </Tab.Content>
               </Content>
