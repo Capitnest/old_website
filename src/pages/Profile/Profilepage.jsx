@@ -13,12 +13,6 @@ export default function Profilepage() {
   return (
     <>
       <Layout>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
         <h1
           style={{ fontSize: "40px", fontWeight: "bold", marginBottom: "10px" }}
         >
