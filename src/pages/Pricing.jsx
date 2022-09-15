@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Layout } from "../components/Layout";
 import styled from "styled-components";
 import {
@@ -14,19 +14,77 @@ import {
   Hide,
   useColorMode,
   Show,
+  Button,
 } from "@chakra-ui/react";
+import { TypeAnimation } from "react-type-animation";
 import { CheckIcon, QuestionIcon, CloseIcon } from "@chakra-ui/icons";
 import { AiFillCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
+import { ref, onValue, get, child, getDatabase } from "firebase/database";
+import { useAuth } from "../contexts/AuthContext";
+import { auth } from "../utils/init-firebase";
+import { Link } from "react-router-dom";
 
 export default function Pricing() {
   const [plan, setPlan] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();
 
+  const { logout, currentUser } = useAuth();
+
+  const [plann, setPlann] = useState("");
+
+  useEffect(() => {
+    if (currentUser) {
+      get(child(ref(getDatabase()), `users/${currentUser.uid}`))
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            console.log(snapshot.val());
+            if (snapshot.val().plan === "pro") {
+              console.log("yep");
+              setPlann("pro");
+            } else {
+              setPlann("free");
+            }
+          } else {
+            console.log("No data available");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } else {
+      console.log("nope");
+    }
+  }, []);
+
   return (
     <>
       <Layout>
         <Title>
-          Choose a <span>Plan</span> that fits you
+          Gain a Edge Over the Market
+          <br />
+          <div
+            style={{ display: "flex", justifyContent: "center", flex: "wrap" }}
+          >
+            With Institutional-level
+            <span style={{ marginLeft: "7px" }}>
+              <TypeAnimation
+                sequence={[
+                  "Tools", // Types 'One'
+                  2000, // Waits 1s
+                  "Research", // Deletes 'One' and types 'Two'
+                  2000,
+                  "Data",
+                  2000,
+                  () => {
+                    console.log("Done typing!"); // Place optional callbacks anywhere in the array
+                  },
+                ]}
+                wrapper="div"
+                cursor={true}
+                repeat={Infinity}
+              />
+            </span>
+          </div>
         </Title>
         <Description>Pay monthly or yearly, cancel at any time.</Description>
 
@@ -86,10 +144,41 @@ export default function Pricing() {
 
         <Hide breakpoint="(max-width: 767px)">
           <Line>
-            <RowHead>
+            <RowHead
+              style={{
+                backgroundColor: () => {
+                  if (colorMode === "dark") {
+                    return "";
+                  } else {
+                  }
+                },
+              }}
+            >
               <div className="column"></div>
               <span className="column">Free</span>
-              <div className="column">Social</div>
+              <div className="column" style={{ display: "flex" }}>
+                Pro{" "}
+                <span
+                  style={{
+                    padding: "3px",
+                    marginLeft: "5px",
+                  }}
+                >
+                  {plan === false ? (
+                    <>
+                      <p>
+                        <BadgeBox style={{ fontSize: "14px" }}>
+                          Save 26%
+                        </BadgeBox>
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <BadgeBox style={{ fontSize: "14px" }}>Save 0%</BadgeBox>
+                    </>
+                  )}
+                </span>
+              </div>
 
               <div className="column">Developer</div>
             </RowHead>
@@ -103,8 +192,8 @@ export default function Pricing() {
                   <StatHelpText>-</StatHelpText>
                 </Stat>
                 <PriceDescription>
-                  Fundamental, limited on-chain history and crypto market data
-                  for retail investors and crypto enthusiasts.
+                  Access to Feeds, Crypto Market Data, Learn Materials & Our
+                  Weekly Newsletter
                 </PriceDescription>
               </div>
               <div className="column">
@@ -115,8 +204,8 @@ export default function Pricing() {
                   <StatHelpText>per month, billed yearly</StatHelpText>
                 </Stat>
                 <PriceDescription>
-                  Fundamental, limited on-chain history and crypto market data
-                  for retail investors and crypto enthusiasts.
+                  Access to Institution-level Research, our Private Discord
+                  Server and to our upcomming events (without any extra costs).{" "}
                 </PriceDescription>
               </div>
 
@@ -126,21 +215,35 @@ export default function Pricing() {
                   <StatHelpText>per month, billed yearly</StatHelpText>
                 </Stat>
                 <PriceDescription>
-                  Fundamental, limited on-chain history and crypto market data
-                  for retail investors and crypto enthusiasts.
+                  Access to our full API, with documentation & support from our
+                  team.
                 </PriceDescription>
               </div>
             </Price>
           </Line>
+
+          <Badge colorScheme="teal">Ads</Badge>
+          <Line>
+            <div className="column">Remove Ads</div>
+            <div className="column">
+              <CloseIcon width="12px" fontWeight="500" />
+            </div>
+            <div className="column">
+              <CheckIcon />
+            </div>
+
+            <div className="column">
+              <CheckIcon />
+            </div>
+          </Line>
+
           <Hr />
 
           <Badge colorScheme="teal">Feeds</Badge>
           <Line>
+            <div className="column">Filters</div>
             <div className="column">
-              <Tooltip label="Very advanced">Advanced Filters</Tooltip>
-            </div>
-            <div className="column">
-              <CloseIcon width="12px" fontWeight="500" />
+              <CheckIcon />
             </div>
             <div className="column">
               <CheckIcon />
@@ -153,16 +256,16 @@ export default function Pricing() {
           <Line>
             <div className="column">Coin Filters</div>
             <div className="column">5</div>
-            <div className="column">20</div>
+            <div className="column">5</div>
 
-            <div className="column">20</div>
+            <div className="column">5</div>
           </Line>
           <Hr />
 
           <Badge colorScheme="teal">Markets</Badge>
 
           <Line>
-            <div className="column">Chart</div>
+            <div className="column">Charts</div>
             <div className="column">
               <CheckIcon />
             </div>
@@ -194,6 +297,19 @@ export default function Pricing() {
           <Line>
             <div className="column">Discord Server</div>
             <div className="column">
+              <CheckIcon />
+            </div>
+            <div className="column">
+              <CheckIcon />
+            </div>
+            <div className="column">
+              <CheckIcon />
+            </div>
+          </Line>
+
+          <Line>
+            <div className="column">VIP Discord Server</div>
+            <div className="column">
               <CloseIcon width="12px" />
             </div>
             <div className="column">
@@ -210,7 +326,7 @@ export default function Pricing() {
               <CloseIcon width="12px" />
             </div>
             <div className="column">
-              <CloseIcon width="12px" />
+              <CheckIcon />
             </div>
             <div className="column">
               <CheckIcon />
@@ -227,7 +343,7 @@ export default function Pricing() {
               <CloseIcon width="12px" />
             </div>
             <div className="column">
-              <CloseIcon width="12px" />
+              <CheckIcon />
             </div>
             <div className="column">
               <CheckIcon />
@@ -240,18 +356,6 @@ export default function Pricing() {
             </div>
             <div className="column">
               <CheckIcon />
-            </div>
-            <div className="column">
-              <CheckIcon />
-            </div>
-          </Line>
-          <Line>
-            <div className="column">Premium Newsletter</div>
-            <div className="column">
-              <CloseIcon width="12px" />
-            </div>
-            <div className="column">
-              <CloseIcon width="12px" />
             </div>
             <div className="column">
               <CheckIcon />
@@ -293,6 +397,109 @@ export default function Pricing() {
               <CheckIcon />
             </div>
           </Line>
+
+          {currentUser ? (
+            <>
+              <Line>
+                <div className="column"></div>
+                {plann === "pro" ? (
+                  <>
+                    <div className="column">
+                      <Button
+                        colorScheme="green"
+                        width="90%"
+                        disabled
+                        variant="outline"
+                      >
+                        Current Plan
+                      </Button>
+                    </div>
+                    <div className="column">
+                      <Button
+                        colorScheme="green"
+                        width="90%"
+                        disabled
+                        variant="outline"
+                      >
+                        Current Plan
+                      </Button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="column">
+                      <Button
+                        colorScheme="green"
+                        width="90%"
+                        disabled
+                        variant="outline"
+                      >
+                        Current Plan
+                      </Button>
+                    </div>
+
+                    <div className="column">
+                      <a
+                        class="gumroad-button"
+                        href="https://capitnest.gumroad.com/l/pro?wanted=true"
+                        style={{ width: "90%" }}
+                        target="_blank"
+                      >
+                        <Button colorScheme="green" width="90%">
+                          Upgrade
+                        </Button>
+                      </a>
+                    </div>
+                  </>
+                )}
+
+                <div className="column">
+                  <a
+                    href="mailto:capitnest@proton.me"
+                    target="_blank"
+                    style={{ width: "90%" }}
+                  >
+                    <Button colorScheme="green" width="90%">
+                      Contact Us
+                    </Button>
+                  </a>
+                </div>
+              </Line>
+            </>
+          ) : (
+            <>
+              <Line>
+                <div className="column"></div>
+
+                <div className="column">
+                  <Link to="/register" style={{ width: "90%" }}>
+                    <Button colorScheme="green" width="100%">
+                      Sign Up
+                    </Button>
+                  </Link>
+                </div>
+                <div className="column">
+                  <Link to="/register" style={{ width: "90%" }}>
+                    <Button colorScheme="green" width="100%">
+                      Sign up
+                    </Button>
+                  </Link>
+                </div>
+
+                <div className="column">
+                  <a
+                    href="mailto:capitnest@proton.me"
+                    target="_blank"
+                    style={{ width: "90%" }}
+                  >
+                    <Button colorScheme="green" width="90%">
+                      Contact Us
+                    </Button>
+                  </a>
+                </div>
+              </Line>
+            </>
+          )}
         </Hide>
 
         <Show breakpoint="(max-width: 767px)">
@@ -303,7 +510,7 @@ export default function Pricing() {
                   if (colorMode === "dark") {
                     return "rgba(255, 255, 255, 0.08)";
                   } else {
-                    return 500;
+                    return "rgb(226,232,240)";
                   }
                 })(),
               }}
@@ -362,6 +569,36 @@ export default function Pricing() {
                 <p>Weekly Newsletter</p>
               </Line>
             </div>
+
+            {currentUser ? (
+              <>
+                <Button
+                  colorScheme="green"
+                  width="96%"
+                  marginRight="2%"
+                  marginLeft="2%"
+                  marginBottom="2%"
+                  disabled
+                  variant="outline"
+                >
+                  Current Plan
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/register">
+                  <Button
+                    colorScheme="green"
+                    width="96%"
+                    marginRight="2%"
+                    marginLeft="2%"
+                    marginBottom="2%"
+                  >
+                    Sign Up
+                  </Button>
+                </Link>
+              </>
+            )}
           </MobileBox>
 
           <MobileBox
@@ -376,7 +613,7 @@ export default function Pricing() {
                   if (colorMode === "dark") {
                     return "rgba(255, 255, 255, 0.08)";
                   } else {
-                    return 500;
+                    return "rgb(226,232,240)";
                   }
                 })(),
               }}
@@ -465,6 +702,58 @@ export default function Pricing() {
                 <p>Access to Capitnest Events</p>
               </Line>
             </div>
+
+            {currentUser ? (
+              <>
+                {plann === "pro" ? (
+                  <>
+                    <Button
+                      colorScheme="green"
+                      width="96%"
+                      marginRight="2%"
+                      marginLeft="2%"
+                      marginBottom="2%"
+                      disabled
+                      variant="outline"
+                    >
+                      Current Plan
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <a
+                      class="gumroad-button"
+                      href="https://capitnest.gumroad.com/l/pro?wanted=true"
+                      style={{
+                        width: "96%",
+                        marginLeft: "2%",
+                        marginRight: "2%",
+                        marginBottom: "2%",
+                      }}
+                      target="_blank"
+                    >
+                      <Button colorScheme="green" width="96%" marginBottom="2%">
+                        Upgrade
+                      </Button>
+                    </a>
+                  </>
+                )}
+              </>
+            ) : (
+              <>
+                <Link to="/register">
+                  <Button
+                    colorScheme="green"
+                    width="96%"
+                    marginRight="2%"
+                    marginLeft="2%"
+                    marginBottom="2%"
+                  >
+                    Sign Up
+                  </Button>
+                </Link>
+              </>
+            )}
           </MobileBox>
 
           <MobileBox>
@@ -474,15 +763,13 @@ export default function Pricing() {
                   if (colorMode === "dark") {
                     return "rgba(255, 255, 255, 0.08)";
                   } else {
-                    return 500;
+                    return "rgb(226,232,240)";
                   }
                 })(),
               }}
             >
               Developer
             </h1>
-
-            <hr />
 
             <h2>Contact Us</h2>
 
@@ -531,6 +818,18 @@ export default function Pricing() {
                 <p>Easy to read Documentation</p>
               </Line>
             </div>
+
+            <a href="mailto:capitnest@proton.me" target="_blank">
+              <Button
+                width="96%"
+                marginRight="2%"
+                marginLeft="2%"
+                marginBottom="2%"
+                borderWidth="1px"
+              >
+                Contact Us
+              </Button>
+            </a>
           </MobileBox>
         </Show>
       </Layout>
@@ -588,6 +887,7 @@ const MobileBox = styled.div`
 `;
 
 const Title = styled.div`
+  display: "flex";
   font-family: "Inter", sans-serif;
   font-size: 30px;
   font-weight: 700;
@@ -596,6 +896,24 @@ const Title = styled.div`
 
   span {
     color: #04d192;
+  }
+
+  @media (max-width: 540px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 370px) {
+    div {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 310px) {
+    font-size: 18px;
   }
 `;
 
@@ -614,6 +932,7 @@ const PlanType = styled.div`
 const PriceDescription = styled.div`
   font-size: 14px;
   font-family: "Inter", sans-serif;
+  margin-right: 10px;
 `;
 
 const Price = styled.div`
@@ -628,7 +947,8 @@ const RowHead = styled.div`
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #234e52;
+  background-color: rgb(56, 161, 105);
+  color: white;
   border-radius: 5px;
 
   span {
@@ -658,6 +978,8 @@ const Line = styled.div`
   margin-top: 5px;
   margin-bottom: 5px;
   width: 100%;
+  font-family: "Inter", sans-serif;
+
   .column {
     width: 25%;
   }
