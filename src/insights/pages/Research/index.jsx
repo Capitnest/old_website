@@ -29,7 +29,7 @@ const Blog = () => {
       <Layout>
         <div style={{ height: "20px" }} />
         <Link
-          to="/learn"
+          to="/research"
           style={{ marginTop: "10px", fontFamily: "'Inter', sans-serif" }}
         >
           <span> &#8592;</span> <span>Go Back</span>
@@ -60,18 +60,12 @@ const Blog = () => {
                     style={{ borderRadius: "10px" }}
                   />
                 </div>
-
-                <p style={{ textAlign: "center" }}>
-                  Image source: {blog.imageSource}
-                </p>
               </Image>
             </header>
 
             <Description>{blog.description}</Description>
 
             <Text>{blog.text}</Text>
-
-            <Ad />
           </>
         ) : (
           <EmptyList />
