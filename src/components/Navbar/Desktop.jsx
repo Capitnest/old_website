@@ -148,16 +148,10 @@ export default function Desktop() {
               variant="link"
             />
             <MenuList>
-              <MenuItem>
-                <Link to="/profile" style={{ color: "inherit" }}>
-                  Profile
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/profile" style={{ color: "inherit" }}>
-                  Settings
-                </Link>
-              </MenuItem>
+              <Link to="/profile" style={{ color: "inherit" }}>
+                <MenuItem>Profile</MenuItem>
+              </Link>
+
               <MenuDivider />
               <MenuItem color="danger">
                 <Button onClick={signOut} variant="link" colorScheme="red">
