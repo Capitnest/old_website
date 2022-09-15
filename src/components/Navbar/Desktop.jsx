@@ -149,7 +149,7 @@ export default function Desktop() {
             />
             <MenuList>
               <Link to="/profile" style={{ color: "inherit" }}>
-                <MenuItem>Profile</MenuItem>
+                <MenuItem>⚙️ Settings</MenuItem>
               </Link>
 
               <MenuDivider />
