@@ -158,84 +158,87 @@ export default function Hashtag() {
                   display: "flex",
                   justifyContent: "center",
                   flexDirection: "column",
-                  marginTop: "75px",
+                  marginTop: "85px",
+                  overflowY: "scroll",
                 }}
               >
-                {!posts.length ? (
-                  <>
-                    {loading === true ? (
-                      <GhostTweet>
-                        <Box
-                          padding="6"
-                          boxShadow="lg"
-                          borderRadius="4px"
-                          borderWidth="2px"
-                        >
-                          <SkeletonCircle size="10" />
-                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
-                        </Box>
-                        <Box
-                          padding="6"
-                          boxShadow="lg"
-                          borderRadius="4px"
-                          borderWidth="2px"
-                          marginTop="10px"
-                        >
-                          <SkeletonCircle size="10" />
-                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
-                        </Box>
-                        <Box
-                          padding="6"
-                          boxShadow="lg"
-                          borderRadius="4px"
-                          borderWidth="2px"
-                          marginTop="10px"
-                        >
-                          <SkeletonCircle size="10" />
-                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
-                        </Box>
-                        <Box
-                          padding="6"
-                          boxShadow="lg"
-                          borderRadius="4px"
-                          borderWidth="2px"
-                          marginTop="10px"
-                        >
-                          <SkeletonCircle size="10" />
-                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
-                        </Box>
-                      </GhostTweet>
-                    ) : (
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          flexDirection: "column",
-                          textAlign: "center",
-                        }}
-                      >
-                        <img src="/images/empty.png" />
-                        <h1
+                <ScrollLength>
+                  {!posts.length ? (
+                    <>
+                      {loading === true ? (
+                        <GhostTweet>
+                          <Box
+                            padding="6"
+                            boxShadow="lg"
+                            borderRadius="4px"
+                            borderWidth="2px"
+                          >
+                            <SkeletonCircle size="10" />
+                            <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                          </Box>
+                          <Box
+                            padding="6"
+                            boxShadow="lg"
+                            borderRadius="4px"
+                            borderWidth="2px"
+                            marginTop="10px"
+                          >
+                            <SkeletonCircle size="10" />
+                            <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                          </Box>
+                          <Box
+                            padding="6"
+                            boxShadow="lg"
+                            borderRadius="4px"
+                            borderWidth="2px"
+                            marginTop="10px"
+                          >
+                            <SkeletonCircle size="10" />
+                            <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                          </Box>
+                          <Box
+                            padding="6"
+                            boxShadow="lg"
+                            borderRadius="4px"
+                            borderWidth="2px"
+                            marginTop="10px"
+                          >
+                            <SkeletonCircle size="10" />
+                            <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                          </Box>
+                        </GhostTweet>
+                      ) : (
+                        <div
                           style={{
-                            fontSize: "30px",
-                            marginBottom: "100%",
-                            fontWeight: "bold",
+                            display: "flex",
+                            justifyContent: "center",
+                            flexDirection: "column",
+                            textAlign: "center",
                           }}
                         >
-                          No results found :(
-                        </h1>
+                          <img src="/images/empty.png" />
+                          <h1
+                            style={{
+                              fontSize: "30px",
+                              marginBottom: "100%",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            No results found :(
+                          </h1>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    posts.map((tweet) => (
+                      <div style={{ marginTop: "10px", marginBottom: "10px" }}>
+                        <WrapItem>
+                          <Tweet blog={tweet} />
+                        </WrapItem>
                       </div>
-                    )}
-                  </>
-                ) : (
-                  posts.map((tweet) => (
-                    <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-                      <WrapItem>
-                        <Tweet blog={tweet} />
-                      </WrapItem>
-                    </div>
-                  ))
-                )}
+                    ))
+                  )}
+                </ScrollLength>
               </div>
             </MiddleSide>
 
@@ -302,6 +305,10 @@ const Title = styled.h1`
   font-size: 25px;
   font-family: "Inter", sans-serif;
   font-weight: bold;
+`;
+
+const ScrollLength = styled.div`
+  height: calc(100vh - 246px);
 `;
 
 const SmallerTitle = styled.h1`
