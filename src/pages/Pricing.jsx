@@ -473,14 +473,14 @@ export default function Pricing() {
 
                 <div className="column">
                   <Link to="/register" style={{ width: "90%" }}>
-                    <Button colorScheme="green" width="100%">
+                    <Button colorScheme="green" width="90%">
                       Sign Up
                     </Button>
                   </Link>
                 </div>
                 <div className="column">
                   <Link to="/register" style={{ width: "90%" }}>
-                    <Button colorScheme="green" width="100%">
+                    <Button colorScheme="green" width="90%">
                       Sign up
                     </Button>
                   </Link>
