@@ -50,7 +50,6 @@ export default function Registerpage() {
   function writeUserData(userId, name, email) {
     const db = getDatabase();
     set(ref(db, "users/" + userId), {
-      username: name,
       email: email,
       plan: "free",
     });
