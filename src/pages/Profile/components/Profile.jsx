@@ -8,6 +8,7 @@ import {
   Badge,
 } from "@chakra-ui/react";
 import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
 
 import { useAuth } from "../../../contexts/AuthContext";
 import { auth, db } from "../../../utils/init-firebase";
@@ -48,12 +49,19 @@ export default function Profile() {
     {
       /* get the current plan */
     }
-    const planRef = ref(db, "users/" + currentUser.uid);
-    onValue(planRef, (snapshot) => {
-      console.log(snapshot.val());
-      setPlan(snapshot.val().plan);
-      setDiscord(snapshot.val().discord);
-    });
+    if (currentUser) {
+      axios
+        .get(
+          `https://timnik.pythonanywhere.com/get-plan?uid=${currentUser.uid}`
+        )
+        .then((response) => {
+          setPlan(response.data);
+          console.log(plan);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
 
     loadCaptchaEnginge(6);
     mounted.current = true;
@@ -61,7 +69,7 @@ export default function Profile() {
     return () => {
       mounted.current = false;
     };
-  }, []);
+  }, [currentUser]);
 
   return (
     <>
@@ -78,14 +86,7 @@ export default function Profile() {
       <p>Email: {currentUser.email}</p>
       <p>Plan: {plan}</p>
       <p>
-        Discord:{" "}
-        {discord === undefined ? (
-          <>
-            <Badge colorScheme="red">Not connected</Badge>
-          </>
-        ) : (
-          <>{discord}</>
-        )}
+        Discord: <Badge colorScheme="red">Not connected</Badge>
       </p>
 
       <br />

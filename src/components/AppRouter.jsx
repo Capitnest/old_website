@@ -7,6 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import axios from "axios";
 import { db } from "../utils/init-firebase";
 import { ref, onValue, get, child, getDatabase } from "firebase/database";
 
@@ -57,20 +58,16 @@ export default function AppRouter(props) {
 
   useEffect(() => {
     if (currentUser) {
-      get(child(ref(getDatabase()), `users/${currentUser.uid}`))
-        .then((snapshot) => {
-          if (snapshot.exists()) {
-            if (snapshot.val().plan === "pro") {
-              setPlan("pro");
-            } else {
-              setPlan("free");
-            }
-          } else {
-            console.log("No data available");
-          }
+      axios
+        .get(
+          `https://timnik.pythonanywhere.com/get-plan?uid=${currentUser.uid}`
+        )
+        .then((response) => {
+          setPlan(response.data);
+          console.log(plan);
         })
         .catch((error) => {
-          console.error(error);
+          console.log(error);
         });
     }
   }, [currentUser]);

@@ -64,9 +64,12 @@ import { GiArchiveResearch, GiUpgrade } from "react-icons/gi";
 import { AiOutlineAreaChart, AiOutlineTeam } from "react-icons/ai";
 import { FaTwitter, FaTelegram, FaInstagram, FaGithub } from "react-icons/fa";
 import { SiTrustpilot } from "react-icons/si";
+import axios from "axios";
 
 import { db } from "./../../utils/init-firebase";
 import { ref, onValue, get, child, getDatabase } from "firebase/database";
+
+import { api } from "./../../utils/capitnest";
 
 export default function Mobile() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -78,23 +81,18 @@ export default function Mobile() {
 
   useEffect(() => {
     if (currentUser) {
-      get(child(ref(getDatabase()), `users/${currentUser.uid}`))
-        .then((snapshot) => {
-          if (snapshot.exists()) {
-            if (snapshot.val().plan === "pro") {
-              setPlan("pro");
-            } else {
-              setPlan("free");
-            }
-          } else {
-            console.log("No data available");
-          }
+      axios
+        .get(
+          `https://timnik.pythonanywhere.com/get-plan?uid=${currentUser.uid}`
+        )
+        .then((response) => {
+          setPlan(response.data);
         })
         .catch((error) => {
-          console.error(error);
+          console.log(error);
         });
     }
-  }, []);
+  }, [currentUser]);
 
   function signOut() {
     return auth.signOut();
