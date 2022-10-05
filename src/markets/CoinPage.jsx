@@ -129,8 +129,19 @@ export default function CoinPage() {
             </>
           )}
 
-          <br />
-          <br />
+          <Ad>
+            Data from{" "}
+            <a
+              href="https://www.coingecko.com/"
+              target="_blank"
+              style={{
+                color: "rgb(141, 198, 71)",
+                textDecoration: "underline",
+              }}
+            >
+              CoinGecko
+            </a>
+          </Ad>
         </Content>
       </Layout>
       <Footerr />
@@ -143,4 +154,10 @@ const Content = styled.div`
   justify-content: center;
   flex-direction: column;
   font-family: "Inter", sans-serif;
+`;
+
+const Ad = styled.p`
+  margin-top: 10px;
+  margin-bottom: -25px;
+  text-align: center;
 `;

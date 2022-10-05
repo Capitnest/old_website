@@ -85,6 +85,19 @@ export default function Coins(props) {
             <Hide breakpoint="(max-height: 800px)">
               <CoinItem coins={coins[6]} />
             </Hide>
+            <p style={{ marginTop: "5px" }}>
+              Data from{" "}
+              <a
+                href="https://www.coingecko.com/"
+                target="_blank"
+                style={{
+                  color: "rgb(141, 198, 71)",
+                  textDecoration: "underline",
+                }}
+              >
+                CoinGecko
+              </a>
+            </p>
           </>
         )}
       </div>

@@ -530,6 +530,19 @@ export default function ExchangePage() {
                   </TabPanels>
                 </Tabs>
               </div>
+              <Ad>
+                Data from{" "}
+                <a
+                  href="https://www.coingecko.com/"
+                  target="_blank"
+                  style={{
+                    color: "rgb(141, 198, 71)",
+                    textDecoration: "underline",
+                  }}
+                >
+                  CoinGecko
+                </a>
+              </Ad>
             </>
           )}
         </Content>
@@ -538,6 +551,12 @@ export default function ExchangePage() {
     </>
   );
 }
+
+const Ad = styled.p`
+  margin-top: 10px;
+  margin-bottom: -15px;
+  text-align: right;
+`;
 
 const HideMobile = styled.div`
   @media (max-width: 800px) {

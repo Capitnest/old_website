@@ -71,7 +71,23 @@ export default function MarketsNavbar() {
       <br />
 
       <div>
-        <Button onClick={onOpen}>Categories</Button>
+        <Flex justifyContent="space-between">
+          <Button onClick={onOpen}>Categories</Button>
+
+          <Ad>
+            Data from{" "}
+            <a
+              href="https://www.coingecko.com/"
+              target="_blank"
+              style={{
+                color: "rgb(141, 198, 71)",
+                textDecoration: "underline",
+              }}
+            >
+              CoinGecko
+            </a>
+          </Ad>
+        </Flex>
 
         <Modal isOpen={isOpen} onClose={onClose} size="lg">
           <ModalOverlay />
@@ -167,5 +183,14 @@ const BoxWhite = styled.div`
     transform: scale(1.01);
     transition: 0.3s ease-in-out;
     cursor: pointer;
+  }
+`;
+
+const Ad = styled.p`
+  margin-top: 5px;
+  text-align: right;
+
+  @media (max-width: 600px) {
+    text-align: center;
   }
 `;
