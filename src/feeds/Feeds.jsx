@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import styled from "styled-components";
 import Influencer from "./components/Influencer";
-import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
+import { SearchBar } from "./components/SearchBox";
 import Coins from "./components/CryptoPrices/Coins";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -27,6 +27,7 @@ export default function Feeds() {
   const [blogs, setBlogs] = useState(daily);
   const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
+  const [plan, setPlan] = useState("pro");
 
   const [defaultList, setDefaultList] = useState([]);
 
@@ -92,23 +93,14 @@ export default function Feeds() {
 
             <MiddleSide>
               <Search>
-                {colorMode === "dark" ? (
-                  <SearchBarDark
-                    value={searchKey}
-                    clearSearch={handleClearSearch}
-                    formSubmit={handleSearchBar}
-                    handleSearchKey={(e) => setSearchKey(e.target.value)}
-                    coin={null}
-                  />
-                ) : (
-                  <SearchBarLight
-                    value={searchKey}
-                    clearSearch={handleClearSearch}
-                    formSubmit={handleSearchBar}
-                    handleSearchKey={(e) => setSearchKey(e.target.value)}
-                    coin={null}
-                  />
-                )}
+                <SearchBar
+                  value={searchKey}
+                  clearSearch={handleClearSearch}
+                  formSubmit={handleSearchBar}
+                  handleSearchKey={(e) => setSearchKey(e.target.value)}
+                  coin={null}
+                  plan={plan}
+                />
               </Search>
 
               <div

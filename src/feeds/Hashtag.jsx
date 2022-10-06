@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import styled from "styled-components";
 import Influencer from "./components/Influencer";
-import { SearchBarLight, SearchBarDark } from "./components/SearchBox";
+import { SearchBar } from "./components/SearchBox";
 import Coins from "./components/CryptoPrices/Coins";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -134,23 +134,13 @@ export default function Hashtag() {
 
             <MiddleSide>
               <Search>
-                {colorMode === "dark" ? (
-                  <SearchBarDark
-                    value={searchKey}
-                    clearSearch={handleClearSearch}
-                    formSubmit={handleSearchBar}
-                    handleSearchKey={(e) => setSearchKey(e.target.value)}
-                    coin={coin}
-                  />
-                ) : (
-                  <SearchBarLight
-                    value={searchKey}
-                    clearSearch={handleClearSearch}
-                    formSubmit={handleSearchBar}
-                    handleSearchKey={(e) => setSearchKey(e.target.value)}
-                    coin={coin}
-                  />
-                )}
+                <SearchBar
+                  value={searchKey}
+                  clearSearch={handleClearSearch}
+                  formSubmit={handleSearchBar}
+                  handleSearchKey={(e) => setSearchKey(e.target.value)}
+                  coin={coin}
+                />
               </Search>
 
               <div
