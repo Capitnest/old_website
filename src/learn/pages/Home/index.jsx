@@ -114,7 +114,9 @@ const Home = () => {
                         Become a Writer
                       </Button>
                     </a>
-                    <Button variant="ghost">I am not interested.</Button>
+                    <Button variant="ghost" onClick={onClose}>
+                      I am not interested.
+                    </Button>
                   </ModalFooter>
                 </ModalContent>
               </Modal>
