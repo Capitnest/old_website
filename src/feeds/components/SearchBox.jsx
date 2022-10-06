@@ -18,9 +18,12 @@ import {
 import { CloseIcon, Search2Icon, ChevronDownIcon } from "@chakra-ui/icons";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 export function SearchBar(props) {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { logout, currentUser } = useAuth();
 
   return (
     <Content>
@@ -149,20 +152,23 @@ export function SearchBar(props) {
         </Coins>
       </Form>
       <Options>
-        <Button padding="0px" size="sm">
-          Trending
-        </Button>
-        {props.plan === "pro" ? (
+        {props.plan === "pro" && !props.loggedIn ? (
           <>
-            <Button variant="link">1w</Button>
-            <Button variant="link">1m</Button>
-            <Button variant="link">3m</Button>
-            <Button variant="link">6m</Button>
-            <Button variant="link">1y</Button>
-            <Button variant="link">max</Button>
+            <TimeStamp to="/feeds" name="Trending" />
+            <TimeStamp to="/feeds/general/1" name="1d" />
+            <TimeStamp to="/feeds/general/7" name="1w" />
+            <TimeStamp to="/feeds/general/32" name="1m" />
+            <TimeStamp to="/feeds/general/90" name="3m" />
+            <TimeStamp to="/feeds/general/180" name="6m" />
+            <TimeStamp to="/feeds/general/360" name="1y" />
           </>
         ) : (
           <>
+            <Button size="sm">Trending</Button>
+
+            <Button variant="link" disabled>
+              1d
+            </Button>
             <Button variant="link" disabled>
               1w
             </Button>
@@ -178,14 +184,33 @@ export function SearchBar(props) {
             <Button variant="link" disabled>
               1y
             </Button>
-            <Button variant="link" disabled>
-              max
-            </Button>
           </>
         )}
       </Options>
       <div style={{ height: "7px" }}></div>
     </Content>
+  );
+}
+
+function TimeStamp({ to, name, ...rest }) {
+  const location = useLocation();
+
+  var isActive = location.pathname === to;
+
+  return (
+    <>
+      {isActive ? (
+        <Button variant="solid" size="sm">
+          {name}
+        </Button>
+      ) : (
+        <Link to={to} style={{ marginTop: "4px", marginLeft: "2px" }}>
+          <Button variant="link" {...rest} size="sm">
+            {name}
+          </Button>
+        </Link>
+      )}
+    </>
   );
 }
 

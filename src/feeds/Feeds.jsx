@@ -21,13 +21,15 @@ import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import HashtagsNav from "./components/HashtagsNav";
 import axios from "axios";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function Feeds() {
   const { id } = useParams();
   const [blogs, setBlogs] = useState(daily);
   const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
-  const [plan, setPlan] = useState("pro");
+  const [plan, setPlan] = useState("free");
+  const { logout, currentUser } = useAuth();
 
   const [defaultList, setDefaultList] = useState([]);
 
@@ -48,9 +50,22 @@ export default function Feeds() {
         console.log(error);
       });
 
+    if (currentUser) {
+      axios
+        .get(
+          `https://timnik.pythonanywhere.com/get-plan?uid=${currentUser.uid}`
+        )
+        .then((response) => {
+          setPlan(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
     //scroll to the top
     window.scrollTo(0, 0);
-  }, []);
+  }, [currentUser]);
 
   //Search submit
   const handleSearchBar = (e) => {
@@ -100,6 +115,7 @@ export default function Feeds() {
                   handleSearchKey={(e) => setSearchKey(e.target.value)}
                   coin={null}
                   plan={plan}
+                  loggedIn={currentUser === undefined}
                 />
               </Search>
 
