@@ -168,7 +168,7 @@ export default function Pricing() {
                     <>
                       <p>
                         <BadgeBox style={{ fontSize: "14px" }}>
-                          Save 26%
+                          Save 40%
                         </BadgeBox>
                       </p>
                     </>
@@ -199,7 +199,7 @@ export default function Pricing() {
               <div className="column">
                 <Stat>
                   <StatNumber>
-                    {plan === false ? <>$29</> : <>$39</>}
+                    {plan === false ? <>$15</> : <>$25</>}
                   </StatNumber>
                   <StatHelpText>per month, billed yearly</StatHelpText>
                 </Stat>
