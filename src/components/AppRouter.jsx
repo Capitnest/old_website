@@ -97,7 +97,7 @@ export default function AppRouter(props) {
           <Route path="/learn/post/:id" component={Blog} />
 
           <Route exact path="/feeds" component={Feeds} />
-          <Route path="/feeds/:id" component={Hashtag} />
+          <Route path="/feeds/:id/:date" component={Hashtag} />
 
           <Route exact path="/research" component={Insights} />
           <ProRoute path="/research/:id" component={Research} plan={plan} />

@@ -48,10 +48,10 @@ export default function HashtagsNav() {
                 flexDirection: "column",
               }}
             >
-              <Navlink to="/feeds/bitcoin" name="#Bitcoin" />
-              <Navlink to="/feeds/ethereum" name="#Ethereum" />
-              <Navlink to="/feeds/solana" name="#Solana" />
-              <Navlink to="/feeds/cardano" name="#Cardano" />
+              <Navlink to="/feeds/bitcoin/trending" name="#Bitcoin" />
+              <Navlink to="/feeds/ethereum/trending" name="#Ethereum" />
+              <Navlink to="/feeds/solana/trending" name="#Solana" />
+              <Navlink to="/feeds/cardano/trending" name="#Cardano" />
               {/* <Navlink to="/feeds/polkadot" name="#Polkadot" />
               <Navlink to="/feeds/bnb" name="#BNB" />
               <Navlink to="/feeds/xrp" name="#XRP" />

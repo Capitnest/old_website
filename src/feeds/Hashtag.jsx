@@ -24,7 +24,7 @@ import HashtagsNav from "./components/HashtagsNav";
 import axios from "axios";
 
 export default function Hashtag() {
-  const { id } = useParams();
+  const { id, date } = useParams();
   const [blogs, setBlogs] = useState(daily);
   const [searchKey, setSearchKey] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
@@ -38,9 +38,18 @@ export default function Hashtag() {
     //scroll to the top
     window.scrollTo(0, 0);
 
+    console.log(date + " HERE");
+    var dateApi = "";
+
+    if (date === "trending") {
+      dateApi = "";
+    } else {
+      dateApi = date;
+    }
+
     if (id === "bitcoin") {
       axios
-        .get("https://timnik.pythonanywhere.com/feeds/bitcoin")
+        .get("https://timnik.pythonanywhere.com/feeds/bitcoin" + dateApi)
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -52,7 +61,7 @@ export default function Hashtag() {
         });
     } else if (id === "ethereum") {
       axios
-        .get("https://timnik.pythonanywhere.com/feeds/ethereum")
+        .get("https://timnik.pythonanywhere.com/feeds/ethereum" + dateApi)
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -64,7 +73,7 @@ export default function Hashtag() {
         });
     } else if (id === "cardano") {
       axios
-        .get("https://timnik.pythonanywhere.com/feeds/cardano")
+        .get("https://timnik.pythonanywhere.com/feeds/cardano" + dateApi)
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -76,7 +85,7 @@ export default function Hashtag() {
         });
     } else if (id === "solana") {
       axios
-        .get("https://timnik.pythonanywhere.com/feeds/solana")
+        .get("https://timnik.pythonanywhere.com/feeds/solana" + dateApi)
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
