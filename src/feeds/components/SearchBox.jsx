@@ -13,6 +13,7 @@ import {
   MenuItemOption,
   MenuGroup,
   MenuOptionGroup,
+  useToast,
   MenuDivider,
 } from "@chakra-ui/react";
 import { CloseIcon, Search2Icon, ChevronDownIcon } from "@chakra-ui/icons";
@@ -24,6 +25,7 @@ import { useAuth } from "../../contexts/AuthContext";
 export function SearchBar(props) {
   const { colorMode, toggleColorMode } = useColorMode();
   const { logout, currentUser } = useAuth();
+  const toast = useToast();
 
   return (
     <Content>
@@ -166,24 +168,392 @@ export function SearchBar(props) {
           <>
             <Button size="sm">Trending</Button>
 
-            <Button variant="link" disabled>
-              1d
-            </Button>
-            <Button variant="link" disabled>
-              1w
-            </Button>
-            <Button variant="link" disabled>
-              1m
-            </Button>
-            <Button variant="link" disabled>
-              3m
-            </Button>
-            <Button variant="link" disabled>
-              6m
-            </Button>
-            <Button variant="link" disabled>
-              1y
-            </Button>
+            {currentUser ? (
+              <>
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title: "Capitnest Pro is required to access 1 day feeds",
+                      description: (
+                        <>
+                          {" "}
+                          <a
+                            href="/pricing"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Become a PRO user - 30% OFF
+                          </a>
+                        </>
+                      ),
+                      duration: 9000,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  1d
+                </Button>
+
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title: "Capitnest Pro is required to access 1 week feeds",
+                      description: (
+                        <>
+                          {" "}
+                          <a
+                            href="/pricing"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Become a PRO user - 30% OFF
+                          </a>
+                        </>
+                      ),
+                      duration: 9000,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  1w
+                </Button>
+
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title:
+                        "Capitnest Pro is required to access 1 month feeds",
+                      description: (
+                        <>
+                          {" "}
+                          <a
+                            href="/pricing"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Become a PRO user - 30% OFF
+                          </a>
+                        </>
+                      ),
+                      duration: 9000,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  1m
+                </Button>
+
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title:
+                        "Capitnest Pro is required to access 3 month feeds",
+                      description: (
+                        <>
+                          {" "}
+                          <a
+                            href="/pricing"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Become a PRO user - 30% OFF
+                          </a>
+                        </>
+                      ),
+                      duration: 9000,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  3m
+                </Button>
+
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title:
+                        "Capitnest Pro is required to access 6 month feeds",
+                      description: (
+                        <>
+                          {" "}
+                          <a
+                            href="/pricing"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Become a PRO user - 30% OFF
+                          </a>
+                        </>
+                      ),
+                      duration: 9000,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  6m
+                </Button>
+
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title: "Capitnest Pro is required to access 1 year feeds",
+                      description: (
+                        <>
+                          {" "}
+                          <a
+                            href="/pricing"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Become a PRO user - 30% OFF
+                          </a>
+                        </>
+                      ),
+                      duration: 9000,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  1y
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title: "You need to be logged in to access 1 day feeds",
+                      description: (
+                        <>
+                          <a
+                            href="/login"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Log In
+                          </a>{" "}
+                          /{" "}
+                          <a
+                            href="/register"
+                            style={{
+                              textDecoration: "underline",
+                              marginLeft: "3px",
+                            }}
+                          >
+                            Register for free
+                          </a>
+                        </>
+                      ),
+                      duration: 1500,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  1d
+                </Button>
+
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title: "You need to be logged in to access 1 week feeds",
+                      description: (
+                        <>
+                          <a
+                            href="/login"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Log In
+                          </a>{" "}
+                          /{" "}
+                          <a
+                            href="/register"
+                            style={{
+                              textDecoration: "underline",
+                              marginLeft: "3px",
+                            }}
+                          >
+                            Register for free
+                          </a>
+                        </>
+                      ),
+                      duration: 1500,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  1w
+                </Button>
+
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title: "You need to be logged in to access 1 month feeds",
+                      description: (
+                        <>
+                          <a
+                            href="/login"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Log In
+                          </a>{" "}
+                          /{" "}
+                          <a
+                            href="/register"
+                            style={{
+                              textDecoration: "underline",
+                              marginLeft: "3px",
+                            }}
+                          >
+                            Register for free
+                          </a>
+                        </>
+                      ),
+                      duration: 1500,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  1m
+                </Button>
+
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title: "You need to be logged in to access 3 month feeds",
+                      description: (
+                        <>
+                          <a
+                            href="/login"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Log In
+                          </a>{" "}
+                          /{" "}
+                          <a
+                            href="/register"
+                            style={{
+                              textDecoration: "underline",
+                              marginLeft: "3px",
+                            }}
+                          >
+                            Register for free
+                          </a>
+                        </>
+                      ),
+                      duration: 1500,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  3m
+                </Button>
+
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title: "You need to be logged in to access 6 month feeds",
+                      description: (
+                        <>
+                          <a
+                            href="/login"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Log In
+                          </a>{" "}
+                          /{" "}
+                          <a
+                            href="/register"
+                            style={{
+                              textDecoration: "underline",
+                              marginLeft: "3px",
+                            }}
+                          >
+                            Register for free
+                          </a>
+                        </>
+                      ),
+                      duration: 1500,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  6m
+                </Button>
+
+                <Button
+                  variant="link"
+                  onClick={() =>
+                    toast({
+                      title: "You need to be logged in to access 1 year feeds",
+                      description: (
+                        <>
+                          <a
+                            href="/login"
+                            style={{
+                              textDecoration: "underline",
+                              marginRight: "3px",
+                            }}
+                          >
+                            Log In
+                          </a>{" "}
+                          /{" "}
+                          <a
+                            href="/register"
+                            style={{
+                              textDecoration: "underline",
+                              marginLeft: "3px",
+                            }}
+                          >
+                            Register for free
+                          </a>
+                        </>
+                      ),
+                      duration: 1500,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  1y
+                </Button>
+              </>
+            )}
           </>
         )}
       </Options>
@@ -196,6 +566,10 @@ function TimeStamp({ to, name, ...rest }) {
   const location = useLocation();
 
   var isActive = location.pathname === to;
+
+  if (name === "Trending" && location.pathname === "/") {
+    var isActive = true;
+  }
 
   return (
     <>
