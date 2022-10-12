@@ -37,7 +37,7 @@ const Blog = () => {
         {blog ? (
           <>
             <Helmet>
-              <title>{blog.title} | Capitnest Learn</title>
+              <title>{blog.title} | Capitnest</title>
               <meta name="description" content={blog.description} />
               <meta property="og:image" content={blog.cover} />
             </Helmet>
