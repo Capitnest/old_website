@@ -10,14 +10,43 @@ import { Layout } from "../../../components/Layout";
 import Footerr from "../../../components/Footer";
 import styled from "styled-components";
 import { Badge } from "@chakra-ui/react";
+import { useColorMode, Flex, Avatar } from "@chakra-ui/react";
 import { Ad } from "../../components/common/Ad";
+import { NotionRenderer } from "react-notion";
+import { MdVerified } from "react-icons/md";
+
+import "react-notion/src/styles.css";
+import "prismjs/themes/prism-tomorrow.css";
 
 const Blog = () => {
   const { id } = useParams();
+  const { colorMode, toggleColorMode } = useColorMode();
   const [blog, setBlog] = useState(null);
+  const [data, setData] = useState({});
+
+  function colorTheme() {
+    if (colorMode === "dark") {
+      return "white";
+    }
+    return "black";
+  }
+
+  const NotionWhite = styled.div`
+    color: white;
+
+    * {
+      color: ${colorTheme()};
+    }
+  `;
 
   useEffect(() => {
     let blog = blogList.find((blog) => blog.id === id);
+
+    fetch(
+      `https://notion-api.splitbee.io/v1/page/${blog.notionId}def2748f4d3b416a91c0b5155505d475`
+    )
+      .then((res) => res.json())
+      .then((data) => setData(data));
 
     if (blog) {
       setBlog(blog);
@@ -47,10 +76,32 @@ const Blog = () => {
                   {blog.topic}
                 </Badge>
                 <h1>{blog.title}</h1>
-                <p>
-                  by
-                  <a href={`/team/${blog.authorUsername}`}> {blog.author}</a>
-                </p>
+
+                <Heade>
+                  <Avatar
+                    name={blog.authorUsername}
+                    src={`/images/team/${blog.authorId}.png`}
+                  />
+                  <HeaderText>
+                    <Flex>
+                      <Link to={`/team/${blog.authorId}`}>
+                        <h1 style={{ fontSize: "20px" }}>
+                          {blog.authorUsername}
+                        </h1>
+                      </Link>
+                      {blog.isVerified ? (
+                        <MdVerified
+                          style={{ marginLeft: "3px" }}
+                          size="20"
+                          color="#63b3ed"
+                        />
+                      ) : (
+                        <></>
+                      )}
+                    </Flex>
+                    <p>{blog.date}</p>
+                  </HeaderText>
+                </Heade>
               </Header>
               <Image>
                 <div style={{ display: "flex", justifyContent: "center" }}>
@@ -63,9 +114,9 @@ const Blog = () => {
               </Image>
             </header>
 
-            <Description>{blog.description}</Description>
-
-            <Text>{blog.text}</Text>
+            <NotionWhite>
+              <NotionRenderer blockMap={data} style={{ color: "white" }} />
+            </NotionWhite>
           </>
         ) : (
           <EmptyList />
@@ -76,16 +127,28 @@ const Blog = () => {
   );
 };
 
-const Description = styled.p`
-  margin-top: 50px;
-  font-size: 18px;
-  font-family: "Inter", sans-serif;
+const Heade = styled.div`
+  margin-top: 20px;
+  display: flex;
+
+  h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  p {
+    font-family: "Inter", sans-serif;
+    color: gray;
+    font-weight: 600;
+  }
 `;
 
-const Text = styled.p`
-  margin-top: 50px;
-  font-size: 18px;
-  font-family: "Inter", sans-serif;
+const HeaderText = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 7px;
+  margin-top: 2px;
 `;
 
 const Header = styled.div`
@@ -100,7 +163,9 @@ const Header = styled.div`
 
 const Image = styled.div`
   img {
-    width: 700px;
+    width: 100%;
+    object-fit: cover;
+    height: 350px;
   }
 
   p {

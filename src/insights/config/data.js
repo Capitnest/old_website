@@ -6,31 +6,44 @@ const Bold = styled.span`
 
 const SmallTitle = styled.h1`
   font-weight: bold;
-  font-size: 22px;
+  font-size: 20px;
+  font-weight: 600;
 `;
 
 const BigTitle = styled.h1`
   font-weight: bold;
-  font-size: 30px;
+  font-size: 24px;
 `;
 
 const Italic = styled.span`
   font-style: italic;
 `;
 
+const Content = styled.div`
+  ul {
+    margin-left: 20px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+`;
+
 export const blogList = [
   {
-    id: "yes",
-    title: "What is Bitcoin?",
-    topic: "bitcoin",
-    tags: ["long-term"],
+    id: "ethereum-the-merge",
+    title: "Ethereum: The Merge",
+    tags: ["technical-analysis"],
     author: "Timnik",
-    authorUsername: "timnik",
-    date: "14 July 2022",
-    time: "6",
+    authorId: "timnik",
+    authorUsername: "Timnik",
+    authorName: "timnik",
+    isVerified: true,
+    date: "21 Sep 2022",
     imageSource: "",
-    description: <>dvds</>,
+    notionId: "def2748f4d3b416a91c0b5155505d475",
+    description: <></>,
     text: <></>,
-    cover: "/images/learn/bitcoin/what-is-bitcoin.png",
+    cover: "/images/research/ethereum-the-merge.jpg",
   },
 ];
