@@ -5,7 +5,17 @@ import { Avatar, Flex, useColorMode } from "@chakra-ui/react";
 import { MdVerified } from "react-icons/md";
 
 export const BlogItem = ({
-  blog: { title, tags, authorName, date, summary, img, isVerified, id },
+  blog: {
+    title,
+    tags,
+    authorName,
+    date,
+    summary,
+    img,
+    isVerified,
+    id,
+    authorId,
+  },
 }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -20,7 +30,7 @@ export const BlogItem = ({
               ))}
             </Tags>
             <Header>
-              <Avatar name={authorName} />
+              <Avatar name={authorName} src={`/images/team/${authorId}.png`} />
               <HeaderText>
                 <Flex>
                   <h1>{authorName}</h1>
@@ -53,7 +63,7 @@ export const BlogItem = ({
               ))}
             </Tags>
             <Header>
-              <Avatar name={authorName} />
+              <Avatar name={authorName} src={`/images/team/${authorId}.png`} />
               <HeaderText>
                 <Flex>
                   <h1>{authorName}</h1>
