@@ -22,6 +22,7 @@ import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import HashtagsNav from "./components/HashtagsNav";
 import axios from "axios";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function Hashtag() {
   const { id, date } = useParams();
@@ -31,10 +32,14 @@ export default function Hashtag() {
   const [coin, setCoin] = useState();
   const [defaultList, setDefaultList] = useState([]);
 
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState("");
   const [loading, setLoading] = useState(true);
+  const [plan, setPlan] = useState("free");
+
+  const { logout, currentUser } = useAuth();
 
   useEffect(() => {
+    setLoading(true);
     //scroll to the top
     window.scrollTo(0, 0);
 
@@ -42,14 +47,17 @@ export default function Hashtag() {
     var dateApi = "";
 
     if (date === "trending") {
-      dateApi = "";
+      dateApi = "general";
     } else {
       dateApi = date;
     }
 
     if (id === "bitcoin") {
       axios
-        .get("https://timnik.pythonanywhere.com/feeds/bitcoin" + dateApi)
+        .get(
+          "https://timnik.pythonanywhere.com/feeds?category=bitcoin&date=" +
+            dateApi
+        )
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -61,7 +69,10 @@ export default function Hashtag() {
         });
     } else if (id === "ethereum") {
       axios
-        .get("https://timnik.pythonanywhere.com/feeds/ethereum" + dateApi)
+        .get(
+          "https://timnik.pythonanywhere.com/feeds?category=ethereum&date=" +
+            dateApi
+        )
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -73,7 +84,10 @@ export default function Hashtag() {
         });
     } else if (id === "cardano") {
       axios
-        .get("https://timnik.pythonanywhere.com/feeds/cardano" + dateApi)
+        .get(
+          "https://timnik.pythonanywhere.com/feeds?category=cardano&date=" +
+            dateApi
+        )
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -85,7 +99,25 @@ export default function Hashtag() {
         });
     } else if (id === "solana") {
       axios
-        .get("https://timnik.pythonanywhere.com/feeds/solana" + dateApi)
+        .get(
+          "https://timnik.pythonanywhere.com/feeds?category=solana&date=" +
+            dateApi
+        )
+        .then((response) => {
+          setPosts(response.data);
+          setDefaultList(response.data);
+          setCoin(id);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else if (id === "general") {
+      axios
+        .get(
+          "https://timnik.pythonanywhere.com/feeds?category=crypto&date=" +
+            dateApi
+        )
         .then((response) => {
           setPosts(response.data);
           setDefaultList(response.data);
@@ -96,11 +128,24 @@ export default function Hashtag() {
           console.log(error);
         });
     } else {
+      console.log("nothign!");
       setDefaultList(null);
       setCoin(null);
-      setPosts(null);
     }
-  }, [id]);
+
+    if (currentUser) {
+      axios
+        .get(
+          `https://timnik.pythonanywhere.com/get-plan?uid=${currentUser.uid}`
+        )
+        .then((response) => {
+          setPlan(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [id, date]);
 
   //Search submit
   const handleSearchBar = (e) => {
@@ -149,6 +194,9 @@ export default function Hashtag() {
                   formSubmit={handleSearchBar}
                   handleSearchKey={(e) => setSearchKey(e.target.value)}
                   coin={coin}
+                  plan={plan}
+                  loggedIn={currentUser === undefined}
+                  path={id}
                 />
               </Search>
 
@@ -162,81 +210,191 @@ export default function Hashtag() {
                 }}
               >
                 <ScrollLength>
-                  {!posts.length ? (
+                  {loading === true ? (
                     <>
-                      {loading === true ? (
-                        <GhostTweet>
-                          <Box
-                            padding="6"
-                            boxShadow="lg"
-                            borderRadius="4px"
-                            borderWidth="2px"
-                          >
-                            <SkeletonCircle size="10" />
-                            <SkeletonText mt="4" noOfLines={4} spacing="4" />
-                          </Box>
-                          <Box
-                            padding="6"
-                            boxShadow="lg"
-                            borderRadius="4px"
-                            borderWidth="2px"
-                            marginTop="10px"
-                          >
-                            <SkeletonCircle size="10" />
-                            <SkeletonText mt="4" noOfLines={4} spacing="4" />
-                          </Box>
-                          <Box
-                            padding="6"
-                            boxShadow="lg"
-                            borderRadius="4px"
-                            borderWidth="2px"
-                            marginTop="10px"
-                          >
-                            <SkeletonCircle size="10" />
-                            <SkeletonText mt="4" noOfLines={4} spacing="4" />
-                          </Box>
-                          <Box
-                            padding="6"
-                            boxShadow="lg"
-                            borderRadius="4px"
-                            borderWidth="2px"
-                            marginTop="10px"
-                          >
-                            <SkeletonCircle size="10" />
-                            <SkeletonText mt="4" noOfLines={4} spacing="4" />
-                          </Box>
-                        </GhostTweet>
-                      ) : (
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            flexDirection: "column",
-                            textAlign: "center",
-                          }}
+                      <GhostTweet>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
                         >
-                          <img src="/images/empty.png" />
-                          <h1
-                            style={{
-                              fontSize: "30px",
-                              marginBottom: "100%",
-                              fontWeight: "bold",
-                            }}
-                          >
-                            No results found :(
-                          </h1>
-                        </div>
-                      )}
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
+                          marginTop="10px"
+                        >
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
+                          marginTop="10px"
+                        >
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                        <Box
+                          padding="6"
+                          boxShadow="lg"
+                          borderRadius="4px"
+                          borderWidth="2px"
+                          marginTop="10px"
+                        >
+                          <SkeletonCircle size="10" />
+                          <SkeletonText mt="4" noOfLines={4} spacing="4" />
+                        </Box>
+                      </GhostTweet>
                     </>
                   ) : (
-                    posts.map((tweet) => (
-                      <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-                        <WrapItem>
-                          <Tweet blog={tweet} />
-                        </WrapItem>
-                      </div>
-                    ))
+                    <>
+                      {!posts.length ? (
+                        <>
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              flexDirection: "column",
+                              textAlign: "center",
+                            }}
+                          >
+                            <img src="/images/empty.png" />
+                            <h1
+                              style={{
+                                fontSize: "30px",
+                                marginBottom: "100%",
+                                fontWeight: "bold",
+                              }}
+                            >
+                              No results found :(
+                            </h1>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          {posts.map((tweet) => (
+                            <div
+                              style={{
+                                marginTop: "10px",
+                                marginBottom: "10px",
+                              }}
+                            >
+                              <WrapItem>
+                                <Tweet blog={tweet} />
+                              </WrapItem>
+                            </div>
+                          ))}
+                        </>
+                      )}
+                    </>
                   )}
+                  {/* {posts === null ? (
+                    <>nope</>
+                  ) : (
+                    <>
+                      {!posts.length && loading !== true ? (
+                        <>
+                          {loading === true ? (
+                            <GhostTweet>
+                              <Box
+                                padding="6"
+                                boxShadow="lg"
+                                borderRadius="4px"
+                                borderWidth="2px"
+                              >
+                                <SkeletonCircle size="10" />
+                                <SkeletonText
+                                  mt="4"
+                                  noOfLines={4}
+                                  spacing="4"
+                                />
+                              </Box>
+                              <Box
+                                padding="6"
+                                boxShadow="lg"
+                                borderRadius="4px"
+                                borderWidth="2px"
+                                marginTop="10px"
+                              >
+                                <SkeletonCircle size="10" />
+                                <SkeletonText
+                                  mt="4"
+                                  noOfLines={4}
+                                  spacing="4"
+                                />
+                              </Box>
+                              <Box
+                                padding="6"
+                                boxShadow="lg"
+                                borderRadius="4px"
+                                borderWidth="2px"
+                                marginTop="10px"
+                              >
+                                <SkeletonCircle size="10" />
+                                <SkeletonText
+                                  mt="4"
+                                  noOfLines={4}
+                                  spacing="4"
+                                />
+                              </Box>
+                              <Box
+                                padding="6"
+                                boxShadow="lg"
+                                borderRadius="4px"
+                                borderWidth="2px"
+                                marginTop="10px"
+                              >
+                                <SkeletonCircle size="10" />
+                                <SkeletonText
+                                  mt="4"
+                                  noOfLines={4}
+                                  spacing="4"
+                                />
+                              </Box>
+                            </GhostTweet>
+                          ) : (
+                            <div
+                              style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                flexDirection: "column",
+                                textAlign: "center",
+                              }}
+                            >
+                              <img src="/images/empty.png" />
+                              <h1
+                                style={{
+                                  fontSize: "30px",
+                                  marginBottom: "100%",
+                                  fontWeight: "bold",
+                                }}
+                              >
+                                No results found :(
+                              </h1>
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        posts.map((tweet) => (
+                          <div
+                            style={{ marginTop: "10px", marginBottom: "10px" }}
+                          >
+                            <WrapItem>
+                              <Tweet blog={tweet} />
+                            </WrapItem>
+                          </div>
+                        ))
+                      )}
+                    </>
+                  )} */}
                 </ScrollLength>
               </div>
             </MiddleSide>

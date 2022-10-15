@@ -156,13 +156,13 @@ export function SearchBar(props) {
       <Options>
         {props.plan === "pro" && !props.loggedIn ? (
           <>
-            <TimeStamp to="/feeds" name="Trending" />
-            <TimeStamp to="/feeds/general/1" name="1d" />
-            <TimeStamp to="/feeds/general/7" name="1w" />
-            <TimeStamp to="/feeds/general/32" name="1m" />
-            <TimeStamp to="/feeds/general/90" name="3m" />
-            <TimeStamp to="/feeds/general/180" name="6m" />
-            <TimeStamp to="/feeds/general/360" name="1y" />
+            <TimeStamp to={`/feeds/${props.path}/trending`} name="Trending" />
+            <TimeStamp to={`/feeds/${props.path}/1`} name="1d" />
+            <TimeStamp to={`/feeds/${props.path}/7`} name="1w" />
+            <TimeStamp to={`/feeds/${props.path}/32`} name="1m" />
+            <TimeStamp to={`/feeds/${props.path}/90`} name="3m" />
+            <TimeStamp to={`/feeds/${props.path}/180`} name="6m" />
+            <TimeStamp to={`/feeds/${props.path}/360`} name="1y" />
           </>
         ) : (
           <>
@@ -566,10 +566,6 @@ function TimeStamp({ to, name, ...rest }) {
   const location = useLocation();
 
   var isActive = location.pathname === to;
-
-  if (name === "Trending" && location.pathname === "/") {
-    var isActive = true;
-  }
 
   return (
     <>

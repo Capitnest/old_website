@@ -36,7 +36,7 @@ export default function Feeds() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const url = `https://timnik.pythonanywhere.com/feeds/general`;
+  const url = `https://timnik.pythonanywhere.com/feeds?category=crypto&date=general`;
 
   useEffect(() => {
     axios
@@ -116,6 +116,7 @@ export default function Feeds() {
                   coin={null}
                   plan={plan}
                   loggedIn={currentUser === undefined}
+                  path={"general"}
                 />
               </Search>
 
