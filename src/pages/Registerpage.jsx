@@ -424,7 +424,7 @@ export default function Registerpage() {
             Login
           </Button>
         </Center>
-        {/* <DividerWithText my={6}>OR</DividerWithText>
+        <DividerWithText my={6}>OR</DividerWithText>
         <Button
           variant="outline"
           isFullWidth
@@ -438,7 +438,7 @@ export default function Registerpage() {
           }
         >
           Sign in with Google
-        </Button> */}
+        </Button>
       </Card>
     </Layout>
   );
