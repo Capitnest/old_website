@@ -217,7 +217,7 @@ export default function Pricing() {
                     {plan === false ? (
                       <>
                         <span style={{ textDecorationLine: "line-through" }}>
-                          $20
+                          $25
                         </span>{" "}
                         $10
                       </>
