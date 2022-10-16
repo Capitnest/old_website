@@ -183,7 +183,7 @@ export default function Pricing() {
                     <>
                       <p>
                         <BadgeBox style={{ fontSize: "14px" }}>
-                          Save 50%
+                          Save 60%
                         </BadgeBox>
                       </p>
                     </>
