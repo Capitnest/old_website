@@ -86,7 +86,22 @@ export default function Pricing() {
             </span>
           </div>
         </Title>
-        <Description>Pay monthly or yearly, cancel at any time.</Description>
+        <Description>
+          Pay monthly or yearly, cancel at any time.{"\n"}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "10px",
+            }}
+          >
+            <BadgeBox
+              style={{ fontSize: "14px", width: "150px", fontWeight: "bold" }}
+            >
+              Beta Launch Sale!
+            </BadgeBox>
+          </div>
+        </Description>
 
         <PlanType>
           <p
@@ -168,13 +183,13 @@ export default function Pricing() {
                     <>
                       <p>
                         <BadgeBox style={{ fontSize: "14px" }}>
-                          Save 40%
+                          Save 50%
                         </BadgeBox>
                       </p>
                     </>
                   ) : (
                     <>
-                      <BadgeBox style={{ fontSize: "14px" }}>Save 0%</BadgeBox>
+                      <BadgeBox style={{ fontSize: "14px" }}>Save 40%</BadgeBox>
                     </>
                   )}
                 </span>
@@ -199,7 +214,21 @@ export default function Pricing() {
               <div className="column">
                 <Stat>
                   <StatNumber>
-                    {plan === false ? <>$15</> : <>$25</>}
+                    {plan === false ? (
+                      <>
+                        <span style={{ textDecorationLine: "line-through" }}>
+                          $20
+                        </span>{" "}
+                        $10
+                      </>
+                    ) : (
+                      <>
+                        <span style={{ textDecorationLine: "line-through" }}>
+                          $25
+                        </span>{" "}
+                        $15
+                      </>
+                    )}
                   </StatNumber>
                   <StatHelpText>per month, billed yearly</StatHelpText>
                 </Stat>
@@ -393,6 +422,52 @@ export default function Pricing() {
             <div className="column">-</div>
 
             <div className="column">-</div>
+            <div className="column">
+              <CheckIcon />
+            </div>
+          </Line>
+
+          <Hr />
+
+          <Badge colorScheme="teal">Upcomming Features</Badge>
+
+          <Line>
+            <div className="column">Insights</div>
+            <div className="column">
+              <CloseIcon width="12px" />
+            </div>
+
+            <div className="column">
+              <CheckIcon />
+            </div>
+            <div className="column">
+              <CheckIcon />
+            </div>
+          </Line>
+
+          <Line>
+            <div className="column">Signals</div>
+            <div className="column">
+              <CloseIcon width="12px" />
+            </div>
+
+            <div className="column">
+              <CheckIcon />
+            </div>
+            <div className="column">
+              <CheckIcon />
+            </div>
+          </Line>
+
+          <Line>
+            <div className="column">Portfolio Tracker</div>
+            <div className="column">
+              <CheckIcon />
+            </div>
+
+            <div className="column">
+              <CheckIcon />
+            </div>
             <div className="column">
               <CheckIcon />
             </div>
