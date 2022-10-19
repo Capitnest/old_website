@@ -567,14 +567,27 @@ function TimeStamp({ to, name, ...rest }) {
 
   var isActive = location.pathname === to;
 
+  if (
+    to === "/feeds/general/trending" &&
+    (location.pathname === "/" ||
+      location.pathname === "/feeds" ||
+      location.pathname === "/feeds/general/trending")
+  ) {
+    var isActive = true;
+  }
+
   return (
     <>
       {isActive ? (
-        <Button variant="solid" size="sm">
+        <Button
+          variant="solid"
+          size="sm"
+          style={{ marginLeft: "4px", padding: "6px" }}
+        >
           {name}
         </Button>
       ) : (
-        <Link to={to} style={{ marginTop: "4px", marginLeft: "2px" }}>
+        <Link to={to} style={{ marginTop: "4px" }}>
           <Button variant="link" {...rest} size="sm">
             {name}
           </Button>

@@ -116,7 +116,16 @@ export default function HashtagsNav() {
 function Navlink({ to, name, ...rest }) {
   const location = useLocation();
 
-  const isActive = location.pathname === to;
+  var isActive = location.pathname === to;
+
+  if (
+    to === "/feeds" &&
+    (location.pathname === "/" ||
+      location.pathname === "/feeds" ||
+      location.pathname === "/feeds/general/trending")
+  ) {
+    var isActive = true;
+  }
 
   return (
     <Linkk>
