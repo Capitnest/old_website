@@ -516,7 +516,7 @@ export default function Pricing() {
                     <div className="column">
                       <a
                         class="gumroad-button"
-                        href="https://capitnest.gumroad.com/l/pro?wanted=true"
+                        href="https://capitnest.gumroad.com/l/pro"
                         style={{ width: "90%" }}
                         target="_blank"
                       >
@@ -699,12 +699,12 @@ export default function Pricing() {
                   {plan === false ? (
                     <>
                       <p>
-                        <BadgeBox>Save 26%</BadgeBox>
+                        <BadgeBox>Save 60%</BadgeBox>
                       </p>
                     </>
                   ) : (
                     <>
-                      <BadgeBox>Save 0%</BadgeBox>
+                      <BadgeBox>Save 40%</BadgeBox>
                     </>
                   )}
                 </span>
@@ -712,7 +712,31 @@ export default function Pricing() {
             </h1>
 
             <h2>
-              {plan === false ? <>$29</> : <>$39</>}
+              {plan === false ? (
+                <>
+                  <div
+                    style={{
+                      textDecorationLine: "line-through",
+                      marginRight: "8px",
+                    }}
+                  >
+                    $25
+                  </div>{" "}
+                  $10
+                </>
+              ) : (
+                <>
+                  <div
+                    style={{
+                      textDecorationLine: "line-through",
+                      marginRight: "8px",
+                    }}
+                  >
+                    $25
+                  </div>{" "}
+                  $15
+                </>
+              )}
 
               <span>/mo</span>
             </h2>
@@ -796,21 +820,31 @@ export default function Pricing() {
                   </>
                 ) : (
                   <>
-                    <a
-                      class="gumroad-button"
-                      href="https://capitnest.gumroad.com/l/pro?wanted=true"
-                      style={{
-                        width: "96%",
-                        marginLeft: "2%",
-                        marginRight: "2%",
-                        marginBottom: "2%",
-                      }}
-                      target="_blank"
-                    >
-                      <Button colorScheme="green" width="96%" marginBottom="2%">
-                        Upgrade
-                      </Button>
-                    </a>
+                    {plan === false ? (
+                      <>
+                        <a
+                          class="gumroad-button"
+                          href="https://capitnest.gumroad.com/l/pro"
+                          style={{
+                            width: "96%",
+                            marginLeft: "2%",
+                            marginRight: "2%",
+                            marginBottom: "2%",
+                          }}
+                          target="_blank"
+                        >
+                          <Button
+                            colorScheme="green"
+                            width="96%"
+                            marginBottom="2%"
+                          >
+                            Upgrade
+                          </Button>
+                        </a>
+                      </>
+                    ) : (
+                      <></>
+                    )}
                   </>
                 )}
               </>
