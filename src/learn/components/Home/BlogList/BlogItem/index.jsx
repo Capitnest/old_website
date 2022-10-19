@@ -1,9 +1,23 @@
 import React from "react";
-import { Box, Badge, Flex, useColorMode } from "@chakra-ui/react";
+import { Box, Badge, Flex, useColorMode, Avatar } from "@chakra-ui/react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { MdVerified } from "react-icons/md";
 
-const BlogItem = ({ blog: { title, topic, time, cover, id, description } }) => {
+const BlogItem = ({
+  blog: {
+    title,
+    topic,
+    time,
+    cover,
+    id,
+    description,
+    date,
+    authorUsername,
+    isVerified,
+    author,
+  },
+}) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   function topic_badge_color(topic) {
@@ -60,7 +74,44 @@ const BlogItem = ({ blog: { title, topic, time, cover, id, description } }) => {
             )}
           </Link>
 
-          <Flex justifyContent="space-between" marginTop="10px">
+          <Flex>
+            <Flex>
+              <Avatar
+                src={`/images/team/${authorUsername}.png`}
+                height={35}
+                width={35}
+              />
+              <Flex flexDirection="column" marginTop="-2px" marginLeft="3px">
+                <Link to={`/team/${authorUsername}`}>
+                  <Flex>
+                    <h1
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                        marginLeft: "4px",
+                      }}
+                    >
+                      {author}
+                    </h1>
+
+                    {isVerified ? (
+                      <MdVerified
+                        style={{ marginLeft: "3px" }}
+                        size="17"
+                        color="#4299e1"
+                      />
+                    ) : (
+                      <></>
+                    )}
+                  </Flex>
+                </Link>
+                <p style={{ color: "gray", marginLeft: "4px" }}>{date}</p>
+              </Flex>
+            </Flex>
+          </Flex>
+
+          <Flex justifyContent="space-between" marginTop="20px">
             <Link to={`/learn/post/${id}`}>
               <Button>
                 <p>Read more</p>
@@ -74,10 +125,14 @@ const BlogItem = ({ blog: { title, topic, time, cover, id, description } }) => {
                 marginTop: "4px",
               }}
             >
-              {time} MIN
+              {time} min
             </p>
 
-            <Badge colorScheme={topic_badge_color(topic)} fontSize="16px">
+            <Badge
+              colorScheme={topic_badge_color(topic)}
+              fontSize="16px"
+              textTransform="lowercase"
+            >
               <div style={{ marginTop: "5px", textAlign: "center" }}>
                 {topic}
               </div>
