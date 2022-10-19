@@ -1,0 +1,1550 @@
+{
+  "def2748f-4d3b-416a-91c0-b5155505d475": {
+    "role": "reader",
+    "value": {
+      "id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "version": 555,
+      "type": "page",
+      "properties": { "title": [["Ethereum: The Merge"]] },
+      "content": [
+        "fbef3323-a9da-47a5-af2f-67e70288b982",
+        "07f16fd2-3555-4388-9acd-4b7e35c70812",
+        "a97eb15b-8313-4635-b230-73f254d02570",
+        "43b10574-2753-48fc-b3e8-0ffd900a7cad",
+        "fafc475b-1b2b-4189-acbe-4ce680f84fc2",
+        "66953e30-aa8d-4e30-81dd-e31372466477",
+        "de4aff36-4988-44b9-a66e-655ada38eb67",
+        "1ba6cfb2-0350-4092-8c17-7fe51bce967e",
+        "6c30aee3-88e3-4a09-bada-efc4fb2fc09c",
+        "d72adeb0-715f-4d3d-8d24-bc1f9f2ed1ee",
+        "3ccce6f0-31de-47ce-b63f-e2eda30eb32c",
+        "a0e7c917-e5f6-4b74-af8d-33586224fd73",
+        "a6b5b5e1-5808-4c85-acde-7f71b7984f63",
+        "d5bccc8f-9ddd-4325-ae54-402a756da95a",
+        "57485ad0-ae60-4053-a1fb-30a18cfc8ad4",
+        "41b0e78d-d6e5-4ae9-9267-99e3cf68718b",
+        "e27c9d4f-8515-4001-a304-61550965484b",
+        "a4c7830b-070d-4310-a288-58ce61943929",
+        "96f334f5-7880-4974-ad3c-732b05775a55",
+        "1218fb77-0b99-4c43-80f1-0393f5244e5a",
+        "24bb28a0-0a90-49d4-bc0e-d452103eedfb",
+        "d51eac36-1a22-42ee-ab0b-fb33f28ed977",
+        "0c837514-46dc-466d-9e33-099215c86fc4",
+        "c6393b62-03fc-4d05-851f-2fd25ef0543a",
+        "7afa9a5c-2ea3-47ad-a4bc-a4e0005b0fae",
+        "0876a8ad-be57-4057-b990-bd1789c1db79",
+        "96a6aaa3-8b31-4935-b4a8-fcaadea880b7",
+        "c228ba49-18f0-4341-a08f-a56da3b17e8f",
+        "654bf953-ee34-4595-89ca-1a4fa6bd8739",
+        "42777edf-4f4f-442f-a372-3512c2940b63",
+        "f527608e-e5d3-4336-99ce-89dc98720490",
+        "8da1eb43-cf73-49fb-90cd-0be73c446419",
+        "33b64905-fbe5-45cd-8a46-7257f8b20d4d",
+        "99ae6966-c349-40a2-a30f-407c1bc6f030",
+        "0e832965-932a-44e1-9c40-b56cb6356f30",
+        "7244581a-7b87-4f75-ac80-1995ec29512b",
+        "bfad36be-ac43-437a-a581-0b3f2b94eaf6",
+        "794f0801-4791-4bfe-a0be-2b659e1622db",
+        "a7ce6349-8f12-4d14-942c-cac96e50df88",
+        "e7ce444a-3c1a-4ed8-bebc-87008f5fe54f",
+        "e55f4b20-4c6d-4716-b8dc-fda0b45c6727",
+        "62cba1c1-e8bc-40ff-816d-2e8b8f4018f0",
+        "6dbe93d6-4023-48be-b8e3-f8ce68651f88",
+        "eaeaacc0-a606-49b5-b667-8a76d58ba6de",
+        "e64e5159-35f2-4225-94b6-f60eba20b44c",
+        "1afc4fd7-244c-4acb-a81d-2075982c29a0",
+        "6b68ca3c-c637-4746-8e9c-c34fdc30f06f",
+        "961561c0-5676-4e0d-8ae9-652ffcd3aaf9",
+        "0a648b67-954a-4afa-bb63-9980cfaac4b9",
+        "24b25797-4fe7-4e32-b545-484661d4c88b",
+        "4a90d1a1-3240-49fc-916d-31ca052ea1c2",
+        "cd82ab18-00f6-42be-93e6-ae4a022a9071",
+        "bd5b6e39-0800-49b2-b88a-0448947c6231",
+        "f275de44-4b1b-4412-b21b-58b211def2ba",
+        "4accd945-66e4-4401-8c8c-186f1e90adba",
+        "a61e6a23-5dbb-4fe4-8c79-82fbaa653bd5",
+        "e65429e5-09ac-452c-a3ee-166ddf09d5f5",
+        "dd1bd875-91c7-469f-bf77-8631eb0da416",
+        "cf37700a-dbee-4bbe-a7b9-c36eb4c02e70"
+      ],
+      "format": { "page_full_width": false, "page_small_text": false },
+      "permissions": [
+        {
+          "role": "reader",
+          "type": "public_permission",
+          "added_timestamp": 1665317862571,
+          "allow_duplicate": false
+        }
+      ],
+      "created_time": 1665313740000,
+      "last_edited_time": 1666180200000,
+      "parent_id": "a7cd8826-753e-4880-8294-f760b8b01870",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "fbef3323-a9da-47a5-af2f-67e70288b982": {
+    "role": "reader",
+    "value": {
+      "id": "fbef3323-a9da-47a5-af2f-67e70288b982",
+      "version": 15,
+      "type": "sub_header",
+      "properties": { "title": [["Executive Summary", [["b"]]]] },
+      "created_time": 1665313922844,
+      "last_edited_time": 1665331020000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "07f16fd2-3555-4388-9acd-4b7e35c70812": {
+    "role": "reader",
+    "value": {
+      "id": "07f16fd2-3555-4388-9acd-4b7e35c70812",
+      "version": 52,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "\n• The Merge was finally completed on 15 September 2022.\n• Ethereum's energy consumption is expected to drop by aproximately 99.95% after The Merge, as the need for computational power is removed.\n• One of the common misconceptions about The Merge is that it will reduce the gas fees, which it will not, but it is the first step towards to potential future updates solving bigger issues."
+          ]
+        ]
+      },
+      "created_time": 1665331020000,
+      "last_edited_time": 1665597900000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "a97eb15b-8313-4635-b230-73f254d02570": {
+    "role": "reader",
+    "value": {
+      "id": "a97eb15b-8313-4635-b230-73f254d02570",
+      "version": 4,
+      "type": "text",
+      "created_time": 1665331020000,
+      "last_edited_time": 1665331020000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "43b10574-2753-48fc-b3e8-0ffd900a7cad": {
+    "role": "reader",
+    "value": {
+      "id": "43b10574-2753-48fc-b3e8-0ffd900a7cad",
+      "version": 22,
+      "type": "sub_header",
+      "properties": { "title": [["Contents"]] },
+      "created_time": 1665330540000,
+      "last_edited_time": 1665331020000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "fafc475b-1b2b-4189-acbe-4ce680f84fc2": {
+    "role": "reader",
+    "value": {
+      "id": "fafc475b-1b2b-4189-acbe-4ce680f84fc2",
+      "version": 23,
+      "type": "text",
+      "properties": { "title": [["Executive Summary", [["b"]]]] },
+      "created_time": 1665330900000,
+      "last_edited_time": 1665331020000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "66953e30-aa8d-4e30-81dd-e31372466477": {
+    "role": "reader",
+    "value": {
+      "id": "66953e30-aa8d-4e30-81dd-e31372466477",
+      "version": 37,
+      "type": "numbered_list",
+      "properties": { "title": [["What is The Merge", [["b"]]]] },
+      "created_time": 1665330900000,
+      "last_edited_time": 1665592080000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "de4aff36-4988-44b9-a66e-655ada38eb67": {
+    "role": "reader",
+    "value": {
+      "id": "de4aff36-4988-44b9-a66e-655ada38eb67",
+      "version": 39,
+      "type": "numbered_list",
+      "properties": { "title": [["Effects of The Merge", [["b"]]]] },
+      "content": [
+        "75984643-b2b3-43b5-b36f-e90a9570c1c8",
+        "dc03ec04-c764-4645-bbf4-4907b596f3a7",
+        "cbc50b56-24dc-45c3-b145-85f6403f0702"
+      ],
+      "created_time": 1665330900000,
+      "last_edited_time": 1665330960000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "75984643-b2b3-43b5-b36f-e90a9570c1c8": {
+    "role": "reader",
+    "value": {
+      "id": "75984643-b2b3-43b5-b36f-e90a9570c1c8",
+      "version": 23,
+      "type": "text",
+      "properties": {
+        "title": [["2.1 Tokenomics & Economics after The Merge"]]
+      },
+      "created_time": 1665330900000,
+      "last_edited_time": 1665330960000,
+      "parent_id": "de4aff36-4988-44b9-a66e-655ada38eb67",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "dc03ec04-c764-4645-bbf4-4907b596f3a7": {
+    "role": "reader",
+    "value": {
+      "id": "dc03ec04-c764-4645-bbf4-4907b596f3a7",
+      "version": 9,
+      "type": "text",
+      "properties": { "title": [["2.2 Gas Fees & Impact on the Environment"]] },
+      "created_time": 1665330960000,
+      "last_edited_time": 1665330960000,
+      "parent_id": "de4aff36-4988-44b9-a66e-655ada38eb67",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "cbc50b56-24dc-45c3-b145-85f6403f0702": {
+    "role": "reader",
+    "value": {
+      "id": "cbc50b56-24dc-45c3-b145-85f6403f0702",
+      "version": 34,
+      "type": "text",
+      "properties": { "title": [["2.3 Next Steps after The Merge"]] },
+      "created_time": 1665330960000,
+      "last_edited_time": 1665330960000,
+      "parent_id": "de4aff36-4988-44b9-a66e-655ada38eb67",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "1ba6cfb2-0350-4092-8c17-7fe51bce967e": {
+    "role": "reader",
+    "value": {
+      "id": "1ba6cfb2-0350-4092-8c17-7fe51bce967e",
+      "version": 23,
+      "type": "numbered_list",
+      "properties": { "title": [["Conclusion", [["b"]]]] },
+      "created_time": 1665330960000,
+      "last_edited_time": 1665330960000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "6c30aee3-88e3-4a09-bada-efc4fb2fc09c": {
+    "role": "reader",
+    "value": {
+      "id": "6c30aee3-88e3-4a09-bada-efc4fb2fc09c",
+      "version": 16,
+      "type": "text",
+      "properties": { "title": [["References", [["b"]]]] },
+      "created_time": 1665330960000,
+      "last_edited_time": 1665330960000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "d72adeb0-715f-4d3d-8d24-bc1f9f2ed1ee": {
+    "role": "reader",
+    "value": {
+      "id": "d72adeb0-715f-4d3d-8d24-bc1f9f2ed1ee",
+      "version": 4,
+      "type": "text",
+      "created_time": 1665331020000,
+      "last_edited_time": 1665331020000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "3ccce6f0-31de-47ce-b63f-e2eda30eb32c": {
+    "role": "reader",
+    "value": {
+      "id": "3ccce6f0-31de-47ce-b63f-e2eda30eb32c",
+      "version": 109,
+      "type": "sub_header",
+      "properties": { "title": [["1. What is The Merge?"]] },
+      "created_time": 1665330540000,
+      "last_edited_time": 1665594360000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "a0e7c917-e5f6-4b74-af8d-33586224fd73": {
+    "role": "reader",
+    "value": {
+      "id": "a0e7c917-e5f6-4b74-af8d-33586224fd73",
+      "version": 225,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "The Merge is Ethereum’s transition from a Proof-of-Work to a Proof-of-Stake consensus mechanism, the mechanism used by blockchains to produce & verify new blocks of transaction."
+          ]
+        ]
+      },
+      "created_time": 1665592200000,
+      "last_edited_time": 1665592260000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "a6b5b5e1-5808-4c85-acde-7f71b7984f63": {
+    "role": "reader",
+    "value": {
+      "id": "a6b5b5e1-5808-4c85-acde-7f71b7984f63",
+      "version": 4,
+      "type": "text",
+      "created_time": 1665592200000,
+      "last_edited_time": 1665592320000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "d5bccc8f-9ddd-4325-ae54-402a756da95a": {
+    "role": "reader",
+    "value": {
+      "id": "d5bccc8f-9ddd-4325-ae54-402a756da95a",
+      "version": 85,
+      "type": "text",
+      "properties": {
+        "title": [["The difference between Proof-of-Work & Proof-of-Stake:"]]
+      },
+      "created_time": 1665592200000,
+      "last_edited_time": 1665592320000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "57485ad0-ae60-4053-a1fb-30a18cfc8ad4": {
+    "role": "reader",
+    "value": {
+      "id": "57485ad0-ae60-4053-a1fb-30a18cfc8ad4",
+      "version": 814,
+      "type": "bulleted_list",
+      "properties": {
+        "title": [
+          [
+            "In PoW blockchains miners compete with each other to solve complex mathematical puzzles by using special and expensive computer hardware (know also as mining rigs). The first miner who solves the puzzle gets to create a new block (that contains the transactions of the blockchain), then the block is posted to the blockchain once it has been verified by the other node operators. After the process is completed, the miner is rewarded with the native coins of the blockchain (in the case of Ethereum, ETH)."
+          ]
+        ]
+      },
+      "created_time": 1665592320000,
+      "last_edited_time": 1665593520000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "41b0e78d-d6e5-4ae9-9267-99e3cf68718b": {
+    "role": "reader",
+    "value": {
+      "id": "41b0e78d-d6e5-4ae9-9267-99e3cf68718b",
+      "version": 756,
+      "type": "bulleted_list",
+      "properties": {
+        "title": [
+          [
+            "In PoS there are no more miners, instead of miners, validators produce and verify the new blocks of the blockchain. For people to participate in a PoS blockchain, they must stake an amount of native coin as collateral. Staking is locking an amount of native coins for a specific amount of time. After the time has passed the validators get back the amount they staked + interest earned on the coins staked as an reward. "
+          ]
+        ]
+      },
+      "content": ["f6ff00cd-976b-4104-b869-f01cd25feb56"],
+      "created_time": 1665593220000,
+      "last_edited_time": 1665598020000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "f6ff00cd-976b-4104-b869-f01cd25feb56": {
+    "role": "reader",
+    "value": {
+      "id": "f6ff00cd-976b-4104-b869-f01cd25feb56",
+      "version": 196,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "Instead of competing to produce new blocks, an algorithm chooses which validator gets to propose a new block of transactions. After a certain number of other validators have verified that the transactions are correct, the blocks are posted to the blockchain. Validators are then rewarded with native coins. "
+          ]
+        ]
+      },
+      "created_time": 1665594000000,
+      "last_edited_time": 1665594120000,
+      "parent_id": "41b0e78d-d6e5-4ae9-9267-99e3cf68718b",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "e27c9d4f-8515-4001-a304-61550965484b": {
+    "role": "reader",
+    "value": {
+      "id": "e27c9d4f-8515-4001-a304-61550965484b",
+      "version": 4,
+      "type": "text",
+      "created_time": 1665594120000,
+      "last_edited_time": 1665594240000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "a4c7830b-070d-4310-a288-58ce61943929": {
+    "role": "reader",
+    "value": {
+      "id": "a4c7830b-070d-4310-a288-58ce61943929",
+      "version": 336,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "The transition is called The Merge because it is a merge between Ethereum’s mainnet (Ethereum 1.0 or the one which is PoW) with the Beacon Chain (a separate version of Ethereum which uses PoS and was used to facilitate the transition)."
+          ]
+        ]
+      },
+      "created_time": 1665594120000,
+      "last_edited_time": 1665594600000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "96f334f5-7880-4974-ad3c-732b05775a55": {
+    "role": "reader",
+    "value": {
+      "id": "96f334f5-7880-4974-ad3c-732b05775a55",
+      "version": 5,
+      "type": "text",
+      "created_time": 1665317880000,
+      "last_edited_time": 1665317880000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "1218fb77-0b99-4c43-80f1-0393f5244e5a": {
+    "role": "reader",
+    "value": {
+      "id": "1218fb77-0b99-4c43-80f1-0393f5244e5a",
+      "version": 59,
+      "type": "sub_header",
+      "properties": {
+        "title": [["2.1 Tokenomics & Economics after The Merge"]]
+      },
+      "created_time": 1665317911258,
+      "last_edited_time": 1665381780000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "24bb28a0-0a90-49d4-bc0e-d452103eedfb": {
+    "role": "reader",
+    "value": {
+      "id": "24bb28a0-0a90-49d4-bc0e-d452103eedfb",
+      "version": 222,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "The Merge will have a great impact on the tokenomics of Ethereum and it will potentially cause ETH to become deflationary. The Ethereum supply is controled by two primary forces: issuance and burn."
+          ]
+        ]
+      },
+      "created_time": 1665317940000,
+      "last_edited_time": 1665318120000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "d51eac36-1a22-42ee-ab0b-fb33f28ed977": {
+    "role": "reader",
+    "value": {
+      "id": "d51eac36-1a22-42ee-ab0b-fb33f28ed977",
+      "version": 298,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "Ethereum’s annual token supply change has dropped from 3.79% to 0.20% after The Merge. Before The Merge, approximately 13,000 ETH were issued daily for miner rewards and 1,600 ETH were issued for staking rewards. The total daily issuance before The Merge being 14,600 ETH."
+          ]
+        ]
+      },
+      "created_time": 1665318120000,
+      "last_edited_time": 1665318240000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "0c837514-46dc-466d-9e33-099215c86fc4": {
+    "role": "reader",
+    "value": {
+      "id": "0c837514-46dc-466d-9e33-099215c86fc4",
+      "version": 201,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "After The Merge, only the 1,600 ETH issuance for staking rewards remained. Thus the daily ETH issuance decreased by aproximately 90% after The Merge."
+          ]
+        ]
+      },
+      "created_time": 1665318240000,
+      "last_edited_time": 1665318360000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "c6393b62-03fc-4d05-851f-2fd25ef0543a": {
+    "role": "reader",
+    "value": {
+      "id": "c6393b62-03fc-4d05-851f-2fd25ef0543a",
+      "version": 222,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "The burn mechanism introduced by EIP-1559 burns atleast 1,600 ETH daily, this will result in zero net ETH inflation or less (ETH becoming deflationary)."
+          ]
+        ]
+      },
+      "created_time": 1665318420000,
+      "last_edited_time": 1665318600000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "7afa9a5c-2ea3-47ad-a4bc-a4e0005b0fae": {
+    "role": "reader",
+    "value": {
+      "id": "7afa9a5c-2ea3-47ad-a4bc-a4e0005b0fae",
+      "version": 9,
+      "type": "image",
+      "properties": {
+        "size": [["57.6KB"]],
+        "title": [["ethereum-the-merge-00.png"]],
+        "source": [
+          [
+            "https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f3f350e5-a5cc-4f97-813e-3ffc5a1e6f26/ethereum-the-merge-00.png"
+          ]
+        ]
+      },
+      "format": {
+        "block_width": 1024,
+        "display_source": "https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f3f350e5-a5cc-4f97-813e-3ffc5a1e6f26/ethereum-the-merge-00.png",
+        "block_full_width": false,
+        "block_page_width": true,
+        "block_aspect_ratio": 0.75,
+        "block_preserve_scale": true
+      },
+      "created_time": 1665317820000,
+      "last_edited_time": 1665317820000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "file_ids": ["f3f350e5-a5cc-4f97-813e-3ffc5a1e6f26"],
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "0876a8ad-be57-4057-b990-bd1789c1db79": {
+    "role": "reader",
+    "value": {
+      "id": "0876a8ad-be57-4057-b990-bd1789c1db79",
+      "version": 9,
+      "type": "image",
+      "properties": {
+        "size": [["56.7KB"]],
+        "title": [["ethereum-merge-01.png"]],
+        "source": [
+          [
+            "https://s3-us-west-2.amazonaws.com/secure.notion-static.com/843bc087-a104-4972-9501-61c2271a8cd3/ethereum-merge-01.png"
+          ]
+        ]
+      },
+      "format": {
+        "block_width": 1024,
+        "display_source": "https://s3-us-west-2.amazonaws.com/secure.notion-static.com/843bc087-a104-4972-9501-61c2271a8cd3/ethereum-merge-01.png",
+        "block_full_width": false,
+        "block_page_width": true,
+        "block_aspect_ratio": 0.75,
+        "block_preserve_scale": true
+      },
+      "created_time": 1665323640000,
+      "last_edited_time": 1665323640000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "file_ids": ["843bc087-a104-4972-9501-61c2271a8cd3"],
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "96a6aaa3-8b31-4935-b4a8-fcaadea880b7": {
+    "role": "reader",
+    "value": {
+      "id": "96a6aaa3-8b31-4935-b4a8-fcaadea880b7",
+      "version": 205,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "The Merge combinaned with the EIP-1559 burn mechanism might cause a ‘triple halving’ effect, aproximately equivalent to the effect of three Bitcoin halvings. "
+          ]
+        ]
+      },
+      "created_time": 1665318600000,
+      "last_edited_time": 1665323880000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "c228ba49-18f0-4341-a08f-a56da3b17e8f": {
+    "role": "reader",
+    "value": {
+      "id": "c228ba49-18f0-4341-a08f-a56da3b17e8f",
+      "version": 5,
+      "type": "text",
+      "created_time": 1665323880000,
+      "last_edited_time": 1665323880000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "654bf953-ee34-4595-89ca-1a4fa6bd8739": {
+    "role": "reader",
+    "value": {
+      "id": "654bf953-ee34-4595-89ca-1a4fa6bd8739",
+      "version": 212,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "During period of high demand, the burn rate can exceed the issuance rate. This would cause Ethereum to become deflatationary, meaning that the total supply of ETH could slowly decrease."
+          ]
+        ]
+      },
+      "created_time": 1665323880000,
+      "last_edited_time": 1665324060000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "42777edf-4f4f-442f-a372-3512c2940b63": {
+    "role": "reader",
+    "value": {
+      "id": "42777edf-4f4f-442f-a372-3512c2940b63",
+      "version": 10,
+      "type": "image",
+      "properties": {
+        "size": [["57.3KB"]],
+        "title": [["ethereum-the-merge-02.png"]],
+        "source": [
+          [
+            "https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0d9c5cf6-eadf-443c-9bf6-d89fa1d1c27c/ethereum-the-merge-02.png"
+          ]
+        ]
+      },
+      "format": {
+        "block_width": 1024,
+        "display_source": "https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0d9c5cf6-eadf-443c-9bf6-d89fa1d1c27c/ethereum-the-merge-02.png",
+        "block_full_width": false,
+        "block_page_width": true,
+        "block_aspect_ratio": 0.75,
+        "block_preserve_scale": true
+      },
+      "created_time": 1665325020000,
+      "last_edited_time": 1665325080000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "file_ids": ["0d9c5cf6-eadf-443c-9bf6-d89fa1d1c27c"],
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "f527608e-e5d3-4336-99ce-89dc98720490": {
+    "role": "reader",
+    "value": {
+      "id": "f527608e-e5d3-4336-99ce-89dc98720490",
+      "version": 853,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "The total supply of ETH is projected to start decreasing after The Merge. This means (according to the law of supply and demand) there is an inverse relationship between the supply and price when demand is unchanged. In other worlds, according to economic theory, the price of Ethereum is expected (but not guaranteed) to rise in price when the supply declines. There are factors that could affect this outcome like a bearish market, or the possibility that The Merge is already priced in by the market."
+          ]
+        ]
+      },
+      "created_time": 1665325020000,
+      "last_edited_time": 1665381360000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "8da1eb43-cf73-49fb-90cd-0be73c446419": {
+    "role": "reader",
+    "value": {
+      "id": "8da1eb43-cf73-49fb-90cd-0be73c446419",
+      "version": 51,
+      "type": "sub_header",
+      "properties": { "title": [["2.2 Gas Fees & Impact on the Environment"]] },
+      "created_time": 1665325500000,
+      "last_edited_time": 1665325680000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "33b64905-fbe5-45cd-8a46-7257f8b20d4d": {
+    "role": "reader",
+    "value": {
+      "id": "33b64905-fbe5-45cd-8a46-7257f8b20d4d",
+      "version": 437,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "It has been clarified by the Ethereum Foundation that The Merge will not reduce gas fees. This is because gas fees are determined by the network demand relative to the network’s capacity. The Merge only changed the consensus mechanism from PoW (proof of work) to PoS (proof of stake) and it doesn’t change any other parameters related to the network’s capacity. "
+          ]
+        ]
+      },
+      "created_time": 1665325680000,
+      "last_edited_time": 1665325860000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "99ae6966-c349-40a2-a30f-407c1bc6f030": {
+    "role": "reader",
+    "value": {
+      "id": "99ae6966-c349-40a2-a30f-407c1bc6f030",
+      "version": 598,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "Neverless, a big improvement of The Merge is the impact on the Environment, it is expected to reduce the network’s energy consumption by an aproximatetly 99,95%, meaning that Ethereum will have a much smaller impact on the Environment. This could boost the popularity of Ethereum among the people for a eco-friendly blockchain, as there is increasing concern about the environmental impact of cryptocurrency, the transition from PoW to PoS will definitely help Ethereum be viewed in a more positive light."
+          ]
+        ]
+      },
+      "created_time": 1665325860000,
+      "last_edited_time": 1665326520000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "0e832965-932a-44e1-9c40-b56cb6356f30": {
+    "role": "reader",
+    "value": {
+      "id": "0e832965-932a-44e1-9c40-b56cb6356f30",
+      "version": 4,
+      "type": "text",
+      "created_time": 1665326520000,
+      "last_edited_time": 1665326520000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "7244581a-7b87-4f75-ac80-1995ec29512b": {
+    "role": "reader",
+    "value": {
+      "id": "7244581a-7b87-4f75-ac80-1995ec29512b",
+      "version": 85,
+      "type": "sub_header",
+      "properties": { "title": [["2.3 Next Steps after The Merge"]] },
+      "created_time": 1665326100000,
+      "last_edited_time": 1665330300000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "bfad36be-ac43-437a-a581-0b3f2b94eaf6": {
+    "role": "reader",
+    "value": {
+      "id": "bfad36be-ac43-437a-a581-0b3f2b94eaf6",
+      "version": 6098,
+      "type": "text",
+      "properties": {
+        "title": [
+          ["One of blockchain's main missions at this moment is to solve the "],
+          ["Blockchain Trilemma. ", [["b"]]],
+          [
+            "It is a theory that says that the blockchain technology can only solve two of the following three: "
+          ],
+          ["decentralization", [["b"]]],
+          [", "],
+          ["scalability", [["b"]]],
+          [" or "],
+          ["security", [["b"]]],
+          ["."]
+        ]
+      },
+      "created_time": 1665381840000,
+      "last_edited_time": 1665384840000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "794f0801-4791-4bfe-a0be-2b659e1622db": {
+    "role": "reader",
+    "value": {
+      "id": "794f0801-4791-4bfe-a0be-2b659e1622db",
+      "version": 2,
+      "type": "text",
+      "created_time": 1665381840000,
+      "last_edited_time": 1665381840000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "a7ce6349-8f12-4d14-942c-cac96e50df88": {
+    "role": "reader",
+    "value": {
+      "id": "a7ce6349-8f12-4d14-942c-cac96e50df88",
+      "version": 345,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "According to Vitalik Buterin, Ethereum is only 55% complete after The Merge. Ethereum is still working for upgrades such as The Surge, Verge, Purge, and Splurge. These upgrades are expected to happen in parallel according to Vitalik."
+          ]
+        ]
+      },
+      "created_time": 1665326220000,
+      "last_edited_time": 1665381420000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "e7ce444a-3c1a-4ed8-bebc-87008f5fe54f": {
+    "role": "reader",
+    "value": {
+      "id": "e7ce444a-3c1a-4ed8-bebc-87008f5fe54f",
+      "version": 9,
+      "type": "image",
+      "properties": {
+        "size": [["479.7KB"]],
+        "title": [["Untitled"]],
+        "source": [
+          [
+            "https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ff86a50a-c6c4-418c-8c1e-831e83391093/Untitled.png"
+          ]
+        ]
+      },
+      "format": {
+        "block_width": 925,
+        "display_source": "https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ff86a50a-c6c4-418c-8c1e-831e83391093/Untitled.png",
+        "block_full_width": false,
+        "block_page_width": true,
+        "block_aspect_ratio": 1.107027027027027,
+        "block_preserve_scale": true
+      },
+      "created_time": 1665330540000,
+      "last_edited_time": 1665330540000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "file_ids": ["ff86a50a-c6c4-418c-8c1e-831e83391093"],
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "e55f4b20-4c6d-4716-b8dc-fda0b45c6727": {
+    "role": "reader",
+    "value": {
+      "id": "e55f4b20-4c6d-4716-b8dc-fda0b45c6727",
+      "version": 433,
+      "type": "text",
+      "properties": {
+        "title": [
+          ["The Surge", [["b"]]],
+          [
+            " will update the sharding, the functionality which splits a database horizontally to spread the load. This upgrade will help Ethereum to scale while maintaing decentralisation. With sharding, validators no longer need to store the entire database, which helps to reduce costs of storage, as well as lower hardware requirements."
+          ]
+        ]
+      },
+      "created_time": 1665326400000,
+      "last_edited_time": 1665326640000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "62cba1c1-e8bc-40ff-816d-2e8b8f4018f0": {
+    "role": "reader",
+    "value": {
+      "id": "62cba1c1-e8bc-40ff-816d-2e8b8f4018f0",
+      "version": 21,
+      "type": "text",
+      "properties": {
+        "title": [
+          ["The Verge", [["b"]]],
+          [
+            " is a technical upgrade that proposes to transition from Merkle trees to Verkle trees. Its purpose is to solve the problem of the Ethereum blockchain getting larger in size as time goes by. Switching to Verkle trees will only require block proposers to store state, and allow all other nodes to verify blocks statelessly. This would help to maintain the scalability and sustainability of Ethereum."
+          ]
+        ]
+      },
+      "created_time": 1665326400000,
+      "last_edited_time": 1665326640000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "6dbe93d6-4023-48be-b8e3-f8ce68651f88": {
+    "role": "reader",
+    "value": {
+      "id": "6dbe93d6-4023-48be-b8e3-f8ce68651f88",
+      "version": 27,
+      "type": "text",
+      "properties": {
+        "title": [
+          ["The Purge", [["b"]]],
+          [
+            " upgrades, not all nodes have to permanently store all of the historical blocks. Clients can stop storing history that is older than one year. This would help to reduce the hardware requirements for nodes, as well as the bandwidth of the network."
+          ]
+        ]
+      },
+      "created_time": 1665326400000,
+      "last_edited_time": 1665326640000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "eaeaacc0-a606-49b5-b667-8a76d58ba6de": {
+    "role": "reader",
+    "value": {
+      "id": "eaeaacc0-a606-49b5-b667-8a76d58ba6de",
+      "version": 7,
+      "type": "text",
+      "properties": {
+        "title": [
+          ["Finally, "],
+          ["The Splurge", [["b"]]],
+          [
+            " consists of various miscellaneous upgrades that help to simplify the use of Ethereum for average users. It will also help to check network performance after implementing the above upgrades."
+          ]
+        ]
+      },
+      "created_time": 1665326678944,
+      "last_edited_time": 1665326640000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "e64e5159-35f2-4225-94b6-f60eba20b44c": {
+    "role": "reader",
+    "value": {
+      "id": "e64e5159-35f2-4225-94b6-f60eba20b44c",
+      "version": 5,
+      "type": "text",
+      "created_time": 1665326640000,
+      "last_edited_time": 1665326640000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "1afc4fd7-244c-4acb-a81d-2075982c29a0": {
+    "role": "reader",
+    "value": {
+      "id": "1afc4fd7-244c-4acb-a81d-2075982c29a0",
+      "version": 25,
+      "type": "sub_header",
+      "properties": { "title": [["3. Conclusion"]] },
+      "created_time": 1665326640000,
+      "last_edited_time": 1665326700000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "6b68ca3c-c637-4746-8e9c-c34fdc30f06f": {
+    "role": "reader",
+    "value": {
+      "id": "6b68ca3c-c637-4746-8e9c-c34fdc30f06f",
+      "version": 312,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "The Merge finally completed on 15 September 2022. It is Ethereum’s transition from PoW (proof of work) to PoS (proof of stake) and is one of the biggest events in crypto. The Merge is a big step towards Ethereum’s vision of a scalable, secure, decentralised, and sustainable blockchain."
+          ]
+        ]
+      },
+      "created_time": 1665324060000,
+      "last_edited_time": 1665326940000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "961561c0-5676-4e0d-8ae9-652ffcd3aaf9": {
+    "role": "reader",
+    "value": {
+      "id": "961561c0-5676-4e0d-8ae9-652ffcd3aaf9",
+      "version": 236,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "The Merge will greatly transform Ethereum’s tokenomics for the better. After The Merge, ETH is expected to become deflationary, with the amount of ETH burned being higher or qeual to the amount of ETH issued. "
+          ]
+        ]
+      },
+      "created_time": 1665326760000,
+      "last_edited_time": 1665326940000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "0a648b67-954a-4afa-bb63-9980cfaac4b9": {
+    "role": "reader",
+    "value": {
+      "id": "0a648b67-954a-4afa-bb63-9980cfaac4b9",
+      "version": 26,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "The Merge also reduced the network’s energy consumption by an aproximatetly 99,95%, meaning that Ethereum will have a much smaller impact on the Environment."
+          ]
+        ]
+      },
+      "created_time": 1665326940000,
+      "last_edited_time": 1665326940000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "24b25797-4fe7-4e32-b545-484661d4c88b": {
+    "role": "reader",
+    "value": {
+      "id": "24b25797-4fe7-4e32-b545-484661d4c88b",
+      "version": 221,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "Finally, The Merge is just one of the many upcoming upgrades for Ethereum. After The Merge, Ethereum is only approximatetly 55% complete. It will be very exciting to see what the future holds for Ethereum."
+          ]
+        ]
+      },
+      "created_time": 1665326880000,
+      "last_edited_time": 1665327000000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "4a90d1a1-3240-49fc-916d-31ca052ea1c2": {
+    "role": "reader",
+    "value": {
+      "id": "4a90d1a1-3240-49fc-916d-31ca052ea1c2",
+      "version": 5,
+      "type": "text",
+      "created_time": 1665327000000,
+      "last_edited_time": 1665327000000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "cd82ab18-00f6-42be-93e6-ae4a022a9071": {
+    "role": "reader",
+    "value": {
+      "id": "cd82ab18-00f6-42be-93e6-ae4a022a9071",
+      "version": 22,
+      "type": "sub_header",
+      "properties": { "title": [["References:"]] },
+      "created_time": 1665327000000,
+      "last_edited_time": 1665327000000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "bd5b6e39-0800-49b2-b88a-0448947c6231": {
+    "role": "reader",
+    "value": {
+      "id": "bd5b6e39-0800-49b2-b88a-0448947c6231",
+      "version": 53,
+      "type": "bulleted_list",
+      "properties": {
+        "title": [
+          ["“The Merge” "],
+          ["Crypto.com", [["a", "http://Crypto.com"]]],
+          [" Research, "]
+        ]
+      },
+      "created_time": 1665327000000,
+      "last_edited_time": 1665327060000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "f275de44-4b1b-4412-b21b-58b211def2ba": {
+    "role": "reader",
+    "value": {
+      "id": "f275de44-4b1b-4412-b21b-58b211def2ba",
+      "version": 4,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "https://crypto.com/research/ethereum-the-merge/",
+            [["a", "https://crypto.com/research/ethereum-the-merge/"]]
+          ]
+        ]
+      },
+      "created_time": 1665327060000,
+      "last_edited_time": 1665327060000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "4accd945-66e4-4401-8c8c-186f1e90adba": {
+    "role": "reader",
+    "value": {
+      "id": "4accd945-66e4-4401-8c8c-186f1e90adba",
+      "version": 11,
+      "type": "text",
+      "created_time": 1665327060000,
+      "last_edited_time": 1665327060000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "a61e6a23-5dbb-4fe4-8c79-82fbaa653bd5": {
+    "role": "reader",
+    "value": {
+      "id": "a61e6a23-5dbb-4fe4-8c79-82fbaa653bd5",
+      "version": 23,
+      "type": "bulleted_list",
+      "properties": {
+        "title": [
+          ["“"],
+          ["Ethereum Token Issuance Plummets 95% Following Merge” ", [["b"]]],
+          ["Decrypt.co", [["b"], ["a", "http://Decrypt.co"]]],
+          [" ", [["b"]]]
+        ]
+      },
+      "created_time": 1665327060000,
+      "last_edited_time": 1665327060000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "e65429e5-09ac-452c-a3ee-166ddf09d5f5": {
+    "role": "reader",
+    "value": {
+      "id": "e65429e5-09ac-452c-a3ee-166ddf09d5f5",
+      "version": 5,
+      "type": "text",
+      "properties": {
+        "title": [
+          [
+            "https://decrypt.co/110331/ethereum-token-issuance-plummets-95-following-merge",
+            [
+              [
+                "a",
+                "https://decrypt.co/110331/ethereum-token-issuance-plummets-95-following-merge"
+              ]
+            ]
+          ]
+        ]
+      },
+      "created_time": 1665327060000,
+      "last_edited_time": 1665327060000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "dd1bd875-91c7-469f-bf77-8631eb0da416": {
+    "role": "reader",
+    "value": {
+      "id": "dd1bd875-91c7-469f-bf77-8631eb0da416",
+      "version": 4,
+      "type": "text",
+      "created_time": 1665327060000,
+      "last_edited_time": 1665327060000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  },
+  "cf37700a-dbee-4bbe-a7b9-c36eb4c02e70": {
+    "role": "reader",
+    "value": {
+      "id": "cf37700a-dbee-4bbe-a7b9-c36eb4c02e70",
+      "version": 6,
+      "type": "text",
+      "created_time": 1665327060000,
+      "last_edited_time": 1665381840000,
+      "parent_id": "def2748f-4d3b-416a-91c0-b5155505d475",
+      "parent_table": "block",
+      "alive": true,
+      "created_by_table": "notion_user",
+      "created_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "last_edited_by_table": "notion_user",
+      "last_edited_by_id": "259053db-c5f4-40d2-ae23-eeb6c7d32817",
+      "space_id": "4ad4a0af-ab6c-4bad-83a3-bfafc10db748"
+    }
+  }
+}

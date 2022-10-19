@@ -14,9 +14,12 @@ import { useColorMode, Flex, Avatar } from "@chakra-ui/react";
 import { Ad } from "../../components/common/Ad";
 import { NotionRenderer } from "react-notion";
 import { MdVerified } from "react-icons/md";
+import axios from "axios";
 
 import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
+
+import response from "./../../data/themerge.json";
 
 const Blog = () => {
   const { id } = useParams();
@@ -42,11 +45,21 @@ const Blog = () => {
   useEffect(() => {
     let blog = blogList.find((blog) => blog.id === id);
 
-    fetch(
-      `https://notion-api.splitbee.io/v1/page/${blog.notionId}def2748f4d3b416a91c0b5155505d475`
-    )
-      .then((res) => res.json())
-      .then((data) => setData(data));
+    // axios
+    //   .get(`https://notion-api.splitbee.io/v1/page/${blog.notionId}`)
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+    // fetch(`https://notion-api.splitbee.io/v1/page/${blog.notionId}`)
+    //   .then((res) => res.json())
+    //   .then((data) => setData(data))
+    //   .catch((rejected) => {
+    //     console.log(rejected);
+    //   });
 
     if (blog) {
       setBlog(blog);
@@ -115,7 +128,7 @@ const Blog = () => {
             </header>
 
             <NotionWhite>
-              <NotionRenderer blockMap={data} style={{ color: "white" }} />
+              <NotionRenderer blockMap={response} style={{ color: "white" }} />
             </NotionWhite>
           </>
         ) : (
