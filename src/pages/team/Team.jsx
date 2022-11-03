@@ -27,7 +27,7 @@ export default function Team() {
               }}
             >
               <Image>
-                <img src={member.profilePic} />
+                <img src={member.profilePic} alt="avatar" />
               </Image>
 
               <Text>

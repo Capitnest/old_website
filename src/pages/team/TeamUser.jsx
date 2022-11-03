@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { members } from "./members";
 import { Layout } from "../../components/Layout";
-import { Avatar, Button, Flex } from "@chakra-ui/react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { BsGithub, BsTwitter, BsInstagram, BsMedium } from "react-icons/bs";
@@ -37,7 +36,7 @@ const TeamUser = () => {
           </Link>
 
           <Image>
-            <img src={blog.profilePic} />
+            <img src={blog.profilePic} alt="avatar" />
           </Image>
 
           <Text>
@@ -50,7 +49,11 @@ const TeamUser = () => {
             {blog.github === "" ? (
               <></>
             ) : (
-              <a href={`https://www.github.com/${blog.github}`} target="_blank">
+              <a
+                href={`https://www.github.com/${blog.github}`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BsGithub size={30} />
               </a>
             )}
@@ -61,6 +64,7 @@ const TeamUser = () => {
               <a
                 href={`https://www.twitter.com/${blog.twitter}`}
                 target="_blank"
+                rel="noreferrer"
               >
                 <BsTwitter size={30} />
               </a>
@@ -72,6 +76,7 @@ const TeamUser = () => {
               <a
                 href={`https://www.instagram.com/${blog.instagram}`}
                 target="_blank"
+                rel="noreferrer"
               >
                 <BsInstagram size={30} />
               </a>
@@ -83,6 +88,7 @@ const TeamUser = () => {
               <a
                 href={`https://www.medium.com/@${blog.medium}`}
                 target="_blank"
+                rel="noreferrer"
               >
                 <BsMedium size={30} />
               </a>

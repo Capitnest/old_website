@@ -8,8 +8,6 @@ import {
 } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
-import { db } from "../utils/init-firebase";
-import { ref, onValue, get, child, getDatabase } from "firebase/database";
 
 import ForgotPasswordPage from "../pages/ForgotPasswordPage";
 import Homepage from "../pages/Home/Homepage";
@@ -35,12 +33,11 @@ import Manifesto from "../pages/company/manifesto/Manifesto";
 import Contact from "../pages/company/contact/Contact";
 import Advertise from "../pages/company/advertise/Advertise";
 
-import Test from "../Test";
-
 // Learn
 import Blog from "../learn/pages/Blog";
 import Home from "../learn/pages/Home";
 import Explore from "../learn/pages/Explore/Explore";
+import Videos from "../learn/pages/Videos";
 
 // Team
 import TeamUser from "../pages/team/TeamUser";
@@ -92,9 +89,10 @@ export default function AppRouter(props) {
           <Route path="/markets/categories/:id" component={Categories} />
           <Route path="/markets/page/:id" component={MarketsPage} />
 
-          <Route path="/learn" exact component={Home} />
-          <Route exact path="/explore" component={Explore} />
+          <Route path="/learn/articles" exact component={Home} />
           <Route path="/learn/post/:id" component={Blog} />
+          <Route path="/learn/videos" components={Videos} />
+          <Route path="/learn/explore" component={Explore} />
 
           <Route exact path="/feeds" component={Feeds} />
           <Route path="/feeds/:id/:date" component={Hashtag} />

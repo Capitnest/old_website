@@ -6,7 +6,6 @@ import styled from "styled-components";
 
 //COMPONENTS
 import Profile from "./components/Profile";
-import Notifications from "./components/Notifications";
 import Activate from "./components/Activate";
 
 export default function Profilepage() {

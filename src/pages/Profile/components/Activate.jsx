@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../../contexts/AuthContext";
 import {
@@ -14,11 +14,11 @@ import {
 
 export default function Activate() {
   const [message, setMessage] = useState();
-  const { logout, currentUser } = useAuth();
+  const { currentUser } = useAuth();
   const [license, setLicense] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   function ActivateLicense(e) {
     e.preventDefault();

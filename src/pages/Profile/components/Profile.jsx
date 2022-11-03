@@ -11,12 +11,9 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 import { useAuth } from "../../../contexts/AuthContext";
-import { auth, db } from "../../../utils/init-firebase";
-import { ref, onValue } from "firebase/database";
+import { auth } from "../../../utils/init-firebase";
 
 import { updateProfile } from "firebase/auth";
-
-import styled from "styled-components";
 
 //Captcha
 import {
@@ -32,23 +29,13 @@ export default function Profile() {
   const mounted = useRef(false);
   const toast = useToast();
   const [plan, setPlan] = useState("free");
-  const [discord, setDiscord] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   function signOut() {
     return auth.signOut();
   }
 
-  function Username() {
-    if (currentUser.displayName == null) {
-      return <>Someone</>;
-    }
-  }
-
   useEffect(() => {
-    {
-      /* get the current plan */
-    }
     if (currentUser) {
       axios
         .get(
@@ -56,11 +43,8 @@ export default function Profile() {
         )
         .then((response) => {
           setPlan(response.data);
-          console.log(plan);
         })
-        .catch((error) => {
-          console.log(error);
-        });
+        .catch((error) => {});
     }
 
     loadCaptchaEnginge(6);
@@ -102,7 +86,7 @@ export default function Profile() {
           <form
             onSubmit={async (e) => {
               e.preventDefault();
-              if (validateCaptcha(captcha) == true) {
+              if (validateCaptcha(captcha) === true) {
                 loadCaptchaEnginge(6);
               } else {
                 toast({
@@ -215,11 +199,3 @@ export default function Profile() {
     </>
   );
 }
-
-const Content = styled.div`
-  margin-top: -60px;
-
-  @media (max-width: 575px) {
-    margin-top: 10px;
-  }
-`;

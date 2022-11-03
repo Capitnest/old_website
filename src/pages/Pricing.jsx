@@ -3,13 +3,9 @@ import { Layout } from "../components/Layout";
 import styled from "styled-components";
 import {
   Stat,
-  StatLabel,
   StatNumber,
   StatHelpText,
-  StatArrow,
-  StatGroup,
   Switch,
-  Tooltip,
   Badge,
   Hide,
   useColorMode,
@@ -17,19 +13,16 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { TypeAnimation } from "react-type-animation";
-import { CheckIcon, QuestionIcon, CloseIcon } from "@chakra-ui/icons";
+import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
 import { AiFillCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
-import { ref, onValue, get, child, getDatabase } from "firebase/database";
+import { ref, get, child, getDatabase } from "firebase/database";
 import { useAuth } from "../contexts/AuthContext";
-import { auth } from "../utils/init-firebase";
 import { Link } from "react-router-dom";
 
 export default function Pricing() {
   const [plan, setPlan] = useState(false);
-  const { colorMode, toggleColorMode } = useColorMode();
-
-  const { logout, currentUser } = useAuth();
-
+  const { colorMode } = useColorMode();
+  const { currentUser } = useAuth();
   const [plann, setPlann] = useState("");
 
   useEffect(() => {
@@ -37,22 +30,15 @@ export default function Pricing() {
       get(child(ref(getDatabase()), `users/${currentUser.uid}`))
         .then((snapshot) => {
           if (snapshot.exists()) {
-            console.log(snapshot.val());
             if (snapshot.val().plan === "pro") {
-              console.log("yep");
               setPlann("pro");
             } else {
               setPlann("free");
             }
           } else {
-            console.log("No data available");
           }
         })
-        .catch((error) => {
-          console.error(error);
-        });
-    } else {
-      console.log("nope");
+        .catch((error) => {});
     }
   }, []);
 

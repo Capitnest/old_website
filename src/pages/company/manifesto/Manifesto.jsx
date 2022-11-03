@@ -1,7 +1,6 @@
 import React from "react";
 import { Layout } from "../../../components/Layout";
 import styled from "styled-components";
-import { chakra, Flex } from "@chakra-ui/react";
 import Footerr from "../../../components/Footer";
 
 export default function Manifesto() {
@@ -72,11 +71,6 @@ export default function Manifesto() {
 }
 
 const Content = styled.div``;
-
-const Text = styled.p`
-  font-family: "Inter", sans-serif;
-  font-family: "Libre Baskerville", serif;
-`;
 
 const Title = styled.h1`
   font-family: "Inter", sans-serif;

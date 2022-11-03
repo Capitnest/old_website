@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Navlink from "./../Navlink";
 import { useAuth } from "./../../contexts/AuthContext";
@@ -7,8 +7,11 @@ import { auth } from "./../../utils/init-firebase";
 import { Link } from "react-router-dom";
 
 import { CgProfile } from "react-icons/cg";
-import { FaGripLinesVertical, FaMoon } from "react-icons/fa";
+import { FaMoon } from "react-icons/fa";
 import { BsFillSunFill } from "react-icons/bs";
+import { MdArticle, MdOndemandVideo } from "react-icons/md";
+
+import Dropdown from "react-bootstrap/Dropdown";
 
 import styled from "styled-components";
 import {
@@ -33,8 +36,15 @@ import {
 
 export default function Desktop() {
   const { colorMode, toggleColorMode } = useColorMode();
-
   const { logout, currentUser } = useAuth();
+
+  const [show, setShow] = useState(false);
+  const showDropdown = (e) => {
+    setShow(true);
+  };
+  const hideDropdown = (e) => {
+    setShow(false);
+  };
 
   function signOut() {
     return auth.signOut();
@@ -72,9 +82,81 @@ export default function Desktop() {
           <Link to="/markets">
             <Navlink to="/markets" name="Markets" />
           </Link>
-          <Link to="/learn">
-            <Navlink to="/learn" name="Learn" />
-          </Link>
+          <div
+            style={{ display: "flex", flexDirection: "column" }}
+            onMouseEnter={showDropdown}
+            onMouseLeave={hideDropdown}
+          >
+            <Link to="/learn/explore">
+              <Navlink to="/learn/explore" name="Learn" activated={show} />
+            </Link>
+
+            <Dropdown show={show}>
+              <div style={{ height: "3px" }} />
+
+              <Dropdown.Menu
+                style={{
+                  backgroundColor: (() => {
+                    if (colorMode === "light") {
+                      return "rgb(255, 255, 255)";
+                    } else {
+                      return "rgb(26, 32, 44)";
+                    }
+                  })(),
+                  color: (() => {
+                    if (colorMode === "light") {
+                      return "black";
+                    } else {
+                      return "white";
+                    }
+                  })(),
+                  borderColor: (() => {
+                    if (colorMode === "light") {
+                      return "black";
+                    } else {
+                      return "white";
+                    }
+                  })(),
+                  borderWidth: "1px",
+                  borderColor: "#04b681",
+                  width: "410px",
+                }}
+              >
+                <DropdownContent>
+                  <Link to="/learn/articles">
+                    <div>
+                      <DropdownIcon>
+                        <MdArticle
+                          size={30}
+                          color="white"
+                          style={{ marginLeft: "10px", marginTop: "10px" }}
+                        />
+                      </DropdownIcon>
+                      <span>
+                        <h1>Articles & Tutorials</h1>
+                        <p>Learn everything about crypto.</p>
+                      </span>
+                    </div>
+                  </Link>
+                  <Link to="/learn/videos">
+                    <div>
+                      <DropdownIcon>
+                        <MdOndemandVideo
+                          size={30}
+                          color="white"
+                          style={{ marginLeft: "10px", marginTop: "10px" }}
+                        />
+                      </DropdownIcon>
+                      <span>
+                        <h1>Videos</h1>
+                        <p>Advanced strategies & analytics in video format.</p>
+                      </span>
+                    </div>
+                  </Link>
+                </DropdownContent>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
           <Link to="/research">
             <Navlink to="/research" name="Research" />
           </Link>
@@ -193,6 +275,47 @@ const Content = styled.div`
     padding-left: 10px;
     padding-right: 10px;
   }
+`;
+
+const DropdownContent = styled.div`
+  margin: 10px;
+  margin-top: 0px;
+  margin-bottom: -5px;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    margin-bottom: 5px;
+
+    &:hover {
+      color: #04b681;
+    }
+
+    span {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+
+    h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    p {
+      color: white;
+    }
+  }
+`;
+
+const DropdownIcon = styled.div`
+  background-color: #04b681;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
 `;
 
 const VerticalLine = styled.div`

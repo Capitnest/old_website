@@ -1,7 +1,6 @@
 import React from "react";
 import { Layout } from "../../../components/Layout";
 import styled from "styled-components";
-import { chakra, Flex } from "@chakra-ui/react";
 import Footerr from "../../../components/Footer";
 
 export default function Contact() {
@@ -32,7 +31,11 @@ export default function Contact() {
           <Description>
             Banner on the most visited & used section on our website.
             <br /> <br />
-            <img src="/images/ads/banner.png" width="600px" />
+            <img
+              src="/images/ads/banner.png"
+              width="600px"
+              alt="example banner"
+            />
             <br /> <br />
             <span style={{ fontStyle: "italic" }}>Priced per month</span>
             <br /> <br />
@@ -58,7 +61,11 @@ export default function Contact() {
           <Description>
             A custom post on the general page on Feeds.
             <br /> <br />
-            <img src="/images/ads/post.png" width="600px" />
+            <img
+              src="/images/ads/post.png"
+              width="600px"
+              alt="Example custom post ad"
+            />
             <br /> <br />
             <span style={{ fontStyle: "italic" }}>Priced per day</span>
             <br /> <br />

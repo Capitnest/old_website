@@ -37,7 +37,7 @@ export default function Registerpage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const toast = useToast();
   const mounted = useRef(false);
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   useEffect(() => {
     loadCaptchaEnginge(6);
@@ -93,7 +93,7 @@ export default function Registerpage() {
               return;
             }
 
-            if (validateCaptcha(captcha) == true) {
+            if (validateCaptcha(captcha) === true) {
               loadCaptchaEnginge(6);
             } else {
               toast({
