@@ -7,9 +7,10 @@ import { auth } from "./../../utils/init-firebase";
 import { Link } from "react-router-dom";
 
 import { CgProfile } from "react-icons/cg";
-import { FaMoon } from "react-icons/fa";
-import { BsFillSunFill } from "react-icons/bs";
+import { FaMoon, FaChartPie } from "react-icons/fa";
+import { BsFillSunFill, BsCurrencyExchange } from "react-icons/bs";
 import { MdArticle, MdOndemandVideo } from "react-icons/md";
+import { AiOutlineAreaChart } from "react-icons/ai";
 
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -46,6 +47,14 @@ export default function Desktop() {
     setShow(false);
   };
 
+  const [showw, setShoww] = useState(false);
+  const showDropdownn = (e) => {
+    setShoww(true);
+  };
+  const hideDropdownn = (e) => {
+    setShoww(false);
+  };
+
   function signOut() {
     return auth.signOut();
   }
@@ -79,9 +88,98 @@ export default function Desktop() {
           <Link to="/feeds">
             <Navlink to="/feeds" name="Feed" />
           </Link>
-          <Link to="/markets">
-            <Navlink to="/markets" name="Markets" />
-          </Link>
+
+          <div
+            style={{ display: "flex", flexDirection: "column" }}
+            onMouseEnter={showDropdownn}
+            onMouseLeave={hideDropdownn}
+          >
+            <Link to="/markets">
+              <Navlink to="/markets" name="Markets" activated={showw} />
+            </Link>
+
+            <Dropdown show={showw}>
+              <div style={{ height: "3px" }} />
+
+              <Dropdown.Menu
+                style={{
+                  backgroundColor: (() => {
+                    if (colorMode === "light") {
+                      return "rgb(255, 255, 255)";
+                    } else {
+                      return "rgb(26, 32, 44)";
+                    }
+                  })(),
+                  color: (() => {
+                    if (colorMode === "light") {
+                      return "black";
+                    } else {
+                      return "white";
+                    }
+                  })(),
+                  borderColor: (() => {
+                    if (colorMode === "light") {
+                      return "black";
+                    } else {
+                      return "white";
+                    }
+                  })(),
+                  borderWidth: "1px",
+                  borderColor: "#04b681",
+                  width: "410px",
+                }}
+              >
+                <DropdownContent>
+                  <Link to="/markets">
+                    <div>
+                      <DropdownIcon>
+                        <AiOutlineAreaChart
+                          size={30}
+                          color="white"
+                          style={{ marginLeft: "10px", marginTop: "10px" }}
+                        />
+                      </DropdownIcon>
+                      <span>
+                        <h1>Markets</h1>
+                        <p>Track & analyze any cryptocurrency.</p>
+                      </span>
+                    </div>
+                  </Link>
+                  <Link to="/exchanges">
+                    <div>
+                      <DropdownIcon>
+                        <BsCurrencyExchange
+                          size={30}
+                          color="white"
+                          style={{ marginLeft: "10px", marginTop: "10px" }}
+                        />
+                      </DropdownIcon>
+                      <span>
+                        <h1>Exchanges</h1>
+                        <p>Data about the top crypto exchanges.</p>
+                      </span>
+                    </div>
+                  </Link>
+                  <Link to="/indexes">
+                    <div>
+                      <DropdownIcon>
+                        <FaChartPie
+                          size={30}
+                          color="white"
+                          style={{ marginLeft: "10px", marginTop: "10px" }}
+                        />
+                      </DropdownIcon>
+                      <span>
+                        <h1>Indexes</h1>
+                        <p>The top indexes of cryptocurrencies.</p>
+                      </span>
+                    </div>
+                  </Link>
+                </DropdownContent>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+
           <div
             style={{ display: "flex", flexDirection: "column" }}
             onMouseEnter={showDropdown}
@@ -157,6 +255,7 @@ export default function Desktop() {
               </Dropdown.Menu>
             </Dropdown>
           </div>
+
           <Link to="/research">
             <Navlink to="/research" name="Research" />
           </Link>
@@ -250,7 +349,7 @@ export default function Desktop() {
 
 const Pages = styled.div`
   display: flex;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-left: 20px;
 `;
 
