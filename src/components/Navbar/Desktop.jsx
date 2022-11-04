@@ -403,10 +403,6 @@ const DropdownContent = styled.div`
       font-weight: 600;
       margin-top: 5px;
     }
-
-    p {
-      color: white;
-    }
   }
 `;
 
