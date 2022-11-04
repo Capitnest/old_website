@@ -384,12 +384,18 @@ const DropdownContent = styled.div`
   display: flex;
   flex-direction: column;
 
+  a {
+    color: inherit;
+  }
+
   div {
     display: flex;
     margin-bottom: 5px;
 
     &:hover {
-      color: #04b681;
+      h1 {
+        color: #04b681;
+      }
     }
 
     span {
