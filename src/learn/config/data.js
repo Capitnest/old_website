@@ -92,6 +92,78 @@ export const blogList = [
     cover: "/images/learn/bitcoin/what-is-bitcoin.png",
   },
   {
+    id: "what-is-bitcoin",
+    title: "What is Bitcoin?",
+    topic: "bitcoin",
+    author: "Timnik",
+    isVerified: true,
+    authorUsername: "timnik",
+    date: "14 July 2022",
+    time: "6",
+    imageSource: "",
+    description: (
+      <>
+        Bitcoin is the first cryptocurrency in the world, it is a virtual
+        currency created to act as money and a form of payment that can function
+        outside the control of any government, state or financial institution,
+        and thus can be transfered globally without the need of any centralized
+        intermediary.
+        <br /> <br />
+        Bitcoin's creator, Satoshi Nakamoto, described bitcoin as “an electronic
+        payment system based on cryptographic proof instead of trust.”
+        <br />
+        <br />
+        <BigTitle>Bitcoin's origins & evolution</BigTitle>
+        <br />
+        Bitcoin was launched anonymously in January 2009 by Satoshi Nakamoto, a
+        presumed pseudonym for a person or group whose true identity remains a
+        mystery. Nakamoto released a paper named "Bitcoin: A Peer-to-Peer
+        Electronic Cash System" where he detailed methods for "allowing any two
+        willing parties to transact directly with each other without the need
+        for a trusted third party" and explained how bitcoin works and it's
+        protocol.
+        <br />
+        <br />
+        At the start bitcoin had no real monetary value, it would take more than
+        a year for the first economic transaction to take place. On May 22,
+        2010, a man, from Florida, negotiated to have two Papa John's pizzas,
+        valued at $25, delivered for 10,000 BTC. The transaction established the
+        initial real-world price or value of Bitcoin at 4 Bitcoins per penny.
+        Now that 10,000 BTC has a value of around $400 million.
+        <br />
+        <br />I will not bore now with every detail, but over the following
+        decade, the price of Bitcoin and the number of Bitcoin users rose in
+        waves. Bitcoin saw multiple ups and downs, but over the time as Bitcoin
+        exchanges established the necessary tools to make the transfer of other
+        currencies to and from bitcoin easy & businesses created robust services
+        and tools, the interest of retail & institutional investors grow bigger
+        and bigger.
+        <br />
+        <br />
+        <BigTitle>What is Bitcoin used for?</BigTitle>
+        <br />
+        At the most basic level, Bitcoin is used for transacting value outside a
+        intermediary/traditional financial systems.
+        <br />
+        <br />
+        In the earlier years, when Bitcoin was not used by as many people,
+        Bitcoin could be used to do small-value transactions, in a way
+        competitively with payment networks like VISA and Mastercard. But now as
+        Bitcoin became more adopted, scaling issues made it less competitive as
+        a way to do small-value transactions due to the limited design.
+        <br />
+        <br />
+        Other alternatives appeared and Bitcoin was now not looked as a payment
+        network and more as an alternative way to gold or known as 'digital
+        gold'. Some other naratives that support Bitcoin are that it supports
+        economic freedom, has protection agains monetary confiscation,
+        censorship and devaluation through uncapped inflation.
+      </>
+    ),
+    text: <></>,
+    cover: "/images/learn/bitcoin/what-is-bitcoin.png",
+  },
+  {
     id: "the-ethereum-merge",
     title: "GUIDE: The Ethereum Merge",
     topic: "security",
