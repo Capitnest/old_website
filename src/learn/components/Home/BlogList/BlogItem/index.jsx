@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Badge, Flex, useColorMode, Avatar } from "@chakra-ui/react";
+import { Badge, Flex, useColorMode, Avatar } from "@chakra-ui/react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { MdVerified } from "react-icons/md";
@@ -36,43 +36,48 @@ const BlogItem = ({
 
   return (
     <Content>
-      <Box
-        marginRight="5px"
-        marginLeft="5px"
-        borderWidth="1px"
-        borderRadius="4px"
-        display="flex"
-        flexDirection="column"
-        style={{
-          backgroundColor: (() => {
-            if (colorMode === "light") {
-              return "#E2E8F0";
-            } else {
-              return "rgba(255, 255, 255, 0.04)";
-            }
-          })(),
-          borderColor: (() => {
-            if (colorMode === "light") {
-              return "#A0AEC0";
-            } else {
-              return "rgba(255, 255, 255, 0.24)";
-            }
-          })(),
-        }}
-      >
-        <Link to={`/learn/post/${id}`}>
+      <Link to={`/learn/post/${id}`} style={{ color: "inherit" }}>
+        <Box
+          border
+          display="flex"
+          flexDirection="column"
+          style={{
+            backgroundColor: (() => {
+              if (colorMode === "light") {
+                return "rgb(249, 249, 250)";
+              } else {
+                return "#171923";
+              }
+            })(),
+            borderColor: (() => {
+              if (colorMode === "light") {
+                return "rgb(214, 213, 222)";
+              } else {
+                return "rgb(64, 63, 75)";
+              }
+            })(),
+          }}
+        >
           <Image>
             <img src={cover} alt="cover" style={{ borderRadius: "4px" }} />
           </Image>
-        </Link>
-        <div style={{ margin: "6px" }}>
-          <Link to={`/learn/post/${id}`}>
-            {colorMode === "dark" ? (
-              <TitleDark>{title}</TitleDark>
-            ) : (
-              <TitleWhite>{title}</TitleWhite>
-            )}
-          </Link>
+
+          <Tag
+            textTransform="lowercase"
+            style={{
+              backgroundColor: (() => {
+                if (colorMode === "light") {
+                  return "#e2e8f0";
+                } else {
+                  return "rgb(64, 63, 75)";
+                }
+              })(),
+            }}
+          >
+            <div style={{ textAlign: "center" }}>#{topic}</div>
+          </Tag>
+
+          <h1>{title}</h1>
 
           <Flex>
             <Flex>
@@ -81,70 +86,68 @@ const BlogItem = ({
                 height={35}
                 width={35}
               />
-              <Flex flexDirection="column" marginTop="-2px" marginLeft="3px">
-                <Link to={`/team/${authorUsername}`}>
-                  <Flex>
-                    <h1
-                      style={{
-                        fontFamily: "'Inter', sans-serif",
-                        fontSize: "16px",
-                        fontWeight: "bold",
-                        marginLeft: "4px",
-                      }}
-                    >
-                      {author}
-                    </h1>
+              <Flex flexDirection="column" marginLeft="3px">
+                <Flex>
+                  <h2
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: "16px",
+                      fontWeight: "bold",
+                      marginLeft: "4px",
+                    }}
+                  >
+                    {author}
+                  </h2>
 
-                    {isVerified ? (
-                      <MdVerified
-                        style={{ marginLeft: "3px" }}
-                        size="17"
-                        color="#4299e1"
-                      />
-                    ) : (
-                      <></>
-                    )}
-                  </Flex>
-                </Link>
+                  {isVerified ? (
+                    <MdVerified
+                      style={{ marginLeft: "3px" }}
+                      size="17"
+                      color="#4299e1"
+                    />
+                  ) : (
+                    <></>
+                  )}
+                </Flex>
+
                 <p style={{ color: "gray", marginLeft: "4px" }}>{date}</p>
               </Flex>
             </Flex>
           </Flex>
-
-          <Flex justifyContent="space-between" marginTop="20px">
-            <Link to={`/learn/post/${id}`}>
-              <Button>
-                <p>Read more</p>
-              </Button>
-            </Link>
-
-            <p
-              style={{
-                fontSize: "16px",
-                fontFamily: "'Inter', sans-serif",
-                marginTop: "4px",
-              }}
-            >
-              {time} min
-            </p>
-
-            <Badge
-              colorScheme={topic_badge_color(topic)}
-              fontSize="16px"
-              textTransform="lowercase"
-            >
-              <div style={{ marginTop: "5px", textAlign: "center" }}>
-                {topic}
-              </div>
-            </Badge>
-          </Flex>
-        </div>
-      </Box>
+        </Box>
+      </Link>
     </Content>
   );
 };
 
 export default BlogItem;
+
+const Tag = styled.div`
+  font-size: 15px;
+  padding: 0px 6px;
+  font-family: "Inter", sans-serif;
+  border-width: 0px;
+  border-radius: 5px;
+  width: max-content;
+  margin-top: 10px;
+  margin-bottom: -8px;
+`;
+
+const Box = styled.div`
+  border-radius: 5px;
+  width: 320px;
+  padding: 12px 12px 12px;
+  border-width: 1px;
+
+  h1 {
+    font-size: 18px;
+    height: 44px;
+  }
+
+  &:hover {
+    margin-top: -2px;
+  }
+`;
 
 const Content = styled.div`
   @media (max-width: 800px) {
@@ -158,38 +161,11 @@ const Image = styled.div`
     width: 100%;
     object-fit: cover;
   }
-
-  &:hover {
-    filter: brightness(120%);
-  }
-
   @media (max-width: 800px) {
     img {
       height: 250px;
       width: 100%;
     }
-  }
-`;
-
-const TitleDark = styled.h1`
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  height: 40px;
-
-  &:hover {
-    color: rgba(255, 255, 255, 0.48);
-  }
-`;
-
-const TitleWhite = styled.h1`
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  height: 40px;
-
-  &:hover {
-    color: rgba(0, 0, 0, 0.64);
   }
 `;
 

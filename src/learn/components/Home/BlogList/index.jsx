@@ -6,9 +6,7 @@ const BlogList = ({ blogs }) => {
   return (
     <List>
       {blogs.map((blog) => (
-        <Item>
-          <BlogItem blog={blog} />
-        </Item>
+        <BlogItem blog={blog} />
       ))}
     </List>
   );
@@ -18,9 +16,7 @@ export default BlogList;
 
 const List = styled.div`
   display: flex;
-  padding-left: 0;
-  list-style: none;
-  flex: 0 0 33.333333%;
+  justify-content: space-between;
 
   @media (max-width: 800px) {
     flex-direction: column;

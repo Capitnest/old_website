@@ -69,7 +69,7 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>Capitnest | Learn</title>
+        <title>Capitnest | Articles</title>
       </Helmet>
       <div>
         <Layout>
