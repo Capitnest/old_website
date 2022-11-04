@@ -142,6 +142,8 @@ const Box = styled.div`
   h1 {
     font-size: 18px;
     height: 44px;
+    margin-top: 15px;
+    font-weight: 600;
   }
 
   &:hover {
