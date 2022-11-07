@@ -11,6 +11,8 @@ import Content from "./components/Content";
 import Newsletter from "./components/Newsletter";
 import Join from "./components/Join";
 
+import Coins from "./components/CryptoPrices/Coins";
+
 //LIBRARIES COMPONENTS
 import { Container } from "@chakra-ui/react";
 
@@ -45,6 +47,7 @@ export default function Homepage() {
         <br />
         <br />
         <br />
+        <Coins />
         <br />
         <Newsletter />
         <br />
