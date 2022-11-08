@@ -8,9 +8,10 @@ import { Link } from "react-router-dom";
 
 import { CgProfile } from "react-icons/cg";
 import { FaMoon, FaChartPie } from "react-icons/fa";
-import { BsFillSunFill, BsCurrencyExchange } from "react-icons/bs";
-import { MdArticle, MdOndemandVideo } from "react-icons/md";
+import { BsFillSunFill, BsCurrencyExchange, BsGlobe2 } from "react-icons/bs";
+import { MdArticle, MdOndemandVideo, MdOutlineBusiness } from "react-icons/md";
 import { AiOutlineAreaChart } from "react-icons/ai";
+import { BiTrendingUp } from "react-icons/bi";
 
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -27,12 +28,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
   MenuDivider,
-  Show,
-  Hide,
 } from "@chakra-ui/react";
 
 export default function Desktop() {
@@ -53,6 +49,14 @@ export default function Desktop() {
   };
   const hideDropdownn = (e) => {
     setShoww(false);
+  };
+
+  const [showwww, setShowwww] = useState(false);
+  const showDropdownnnn = (e) => {
+    setShowwww(true);
+  };
+  const hideDropdownnnn = (e) => {
+    setShowwww(false);
   };
 
   function signOut() {
@@ -256,9 +260,101 @@ export default function Desktop() {
             </Dropdown>
           </div>
 
+          <div
+            style={{ display: "flex", flexDirection: "column" }}
+            onMouseEnter={showDropdownnnn}
+            onMouseLeave={hideDropdownnnn}
+          >
+            <Link to="/insights">
+              <Navlink name="Insights" activated={showwww} />
+            </Link>
+
+            <Dropdown show={showwww}>
+              <div style={{ height: "3px" }} />
+
+              <Dropdown.Menu
+                style={{
+                  backgroundColor: (() => {
+                    if (colorMode === "light") {
+                      return "rgb(255, 255, 255)";
+                    } else {
+                      return "rgb(26, 32, 44)";
+                    }
+                  })(),
+                  color: (() => {
+                    if (colorMode === "light") {
+                      return "black";
+                    } else {
+                      return "white";
+                    }
+                  })(),
+                  borderColor: (() => {
+                    if (colorMode === "light") {
+                      return "black";
+                    } else {
+                      return "white";
+                    }
+                  })(),
+                  borderWidth: "1px",
+                  borderColor: "#04b681",
+                  width: "410px",
+                }}
+              >
+                <DropdownContent>
+                  <Link to="/learn/articles">
+                    <div>
+                      <DropdownIcon>
+                        <BsGlobe2
+                          size={30}
+                          color="white"
+                          style={{ marginLeft: "10px", marginTop: "10px" }}
+                        />
+                      </DropdownIcon>
+                      <span>
+                        <h1>Global Crypto Data</h1>
+                        <p>The global data & metrics of crypto.</p>
+                      </span>
+                    </div>
+                  </Link>
+                  <Link to="/learn/videos">
+                    <div>
+                      <DropdownIcon>
+                        <BiTrendingUp
+                          size={30}
+                          color="white"
+                          style={{ marginLeft: "10px", marginTop: "10px" }}
+                        />
+                      </DropdownIcon>
+                      <span>
+                        <h1>Trending Cryptos & Assets</h1>
+                        <p>See the most popular cryptocurrencies & assets.</p>
+                      </span>
+                    </div>
+                  </Link>
+                  <Link to="/learn/videos">
+                    <div>
+                      <DropdownIcon>
+                        <MdOutlineBusiness
+                          size={30}
+                          color="white"
+                          style={{ marginLeft: "10px", marginTop: "10px" }}
+                        />
+                      </DropdownIcon>
+                      <span>
+                        <h1>Companies Public Treasury</h1>
+                        <p>Companies public holdings of bitcoin or ethereum.</p>
+                      </span>
+                    </div>
+                  </Link>
+                </DropdownContent>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+
           <Link to="/research">
             <Navlink to="/research" name="Research" />
           </Link>
+
           <Link to="/pricing">
             <Navlink to="/pricing" name="Pricing" />
           </Link>

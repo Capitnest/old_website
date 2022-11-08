@@ -110,7 +110,7 @@ export default function AppRouter(props) {
 
           <Route exact path="/pricing" component={Pricing} />
 
-          <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+          <ProtectedRoute exact path="/insights" component={Dashboard} />
           <ProtectedRoute exact path="/login" component={Loginpage} />
           <ProtectedRoute exact path="/register" component={Registerpage} />
           <ProtectedRoute exact path="/profile" component={Profilepage} />
