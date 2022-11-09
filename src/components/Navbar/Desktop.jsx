@@ -331,7 +331,7 @@ export default function Desktop() {
                       </span>
                     </div>
                   </Link>
-                  <Link to="/learn/videos">
+                  <Link to="/insights/companies">
                     <div>
                       <DropdownIcon>
                         <MdOutlineBusiness

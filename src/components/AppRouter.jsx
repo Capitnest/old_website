@@ -48,6 +48,7 @@ import Research from "../research/pages/Research";
 
 // Insights
 import GlobalData from "../insights/pages/GlobalData";
+import PublicTreasury from "../insights/pages/PublicTreasury";
 
 import Pricing from "../pages/Pricing";
 
@@ -109,6 +110,7 @@ export default function AppRouter(props) {
           <Route path="/team" component={Team} />
 
           <Route path="/insights/global" component={GlobalData} />
+          <Route path="/insights/companies" component={PublicTreasury} />
 
           <Route exact path="/pricing" component={Pricing} />
 

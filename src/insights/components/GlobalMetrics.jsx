@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { Layout } from "./../../components/Layout";
 import { Helmet } from "react-helmet";
 import axios from "axios";
-import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
+import Tab from "./Tab";
 
 import MarketDominance from "./MarketDominance";
 import CurrentGlobalMetrics from "./CurrentGlobalMetrics";
-import Summary from "./Summary";
-import Social from "./Social";
 
 export default function GlobalMetrics() {
-  const { id } = useParams();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -39,27 +35,9 @@ export default function GlobalMetrics() {
           <>Loading...</>
         ) : (
           <>
-            <Tabs marginTop="40px" variant="enclosed-colored">
-              <TabList>
-                <Tab>Advanced</Tab>
-                <Tab>Summary</Tab>
-              </TabList>
+            <CurrentGlobalMetrics data={data} />
 
-              <TabPanels>
-                <TabPanel>
-                  <CurrentGlobalMetrics data={data} />
-
-                  <MarketDominance data={data} />
-
-                  <Social />
-                </TabPanel>
-                <TabPanel>
-                  <Summary data={data} />
-                </TabPanel>
-              </TabPanels>
-            </Tabs>
-
-            <br />
+            <MarketDominance data={data} />
           </>
         )}
       </Layout>

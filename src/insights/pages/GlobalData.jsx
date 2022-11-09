@@ -1,21 +1,17 @@
 import React from "react";
 import { Layout } from "./../../components/Layout";
-
-//COMPONENTS
-import Welcome from "../components/Welcome";
 import GlobalMetrics from "../components/GlobalMetrics";
 
 import Footerr from "../../components/Footer";
+import Tab from "../components/Tab";
 
 export default function Dashboard() {
   return (
     <>
       <Layout>
-        <Welcome />
-
+        <Tab index={0} />
         <GlobalMetrics />
       </Layout>
-      <Footerr />
     </>
   );
 }
