@@ -215,6 +215,7 @@ export function Navbar() {
                   }
                   icon={<RiBookMarkFill size={30} color="black" />}
                 />
+
                 <BottomNavigationAction
                   onClick={() => {
                     history.push(`/research`);

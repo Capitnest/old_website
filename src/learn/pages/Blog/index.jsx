@@ -29,7 +29,7 @@ const Blog = () => {
       <Layout>
         <div style={{ height: "20px" }} />
         <Link
-          to="/learn"
+          to="/learn/articles"
           style={{ marginTop: "10px", fontFamily: "'Inter', sans-serif" }}
         >
           <span> &#8592;</span> <span>Go Back</span>

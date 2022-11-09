@@ -17,7 +17,6 @@ import Profilepage from "../pages/Profile/Profilepage";
 import Registerpage from "../pages/Registerpage";
 import ResetPasswordPage from "../pages/ResetPasswordPage";
 import Feeds from "../feeds/Feeds";
-import Dashboard from "../pages/Dashboard/Dashboard";
 
 import Indexes from "../markets/Indexes";
 import Exchanges from "../markets/Exchanges";
@@ -43,9 +42,12 @@ import Videos from "../learn/pages/Videos";
 import TeamUser from "../pages/team/TeamUser";
 import Team from "../pages/team/Team";
 
+// Research
+import Insights from "../research/pages/Insights";
+import Research from "../research/pages/Research";
+
 // Insights
-import Insights from "../insights/pages/Insights";
-import Research from "../insights/pages/Research";
+import GlobalData from "../insights/pages/GlobalData";
 
 import Pricing from "../pages/Pricing";
 
@@ -106,11 +108,10 @@ export default function AppRouter(props) {
           <Route path="/team/:id" component={TeamUser} />
           <Route path="/team" component={Team} />
 
-          {/* <Route path="/insights" component={Insights} /> */}
+          <Route path="/insights/global" component={GlobalData} />
 
           <Route exact path="/pricing" component={Pricing} />
 
-          <ProtectedRoute exact path="/insights" component={Dashboard} />
           <ProtectedRoute exact path="/login" component={Loginpage} />
           <ProtectedRoute exact path="/register" component={Registerpage} />
           <ProtectedRoute exact path="/profile" component={Profilepage} />

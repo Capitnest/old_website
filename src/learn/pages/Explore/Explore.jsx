@@ -28,11 +28,17 @@ export default function Explore() {
       <Layout>
         <Content>
           <Header>
-            <img src="/images/learn/explore/articles.png" />
+            <Link to="/learn/articles">
+              <img src="/images/learn/explore/articles.png" />
+            </Link>
 
-            <img src="/images/learn/explore/videos.png" />
+            <Link to="/learn/videos">
+              <img src="/images/learn/explore/videos.png" />
+            </Link>
 
-            <img src="/images/learn/explore/courses.png" />
+            <Link to="/learn/courses">
+              <img src="/images/learn/explore/courses.png" />
+            </Link>
           </Header>
 
           <SectionHeader>

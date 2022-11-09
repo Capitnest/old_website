@@ -1,9 +1,9 @@
 import React from "react";
-import { Layout } from "../../components/Layout";
+import { Layout } from "./../../components/Layout";
 
 //COMPONENTS
-import Welcome from "./components/Welcome";
-import GlobalMetrics from "./components/GlobalMetrics";
+import Welcome from "../components/Welcome";
+import GlobalMetrics from "../components/GlobalMetrics";
 
 import Footerr from "../../components/Footer";
 

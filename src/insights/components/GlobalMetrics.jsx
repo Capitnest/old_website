@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Layout } from "../../../components/Layout";
+import { Layout } from "./../../components/Layout";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";

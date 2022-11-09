@@ -265,7 +265,7 @@ export default function Desktop() {
             onMouseEnter={showDropdownnnn}
             onMouseLeave={hideDropdownnnn}
           >
-            <Link to="/insights">
+            <Link to="/insights/global">
               <Navlink name="Insights" activated={showwww} />
             </Link>
 
@@ -301,7 +301,7 @@ export default function Desktop() {
                 }}
               >
                 <DropdownContent>
-                  <Link to="/learn/articles">
+                  <Link to="/insights/global">
                     <div>
                       <DropdownIcon>
                         <BsGlobe2
