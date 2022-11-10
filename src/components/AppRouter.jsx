@@ -50,6 +50,7 @@ import Research from "../research/pages/Research";
 import GlobalData from "../insights/pages/GlobalData";
 import PublicTreasury from "../insights/pages/PublicTreasury";
 import DefiData from "../insights/pages/DefiData";
+import TrendingCrypto from "../insights/pages/TrendingCrypto";
 
 import Pricing from "../pages/Pricing";
 
@@ -113,6 +114,7 @@ export default function AppRouter(props) {
           <Route path="/insights/global" component={GlobalData} />
           <Route path="/insights/companies" component={PublicTreasury} />
           <Route path="/insights/defi" component={DefiData} />
+          <Route path="/insights/trending" component={TrendingCrypto} />
 
           <Route exact path="/pricing" component={Pricing} />
 

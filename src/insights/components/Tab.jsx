@@ -18,7 +18,9 @@ export default function Tab(props) {
           <Link to="/insights/defi" style={{ color: "inherit" }}>
             <T>Defi Data</T>
           </Link>
-          <T>Trending Cryptos</T>
+          <Link to="/insights/trending" style={{ color: "inherit" }}>
+            <T>Trending Cryptos</T>
+          </Link>
           <Link to="/insights/companies" style={{ color: "inherit" }}>
             <T>Companies Holdings</T>
           </Link>
