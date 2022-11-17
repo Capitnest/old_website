@@ -27,8 +27,6 @@ export default function DefiData() {
   return (
     <>
       <Layout>
-        <Tab index={1} />
-
         <h1
           style={{
             fontFamily: "'Inter', sans-serif",

@@ -30,7 +30,7 @@ export default function GlobalMetrics() {
       <Helmet>
         <title> Dashboard | Capitnest </title>
       </Helmet>
-      <Layout>
+      <>
         {loading === true ? (
           <>Loading...</>
         ) : (
@@ -40,7 +40,7 @@ export default function GlobalMetrics() {
             <MarketDominance data={data} />
           </>
         )}
-      </Layout>
+      </>
     </>
   );
 }
