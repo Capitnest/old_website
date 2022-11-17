@@ -7,16 +7,17 @@ export default function Filter() {
     <Content>
       <FilterImage>
         <img
-          src="/images/filter.webp"
+          src="/images/pages/home/feeds.png"
           style={{ marginTop: "-90px" }}
-          width="900px"
+          width="1400px"
         />
       </FilterImage>
       <Flex direction={"column"}>
-        <h1>We filter through the bad and only show you the good</h1>
+        <h1>Never be left behind</h1>
         <p>
-          We filter through hundrends of different sources and only show to you
-          the legit & high-quality content.
+          Always be up to date to the latest news & updates in the web3 world.
+          We filter through thousands of different sources and show you a
+          summary of articles & tweets through a twitter-like interface.
         </p>
         <FilterButton>
           <a href="/register">
@@ -166,6 +167,7 @@ const FilterImage = styled.div`
     img {
       margin-right: 0px;
       width: 450px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
   }
 `;

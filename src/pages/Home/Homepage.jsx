@@ -36,10 +36,7 @@ export default function Homepage() {
           name="more"
           style={{ position: "relative", zIndex: "-2", top: "-80px" }}
         />
-        <br />
-        <br />
-        <br />
-        <br />
+
         <Filter />
         <br />
         <br />

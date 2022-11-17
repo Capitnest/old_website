@@ -6,11 +6,12 @@ export default function Explore() {
   return (
     <Content>
       <Flex direction={"column"}>
-        <h1>Zoom Out & See from all the different angles</h1>
+        <h1>Courses & Videos</h1>
         <p>
-          It's hard to understand information from tens of different sources. We
-          get you to the truth by zooming out. By seeing and hearing everything
-          from everywhere. From every social media, news website & platform.
+          Learn the basics & advanced of crypto with high quality courses &
+          videos. Understand the basic like charts, technical analysis,
+          fundamental analysis and apply them to trading/investing strategies,
+          everything thought from our courses & videos.
         </p>
         <FilterButton>
           <a href="/register">
@@ -19,10 +20,7 @@ export default function Explore() {
         </FilterButton>
       </Flex>
       <FilterImage>
-        <img
-          src="https://cdni.iconscout.com/illustration/premium/thumb/man-working-on-nft-blockchain-5017552-4173581.png"
-          width="1200px"
-        />
+        <img src="/images/pages/home/video.png" width="1400px" />
       </FilterImage>
     </Content>
   );
@@ -179,6 +177,7 @@ const FilterImage = styled.div`
     justify-content: center;
 
     img {
+      margin-top: -30px;
       display: flex;
       justify-content: center;
     }
