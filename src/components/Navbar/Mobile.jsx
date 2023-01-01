@@ -333,7 +333,7 @@ export default function Mobile() {
               <p>
                 {" "}
                 <Link
-                  to="/learn"
+                  to="/insights"
                   style={{
                     display: "flex",
                   }}
@@ -342,7 +342,7 @@ export default function Mobile() {
                     size={20}
                     style={{ marginRight: "4px", marginTop: "2px" }}
                   />
-                  Learn
+                  Insights
                 </Link>
               </p>
               <hr />

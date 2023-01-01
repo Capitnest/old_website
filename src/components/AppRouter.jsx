@@ -93,10 +93,10 @@ export default function AppRouter(props) {
           <Route path="/markets/categories/:id" component={Categories} />
           <Route path="/markets/page/:id" component={MarketsPage} />
 
-          <Route path="/learn/articles" exact component={Home} />
+          {/* <Route path="/learn/articles" exact component={Home} />
           <Route path="/learn/post/:id" component={Blog} />
           <Route path="/learn/videos" components={Videos} />
-          <Route path="/learn/explore" component={Explore} />
+          <Route path="/learn/explore" component={Explore} /> */}
 
           <Route exact path="/feeds" component={Feeds} />
           <Route path="/feeds/:id/:date" component={Hashtag} />
@@ -110,9 +110,21 @@ export default function AppRouter(props) {
           <Route path="/team/:id" component={TeamUser} />
           <Route path="/team" component={Team} />
 
-          <Route path="/insights/global" component={GlobalData} />
-          <Route path="/insights/companies" component={PublicTreasury} />
-          <Route path="/insights/trending" component={TrendingCrypto} />
+          <ProRoute
+            path="/insights/global"
+            component={GlobalData}
+            plan={plan}
+          />
+          <ProRoute
+            path="/insights/companies"
+            component={PublicTreasury}
+            plan={plan}
+          />
+          <ProRoute
+            path="/insights/trending"
+            component={TrendingCrypto}
+            plan={plan}
+          />
 
           <Route exact path="/pricing" component={Pricing} />
 

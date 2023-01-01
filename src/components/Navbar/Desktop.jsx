@@ -184,7 +184,7 @@ export default function Desktop() {
             </Dropdown>
           </div>
 
-          <div
+          {/* <div
             style={{ display: "flex", flexDirection: "column" }}
             onMouseEnter={showDropdown}
             onMouseLeave={hideDropdown}
@@ -258,7 +258,7 @@ export default function Desktop() {
                 </DropdownContent>
               </Dropdown.Menu>
             </Dropdown>
-          </div>
+          </div> */}
 
           <div
             style={{ display: "flex", flexDirection: "column" }}
