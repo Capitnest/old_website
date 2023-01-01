@@ -1,66 +1,112 @@
 import React from "react";
-import { Flex, Spacer } from "@chakra-ui/react";
+import { Flex, Spacer, Button } from "@chakra-ui/react";
 import styled from "styled-components";
+import { TypeAnimation } from "react-type-animation";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <Head>
-      <Flex flexDirection={"column"}>
-        <h1>Find important news about Crypto & NFTs</h1>
-        <p>
-          In a industry full of fake news, scams & bad advices find the most
-          important & trustworthy news about Cryptocurrency & NFTs.
-        </p>
-        <Spacer />
+      <h1 style={{ fontfamily: "'Unbounded', cursive" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flex: "wrap",
+            marginBottom: "0px",
+          }}
+        >
+          The{" "}
+          <span style={{ marginLeft: "7px", color: "#04d192" }}>
+            <TypeAnimation
+              sequence={[
+                "Best", // Types 'One'
+                2000, // Waits 1s
+                "Fastest", // Deletes 'One' and types 'Two'
+                2000,
+                "Easiest",
+                2000,
+              ]}
+              wrapper="div"
+              cursor={true}
+              repeat={Infinity}
+            />
+          </span>
+          way to
+        </div>
+        be up-to-date in crypto
+      </h1>
 
-        <ButtonN>
-          <a href="/register">
-            <Button>Sign Up</Button>
-          </a>
-        </ButtonN>
-      </Flex>
-      <Imagee>
-        <img src="/images/home.png" width="1000px" />
-      </Imagee>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <p
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            textAlign: "center",
+            color: "gray",
+            width: "85%",
+          }}
+        >
+          Capitnest is a platform that collects & filters through thousands of
+          different information sources and shows you only the true and concise
+          information about crypto.
+        </p>
+      </div>
+
+      <Buttons
+        style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}
+      >
+        <Link to="/register">
+          <Button
+            width="164px"
+            height="52px"
+            borderRadius="99px"
+            fontFamily='"Unbounded", cursive'
+            fontWeight="400"
+            fontSize="20px"
+            colorScheme="green"
+            marginRight="10px"
+            backgroundColor="#04d192"
+          >
+            Register
+          </Button>
+        </Link>
+        <a href="#more">
+          <Button
+            width="164px"
+            marginLeft="10px"
+            height="52px"
+            borderRadius="99px"
+            fontFamily='"Unbounded", cursive'
+            fontWeight="400"
+            fontSize="20px"
+            colorScheme="green"
+            borderColor="#04d192"
+            variant="outline"
+          >
+            Learn More
+          </Button>
+        </a>
+      </Buttons>
     </Head>
   );
 }
 
-const Button = styled.button`
-  appearance: none;
-  border-radius: 4px;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: "inline-flex";
-  height: 40px;
-  background-color: #6d4bd0;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-
-  &:focus {
-    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
-      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+const Buttons = styled.div`
+  *:hover {
+    transform: scale(1.05) perspective(1px);
   }
 
-  &:hover {
-    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
-      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-    transform: translateY(-2px);
-    background-color: #5a35c6;
-    color: #e4e4e4;
-  }
-
-  &:active {
-    box-shadow: #d6d6e7 0 3px 0px inset;
-    transform: translateY(2px);
+  @media (max-width: 350px) {
+    *:hover {
+      transform: scale(1) perspective(0px);
+    }
   }
 `;
 
 const Head = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-top: 30px;
 
@@ -70,7 +116,8 @@ const Head = styled.div`
 
   h1 {
     font-size: 60px;
-    font-family: "Inter", sans-serif;
+    font-family: "Unbounded", cursive;
+    text-align: center;
     font-weight: bold;
     margin-top: 80px;
   }
@@ -90,13 +137,6 @@ const Head = styled.div`
     font-family: "Inter", sans-serif;
 
     &:hover {
-    }
-  }
-
-  @media (max-width: 1200px) {
-    img {
-      margin-top: 20px;
-      width: 800px;
     }
   }
 
@@ -121,30 +161,14 @@ const Head = styled.div`
   }
 
   @media (max-width: 800px) {
-    img {
-      width: 900px;
-    }
-  }
-
-  @media (max-width: 750px) {
-    margin-top: 0px;
-    img {
-      width: 1000px;
-      margin-top: 70px;
-    }
-
     h1 {
       font-size: 40px;
     }
-
-    p {
-      font-size: 18px;
-    }
   }
 
-  @media (max-width: 680px) {
+  @media (max-width: 600px) {
     h1 {
-      font-size: 30px;
+      font-size: 35px;
     }
 
     p {
@@ -152,81 +176,15 @@ const Head = styled.div`
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 450px) {
     h1 {
       font-size: 30px;
     }
   }
 
-  @media (max-width: 600px) {
-    flex-direction: column-reverse;
-    justify-content: center;
-    text-align: center;
-
-    p {
-      margin-right: 2%;
-      margin-left: 2%;
-    }
-
+  @media (max-width: 400px) {
     h1 {
-      font-size: 47px;
-      margin-top: 0px;
+      font-size: 25px;
     }
-
-    img {
-      width: 400px;
-      margin-bottom: 0px;
-    }
-  }
-
-  @media (max-width: 600px) {
-    p {
-      font-size: 17px;
-    }
-
-    h1 {
-      font-size: 41px;
-    }
-  }
-
-  @media (max-width: 330px) {
-    h1 {
-      font-size: 37px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-  }
-
-  @media (max-width: 300px) {
-    h1 {
-      font-size: 34px;
-    }
-  }
-
-  @media (max-width: 280px) {
-    h1 {
-      font-size: 30px;
-    }
-  }
-`;
-
-const ButtonN = styled.div`
-  @media (max-width: 600px) {
-    margin-top: 0px;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-`;
-
-const Imagee = styled.div`
-  @media (max-width: 900px) {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-left: 0px;
-    margin-top: 0px;
   }
 `;

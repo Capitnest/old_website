@@ -102,7 +102,7 @@ export default function Stats() {
         </span>
       </BigScreen>
 
-      <Center>
+      <Center style={{ marginBottom: "160px" }}>
         <SmallScreen>
           <div>
             <Box
@@ -169,21 +169,6 @@ export default function Stats() {
           </span>
         </SmallScreen>
       </Center>
-
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "20px",
-          marginBottom: "120px",
-        }}
-      >
-        <a href="#more">
-          <Button colorScheme="teal">
-            <ArrowDownIcon marginBottom="4px" /> See More
-          </Button>
-        </a>
-      </div>
     </>
   );
 }

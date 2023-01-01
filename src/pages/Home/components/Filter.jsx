@@ -1,62 +1,107 @@
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import styled from "styled-components";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 
 export default function Filter() {
   return (
     <Content>
-      <FilterImage>
-        <img
-          src="/images/pages/home/feeds.png"
-          style={{ marginTop: "-90px" }}
-          width="1400px"
-        />
-      </FilterImage>
-      <Flex direction={"column"}>
-        <h1>Never be left behind</h1>
-        <p>
-          Always be up to date to the latest news & updates in the web3 world.
-          We filter through thousands of different sources and show you a
-          summary of articles & tweets through a twitter-like interface.
-        </p>
-        <FilterButton>
-          <a href="/register">
-            <Button>Sign Up</Button>
-          </a>
-        </FilterButton>
-      </Flex>
+      <Box
+        width="100%"
+        backgroundColor="RGBA(0, 0, 0, 0.48)"
+        borderRadius="10px"
+        padding="36px 50px"
+      >
+        <Columns>
+          <div className="column1">
+            <Tag style={{ fontFamily: '"Unbounded", cursive' }}>FEEDS</Tag>
+            <h1 style={{ fontFamily: '"Unbounded", cursive' }}>
+              Latest News in a Twitter-like format
+            </h1>
+
+            <Benefits>
+              <p>
+                <AiOutlineCheckCircle
+                  color="#04d192"
+                  size={27}
+                  style={{ marginRight: "4px" }}
+                />
+                Scroll and read all the important news of the day
+              </p>
+              <p>
+                <AiOutlineCheckCircle
+                  color="#04d192"
+                  size={27}
+                  style={{ marginRight: "4px" }}
+                />
+                Takes 2-7 minutes to read all the news of the day
+              </p>
+              <p>
+                <AiOutlineCheckCircle
+                  color="#04d192"
+                  size={27}
+                  style={{ marginRight: "4px" }}
+                />
+                Timestamp, Coin & Popularity filters
+              </p>
+              <p>
+                <AiOutlineCheckCircle
+                  color="#04d192"
+                  size={27}
+                  style={{ marginRight: "4px" }}
+                />
+                News & Posts from different platforms (different websites &
+                twitter)
+              </p>
+            </Benefits>
+          </div>
+          <div className="column2">
+            <img src="/images/pages/home/feeds.png" height="300px" />
+          </div>
+        </Columns>
+      </Box>
     </Content>
   );
 }
 
-const Button = styled.button`
-  appearance: none;
-  border-radius: 4px;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: "inline-flex";
-  height: 40px;
-  background-color: #6d4bd0;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  &:focus {
-    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
-      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+const Columns = styled.div`
+  display: flex;
+
+  .column1 {
+    width: 60%;
   }
-  &:hover {
-    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
-      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-    transform: translateY(-2px);
-    background-color: #5a35c6;
-    color: #e4e4e4;
+
+  .column2 {
+    width: 40%;
   }
-  &:active {
-    box-shadow: #d6d6e7 0 3px 0px inset;
-    transform: translateY(2px);
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    justify-content: center;
+
+    .column1 {
+      width: 100%;
+    }
+
+    .column2 {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   }
+`;
+
+const Benefits = styled.div`
+  p {
+    display: flex;
+  }
+`;
+
+const Tag = styled.p`
+  font-size: 20px;
+  margin-top: 0px;
+  font-family: "Unbounded", cursive;
+  color: #04d192;
 `;
 
 const Content = styled.div`
@@ -64,7 +109,7 @@ const Content = styled.div`
   justify-content: center;
 
   h1 {
-    font-size: 40px;
+    font-size: 48px;
     font-family: "Inter", sans-serif;
     font-weight: bold;
   }
@@ -83,68 +128,19 @@ const Content = styled.div`
     }
   }
 
-  @media (max-width: 1100px) {
-    h1 {
-      margin-top: -30px;
-    }
-  }
-
-  @media (max-width: 900px) {
+  @media (max-width: 1010px) {
     h1 {
       font-size: 40px;
-      margin-top: -70px;
     }
   }
 
-  @media (max-width: 800px) {
-    h1 {
-      font-size: 35px;
-      margin-top: -60px;
-    }
-  }
-
-  @media (max-width: 750px) {
-    h1 {
-      font-size: 28px;
-    }
-  }
-
-  @media (max-width: 650px) {
-    h1 {
-      font-size: 25px;
-      margin-top: -70px;
-    }
-  }
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-    text-align: center;
-
-    h1 {
-      margin-top: 10px;
-      font-size: 35px;
-    }
-  }
-
-  @media (max-width: 370px) {
-    h1 {
-      font-size: 30px;
-    }
-
+  @media (max-width: 890px) {
     p {
       font-size: 16px;
     }
-  }
 
-  @media (max-width: 310px) {
     h1 {
-      font-size: 27px;
-    }
-  }
-
-  @media (max-width: 285px) {
-    h1 {
-      font-size: 25px;
+      font-size: 36px;
     }
   }
 `;

@@ -1,70 +1,253 @@
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import styled from "styled-components";
+import { AiOutlineCheckCircle, AiOutlineAreaChart } from "react-icons/ai";
+import { GoTelescope } from "react-icons/go";
+import FadeIn from "react-fade-in";
 
 export default function Explore() {
   return (
     <Content>
-      <Flex direction={"column"}>
-        <h1>Courses & Videos</h1>
-        <p>
-          Learn the basics & advanced of crypto with high quality courses &
-          videos. Understand the basic like charts, technical analysis,
-          fundamental analysis and apply them to trading/investing strategies,
-          everything thought from our courses & videos.
-        </p>
-        <FilterButton>
-          <a href="/register">
-            <Button>Explore</Button>
-          </a>
-        </FilterButton>
-      </Flex>
-      <FilterImage>
-        <img src="/images/pages/home/video.png" width="1400px" />
-      </FilterImage>
+      <TwoBoxes>
+        <Box
+          backgroundColor="RGBA(0, 0, 0, 0.64)"
+          borderRadius="10px"
+          padding="36px 50px"
+          className="explore-twoboxes-box1"
+        >
+          <h1
+            style={{
+              fontFamily: '"Unbounded", cursive',
+
+              display: "flex",
+            }}
+          >
+            <AiOutlineAreaChart size={56} />
+            Markets
+          </h1>
+          <p>
+            Real-time price data & statistics of cryptocurrencies & exchanges at
+            your fingertips.
+          </p>
+        </Box>
+
+        <Box
+          backgroundColor="RGBA(0, 0, 0, 0.64)"
+          borderRadius="10px"
+          padding="36px 50px"
+          className="explore-twoboxes-box2"
+        >
+          <h1
+            style={{
+              fontFamily: '"Unbounded", cursive',
+              display: "flex",
+            }}
+          >
+            <GoTelescope size={57} />
+            Research
+          </h1>
+          <p>Institutional-level research made by our team.</p>
+        </Box>
+      </TwoBoxes>
+
+      {/* <Box
+        width="100%"
+        backgroundColor="RGBA(0, 0, 0, 0.48)"
+        borderRadius="10px"
+        padding="36px 50px"
+        paddingBottom="0px"
+        marginTop="50px"
+      >
+        <Columns>
+          <div style={{ width: "44%" }}>
+            <img src="/images/pages/home/video.png" height="250px" />
+          </div>
+          <div style={{ width: "60%" }}>
+            <Tag style={{ fontFamily: '"Unbounded", cursive' }}>LEARN</Tag>
+            <h1
+              style={{ fontFamily: '"Unbounded", cursive', fontSize: "48px" }}
+            >
+              Become a expert in WEB3
+            </h1>
+
+            <Benefits>
+              <p>
+                <AiOutlineCheckCircle
+                  color="#04d192"
+                  size={27}
+                  style={{ marginRight: "4px" }}
+                />
+                Courses, Videos & Articles
+              </p>
+              <p>
+                <AiOutlineCheckCircle
+                  color="#04d192"
+                  size={27}
+                  style={{ marginRight: "4px" }}
+                />
+                Content for beginners & advanced
+              </p>
+              <p>
+                <AiOutlineCheckCircle
+                  color="#04d192"
+                  size={27}
+                  style={{ marginRight: "4px" }}
+                />
+                Learn trading strategies
+              </p>
+              <p>
+                <AiOutlineCheckCircle
+                  color="#04d192"
+                  size={27}
+                  style={{ marginRight: "4px" }}
+                />
+                Content made by us or choosen by us
+              </p>
+            </Benefits>
+          </div>
+        </Columns>
+      </Box> */}
+
+      <Box
+        width="100%"
+        backgroundColor="RGBA(0, 0, 0, 0.48)"
+        borderRadius="10px"
+        padding="36px 50px"
+        paddingBottom="0px"
+        marginTop="50px"
+      >
+        <Columns>
+          <div className="explore-box-columns-column1">
+            <Tag style={{ fontFamily: '"Unbounded", cursive' }}>INSIGHTS</Tag>
+            <h1 style={{ fontFamily: '"Unbounded", cursive' }}>
+              See the depths of crypto
+            </h1>
+
+            <Benefits>
+              <p>
+                <AiOutlineCheckCircle
+                  color="#04d192"
+                  size={27}
+                  style={{ marginRight: "4px" }}
+                />
+                Global Market Data
+              </p>
+              <p>
+                <AiOutlineCheckCircle
+                  color="#04d192"
+                  size={27}
+                  style={{ marginRight: "4px" }}
+                />
+                See the most searched coins
+              </p>
+              <p>
+                <AiOutlineCheckCircle
+                  color="#04d192"
+                  size={27}
+                  style={{ marginRight: "4px" }}
+                />
+                See companies public treasury
+              </p>
+            </Benefits>
+          </div>
+          <div className="explore-box-columns-column2">
+            <img src="/images/pages/home/insights.png" height="250px" />
+          </div>
+        </Columns>
+      </Box>
     </Content>
   );
 }
 
-const Button = styled.button`
-  appearance: none;
-  border-radius: 4px;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: "inline-flex";
-  height: 40px;
-  background-color: #6d4bd0;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
+const TwoBoxes = styled.div`
+  display: flex;
 
-  &:focus {
-    box-shadow: #d6d6e7 0 7px 13px 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
-      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  .explore-twoboxes-box1 {
+    margin-right: 20px;
+    @media (max-width: 978px) {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  .explore-twoboxes-box2 {
+    margin-left: 20px;
   }
 
-  &:hover {
-    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
-      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-    transform: translateY(-2px);
-    background-color: #5a35c6;
-    color: #e4e4e4;
+  @media (max-width: 800px) {
+    flex-direction: column;
+
+    .explore-twoboxes-box1 {
+      margin-right: 0px;
+
+      @media (max-width: 978px) {
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .explore-twoboxes-box2 {
+      margin-left: 0px;
+      margin-top: 30px;
+    }
+  }
+`;
+
+const Columns = styled.div`
+  display: flex;
+
+  .explore-box-columns-column1 {
+    width: 60%;
   }
 
-  &:active {
-    box-shadow: #d6d6e7 0 3px 0px inset;
-    transform: translateY(2px);
+  .explore-box-columns-column2 {
+    width: 40%;
   }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    justify-content: center;
+
+    .explore-box-columns-column1 {
+      width: 100%;
+    }
+
+    .explore-box-columns-column2 {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 510px) {
+    h1 {
+      font-size: 25px;
+    }
+  }
+`;
+
+const Benefits = styled.div`
+  p {
+    display: flex;
+  }
+`;
+
+const Tag = styled.p`
+  font-size: 20px;
+  margin-top: 0px;
+  font-family: "Unbounded", cursive;
+  color: #04d192;
 `;
 
 const Content = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column;
 
   h1 {
-    font-size: 40px;
+    font-size: 48px;
     font-family: "Inter", sans-serif;
     font-weight: bold;
   }
@@ -82,115 +265,13 @@ const Content = styled.div`
 
   a {
     font-family: "Inter", sans-serif;
-
     &:hover {
     }
   }
 
-  @media (max-width: 1200px) {
-    margin-top: 60px;
-  }
-
-  @media (max-width: 1100px) {
-    p {
-      font-size: 16px;
-    }
-  }
-
-  @media (max-width: 800px) {
+  @media (max-width: 1010px) {
     h1 {
       font-size: 40px;
-      margin-top: -20px;
     }
-
-    img {
-      width: 1400px;
-    }
-  }
-
-  @media (max-width: 700px) {
-    h1 {
-      margin-top: -40px;
-      font-size: 35px;
-    }
-
-    img {
-      width: 1600px;
-    }
-  }
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-    text-align: center;
-    flex-direction: column-reverse;
-
-    img {
-      width: 450px;
-    }
-
-    h1 {
-      margin-top: 0px;
-    }
-
-    p {
-      font-size: 18px;
-    }
-  }
-
-  @media (max-width: 450px) {
-    p {
-      font-size: 16px;
-    }
-
-    h1 {
-      font-size: 30px;
-    }
-  }
-
-  @media (max-width: 365px) {
-    h1 {
-      font-size: 28px;
-    }
-
-    p {
-      font-size: 15px;
-    }
-  }
-
-  @media (max-width: 340px) {
-    h1 {
-      font-size: 25px;
-    }
-  }
-
-  @media (max-width: 310px) {
-    h1 {
-      font-size: 22px;
-    }
-  }
-`;
-
-const FilterImage = styled.div`
-  @media (max-width: 600px) {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-
-    img {
-      margin-top: -30px;
-      display: flex;
-      justify-content: center;
-    }
-  }
-
-  @media (max-width: 1100px) {
-    margin-top: 0px;
-  }
-`;
-
-const FilterButton = styled.div`
-  @media (max-width: 600px) {
-    display: flex;
-    justify-content: center;
   }
 `;

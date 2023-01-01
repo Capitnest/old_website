@@ -44,7 +44,6 @@ export default function Homepage() {
         <br />
         <br />
         <br />
-        <Coins />
         <br />
         <Newsletter />
         <br />
