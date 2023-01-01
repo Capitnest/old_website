@@ -166,36 +166,11 @@ export function SearchBar(props) {
           </>
         ) : (
           <>
-            <Button size="sm">Trending</Button>
+            <TimeStamp to={`/feeds/${props.path}/trending`} name="Trending" />
 
             {currentUser ? (
               <>
-                <Button
-                  variant="link"
-                  onClick={() =>
-                    toast({
-                      title: "Capitnest Pro is required to access 1 day feeds",
-                      description: (
-                        <>
-                          {" "}
-                          <a
-                            href="/pricing"
-                            style={{
-                              textDecoration: "underline",
-                              marginRight: "3px",
-                            }}
-                          >
-                            Become a PRO user - 30% OFF
-                          </a>
-                        </>
-                      ),
-                      duration: 9000,
-                      isClosable: true,
-                    })
-                  }
-                >
-                  1d
-                </Button>
+                <TimeStamp to={`/feeds/${props.path}/1`} name="1d" />
 
                 <Button
                   variant="link"
