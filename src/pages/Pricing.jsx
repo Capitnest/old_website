@@ -61,9 +61,6 @@ export default function Pricing() {
                   2000,
                   "Data",
                   2000,
-                  () => {
-                    console.log("Done typing!"); // Place optional callbacks anywhere in the array
-                  },
                 ]}
                 wrapper="div"
                 cursor={true}
@@ -84,7 +81,7 @@ export default function Pricing() {
             <BadgeBox
               style={{ fontSize: "14px", width: "150px", fontWeight: "bold" }}
             >
-              Beta Launch Sale!
+              ⭐ New Year Sale!
             </BadgeBox>
           </div>
         </Description>
@@ -323,7 +320,7 @@ export default function Pricing() {
           </Line>
 
           <Line>
-            <div className="column">VIP Discord Server</div>
+            <div className="column">Insights</div>
             <div className="column">
               <CloseIcon width="12px" />
             </div>
@@ -356,18 +353,6 @@ export default function Pricing() {
             <div className="column">Research Reports</div>
             <div className="column">
               <CloseIcon width="12px" />
-            </div>
-            <div className="column">
-              <CheckIcon />
-            </div>
-            <div className="column">
-              <CheckIcon />
-            </div>
-          </Line>
-          <Line>
-            <div className="column">Learn Material</div>
-            <div className="column">
-              <CheckIcon />
             </div>
             <div className="column">
               <CheckIcon />
@@ -418,7 +403,21 @@ export default function Pricing() {
           <Badge colorScheme="teal">Upcomming Features</Badge>
 
           <Line>
-            <div className="column">Insights</div>
+            <div className="column">Marketplace</div>
+            <div className="column">
+              <CheckIcon />
+            </div>
+
+            <div className="column">
+              <CheckIcon />
+            </div>
+            <div className="column">
+              <CheckIcon />
+            </div>
+          </Line>
+
+          <Line>
+            <div className="column">Courses & Videos</div>
             <div className="column">
               <CloseIcon width="12px" />
             </div>
@@ -432,7 +431,7 @@ export default function Pricing() {
           </Line>
 
           <Line>
-            <div className="column">Signals</div>
+            <div className="column">Descentralised Signals</div>
             <div className="column">
               <CloseIcon width="12px" />
             </div>
