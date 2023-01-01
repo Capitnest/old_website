@@ -41,7 +41,7 @@ export default function TrendingCrypto() {
       <Layout>
         <Tab index={2} />
         <Stats>
-          <div style={{ width: "60%" }}>
+          <div>
             <h1
               style={{
                 fontSize: "22px",
@@ -121,7 +121,6 @@ export default function TrendingCrypto() {
                             </AccordionButton>
                           </h2>
                           <AccordionPanel>
-                            <TrendinggCrypto id={coin.item.id} />
                             <div style={{ height: "10px" }} />
                             <Link
                               to={`/coin/${coin.item.id}`}
@@ -140,75 +139,9 @@ export default function TrendingCrypto() {
               )}
             </Accordion>
           </div>
-          <div>
-            <h1
-              style={{
-                fontSize: "22px",
-                fontWeight: 600,
-                marginBottom: "10px",
-              }}
-            >
-              Asset of the day on{" "}
-              <a
-                href="https://lunarcrush.com"
-                style={{ color: "rgb(19, 243, 201)" }}
-                target="_blank"
-              >
-                LunarCrush.com
-              </a>
-            </h1>
-
-            <Box
-              border
-              style={{
-                backgroundColor: (() => {
-                  if (colorMode === "light") {
-                    return "rgb(249, 249, 250)";
-                  } else {
-                    return "#171923";
-                  }
-                })(),
-                borderColor: (() => {
-                  if (colorMode === "light") {
-                    return "rgb(214, 213, 222)";
-                  } else {
-                    return "rgb(64, 63, 75)";
-                  }
-                })(),
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <p>Coin: </p>
-                <p>NFT:</p>
-                <p>Stock:</p>
-              </div>
-            </Box>
-          </div>
         </Stats>
       </Layout>
     </>
-  );
-}
-
-function TrendinggCrypto(props) {
-  return (
-    <div>
-      {" "}
-      {useScript(
-        "https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"
-      )}
-      <script src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></script>
-      <coingecko-coin-compare-chart-widget
-        coin-ids={props.id}
-        currency="usd"
-        locale="en"
-      ></coingecko-coin-compare-chart-widget>
-    </div>
   );
 }
 

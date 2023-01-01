@@ -26,135 +26,113 @@ export default function MarketDominance(props) {
   return (
     <>
       <Content>
-        {colorMode === "dark" ? (
-          <>
-            <MarketDominanceContent>
-              <Title>Market Dominance</Title>
+        <MarketDominanceContent>
+          <Title>Market Dominance</Title>
 
-              <Link to="/coins/bitcoin" style={{ color: "inherit" }}>
-                <CoinBox
-                  style={{
-                    backgroundColor: (() => {
-                      if (colorMode === "light") {
-                        return "rgb(237, 242, 247)";
-                      } else {
-                        return "#1f2434";
-                      }
-                    })(),
-                  }}
-                >
-                  <img src="/images/icons/bitcoin.png" alt="bicoin" />
+          <Link to="/coins/bitcoin" style={{ color: "inherit" }}>
+            <CoinBox
+              style={{
+                backgroundColor: (() => {
+                  if (colorMode === "light") {
+                    return "rgb(237, 242, 247)";
+                  } else {
+                    return "#1f2434";
+                  }
+                })(),
+              }}
+            >
+              <img src="/images/icons/bitcoin.png" alt="bicoin" />
 
-                  <div>
-                    <h1>Bitcoin</h1>
-                    <p>
-                      <NumberFormat
-                        thousandSeparator={true}
-                        value={props.data.data.market_cap_percentage.btc}
-                        displayType="text"
-                        decimalScale={1}
-                      />
-                      %
-                    </p>
-                  </div>
-                </CoinBox>
-              </Link>
-
-              <Link to="/coins/ethereum" style={{ color: "inherit" }}>
-                <CoinBox
-                  style={{
-                    backgroundColor: (() => {
-                      if (colorMode === "light") {
-                        return "rgb(237, 242, 247)";
-                      } else {
-                        return "#1f2434";
-                      }
-                    })(),
-                  }}
-                >
-                  <img
-                    src="/images/icons/ethereum.png"
-                    alt="ethereum"
-                    width="40px"
+              <div>
+                <h1>Bitcoin</h1>
+                <p>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    value={props.data.data.market_cap_percentage.btc}
+                    displayType="text"
+                    decimalScale={1}
                   />
+                  %
+                </p>
+              </div>
+            </CoinBox>
+          </Link>
 
-                  <div>
-                    <h1>Ethereum</h1>
-                    <p>
-                      <NumberFormat
-                        thousandSeparator={true}
-                        value={props.data.data.market_cap_percentage.eth}
-                        displayType="text"
-                        decimalScale={1}
-                      />
-                      %
-                    </p>
-                  </div>
-                </CoinBox>
-              </Link>
+          <Link to="/coins/ethereum" style={{ color: "inherit" }}>
+            <CoinBox
+              style={{
+                backgroundColor: (() => {
+                  if (colorMode === "light") {
+                    return "rgb(237, 242, 247)";
+                  } else {
+                    return "#1f2434";
+                  }
+                })(),
+              }}
+            >
+              <img
+                src="/images/icons/ethereum.png"
+                alt="ethereum"
+                width="40px"
+              />
 
-              <Link to="/markets" style={{ color: "inherit" }}>
-                <CoinBox
-                  style={{
-                    backgroundColor: (() => {
-                      if (colorMode === "light") {
-                        return "rgb(237, 242, 247)";
-                      } else {
-                        return "#1f2434";
-                      }
-                    })(),
-                  }}
-                >
-                  <FaCoins size={50} style={{ marginTop: "4px" }} />
-
-                  <div>
-                    <h1>Other</h1>
-                    <p>
-                      <NumberFormat
-                        thousandSeparator={true}
-                        value={AltCoinsPercentage(props.data)}
-                        displayType="text"
-                        decimalScale={1}
-                      />
-                      %
-                    </p>
-                  </div>
-                </CoinBox>
-              </Link>
-            </MarketDominanceContent>
-            <Index>
-              <Title>Crypto Fear Index</Title>
-              <Wrap>
-                <Box padding="10px" borderWidth="2px" borderRadius="10px">
-                  <img
-                    src="https://alternative.me/crypto/fear-and-greed-index.png"
-                    alt="Crypto Fear & Greed Index on May 13, 2020"
-                    width="100%"
+              <div>
+                <h1>Ethereum</h1>
+                <p>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    value={props.data.data.market_cap_percentage.eth}
+                    displayType="text"
+                    decimalScale={1}
                   />
-                </Box>
-              </Wrap>
-            </Index>
-          </>
-        ) : (
-          <>
-            <MarketDominanceContent>
-              <Title>Market Dominance</Title>
-            </MarketDominanceContent>
+                  %
+                </p>
+              </div>
+            </CoinBox>
+          </Link>
 
-            <Index>
-              <Title>Crypto Fear Index</Title>
-              <Wrap>
-                <Box padding="10px" borderWidth="2px" borderRadius="10px">
-                  <img
-                    src="https://alternative.me/crypto/fear-and-greed-index.png"
-                    alt="Crypto Fear & Greed Index on May 13, 2020"
-                    width="100%"
+          <Link to="/markets" style={{ color: "inherit" }}>
+            <CoinBox
+              style={{
+                backgroundColor: (() => {
+                  if (colorMode === "light") {
+                    return "rgb(237, 242, 247)";
+                  } else {
+                    return "#1f2434";
+                  }
+                })(),
+              }}
+            >
+              <FaCoins size={50} style={{ marginTop: "4px" }} />
+
+              <div>
+                <h1>Other</h1>
+                <p>
+                  <NumberFormat
+                    thousandSeparator={true}
+                    value={AltCoinsPercentage(props.data)}
+                    displayType="text"
+                    decimalScale={1}
                   />
-                </Box>
-              </Wrap>
-            </Index>
-          </>
-        )}
+                  %
+                </p>
+              </div>
+            </CoinBox>
+          </Link>
+        </MarketDominanceContent>
+        <Index>
+          <Title>Crypto Fear Index</Title>
+
+          <Wrap>
+            <Box padding="10px" borderWidth="2px" borderRadius="10px">
+              <img
+                src="https://alternative.me/crypto/fear-and-greed-index.png"
+                alt="Crypto Fear & Greed Index on May 13, 2020"
+                width="100%"
+              />
+            </Box>
+          </Wrap>
+        </Index>
       </Content>
     </>
   );
@@ -208,7 +186,7 @@ const Index = styled.div`
 
 const Title = styled.h1`
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 10px;
 `;
 
