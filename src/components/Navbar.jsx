@@ -7,10 +7,10 @@ import Mobile from "./Navbar/Mobile";
 export function Navbar() {
   return (
     <>
-      <Hide breakpoint="(max-width: 920px)">
+      <Hide breakpoint="(max-width: 850px)">
         <Desktop />
       </Hide>
-      <Show breakpoint="(max-width: 920px)">
+      <Show breakpoint="(max-width: 850px)">
         <Mobile />
       </Show>
     </>
