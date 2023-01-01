@@ -125,7 +125,7 @@ export default function Mobile() {
       </LeftSide>
 
       <RightSide>
-        <button
+        {/* <button
           style={{ borderWidth: "0px", marginRight: "9px" }}
           onClick={() => {
             toggleColorMode();
@@ -135,7 +135,7 @@ export default function Mobile() {
             <FaMoon size={25} color="#F6AD55" />,
             <BsFillSunFill size={27} color="#F6AD55" />
           )}
-        </button>
+        </button> */}
 
         <IconButton
           ref={btnRef}

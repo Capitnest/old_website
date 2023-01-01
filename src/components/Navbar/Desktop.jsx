@@ -362,7 +362,7 @@ export default function Desktop() {
       </LeftSide>
 
       <RightSide>
-        <button
+        {/* <button
           style={{ borderWidth: "0px", marginRight: "9px" }}
           onClick={() => {
             toggleColorMode();
@@ -372,9 +372,9 @@ export default function Desktop() {
             <FaMoon size={25} color="#F6AD55" />,
             <BsFillSunFill size={27} color="#F6AD55" />
           )}
-        </button>
+        </button> */}
 
-        <VerticalLine
+        {/* <VerticalLine
           style={{
             borderColor: (() => {
               if (colorMode === "light") {
@@ -384,7 +384,7 @@ export default function Desktop() {
               }
             })(),
           }}
-        />
+        /> */}
         {!currentUser && (
           <div style={{ marginTop: "9px", marginLeft: "8px" }}>
             <a href="/login" style={{ marginRight: "5px" }}>
